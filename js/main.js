@@ -169,7 +169,7 @@ function calcCost() {
   if (el) el.addEventListener('change', calcCost);
 });
 
-// ── CONTACT FORM SUBMISSION — PHP mailer ──
+// ── CONTACT FORM SUBMISSION — Formspree ──
 // Keep cost-hidden field in sync with the displayed cost
 document.addEventListener('change', () => {
   const costEl  = document.getElementById('booking-cost');
@@ -203,15 +203,15 @@ if (contactForm) {
     try {
       const formData = new FormData(contactForm);
 
-      // send-mail.php lives at the site root, one level up from /contact/
-      const response = await fetch('../send-mail.php', {
+      const response = await fetch('https://formspree.io/f/xleqevwo', {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: { 'Accept': 'application/json' }
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      if (result.ok) {
         successEl.style.display = 'block';
         contactForm.reset();
         document.getElementById('booking-cost').textContent     = '—';
