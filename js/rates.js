@@ -46,4 +46,4 @@ const SEASON_CONFIG = [
 ];
 
 // Which rooms are apartments (higher rate) vs standard rooms
-const APARTMENT_ROOMS = ['pool-apartment'];
+const APARTMENT_ROOMS = ['studio-apartment'];
