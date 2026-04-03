@@ -1,0 +1,11 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Backup files
+bak.html
+
+# Claude / editor config
+.claude/
+CLAUDE.md
+.auto-memory/
