@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/tamariuc/public_html
+    - /bin/cp -r accommodation $DEPLOYPATH/accommodation
+    - /bin/cp -r contact $DEPLOYPATH/contact
+    - /bin/cp -r css $DEPLOYPATH/css
+    - /bin/cp -r getting-here $DEPLOYPATH/getting-here
+    - /bin/cp -r images $DEPLOYPATH/images
+    - /bin/cp -r js $DEPLOYPATH/js
+    - /bin/cp -r things-to-do $DEPLOYPATH/things-to-do
+    - /bin/cp index.html $DEPLOYPATH/index.html
+    - /bin/cp send-mail.php $DEPLOYPATH/send-mail.php
