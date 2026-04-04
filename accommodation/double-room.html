@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Double Room — Tamariu Chalet</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body, p, li, td, th, a, button, input, label, select, textarea {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .rates-box {
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .rates-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      table-layout: auto;
+    }
+    .rates-table th,
+    .rates-table td {
+      padding: 7px 10px;
+      white-space: nowrap;
+    }
+    .rates-cleaning-note {
+      font-size: 0.8rem;
+      color: var(--stone);
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
@@ -53,41 +80,36 @@
 </div>
 
 <div class="room-page">
-  <!-- Added grid-template-columns to force the right column (rates) to be wider (1fr) -->
-  <div class="room-page-grid" style="grid-template-columns: 2fr 1fr;">
+  <div class="room-page-grid">
 
     <!-- LEFT: Gallery + Description -->
     <div>
-      <!-- Gallery: replace placeholders with real images -->
       <div class="room-gallery">
         <div class="img-placeholder main-img">
-          <img src="../images/rooms/double-room/main.jpg" class="main-img" alt="Double Room"> 
           🛏 Double Room — Main View<br><small style="font-size:0.65rem;margin-top:8px;display:block;opacity:0.5;">images/rooms/double-room/main.jpg</small>
         </div>
         <div class="img-placeholder thumb">
-          <img src="../images/rooms/double-room/view2.jpg" class="thumb" alt="Room detail">
           View 2<br><small style="font-size:0.55rem;opacity:0.5;">double-room/view2.jpg</small>
         </div>
         <div class="img-placeholder thumb">
-          <img src="../images/rooms/double-room/view3.jpg" class="thumb" alt="Room detail">
           View 3<br><small style="font-size:0.55rem;opacity:0.5;">double-room/view3.jpg</small>
         </div>
       </div>
 
-      <h2 style="font-family:Verdana,Arial,sans-serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About This Room</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About This Room</h2>
       <p style="color:var(--stone);margin-bottom:14px;font-size:0.95rem;">
         A comfortable, well-appointed double room with a relaxed Mediterranean character.
         Natural light fills the space throughout the day, and the garden outlook lends a sense of
         calm privacy. The room benefits from quality bed linen, ample storage and convenient
         access to the shared bathroom facilities just across the hall.
       </p>
-<a href="../images/shared/patio.jpg">TEST LINK</a>
+
       <div class="shared-links">
-        <a href="../images/shared/patio.jpg" class="shared-link">🌿 Patio &amp; Eating Area</a>
-        <a href="../images/shared/pool.jpg" class="shared-link">🏊 Pool &amp; Garden</a>
+        <a href="#" class="shared-link">🌿 Patio &amp; Eating Area</a>
+        <a href="#" class="shared-link">🏊 Pool &amp; Garden</a>
       </div>
 
-      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Shared Amenities</h3>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Shared Amenities</h3>
       <ul class="amenities-list">
         <li>Shared bathroom</li>
         <li>Shower</li>
@@ -112,59 +134,52 @@
     <div>
       <div class="rates-box">
         <h3>Rates — Double Room</h3>
-        <!-- Table width 100% fills the grid column -->
-        <table class="rates-table" style="width: 100%;">
+        <table class="rates-table">
           <thead>
             <tr>
               <th>Season</th>
               <th>Dates</th>
               <th>Rate/Night</th>
               <th>Min Stay</th>
-              <th>Cleaning</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="season-name">Early</td>
-              <!-- No wrap keeps dates on one line -->
-              <td style="white-space: nowrap;">01 Jan – 30 Apr</td>
+              <td>01 Jan – 30 Apr</td>
               <td class="closed-cell">Closed</td>
-              <td>—</td>
               <td>—</td>
             </tr>
             <tr>
               <td class="season-name">Spring</td>
-              <td style="white-space: nowrap;">01 May – 30 Jun</td>
+              <td>01 May – 30 Jun</td>
               <td class="rate-highlight">€110</td>
-              <td style="white-space: nowrap;">2 nights</td>
-              <td>€30</td>
+              <td>2 nights</td>
             </tr>
             <tr>
               <td class="season-name">Summer</td>
-              <td style="white-space: nowrap;">01 Jul – 31 Aug</td>
+              <td>01 Jul – 31 Aug</td>
               <td class="rate-highlight">€125</td>
-              <td style="white-space: nowrap;">3 nights</td>
-              <td>€45</td>
+              <td>3 nights</td>
             </tr>
             <tr>
               <td class="season-name">Late</td>
-              <td style="white-space: nowrap;">01 Sep – 31 Dec</td>
+              <td>01 Sep – 31 Dec</td>
               <td class="rate-highlight">€110</td>
-              <td style="white-space: nowrap;">2 nights</td>
-              <td>€30</td>
+              <td>2 nights</td>
             </tr>
           </tbody>
         </table>
-        <p class="rates-note">Rates are per room per night. Cleaning fee added once per stay.</p>
+        <p class="rates-note">Rates are per room per night.</p>
+        <p class="rates-cleaning-note">A one-off cleaning fee of €30 applies per stay.</p>
       </div>
 
       <a href="https://calendar.google.com/calendar/embed?src=psvnv0di1muvst84vmk0311pnn91456p%40import.calendar.google.com&ctz=Europe%2FMadrid" target="_blank" rel="noopener" class="availability-btn">
         📅 Check Availability
       </a>
-      <!-- Replace the href above with your actual Google Calendar embed link -->
 
       <div style="margin-top:30px;padding:20px;background:var(--linen);border:1px solid rgba(0,0,0,0.08);">
-        <h4 style="font-family:Verdana,Arial,sans-serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
+        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
         <p style="font-size:0.82rem;color:var(--stone);margin-bottom:14px;">Send us an enquiry and we'll confirm your dates and total cost.</p>
         <a href="../contact/index.html?room=double-room" class="btn-outline" style="display:block;text-align:center;">Enquire Now</a>
       </div>

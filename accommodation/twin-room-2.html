@@ -6,22 +6,30 @@
   <title>Twin Room 2 — Tamariu Chalet</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .room-page-grid > div:last-child {
-      min-width: 0;
+    body, p, li, td, th, a, button, input, label, select, textarea {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     .rates-box {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      display: block;
+      display: inline-block;
       width: 100%;
+      box-sizing: border-box;
     }
     .rates-table {
-      min-width: 480px;
+      width: 100%;
       border-collapse: collapse;
+      font-size: 0.82rem;
+      table-layout: auto;
     }
-    .rates-table td,
-    .rates-table th {
+    .rates-table th,
+    .rates-table td {
+      padding: 7px 10px;
       white-space: nowrap;
+    }
+    .rates-cleaning-note {
+      font-size: 0.8rem;
+      color: var(--stone);
+      margin-top: 10px;
+      font-style: italic;
     }
   </style>
 </head>
@@ -33,7 +41,7 @@
     <li>
       <a href="#">The Accommodation <span class="arrow">▾</span></a>
       <ul class="dropdown">
-        <li><a href="twin-room-2.html">Twin Room 2</a></li>
+        <li><a href="double-room.html">Double Room</a></li>
         <li><a href="twin-room-1.html">Twin Room 1</a></li>
         <li><a href="twin-room-2.html">Twin Room 2</a></li>
         <li><a href="pool-apartment.html">Studio Apartment</a></li>
@@ -78,22 +86,19 @@
     <div>
       <div class="room-gallery">
         <div class="img-placeholder main-img">
-          <!-- <img src="../images/rooms/twin-room-2/main.jpg" class="main-img" alt="Twin Room 2"> -->
           🛏 Twin Room 2 — Main View<br><small style="font-size:0.65rem;margin-top:8px;display:block;opacity:0.5;">images/rooms/twin-room-2/main.jpg</small>
         </div>
         <div class="img-placeholder thumb">
-          <!-- <img src="../images/rooms/twin-room-2/view2.jpg" class="thumb" alt="Room detail"> -->
           View 2<br><small style="font-size:0.55rem;opacity:0.5;">twin-room-2/view2.jpg</small>
         </div>
         <div class="img-placeholder thumb">
-          <!-- <img src="../images/rooms/twin-room-2/view3.jpg" class="thumb" alt="Room detail"> -->
           View 3<br><small style="font-size:0.55rem;opacity:0.5;">twin-room-2/view3.jpg</small>
         </div>
       </div>
 
-      <h2 style="font-family:Verdana,Arial,sans-serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About This Room</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About This Room</h2>
       <p style="color:var(--stone);margin-bottom:14px;font-size:0.95rem;">
-        A relaxed, comfortable twin room with two single beds and a warm Mediterranean feel with a relaxed Mediterranean character.
+        A relaxed, comfortable twin room with two single beds and a warm Mediterranean feel.
         Natural light fills the space throughout the day, and the garden outlook lends a sense of
         calm privacy. The room benefits from quality bed linen, ample storage and convenient
         access to the shared bathroom facilities just across the hall.
@@ -104,7 +109,7 @@
         <a href="#" class="shared-link">🏊 Pool &amp; Garden</a>
       </div>
 
-      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Shared Amenities</h3>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Shared Amenities</h3>
       <ul class="amenities-list">
         <li>Shared bathroom</li>
         <li>Shower</li>
@@ -136,7 +141,6 @@
               <th>Dates</th>
               <th>Rate/Night</th>
               <th>Min Stay</th>
-              <th>Cleaning</th>
             </tr>
           </thead>
           <tbody>
@@ -145,32 +149,29 @@
               <td>01 Jan – 30 Apr</td>
               <td class="closed-cell">Closed</td>
               <td>—</td>
-              <td>—</td>
             </tr>
             <tr>
               <td class="season-name">Spring</td>
               <td>01 May – 30 Jun</td>
               <td class="rate-highlight">€110</td>
               <td>2 nights</td>
-              <td>€30</td>
             </tr>
             <tr>
               <td class="season-name">Summer</td>
               <td>01 Jul – 31 Aug</td>
               <td class="rate-highlight">€125</td>
               <td>3 nights</td>
-              <td>€45</td>
             </tr>
             <tr>
               <td class="season-name">Late</td>
               <td>01 Sep – 31 Dec</td>
               <td class="rate-highlight">€110</td>
               <td>2 nights</td>
-              <td>€30</td>
             </tr>
           </tbody>
         </table>
-        <p class="rates-note">Rates are per room per night. Cleaning fee added once per stay.</p>
+        <p class="rates-note">Rates are per room per night.</p>
+        <p class="rates-cleaning-note">A one-off cleaning fee of €30 applies per stay.</p>
       </div>
 
       <a href="https://calendar.google.com/calendar/embed?src=3i6f0rbuv9rasr49djq8q2hi0bl1d2lr%40import.calendar.google.com&ctz=Europe%2FMadrid" target="_blank" rel="noopener" class="availability-btn">
@@ -178,12 +179,11 @@
       </a>
 
       <div style="margin-top:30px;padding:20px;background:var(--linen);border:1px solid rgba(0,0,0,0.08);">
-        <h4 style="font-family:Verdana,Arial,sans-serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
+        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
         <p style="font-size:0.82rem;color:var(--stone);margin-bottom:14px;">Send us an enquiry and we'll confirm your dates and total cost.</p>
         <a href="../contact/index.html?room=twin-room-2" class="btn-outline" style="display:block;text-align:center;">Enquire Now</a>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -196,7 +196,7 @@
     <div class="footer-col">
       <h4>The Rooms</h4>
       <ul>
-        <li><a href="twin-room-2.html">Twin Room 2</a></li>
+        <li><a href="double-room.html">Double Room</a></li>
         <li><a href="twin-room-1.html">Twin Room 1</a></li>
         <li><a href="twin-room-2.html">Twin Room 2</a></li>
         <li><a href="pool-apartment.html">Studio Apartment</a></li>
