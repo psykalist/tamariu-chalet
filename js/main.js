@@ -64,15 +64,18 @@ if (track) {
 // ── RATES TABLE AUTO-RENDER ──
 // Finds any <table class="rates-table"> with data-room-type="room" or "apartment"
 // and populates it from SEASON_CONFIG in rates.js
+// Cleaning fee is shown as a note below the table, not as a column.
 
 function renderRatesTables() {
   document.querySelectorAll('table.rates-table[data-room-type]').forEach(table => {
-    const isApt = table.dataset.roomType === 'apartment';
+    const type  = table.dataset.roomType;
+    if (type === 'summary') return; // handled by renderSummaryTable
+    const isApt = type === 'apartment';
     const tbody = table.querySelector('tbody');
     if (!tbody) return;
     tbody.innerHTML = '';
     SEASON_CONFIG.forEach(s => {
-      const d = isApt ? s.apt : s.room;
+      const d      = isApt ? s.apt : s.room;
       const closed = d.rate === null;
       tbody.innerHTML += `
         <tr>
@@ -80,9 +83,19 @@ function renderRatesTables() {
           <td>${s.dates}</td>
           <td>${closed ? '<span class="closed-cell">Closed</span>' : `<span class="rate-highlight">€${d.rate}</span>`}</td>
           <td>${closed ? '—' : `${d.minStay} nights`}</td>
-          <td>${closed ? '—' : `€${d.cleaning}`}</td>
         </tr>`;
     });
+
+    // Insert cleaning fee note below the table if not already present
+    const existing = table.parentElement.querySelector('.rates-cleaning-note');
+    if (!existing) {
+      const cleaningFee = isApt ? SEASON_CONFIG[1].apt.cleaning : SEASON_CONFIG[1].room.cleaning;
+      const note = document.createElement('p');
+      note.className = 'rates-cleaning-note';
+      note.style.cssText = 'font-size:0.8rem;color:var(--stone);margin-top:10px;font-style:italic;';
+      note.textContent = `A one-off cleaning fee of €${cleaningFee} applies per stay.`;
+      table.insertAdjacentElement('afterend', note);
+    }
   });
 }
 
@@ -147,33 +160,33 @@ function calcCost() {
 
   if (!rateData.rate) {
     costEl.textContent = '—';
-    breakEl.textContent = `Rooms closed in ${season.name} (Jan–Apr)`;
+    breakEl.textContent = `Rooms closed in ${season.name} season`;
     return;
   }
 
   if (nights < rateData.minStay) {
     costEl.textContent = '—';
-    breakEl.textContent = `Minimum ${rateData.minStay} nights in ${season.name}`;
+    breakEl.textContent = `Minimum ${rateData.minStay} nights in ${season.name} season`;
     return;
   }
 
-  const accom  = nights * rateData.rate;
-  const total  = accom + rateData.cleaning;
-  costEl.textContent = `€${total}`;
+  const accom = nights * rateData.rate;
+  const total = accom + rateData.cleaning;
+  costEl.textContent  = `€${total}`;
   breakEl.textContent = `${nights} nights × €${rateData.rate} + €${rateData.cleaning} cleaning`;
 }
 
-// Bind events
-['booking-room','booking-checkin','booking-checkout'].forEach(id => {
+// Bind calculator events
+['booking-room', 'booking-checkin', 'booking-checkout'].forEach(id => {
   const el = document.getElementById(id);
   if (el) el.addEventListener('change', calcCost);
 });
 
 // ── CONTACT FORM SUBMISSION — Formspree ──
-// Keep cost-hidden field in sync with the displayed cost
+// Sync cost-hidden field with displayed cost on any change
 document.addEventListener('change', () => {
-  const costEl  = document.getElementById('booking-cost');
-  const hidden  = document.getElementById('cost-hidden');
+  const costEl = document.getElementById('booking-cost');
+  const hidden = document.getElementById('cost-hidden');
   if (costEl && hidden) hidden.value = costEl.textContent;
 });
 
@@ -192,20 +205,15 @@ if (contactForm) {
     const errorEl   = document.getElementById('form-error');
     const errorText = document.getElementById('error-text');
 
-    // Reset messages
     successEl.style.display = 'none';
     errorEl.style.display   = 'none';
-
-    // Disable button while sending
     btn.disabled    = true;
     btn.textContent = 'Sending…';
 
     try {
-      const formData = new FormData(contactForm);
-
       const response = await fetch('https://formspree.io/f/xleqevwo', {
         method: 'POST',
-        body: formData,
+        body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
       });
 
@@ -214,39 +222,15 @@ if (contactForm) {
       if (result.ok) {
         successEl.style.display = 'block';
         contactForm.reset();
-        document.getElementById('booking-cost').textContent     = '—';
-        document.getElementById('booking-breakdown').textContent = 'Select room & dates';
+        if (document.getElementById('booking-cost'))
+          document.getElementById('booking-cost').textContent = '—';
+        if (document.getElementById('booking-breakdown'))
+          document.getElementById('booking-breakdown').textContent = 'Select room & dates';
       } else {
-        errorText.textContent  = result.message || 'Something went wrong. Please email us directly at tamariuchalet@gmail.com';
-        errorEl.style.display  = 'block';
+        errorText.textContent = result.message || 'Something went wrong. Please email us directly at tamariuchalet@gmail.com';
+        errorEl.style.display = 'block';
       }
     } catch (err) {
       errorText.textContent = 'Could not connect to the server. Please email us directly at tamariuchalet@gmail.com';
       errorEl.style.display = 'block';
     } finally {
-      btn.disabled    = false;
-      btn.textContent = 'Send Enquiry';
-    }
-  });
-}
-
-// ── FADE IN ON SCROLL ──
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-fadeEls.forEach(el => observer.observe(el));
-
-// Add fade-in CSS dynamically
-const style = document.createElement('style');
-style.textContent = `
-  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-`;
-document.head.appendChild(style);

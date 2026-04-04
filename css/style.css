@@ -1,19 +1,21 @@
 /* ============================================================
    TAMARIU CHALET — Main Stylesheet
-   Aesthetic: Mediterranean — warm terracotta, deep blue,
-   aged linen, with clean sans-serif typography (Verdana)
+   Aesthetic: Mediterranean luxury — warm terracotta, deep blue,
+   aged linen, with elegant serif typography
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
 :root {
-  --terracotta: #9E4D20;       /* darkened for 4.9:1 contrast on linen (was #C4693A ~3.3:1) */
-  --terracotta-light: #C87040; /* adjusted proportionally */
+  --terracotta: #C4693A;
+  --terracotta-light: #E8926A;
   --deep-blue: #1A3A5C;
   --sea-blue: #2D6A9F;
   --linen: #F5EFE6;
   --warm-white: #FDFAF6;
-  --stone: #5C4F44;
+  --stone: #8C7B6B;
   --dark: #1C1C1C;
-  --gold: #C9A83C;             /* lightened for 5.3:1 contrast on deep-blue (was #B8963A ~4.2:1) */
+  --gold: #B8963A;
   --nav-height: 70px;
 }
 
@@ -22,18 +24,17 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: Verdana, Arial, sans-serif;
+  font-family: 'Jost', sans-serif;
   background: var(--warm-white);
   color: var(--dark);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.7;
-  font-size: 15px;
 }
 
 h1, h2, h3, h4 {
-  font-family: Verdana, Arial, sans-serif;
-  font-weight: 700;
-  line-height: 1.25;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -56,11 +57,11 @@ nav {
 }
 
 .nav-logo {
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
   color: var(--linen);
   letter-spacing: 0.05em;
-  font-weight: 700;
+  font-style: italic;
 }
 
 .nav-logo span { color: var(--gold); font-style: normal; }
@@ -304,7 +305,7 @@ nav {
 }
 
 .about-text {
-  color: var(--dark);
+  color: var(--stone);
   font-size: 0.95rem;
   margin-bottom: 16px;
 }
@@ -349,7 +350,7 @@ nav {
 }
 
 .carousel-header p {
-  color: rgba(245,239,230,0.85); /* increased from 0.6 for better contrast */
+  color: rgba(245,239,230,0.6);
   font-size: 0.9rem;
   letter-spacing: 0.05em;
 }
@@ -389,9 +390,9 @@ nav {
   padding: 30px 20px 16px;
   background: linear-gradient(transparent, rgba(0,0,0,0.65));
   color: white;
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
 }
 
 .carousel-controls {
@@ -479,7 +480,7 @@ nav {
 .room-card-image .placeholder-img {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
-  font-family: Verdana, Arial, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 3rem;
   color: rgba(255,255,255,0.3);
   background: linear-gradient(135deg, var(--deep-blue), var(--sea-blue));
@@ -495,7 +496,7 @@ nav {
 
 .room-card-body p {
   font-size: 0.85rem;
-  color: var(--dark);
+  color: var(--stone);
   margin-bottom: 16px;
 }
 
@@ -514,10 +515,9 @@ nav {
 }
 
 .room-from .from-price {
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 1.3rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
   color: var(--terracotta);
-  font-weight: 700;
 }
 
 .room-from .from-night {
@@ -541,14 +541,15 @@ nav {
   color: white;
 }
 
+
 /* ── RATES TABLE ── */
 .rates-box {
   background: var(--linen);
   border: 1px solid rgba(184,150,58,0.3);
   border-top: 3px solid var(--gold);
-  padding: 28px;
+  padding: 28px 16px;
   margin: 32px 0;
-  max-width: 520px;
+  overflow-x: auto;
 }
 
 .rates-box h3 {
@@ -556,10 +557,11 @@ nav {
   color: var(--deep-blue);
   margin-bottom: 16px;
   letter-spacing: 0.04em;
+  padding: 0 4px;
 }
 
 .rates-table {
-  width: 100%;
+  width: max-content;
   border-collapse: collapse;
   font-size: 0.82rem;
 }
@@ -579,6 +581,11 @@ nav {
   padding: 9px 8px;
   border-bottom: 1px solid rgba(0,0,0,0.05);
   color: var(--dark);
+}
+
+/* Only prevent wrapping on the dates column */
+.rates-table th:nth-child(2),
+.rates-table td:nth-child(2) {
   white-space: nowrap;
 }
 
@@ -594,9 +601,8 @@ nav {
 
 .rate-highlight {
   color: var(--terracotta);
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
 }
 
 .rates-note {
@@ -604,6 +610,7 @@ nav {
   color: var(--stone);
   margin-top: 12px;
   font-style: italic;
+  padding: 0 4px;
 }
 
 /* ── PAGE HERO (inner pages) ── */
@@ -652,9 +659,13 @@ nav {
 
 .room-page-grid {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 420px;
   gap: 60px;
   align-items: start;
+}
+
+.room-page-grid > div:last-child {
+  min-width: 0;
 }
 
 .room-gallery {
@@ -662,6 +673,31 @@ nav {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-bottom: 30px;
+}
+
+.room-gallery-main {
+  grid-column: 1 / -1;
+}
+
+.room-gallery-main img,
+.room-gallery-main .img-placeholder {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.room-gallery-thumbs {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.room-gallery-thumbs img,
+.room-gallery-thumbs .img-placeholder {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 .room-gallery .main-img {
@@ -682,7 +718,7 @@ nav {
   background: linear-gradient(135deg, var(--deep-blue) 0%, var(--sea-blue) 100%);
   color: rgba(255,255,255,0.25);
   font-size: 2.5rem;
-  font-family: Verdana, Arial, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .room-gallery .img-placeholder.thumb { height: 180px; }
@@ -722,9 +758,9 @@ nav {
 
 .amenities-list li {
   font-size: 0.85rem;
-  color: var(--dark);
+  color: var(--stone);
   padding: 6px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -773,7 +809,7 @@ nav {
 }
 
 .content-page p {
-  color: var(--dark);
+  color: var(--stone);
   margin-bottom: 14px;
   font-size: 0.95rem;
 }
@@ -786,7 +822,7 @@ nav {
 .content-page ul li {
   padding: 6px 0 6px 20px;
   position: relative;
-  color: var(--dark);
+  color: var(--stone);
   font-size: 0.9rem;
 }
 
@@ -823,7 +859,7 @@ nav {
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.25);
   font-size: 2rem;
-  font-family: Verdana, Arial, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .external-link-card {
@@ -849,7 +885,7 @@ nav {
 
 .external-link-card p {
   font-size: 0.82rem;
-  color: var(--dark);
+  color: var(--stone);
   margin: 0;
 }
 
@@ -883,7 +919,7 @@ nav {
 
 .transport-card p {
   font-size: 0.85rem;
-  color: var(--dark);
+  color: var(--stone);
   margin: 0;
 }
 
@@ -960,7 +996,7 @@ nav {
   padding: 11px 14px;
   border: 1px solid rgba(0,0,0,0.15);
   background: white;
-  font-family: Verdana, Arial, sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.9rem;
   color: var(--dark);
   outline: none;
@@ -997,10 +1033,9 @@ nav {
 }
 
 .cost-display .cost-value {
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
   color: var(--terracotta);
-  font-weight: 700;
 }
 
 .cost-display .cost-breakdown {
@@ -1014,9 +1049,9 @@ nav {
   padding: 14px;
   background: var(--deep-blue);
   color: white;
-  font-family: Verdana, Arial, sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
@@ -1042,15 +1077,15 @@ footer {
 }
 
 .footer-brand .brand-name {
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
   margin-bottom: 12px;
-  font-weight: 700;
+  font-style: italic;
 }
 
 .footer-brand p {
   font-size: 0.82rem;
-  color: rgba(245,239,230,0.75); /* increased from 0.5 for better contrast */
+  color: rgba(245,239,230,0.5);
   line-height: 1.7;
 }
 
@@ -1070,61 +1105,4 @@ footer {
 
 .footer-col ul li a {
   font-size: 0.82rem;
-  color: rgba(245,239,230,0.82); /* increased from 0.6 for better contrast */
-  transition: color 0.2s;
-}
-
-.footer-col ul li a:hover { color: var(--gold); }
-
-.footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-bottom p {
-  font-size: 0.75rem;
-  color: rgba(245,239,230,0.6); /* increased from 0.35 for better contrast */
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  .about-section { grid-template-columns: 1fr; gap: 40px; }
-  .room-page-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-}
-
-@media (max-width: 768px) {
-  nav { padding: 0 20px; }
-  .nav-menu { display: none; }
-  .hamburger { display: flex; }
-  .nav-menu.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: var(--nav-height);
-    left: 0; right: 0;
-    background: var(--deep-blue);
-    padding: 20px;
-    gap: 0;
-  }
-  .nav-menu.open .dropdown {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    border: none;
-    border-left: 2px solid var(--gold);
-    margin-left: 10px;
-    margin-top: 4px;
-  }
-  .about-section, .rooms-section, .content-page, .contact-grid { padding: 50px 20px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .room-page { padding: 40px 20px; }
-}
+  color: rgba
