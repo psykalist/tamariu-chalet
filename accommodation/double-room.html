@@ -53,7 +53,8 @@
 </div>
 
 <div class="room-page">
-  <div class="room-page-grid">
+  <!-- Added grid-template-columns to force the right column (rates) to be wider (1fr) -->
+  <div class="room-page-grid" style="grid-template-columns: 2fr 1fr;">
 
     <!-- LEFT: Gallery + Description -->
     <div>
@@ -61,7 +62,7 @@
       <div class="room-gallery">
         <div class="img-placeholder main-img">
           <img src="../images/rooms/double-room/main.jpg" class="main-img" alt="Double Room"> 
-          🛏 Double Room — Main View<br><small style="font-size:0.65rem;margin-top:8px;display:block;opacity:0.5;">images/rooms/ddouble-room/main.jpg</small>
+          🛏 Double Room — Main View<br><small style="font-size:0.65rem;margin-top:8px;display:block;opacity:0.5;">images/rooms/double-room/main.jpg</small>
         </div>
         <div class="img-placeholder thumb">
           <img src="../images/rooms/double-room/view2.jpg" class="thumb" alt="Room detail">
@@ -111,7 +112,7 @@
     <div>
       <div class="rates-box">
         <h3>Rates — Double Room</h3>
-        <!-- Added width:100% to fill the container and prevent "narrow" look -->
+        <!-- Table width 100% fills the grid column -->
         <table class="rates-table" style="width: 100%;">
           <thead>
             <tr>
@@ -125,6 +126,7 @@
           <tbody>
             <tr>
               <td class="season-name">Early</td>
+              <!-- No wrap keeps dates on one line -->
               <td style="white-space: nowrap;">01 Jan – 30 Apr</td>
               <td class="closed-cell">Closed</td>
               <td>—</td>
