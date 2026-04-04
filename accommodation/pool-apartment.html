@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Studio Apartment — Tamariu Chalet</title>
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Added style to prevent date wrapping in the JS-generated table rows -->
+  <style>
+    .rates-table td:nth-child(2),
+    .rates-table td:nth-child(4) {
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
 
@@ -53,7 +60,8 @@
 </div>
 
 <div class="room-page">
-  <div class="room-page-grid">
+  <!-- Applied grid fix: 2fr for content, 1fr for rates -->
+  <div class="room-page-grid" style="grid-template-columns: 2fr 1fr;">
 
     <!-- LEFT: Gallery + Description -->
     <div>
@@ -67,7 +75,7 @@
         </div>
       </div>
 
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About the Apartment</h2>
+      <h2 style="font-family:Verdana,Arial,sans-serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About the Apartment</h2>
       <p style="color:var(--stone);margin-bottom:14px;font-size:0.95rem;">
         Our fully self-contained Studio Apartment offers the ultimate in privacy and independence.
         With its own private entrance, the apartment sits directly alongside the pool and garden,
@@ -86,7 +94,7 @@
         <a href="../images/shared/garden.jpg" class="shared-link">🏊 Pool &amp; Garden</a>
       </div>
 
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Apartment Amenities</h3>
+      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Apartment Amenities</h3>
       <ul class="amenities-list">
         <li>Private entrance</li>
         <li>Private bathroom</li>
@@ -113,7 +121,8 @@
     <div>
       <div class="rates-box">
         <h3>Rates — Studio Apartment</h3>
-        <table class="rates-table" data-room-type="apartment">
+        <!-- Applied width fix to fill the column -->
+        <table class="rates-table" data-room-type="apartment" style="width: 100%;">
           <thead>
             <tr>
               <th>Season</th>
@@ -133,7 +142,7 @@
       </a>
 
       <div style="margin-top:30px;padding:20px;background:var(--linen);border:1px solid rgba(0,0,0,0.08);">
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
+        <h4 style="font-family:Verdana,Arial,sans-serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
         <p style="font-size:0.82rem;color:var(--stone);margin-bottom:14px;">Send us an enquiry and we'll confirm your dates and total cost.</p>
         <a href="../contact/index.html?room=pool-apartment" class="btn-outline" style="display:block;text-align:center;">Enquire Now</a>
       </div>
