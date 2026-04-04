@@ -6,12 +6,18 @@
   <title>Twin Room 2 — Tamariu Chalet</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
+    .room-page-grid > div:last-child {
+      min-width: 0;
+    }
     .rates-box {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      display: block;
+      width: 100%;
     }
     .rates-table {
-      min-width: 520px;
+      min-width: 480px;
+      border-collapse: collapse;
     }
     .rates-table td,
     .rates-table th {
@@ -70,7 +76,6 @@
 
     <!-- LEFT: Gallery + Description -->
     <div>
-      <!-- Gallery: replace placeholders with real images -->
       <div class="room-gallery">
         <div class="img-placeholder main-img">
           <!-- <img src="../images/rooms/twin-room-2/main.jpg" class="main-img" alt="Twin Room 2"> -->
@@ -178,6 +183,7 @@
         <a href="../contact/index.html?room=twin-room-2" class="btn-outline" style="display:block;text-align:center;">Enquire Now</a>
       </div>
     </div>
+
   </div>
 </div>
 
