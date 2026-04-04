@@ -14,7 +14,7 @@
     <li>
       <a href="#">The Accommodation <span class="arrow">▾</span></a>
       <ul class="dropdown">
-        <li><a href="twin-room-1.html">Twin Room 1</a></li>
+        <li><a href="double-room.html">Double Room</a></li>
         <li><a href="twin-room-1.html">Twin Room 1</a></li>
         <li><a href="twin-room-2.html">Twin Room 2</a></li>
         <li><a href="pool-apartment.html">Studio Apartment</a></li>
@@ -53,7 +53,8 @@
 </div>
 
 <div class="room-page">
-  <div class="room-page-grid">
+  <!-- Applied grid fix: 2fr for content, 1fr for rates -->
+  <div class="room-page-grid" style="grid-template-columns: 2fr 1fr;">
 
     <!-- LEFT: Gallery + Description -->
     <div>
@@ -73,7 +74,7 @@
         </div>
       </div>
 
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About This Room</h2>
+      <h2 style="font-family:Verdana,Arial,sans-serif;font-size:1.8rem;color:var(--deep-blue);margin-bottom:12px;">About This Room</h2>
       <p style="color:var(--stone);margin-bottom:14px;font-size:0.95rem;">
         A bright and cheerful twin room with two comfortable single beds with a relaxed Mediterranean character.
         Natural light fills the space throughout the day, and the garden outlook lends a sense of
@@ -86,7 +87,7 @@
         <a href="#" class="shared-link">🏊 Pool &amp; Garden</a>
       </div>
 
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Shared Amenities</h3>
+      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Shared Amenities</h3>
       <ul class="amenities-list">
         <li>Shared bathroom</li>
         <li>Shower</li>
@@ -111,7 +112,8 @@
     <div>
       <div class="rates-box">
         <h3>Rates — Twin Room 1</h3>
-        <table class="rates-table">
+        <!-- Applied width fix -->
+        <table class="rates-table" style="width: 100%;">
           <thead>
             <tr>
               <th>Season</th>
@@ -124,30 +126,31 @@
           <tbody>
             <tr>
               <td class="season-name">Early</td>
-              <td>01 Jan – 30 Apr</td>
+              <!-- Applied nowrap fix -->
+              <td style="white-space: nowrap;">01 Jan – 30 Apr</td>
               <td class="closed-cell">Closed</td>
               <td>—</td>
               <td>—</td>
             </tr>
             <tr>
               <td class="season-name">Spring</td>
-              <td>01 May – 30 Jun</td>
+              <td style="white-space: nowrap;">01 May – 30 Jun</td>
               <td class="rate-highlight">€110</td>
-              <td>2 nights</td>
+              <td style="white-space: nowrap;">2 nights</td>
               <td>€30</td>
             </tr>
             <tr>
               <td class="season-name">Summer</td>
-              <td>01 Jul – 31 Aug</td>
+              <td style="white-space: nowrap;">01 Jul – 31 Aug</td>
               <td class="rate-highlight">€125</td>
-              <td>3 nights</td>
+              <td style="white-space: nowrap;">3 nights</td>
               <td>€45</td>
             </tr>
             <tr>
               <td class="season-name">Late</td>
-              <td>01 Sep – 31 Dec</td>
+              <td style="white-space: nowrap;">01 Sep – 31 Dec</td>
               <td class="rate-highlight">€110</td>
-              <td>2 nights</td>
+              <td style="white-space: nowrap;">2 nights</td>
               <td>€30</td>
             </tr>
           </tbody>
@@ -161,7 +164,7 @@
       <!-- Replace the href above with your actual Google Calendar embed link -->
 
       <div style="margin-top:30px;padding:20px;background:var(--linen);border:1px solid rgba(0,0,0,0.08);">
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
+        <h4 style="font-family:Verdana,Arial,sans-serif;font-size:1rem;color:var(--deep-blue);margin-bottom:10px;">Ready to Book?</h4>
         <p style="font-size:0.82rem;color:var(--stone);margin-bottom:14px;">Send us an enquiry and we'll confirm your dates and total cost.</p>
         <a href="../contact/index.html?room=twin-room-1" class="btn-outline" style="display:block;text-align:center;">Enquire Now</a>
       </div>
@@ -178,7 +181,8 @@
     <div class="footer-col">
       <h4>The Rooms</h4>
       <ul>
-        <li><a href="twin-room-1.html">Twin Room 1</a></li>
+        <!-- Fixed duplicate links -->
+        <li><a href="double-room.html">Double Room</a></li>
         <li><a href="twin-room-1.html">Twin Room 1</a></li>
         <li><a href="twin-room-2.html">Twin Room 2</a></li>
         <li><a href="pool-apartment.html">Studio Apartment</a></li>
