@@ -3,8 +3,8 @@ name: Sync Bookings from Airbnb
 # ── When this runs ───────────────────────────────────────────
 on:
   schedule:
-    # Every day at 03:00 UTC (4am Spain time in summer, 3am in winter)
-    - cron: '0 3 * * *'
+    # Every hour
+    - cron: '0 * * * *'
   # Also allows you to trigger it manually from the GitHub Actions tab
   workflow_dispatch:
 
