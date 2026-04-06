@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reservi allotjament al Tamariu Chalet, Costa Brava. Feu servir la nostra calculadora de tarifes i envieu la vostra consulta o contacteu-nos per WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/ca/contact/index.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/contact/">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/contact/">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/contact/">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/contact/">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/contact/">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/contact/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/ca/contact/index.html">
+  <meta property="og:title" content="Contact &amp; Book — Tamariu Chalet">
+  <meta property="og:description" content="Reservi allotjament al Tamariu Chalet, Costa Brava. Feu servir la nostra calculadora de tarifes i envieu la vostra consulta o contacteu-nos per WhatsApp.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact &amp; Book — Tamariu Chalet">
+  <meta name="twitter:description" content="Reservi allotjament al Tamariu Chalet, Costa Brava. Feu servir la nostra calculadora de tarifes i envieu la vostra consulta o contacteu-nos per WhatsApp.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <title>Contact &amp; Book — Tamariu Chalet</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ── Cancellation Policy Modal ── */
+    .cancel-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28,28,28,0.55);
+      z-index: 9000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .cancel-modal-overlay.open { display: flex; }
+    .cancel-modal {
+      background: var(--warm-white);
+      max-width: 560px;
+      width: 100%;
+      border-radius: 4px;
+      padding: 36px 36px 28px;
+      position: relative;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+      font-family: Verdana, Arial, sans-serif;
+    }
+    .cancel-modal h2 {
+      font-size: 1.05rem;
+      color: var(--deep-blue);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .cancel-modal .cancel-tagline {
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-bottom: 20px;
+    }
+    .cancel-modal p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .cancel-modal .cancel-highlight {
+      background: var(--linen);
+      border-left: 3px solid var(--deep-blue);
+      padding: 12px 16px;
+      margin: 16px 0;
+      font-size: 0.84rem;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .cancel-modal .cancel-close-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 11px 28px;
+      background: var(--deep-blue);
+      color: white;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .cancel-modal .cancel-close-btn:hover { background: var(--terracotta); }
+    .cancel-modal-x {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--stone);
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+    .cancel-modal-x:hover { color: var(--dark); }
+    /* Cancel Policy trigger button — matches WhatsApp button layout */
+    .btn-cancel-policy {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 13px 24px;
+      background: var(--deep-blue);
+      color: white;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-cancel-policy:hover { background: var(--terracotta); }
+
+    /* ── Multi-room form styles ── */
+    .enquiry-type {
+      display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .type-option {
+      display: flex; align-items: center; gap: 8px; cursor: pointer;
+      padding: 10px 16px; border: 2px solid var(--linen);
+      font-size: 0.86rem; transition: border-color 0.2s, background 0.2s;
+      flex: 1; min-width: 150px; font-family: Verdana, Arial, sans-serif;
+    }
+    .type-option:has(input:checked) { border-color: var(--deep-blue); background: var(--linen); }
+    .type-option input { margin: 0; accent-color: var(--deep-blue); }
+    .room-checkboxes { display: flex; flex-direction: column; gap: 8px; }
+    .room-check-option {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 14px; border: 1px solid rgba(0,0,0,0.1);
+      background: #fff; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .room-check-option:has(input:checked) { border-color: var(--deep-blue); background: var(--linen); }
+    .room-check-option input[type="checkbox"] {
+      margin-top: 3px; flex-shrink: 0;
+      width: 16px; height: 16px; accent-color: var(--deep-blue); cursor: pointer;
+    }
+    .room-check-label strong { display: block; font-size: 0.87rem; color: var(--dark); margin-bottom: 2px; }
+    .room-note { font-size: 0.75rem; color: var(--stone); font-style: italic; }
+    .occupancy-footnote {
+      font-size: 0.76rem; color: var(--stone); font-style: italic;
+      margin-top: 10px; padding-top: 8px; line-height: 1.6;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .apt-note { font-size: 0.77rem; color: var(--stone); margin-top: 5px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
+  <ul class="nav-menu">
+    <li><a href="#">L'Allotjament <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../accommodation/double-room.html">Habitació Doble</a></li><li><a href="../accommodation/twin-room-1.html">Habitació Doble/Twin 1</a></li><li><a href="../accommodation/twin-room-2.html">Habitació Doble/Twin 2</a></li><li><a href="../accommodation/pool-apartment.html">Apartament Estudi</a></li></ul></li>
+    <li><a href="#">Què Fer <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../../things-to-do/girona.html">Visitar Girona</a></li><li><a href="../../things-to-do/cycling.html">Ciclisme</a></li><li><a href="../../things-to-do/markets.html">Mercats Locals</a></li><li><a href="../../things-to-do/walking.html">Senderisme</a></li><li><a href="../../things-to-do/tourist-info.html">Informació Turística</a></li><li><a href="../../getting-here/julivia-bus.html">Bus Julivia</a></li><li><a href="../../getting-here/begur-bus.html">Bus Platges Begur</a></li><li><a href="../../things-to-do/restaurants.html">Restaurants Locals</a></li><li><a href="../../things-to-do/water-sports.html">Esports Aquàtics</a></li></ul></li>
+    <li><a href="#">Sobre Catalunya <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../about-catalunya/cuisine.html">Cuina Catalana</a></li><li><a href="../about-catalunya/language.html">Llengua Catalana</a></li><li><a href="../about-catalunya/culture.html">Cultura Catalana</a></li><li><a href="../about-catalunya/history.html">Història de Catalunya</a></li><li><a href="../about-catalunya/cities.html">Ciutats d'Interès</a></li><li><a href="../about-catalunya/facts.html">Curiositats</a></li></ul></li><li><a href="#">Com Arribar-hi <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../../getting-here/index.html">Mapa i Direccions</a></li></ul></li>
+    <li><a href="index.html">Contacte i Reserva</a></li>
+  </ul>
+  <div class="lang-switcher"><a href="/contact/index.html">EN</a><span class="lang-sep">|</span><a href="/es/contact/index.html">ES</a><span class="lang-sep">|</span><a href="/ca/contact/index.html" class="lang-active">CA</a><span class="lang-sep">|</span><a href="/fr/contact/index.html">FR</a><span class="lang-sep">|</span><a href="/nl/contact/index.html">NL</a></div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <p class="breadcrumb">Contacte i Reserves</p>
+    <h1>Contactar</h1>
+  </div>
+</div>
+
+<div class="contact-grid">
+
+  <!-- LEFT: Contact Details -->
+  <div class="contact-info">
+    <h2>Contact Details</h2>
+    <p style="color:var(--stone);margin-bottom:28px;font-size:0.92rem;">We'd love to hear from you — whether you have a question about the accommodation, want to check availability or are ready to book. We aim to respond within 24 hours.</p>
+
+    <div class="contact-detail">
+      <div class="icon">📧</div>
+      <div class="detail-text">
+        <strong>Email</strong>
+        <a href="mailto:tamariuchalet@gmail.com">tamariuchalet@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="contact-detail">
+      <div class="icon">📱</div>
+      <div class="detail-text">
+        <strong>Phone &amp; WhatsApp</strong>
+        <span>+34 626 788 866</span>
+        <p style="font-size:0.78rem;color:var(--stone);margin-top:3px;">WhatsApp messages welcome — we'll reply as soon as possible.</p>
+      </div>
+    </div>
+
+    <div class="contact-detail">
+      <div class="icon">📍</div>
+      <div class="detail-text">
+        <strong>Address</strong>
+        <span>Carrer de la Punta De L'Estela 7, Tamariu, Palafrugell<br>Girona, 17212, Spain</span>
+      </div>
+    </div>
+
+    <a href="https://wa.me/34626788866" target="_blank" rel="noopener"
+       style="display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:13px 24px;background:#25D366;color:white;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s;"
+       onmouseover="this.style.background='#1ebe59'" onmouseout="this.style.background='#25D366'">
+      💬 WhatsApp Us
+    </a>
+    <button class="btn-cancel-policy" onclick="document.getElementById('cancelModal').classList.add('open')">📋 Política de Cancel·lació</button>
+    <a href="house-rules.html" class="btn-cancel-policy" style="display:inline-flex;align-items:center;gap:10px;margin-top:12px;text-decoration:none;">
+      📋 Normes de la Casa
+    </a>
+
+    <div style="margin-top:40px;padding:20px 24px;background:var(--linen);border-top:3px solid var(--gold);">
+      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.1rem;color:var(--deep-blue);margin-bottom:12px;">Resum de Temporades i Tarifes</h3>
+      <table class="rates-table" style="font-size:0.78rem;">
+        <thead>
+          <tr><th>Temporada</th><th>Dates</th><th>Habitació</th><th>Apartament</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="season-name">Temporada Baixa</td>
+            <td>1 Jan – 30 Apr</td>
+            <td class="closed-cell">Tancat</td>
+            <td class="closed-cell">Tancat</td>
+          </tr>
+          <tr>
+            <td class="season-name">Primavera</td>
+            <td>1 May – 31 May</td>
+            <td class="rate-highlight">€115</td>
+            <td class="rate-highlight">€165</td>
+          </tr>
+          <tr>
+            <td class="season-name">Estiu</td>
+            <td>1 Jun – 31 Aug</td>
+            <td class="rate-highlight">€130</td>
+            <td class="rate-highlight">€180</td>
+          </tr>
+          <tr>
+            <td class="season-name">Tardor</td>
+            <td>1 Sep – 31 Dec</td>
+            <td class="closed-cell">Tancat</td>
+            <td class="rate-highlight">€165</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="rates-note">+ Taxa de neteja: €30 per habitació · €45 per apartament. Estada mínima: 2 nits (3 nits habitacions a l'estiu · 4 nits apartament a l'estiu). Habitacions: màx. 2 hostes · sense nadons (per consideració als altres hostes). Apartament: tarifa base per a 2 persones · fins a 2 hostes addicionals en sofà llit +€50/persona/nit (màx. 4 en total).</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: Booking Enquiry Form -->
+  <div class="booking-form">
+    <h2>Fer una Consulta</h2>
+    <p style="color:var(--stone);margin-bottom:20px;font-size:0.88rem;">Si voleu reservar o simplement teniu alguna pregunta, ompliu el formulari i us respondrem en menys de 24 hores.</p>
+
+    <!-- Enquiry type toggle -->
+    <div class="enquiry-type">
+      <label class="type-option">
+        <input type="radio" name="enquiry-type" value="booking" checked onchange="toggleEnquiryType()">
+        <span>📅 Consulta de Reserva</span>
+      </label>
+      <label class="type-option">
+        <input type="radio" name="enquiry-type" value="message" onchange="toggleEnquiryType()">
+        <span>💬 Missatge General</span>
+      </label>
+    </div>
+
+    <form id="contact-form">
+      <input type="hidden" name="enquiry_type" id="enquiry-type-hidden" value="Booking Enquiry">
+      <input type="hidden" name="rooms_selected" id="rooms-hidden" value="">
+
+      <!-- BOOKING SECTION -->
+      <div id="booking-section">
+        <div class="form-group">
+          <label>Seleccioneu Habitacions / Apartament</label>
+          <div class="room-checkboxes">
+            <label class="room-check-option">
+              <input type="checkbox" class="room-checkbox" name="rooms[]" value="double-room" onchange="calcCost()">
+              <div class="room-check-label">
+                <strong>Habitació Doble</strong>
+              </div>
+            </label>
+            <label class="room-check-option">
+              <input type="checkbox" class="room-checkbox" name="rooms[]" value="twin-room-1" onchange="calcCost()">
+              <div class="room-check-label">
+                <strong>Habitació Doble/Twin 1</strong>
+              </div>
+            </label>
+            <label class="room-check-option">
+              <input type="checkbox" class="room-checkbox" name="rooms[]" value="twin-room-2" onchange="calcCost()">
+              <div class="room-check-label">
+                <strong>Habitació Doble/Twin 2</strong>
+              </div>
+            </label>
+            <label class="room-check-option">
+              <input type="checkbox" class="room-checkbox" name="rooms[]" value="studio-apartment" onchange="handleAptChange()">
+              <div class="room-check-label">
+                <strong>Apartament Estudi</strong>
+              </div>
+            </label>
+          </div>
+          <p class="occupancy-footnote">* Habitacions: màx. 2 hostes per habitació · bebès no admesos (per consideració als hostes veïns). Apartament: fins a 4 hostes en total — 2 inclosos a la tarifa base, fins a 2 addicionals al sofà llit a +€50/persona/nit.</p>
+        </div>
+
+        <!-- Extra guests for apartment -->
+        <div id="apt-extra-guests" style="display:none;" class="form-group">
+          <label for="extra-guests">Hostes Extra — Sofà Llit (Apartament Estudi)</label>
+          <select id="extra-guests" name="extra_guests" onchange="calcCost()">
+            <option value="0">Sense hostes extra (2 persones incloses a la tarifa base)</option>
+            <option value="1">1 hoste extra en sofà llit (+€50 per nit)</option>
+            <option value="2">2 hostes extra en sofà llit (+€100 per nit)</option>
+          </select>
+          <p class="apt-note">Màxim 4 persones en total a l'apartament. Els hostes extra dormen al sofà llit.</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="booking-checkin">Data d'Entrada</label>
+            <input type="date" id="booking-checkin" name="checkin" onchange="calcCost()">
+          </div>
+          <div class="form-group">
+            <label for="booking-checkout">Data de Sortida</label>
+            <input type="date" id="booking-checkout" name="checkout" onchange="calcCost()">
+          </div>
+        </div>
+
+        <div class="cost-display">
+          <div>
+            <div class="cost-label">Total Estimat</div>
+            <div class="cost-value" id="booking-cost">—</div>
+          </div>
+          <div class="cost-breakdown" id="booking-breakdown">Seleccioneu les habitacions i les dates</div>
+        </div>
+        <input type="hidden" id="cost-hidden" name="cost" value="—">
+      </div>
+
+      <!-- Always visible fields -->
+      <div class="form-group">
+        <label for="guest-name">El Vostre Nom *</label>
+        <input type="text" id="guest-name" name="name" required placeholder="Nom complet">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="guest-email">Correu Electrònic *</label>
+          <input type="email" id="guest-email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="guest-phone">Telèfon / WhatsApp</label>
+          <input type="tel" id="guest-phone" name="phone" placeholder="+34 600 000 000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="guest-message">Missatge / Preguntes</label>
+        <textarea id="guest-message" name="message" rows="4" placeholder="Preguntes, requisits especials o informació addicional..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" id="submit-btn" data-booking-label="Enviar la Consulta">Enviar la Consulta</button>
+
+      <div id="form-success" style="display:none;margin-top:16px;padding:14px 18px;background:#e6f4ea;border-left:3px solid #34a853;font-size:0.88rem;color:#1e6e36;">
+        ✅ La vostra consulta ha estat enviada! Ens posarem en contacte en menys de 24 hores.
+      </div>
+      <div id="form-error" style="display:none;margin-top:16px;padding:14px 18px;background:#fce8e6;border-left:3px solid #c5221f;font-size:0.88rem;color:#c5221f;">
+        ❌ <span id="error-text">Alguna cosa ha anat malament. Poseu-vos en contacte directament a tamariuchalet@gmail.com</span>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Un refugi tranquil a la Costa Brava — on els boscos de pins es troben amb el mar al poble de Tamariu, Catalunya.</p></div>
+    <div class="footer-col"><h4>Les Habitacions</h4><ul><li><a href="../accommodation/double-room.html">Habitació Doble</a></li><li><a href="../accommodation/twin-room-1.html">Habitació Doble/Twin 1</a></li><li><a href="../accommodation/twin-room-2.html">Habitació Doble/Twin 2</a></li><li><a href="../accommodation/pool-apartment.html">Apartament Estudi</a></li></ul></div>
+    <div class="footer-col"><h4>Què Fer</h4><ul><li><a href="../../things-to-do/girona.html">Visitar Girona</a></li><li><a href="../../things-to-do/cycling.html">Ciclisme</a></li><li><a href="../../things-to-do/water-sports.html">Esports Aquàtics</a></li></ul></div>
+    <div class="footer-col"><h4>Getting Here</h4><ul><li><a href="../../getting-here/index.html">Mapa i Direccions</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet · tamariuchalet@gmail.com</p><p>Tamariu, Costa Brava, Catalunya</p></div>
+</footer>
+
+<!-- ── Cancellation Policy Modal ── -->
+<div class="cancel-modal-overlay" id="cancelModal" role="dialog" aria-modal="true" aria-labelledby="cancelModalTitle">
+  <div class="cancel-modal">
+    <button class="cancel-modal-x" onclick="closeCancelModal()" aria-label="Close">&#x2715;</button>
+    <h2 id="cancelModalTitle">Política de Cancel·lació</h2>
+    <p class="cancel-tagline">Entenem que els plans poden canviar — així és com gestionem les cancel·lacions.</p>
+
+    <div class="cancel-highlight">
+      ✅ <strong>Cancel·leu 7 dies o més abans de la vostra estada</strong> i us retornarem el pagament íntegrament, sense preguntes.
+    </div>
+
+    <p>Volem que us sentiu segurs en reservar amb nosaltres. Si sorgeix alguna cosa i necessiteu cancel·lar, simplement <strong>envieu-nos un correu a <a href="mailto:tamariuchalet@gmail.com" style="color:var(--deep-blue);">tamariuchalet@gmail.com</a></strong> almenys 7 dies abans de l'arribada.</p>
+
+    <p>Per a cancel·lacions <strong>dins dels 7 dies previs a l'arribada</strong>, lamentablement no podem oferir reemborsament. Sempre intentarem ajudar-vos en circumstàncies excepcionals.</p>
+
+    <p style="font-size:0.8rem;color:var(--stone);margin-top:8px;">Per cancel·lar, envieu-nos el vostre nom, dates i allotjament. Tramitem els reemborsaments en un termini de 5 dies hàbils.</p>
+
+    <button class="cancel-close-btn" onclick="closeCancelModal()">Entès — Tancar</button>
+  </div>
+</div>
+
+<script>
+  function closeCancelModal() {
+    document.getElementById('cancelModal').classList.remove('open');
+  }
+  // Close on overlay click (outside the modal box)
+  document.getElementById('cancelModal').addEventListener('click', function(e) {
+    if (e.target === this) closeCancelModal();
+  });
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeCancelModal();
+  });
+</script>
+
+<script src="../../js/bookings.js"></script>
+<script src="../../js/rates.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

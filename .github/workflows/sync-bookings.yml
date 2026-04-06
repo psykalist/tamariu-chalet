@@ -1,0 +1,53 @@
+name: Sync Bookings from Airbnb
+
+# ── When this runs ───────────────────────────────────────────
+on:
+  schedule:
+    # Every day at 03:00 UTC (4am Spain time in summer, 3am in winter)
+    - cron: '0 3 * * *'
+  # Also allows you to trigger it manually from the GitHub Actions tab
+  workflow_dispatch:
+
+# ── The job ──────────────────────────────────────────────────
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 1. Check out your repo so the script and js/ folder are available
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Python 3
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Run the sync script
+      #    Airbnb iCal URLs are passed in as environment variables
+      #    from GitHub Secrets — they never appear in the code
+      - name: Fetch Airbnb calendars and update bookings.js
+        env:
+          AIRBNB_DOUBLE_ROOM: ${{ secrets.AIRBNB_DOUBLE_ROOM }}
+          AIRBNB_TWIN_1:      ${{ secrets.AIRBNB_TWIN_1 }}
+          AIRBNB_TWIN_2:      ${{ secrets.AIRBNB_TWIN_2 }}
+          AIRBNB_APARTMENT:   ${{ secrets.AIRBNB_APARTMENT }}
+          GOOGLE_CALENDAR:    ${{ secrets.GOOGLE_CALENDAR }}
+        run: python3 sync-bookings.py
+
+      # 4. Upload the updated bookings.js to iFastNet via FTP
+      #    Only uploads this one file — everything else stays as-is
+      - name: Deploy bookings.js to iFastNet
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:      ${{ secrets.FTP_SERVER }}
+          username:    ${{ secrets.FTP_USERNAME }}
+          password:    ${{ secrets.FTP_PASSWORD }}
+          protocol:    ftps          # secure FTP — use 'ftp' if this fails
+          port:        21
+          local-dir:   ./js/
+          server-dir:  /public_html/js/
+          include:     bookings.js   # only this file, nothing else
+          log-level:   minimal

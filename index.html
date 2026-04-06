@@ -3,9 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peaceful, characterful accommodation in Tamariu, Costa Brava. Three rooms and a self-contained studio apartment, steps from the sea. Book direct.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/">
+  <meta property="og:title" content="Tamariu Chalet — Costa Brava Accommodation">
+  <meta property="og:description" content="Peaceful, characterful accommodation in Tamariu, Costa Brava. Three rooms and a self-contained studio apartment, steps from the sea. Book direct.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tamariu Chalet — Costa Brava Accommodation">
+  <meta name="twitter:description" content="Peaceful, characterful accommodation in Tamariu, Costa Brava. Three rooms and a self-contained studio apartment, steps from the sea. Book direct.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
   <title>Tamariu Chalet — Costa Brava Accommodation</title>
-  <meta name="description" content="Discover Tamariu Chalet — peaceful, characterful accommodation in the coastal village of Tamariu, Costa Brava, Catalunya.">
   <link rel="stylesheet" href="css/style.css">
+<style>
+/* ── Carousel image fit ── */
+.carousel-slide { cursor: pointer; }
+.carousel-slide img { width:100%; height:260px; object-fit:cover; display:block; transition:transform 0.3s; }
+.carousel-slide:hover img { transform:scale(1.04); }
+
+/* ── Room card images ── */
+.room-card-image img { width:100%; height:200px; object-fit:cover; display:block; }
+
+/* ── Tamariu views grid ── */
+.tamariu-views-section { padding:70px 40px; background:var(--warm-white); }
+.tamariu-grid {
+  max-width:1200px; margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+@media(max-width:900px){ .tamariu-grid{ grid-template-columns:repeat(3,1fr); } }
+@media(max-width:700px){ .tamariu-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px){ .tamariu-grid{ grid-template-columns:repeat(2,1fr); } }
+.tamariu-grid-item {
+  position:relative; overflow:hidden; cursor:pointer;
+  aspect-ratio:4/3;
+}
+.tamariu-grid-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.3s; }
+.tamariu-grid-item:hover img { transform:scale(1.06); }
+.tamariu-grid-label {
+  position:absolute; bottom:0; left:0; right:0;
+  background:rgba(26,58,92,0.7); color:#fff;
+  font-size:0.75rem; padding:6px 10px;
+  font-family:Verdana,Arial,sans-serif;
+  opacity:0; transition:opacity 0.2s;
+}
+.tamariu-grid-item:hover .tamariu-grid-label { opacity:1; }
+
+/* ── Lightbox ── */
+.lightbox-overlay {
+  display:none; position:fixed; inset:0; z-index:9000;
+  background:rgba(0,0,0,0.92);
+  align-items:center; justify-content:center; flex-direction:column;
+}
+.lightbox-overlay.active { display:flex; }
+#lightbox-img {
+  max-width:90vw; max-height:82vh;
+  object-fit:contain; display:block;
+  box-shadow:0 4px 40px rgba(0,0,0,0.6);
+}
+#lightbox-caption {
+  color:rgba(255,255,255,0.75); font-size:0.9rem;
+  margin-top:14px; font-family:Verdana,Arial,sans-serif;
+}
+.lightbox-close {
+  position:fixed; top:20px; right:28px;
+  background:none; border:none; color:#fff;
+  font-size:2rem; cursor:pointer; line-height:1;
+}
+</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GuestHouse",
+  "name": "Tamariu Chalet",
+  "description": "Peaceful, characterful accommodation in the coastal village of Tamariu, Costa Brava, Catalunya. Three rooms and a self-contained studio apartment, steps from the sea.",
+  "url": "https://tamariuchalet.com/",
+  "telephone": "+34626788866",
+  "email": "tamariuchalet@gmail.com",
+  "image": "https://tamariuchalet.com/images/shared/tamariu.jpg",
+  "priceRange": "€115 – €180",
+  "checkinTime": "14:00",
+  "checkoutTime": "11:00",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Carrer de la Punta De L'Estela 7",
+    "addressLocality": "Tamariu",
+    "addressRegion": "Girona",
+    "postalCode": "17212",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.9171,
+    "longitude": 3.1958
+  },
+  "hasMap": "https://maps.app.goo.gl/mNMy1VPqRKun75PV8",
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Free WiFi",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Swimming Pool",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Garden",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "BBQ",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Pergola",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Free Parking",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Bike Storage",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Sun Loungers",
+      "value": true
+    }
+  ],
+  "containsPlace": [
+    {
+      "@type": "HotelRoom",
+      "name": "Double Room",
+      "url": "https://tamariuchalet.com/accommodation/double-room.html",
+      "image": "https://tamariuchalet.com/images/rooms/double-room/main.jpg",
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 2
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Shower",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Hairdryer",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "USB Charging Points",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Ceiling Fan",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Mosquito Screens",
+          "value": true
+        }
+      ]
+    },
+    {
+      "@type": "HotelRoom",
+      "name": "Double/Twin Room 1",
+      "url": "https://tamariuchalet.com/accommodation/twin-room-1.html",
+      "image": "https://tamariuchalet.com/images/rooms/twin-room-1/main.jpg",
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 2
+      },
+      "bed": [
+        {
+          "@type": "BedDetails",
+          "typeOfBed": "Double bed"
+        },
+        {
+          "@type": "BedDetails",
+          "typeOfBed": "Twin beds"
+        }
+      ]
+    },
+    {
+      "@type": "HotelRoom",
+      "name": "Double/Twin Room 2",
+      "url": "https://tamariuchalet.com/accommodation/twin-room-2.html",
+      "image": "https://tamariuchalet.com/images/rooms/twin-room-2/main.jpg",
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 2
+      },
+      "bed": [
+        {
+          "@type": "BedDetails",
+          "typeOfBed": "Double bed"
+        },
+        {
+          "@type": "BedDetails",
+          "typeOfBed": "Twin beds"
+        }
+      ]
+    },
+    {
+      "@type": "Apartment",
+      "name": "Studio Apartment",
+      "url": "https://tamariuchalet.com/accommodation/pool-apartment.html",
+      "image": "https://tamariuchalet.com/images/rooms/pool-apartment/main.jpg",
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 3
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Private Entrance",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Private Kitchen",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Private Terrace",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Private Bathroom",
+          "value": true
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -17,8 +277,8 @@
       <a href="#">The Accommodation <span class="arrow">▾</span></a>
       <ul class="dropdown">
         <li><a href="accommodation/double-room.html">Double Room</a></li>
-        <li><a href="accommodation/twin-room-1.html">Twin Room 1</a></li>
-        <li><a href="accommodation/twin-room-2.html">Twin Room 2</a></li>
+        <li><a href="accommodation/twin-room-1.html">Double/Twin Room 1</a></li>
+        <li><a href="accommodation/twin-room-2.html">Double/Twin Room 2</a></li>
         <li><a href="accommodation/pool-apartment.html">Studio Apartment</a></li>
       </ul>
     </li>
@@ -29,21 +289,30 @@
         <li><a href="things-to-do/cycling.html">Cycling</a></li>
         <li><a href="things-to-do/markets.html">Local Markets</a></li>
         <li><a href="things-to-do/walking.html">Walking</a></li>
-        <li><a href="things-to-do/tourist-info.html">Tourist Information</a></li>
+        <li><a href="things-to-do/tourist-info.html">Tourist Information</a></li><li><a href="getting-here/julivia-bus.html">Julivia Bus</a></li><li><a href="getting-here/begur-bus.html">Begur Beach Bus</a></li>
         <li><a href="things-to-do/restaurants.html">Local Restaurants</a></li>
         <li><a href="things-to-do/water-sports.html">Water Sports</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About Catalunya <span class="arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="about-catalunya/cuisine.html">Catalonian Cuisine</a></li>
+        <li><a href="about-catalunya/language.html">Catalonian Language</a></li>
+        <li><a href="about-catalunya/culture.html">Catalonian Culture</a></li>
+        <li><a href="about-catalunya/history.html">Catalonian History</a></li>
+        <li><a href="about-catalunya/cities.html">Cities of Interest</a></li>
+        <li><a href="about-catalunya/facts.html">Catalonian Facts</a></li>
       </ul>
     </li>
     <li>
       <a href="#">Getting Here <span class="arrow">▾</span></a>
       <ul class="dropdown">
         <li><a href="getting-here/index.html">Map &amp; Directions</a></li>
-        <li><a href="getting-here/julivia-bus.html">Julivia Bus</a></li>
-        <li><a href="getting-here/begur-bus.html">Begur Beach Bus</a></li>
       </ul>
     </li>
     <li><a href="contact/index.html">Contact &amp; Book</a></li>
   </ul>
+  <div class="lang-switcher"><a href="/" class="lang-active">EN</a><span class="lang-sep">|</span><a href="/es/">ES</a><span class="lang-sep">|</span><a href="/ca/">CA</a><span class="lang-sep">|</span><a href="/fr/">FR</a><span class="lang-sep">|</span><a href="/nl/">NL</a></div>
   <button class="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -58,8 +327,9 @@
     <h1 class="hero-title">
       Welcome to<br><em>Tamariu Chalet</em>
     </h1>
-    <p class="hero-subtitle">Three rooms &amp; a private studio apartment, steps from the sea</p>
-    <a href="contact/index.html" class="hero-cta">Check Availability</a>
+ <p class="hero-subtitle">Three rooms &amp; a private studio apartment, steps from the sea</p>
+<p class="hero-savings">Book direct and save 10% on online platform prices.</p>
+<a href="contact/index.html" class="hero-cta">Check Availability</a>
   </div>
   <div class="scroll-indicator">Scroll</div>
 </section>
@@ -102,49 +372,57 @@
     <a href="accommodation/double-room.html" class="btn-outline" style="margin-top:10px;">Explore Rooms →</a>
   </div>
   <div class="about-image">
-    <div class="img-placeholder" style="width:100%;height:500px;background:linear-gradient(135deg,#1A3A5C,#2D6A9F);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-family:Verdana,Arial,sans-serif;font-size:3rem;">
-      <!-- Replace with: <img src="images/shared/tamariu-view.jpg" alt="Tamariu cove"> -->
-      Tamariu
-    </div>
+    <img src="images/shared/tamariu.jpg" alt="Tamariu cove, Costa Brava" style="width:100%;height:500px;object-fit:cover;display:block;">
   </div>
 </section>
 
-<!-- ── CAROUSEL: Beaches & Towns ── -->
-<section class="carousel-section">
+<!-- ── CAROUSEL: The Chalet & Gardens ── -->
+<section class="carousel-section" id="chalet-gallery">
   <div class="carousel-header fade-in">
-    <h2>Beaches &amp; Medieval Towns</h2>
-    <p>The Costa Brava at its most spectacular</p>
+    <h2>The Chalet &amp; Gardens</h2>
+    <p>Your home on the Costa Brava</p>
   </div>
   <div class="carousel-track-wrapper">
     <div class="carousel-track">
-      <!-- Add your own images into images/carousel/ and replace the placeholders below -->
-      <div class="carousel-slide">
-        <div class="img-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#1A3A5C,#2D6A9F);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-family:Verdana,Arial,sans-serif;font-size:1.2rem;">Tamariu Beach<br><small style="font-size:0.7rem;margin-top:6px;display:block;opacity:0.6;">images/carousel/tamariu-beach.jpg</small></div>
-        <div class="carousel-slide-label">Tamariu Beach</div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/pool%20and%20garden.jpg','Pool &amp; Garden')">
+        <img src="images/shared/pool%20and%20garden.jpg" alt="Pool and garden">
+        <div class="carousel-slide-label">Pool &amp; Garden</div>
       </div>
-      <div class="carousel-slide">
-        <div class="img-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#2D4A6C,#3D7AAF);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-family:Verdana,Arial,sans-serif;font-size:1.2rem;">Llafranc<br><small style="font-size:0.7rem;margin-top:6px;display:block;opacity:0.6;">images/carousel/llafranc.jpg</small></div>
-        <div class="carousel-slide-label">Llafranc</div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/pool%20view.jpg','Pool View')">
+        <img src="images/shared/pool%20view.jpg" alt="Pool view">
+        <div class="carousel-slide-label">Pool View</div>
       </div>
-      <div class="carousel-slide">
-        <div class="img-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#3A2A1C,#7A5A3C);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-family:Verdana,Arial,sans-serif;font-size:1.2rem;">Girona Old Town<br><small style="font-size:0.7rem;margin-top:6px;display:block;opacity:0.6;">images/carousel/girona.jpg</small></div>
-        <div class="carousel-slide-label">Girona Cathedral Quarter</div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/pool%20view-2.jpg','Pool — Second View')">
+        <img src="images/shared/pool%20view-2.jpg" alt="Pool second view">
+        <div class="carousel-slide-label">Pool — Second View</div>
       </div>
-      <div class="carousel-slide">
-        <div class="img-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#1C3A2A,#3A7A5A);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-family:Verdana,Arial,sans-serif;font-size:1.2rem;">Calella de Palafrugell<br><small style="font-size:0.7rem;margin-top:6px;display:block;opacity:0.6;">images/carousel/calella.jpg</small></div>
-        <div class="carousel-slide-label">Calella de Palafrugell</div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/patio.jpeg','Patio &amp; Eating Area')">
+        <img src="images/shared/patio.jpeg" alt="Patio and eating area">
+        <div class="carousel-slide-label">Patio &amp; Eating Area</div>
       </div>
-      <div class="carousel-slide">
-        <div class="img-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#3A1C2A,#7A3A5A);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-family:Verdana,Arial,sans-serif;font-size:1.2rem;">Begur Castle<br><small style="font-size:0.7rem;margin-top:6px;display:block;opacity:0.6;">images/carousel/begur.jpg</small></div>
-        <div class="carousel-slide-label">Begur Hilltop Castle</div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/courtyard.jpg','Courtyard')">
+        <img src="images/shared/courtyard.jpg" alt="Courtyard">
+        <div class="carousel-slide-label">Courtyard</div>
       </div>
-      <div class="carousel-slide">
-        <div class="img-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#2A3A1C,#5A7A3A);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-family:Verdana,Arial,sans-serif;font-size:1.2rem;">Peratallada<br><small style="font-size:0.7rem;margin-top:6px;display:block;opacity:0.6;">images/carousel/peratallada.jpg</small></div>
-        <div class="carousel-slide-label">Peratallada Medieval Village</div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/courtyard2.jpg','Courtyard — Second View')">
+        <img src="images/shared/courtyard2.jpg" alt="Courtyard second view">
+        <div class="carousel-slide-label">Courtyard — Second View</div>
       </div>
-      <div class="carousel-slide">
-        <div class="img-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#1A2A4C,#2A5A9F);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-family:Verdana,Arial,sans-serif;font-size:1.2rem;">Costa Brava Coves<br><small style="font-size:0.7rem;margin-top:6px;display:block;opacity:0.6;">images/carousel/coves.jpg</small></div>
-        <div class="carousel-slide-label">Hidden Coves by Boat</div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/outdoordining.jpg','Outdoor Dining')">
+        <img src="images/shared/outdoordining.jpg" alt="Outdoor dining">
+        <div class="carousel-slide-label">Outdoor Dining</div>
+      </div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/bbq%20and%20outdorr%20dining.jpg','BBQ &amp; Outdoor Dining')">
+        <img src="images/shared/bbq%20and%20outdorr%20dining.jpg" alt="BBQ and outdoor dining">
+        <div class="carousel-slide-label">BBQ &amp; Outdoor Dining</div>
+      </div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/in%20door%20dining.jpg','Indoor Dining')">
+        <img src="images/shared/in%20door%20dining.jpg" alt="Indoor dining">
+        <div class="carousel-slide-label">Indoor Dining</div>
+      </div>
+      <div class="carousel-slide" onclick="openLightbox('images/shared/street-view.jpg','Street View')">
+        <img src="images/shared/street-view.jpg" alt="Street view">
+        <div class="carousel-slide-label">Street View</div>
       </div>
     </div>
   </div>
@@ -163,15 +441,14 @@
   <div class="rooms-grid">
     <div class="room-card fade-in">
       <div class="room-card-image">
-        <div class="placeholder-img">🛏</div>
-        <!-- <img src="images/rooms/double-room/main.jpg" alt="Double Room"> -->
+        <img src="images/rooms/double-room/main.jpg" alt="Double Room">
       </div>
       <div class="room-card-body">
         <h3>Double Room</h3>
         <p>A generous double bedroom with garden views, sharing the house's well-equipped bathroom facilities.</p>
         <div class="room-from">
           <span class="from-label">From</span>
-          <span class="from-price">€110</span>
+          <span class="from-price">€115</span>
           <span class="from-night">/night</span>
         </div>
         <a href="accommodation/double-room.html" class="btn-outline">View Room</a>
@@ -179,14 +456,14 @@
     </div>
     <div class="room-card fade-in">
       <div class="room-card-image">
-        <div class="placeholder-img">🛏</div>
+        <img src="images/rooms/twin-room-1/main.jpg" alt="Double/Twin Room 1">
       </div>
       <div class="room-card-body">
-        <h3>Twin Room 1</h3>
+        <h3>Double/Twin Room 1</h3>
         <p>Two single beds, light-filled and airy — ideal for friends or siblings exploring the coast.</p>
         <div class="room-from">
           <span class="from-label">From</span>
-          <span class="from-price">€110</span>
+          <span class="from-price">€115</span>
           <span class="from-night">/night</span>
         </div>
         <a href="accommodation/twin-room-1.html" class="btn-outline">View Room</a>
@@ -194,14 +471,14 @@
     </div>
     <div class="room-card fade-in">
       <div class="room-card-image">
-        <div class="placeholder-img">🛏</div>
+        <img src="images/rooms/twin-room-2/main.jpg" alt="Double/Twin Room 2">
       </div>
       <div class="room-card-body">
-        <h3>Twin Room 2</h3>
+        <h3>Double/Twin Room 2</h3>
         <p>A second twin room with a warm, relaxed feel — sharing the same comfortable house amenities.</p>
         <div class="room-from">
           <span class="from-label">From</span>
-          <span class="from-price">€110</span>
+          <span class="from-price">€115</span>
           <span class="from-night">/night</span>
         </div>
         <a href="accommodation/twin-room-2.html" class="btn-outline">View Room</a>
@@ -209,18 +486,76 @@
     </div>
     <div class="room-card fade-in">
       <div class="room-card-image">
-        <div class="placeholder-img">🏊</div>
+        <img src="images/rooms/pool-apartment/main.jpg" alt="Studio Apartment">
       </div>
       <div class="room-card-body">
         <h3>Studio Apartment</h3>
         <p>A fully self-contained studio apartment with private entrance, overlooking the pool and garden.</p>
         <div class="room-from">
           <span class="from-label">From</span>
-          <span class="from-price">€100</span>
+          <span class="from-price">€165</span>
           <span class="from-night">/night</span>
         </div>
         <a href="accommodation/pool-apartment.html" class="btn-outline">View Apartment</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TAMARIU VIEWS ── -->
+<section class="tamariu-views-section">
+  <div class="section-header fade-in">
+    <p class="section-label">Life on the Coast</p>
+    <h2 class="section-title">Tamariu Beach &amp; Village</h2>
+  </div>
+  <div class="tamariu-grid">
+    <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/beach1.jpg','Tamariu Beach')">
+      <img src="images/tamariu%20views/beach1.jpg" alt="Tamariu Beach">
+      <div class="tamariu-grid-label">Tamariu Beach</div>
+    </div>
+    <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/Beach%20horizon.jpg','Beach Horizon')">
+      <img src="images/tamariu%20views/Beach%20horizon.jpg" alt="Beach Horizon">
+      <div class="tamariu-grid-label">Beach Horizon</div>
+    </div>
+    <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/Diving%20Board.jpg','Diving Board')">
+      <img src="images/tamariu%20views/Diving%20Board.jpg" alt="Diving Board">
+      <div class="tamariu-grid-label">Diving Board</div>
+    </div>
+    <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/evening%20sunset%20Baeach.jpg','Evening Sunset')">
+      <img src="images/tamariu%20views/evening%20sunset%20Baeach.jpg" alt="Evening Sunset on the Beach">
+      <div class="tamariu-grid-label">Evening Sunset</div>
+    </div>
+    <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/Looking%20back%20to%20beach%20from%20GR-92.jpg','View from the GR-92 Coastal Path')">
+      <img src="images/tamariu%20views/Looking%20back%20to%20beach%20from%20GR-92.jpg" alt="View from GR-92 coastal path">
+      <div class="tamariu-grid-label">GR-92 Coastal Path</div>
+    </div>
+  <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/tamariu01-scaled.jpg','Tamariu Village')">
+      <img src="images/tamariu%20views/tamariu01-scaled.jpg" alt="Tamariu Village">
+      <div class="tamariu-grid-label">Tamariu Village</div>
+    </div>
+        <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/tamariu7.jpg','Tamariu — Aerial View')">
+      <img src="images/tamariu%20views/tamariu7.jpg" alt="Tamariu — Aerial View">
+      <div class="tamariu-grid-label">Tamariu — Aerial View</div>
+    </div>
+        <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/tamariu8.jpg','Tamariu Cove')">
+      <img src="images/tamariu%20views/tamariu8.jpg" alt="Tamariu Cove">
+      <div class="tamariu-grid-label">Tamariu Cove</div>
+    </div>
+        <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/beach10.jpg','Beach Life')">
+      <img src="images/tamariu%20views/beach10.jpg" alt="Beach Life">
+      <div class="tamariu-grid-label">Beach Life</div>
+    </div>
+        <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/beach11.jpg','Tamariu Shore')">
+      <img src="images/tamariu%20views/beach11.jpg" alt="Tamariu Shore">
+      <div class="tamariu-grid-label">Tamariu Shore</div>
+    </div>
+        <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/hotel-tamariu-costa-brava--2-.jpg','Tamariu Seafront')">
+      <img src="images/tamariu%20views/hotel-tamariu-costa-brava--2-.jpg" alt="Tamariu Seafront">
+      <div class="tamariu-grid-label">Tamariu Seafront</div>
+    </div>
+        <div class="tamariu-grid-item" onclick="openLightbox('images/tamariu%20views/location-tamariu.jpg','Tamariu Location')">
+      <img src="images/tamariu%20views/location-tamariu.jpg" alt="Tamariu Location">
+      <div class="tamariu-grid-label">Tamariu Location</div>
     </div>
   </div>
 </section>
@@ -273,8 +608,8 @@
       <h4>The Rooms</h4>
       <ul>
         <li><a href="accommodation/double-room.html">Double Room</a></li>
-        <li><a href="accommodation/twin-room-1.html">Twin Room 1</a></li>
-        <li><a href="accommodation/twin-room-2.html">Twin Room 2</a></li>
+        <li><a href="accommodation/twin-room-1.html">Double/Twin Room 1</a></li>
+        <li><a href="accommodation/twin-room-2.html">Double/Twin Room 2</a></li>
         <li><a href="accommodation/pool-apartment.html">Studio Apartment</a></li>
       </ul>
     </div>
@@ -293,8 +628,6 @@
       <h4>Travel Info</h4>
       <ul>
         <li><a href="getting-here/index.html">Map &amp; Directions</a></li>
-        <li><a href="getting-here/julivia-bus.html">Julivia Bus</a></li>
-        <li><a href="getting-here/begur-bus.html">Begur Beach Bus</a></li>
         <li><a href="contact/index.html">Contact &amp; Book</a></li>
         <li><a href="https://visitpalafrugell.cat" target="_blank" rel="noopener">Palafrugell Tourist Info</a></li>
       </ul>
@@ -306,6 +639,25 @@
   </div>
 </footer>
 
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox" class="lightbox-overlay" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)">&#10005;</button>
+  <img id="lightbox-img" src="" alt="">
+  <p id="lightbox-caption"></p>
+</div>
+
 <script src="js/main.js"></script>
-</body>
-</html>
+<script>
+function openLightbox(src, caption) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').innerHTML = caption || '';
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+  if (!e || e.target !== document.getElementById('lightbox-img')) {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', function(

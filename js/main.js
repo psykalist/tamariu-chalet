@@ -121,81 +121,160 @@ function renderSummaryTable() {
 renderRatesTables();
 renderSummaryTable();
 
-// ── BOOKING FORM — Cost Calculator ──
+// ── BOOKING FORM — Cost Calculator (multi-room + extra guests) ──
 
-function getSeason(date) {
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  for (const s of SEASON_CONFIG) {
-    const [sm, sd] = s.start;
-    const [em, ed] = s.end;
-    const afterStart = m > sm || (m === sm && d >= sd);
-    const beforeEnd  = m < em || (m === em && d <= ed);
-    if (afterStart && beforeEnd) return s;
-  }
-  return SEASON_CONFIG[SEASON_CONFIG.length - 1];
-}
-
+// Returns the number of whole days between two Date objects
 function daysBetween(d1, d2) {
-  return Math.round((d2 - d1) / 86400000);
+  return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
 }
+
+// Returns the SEASON_CONFIG entry whose start/end range contains the given date
+function getSeason(date) {
+  const m = date.getMonth() + 1; // 1-based month
+  const d = date.getDate();
+  const n = m * 100 + d; // comparable number e.g. 605 = Jun 5
+  for (const s of SEASON_CONFIG) {
+    const startN = s.start[0] * 100 + s.start[1];
+    const endN   = s.end[0]   * 100 + s.end[1];
+    if (n >= startN && n <= endN) return s;
+  }
+  return SEASON_CONFIG[0]; // fallback (shouldn't happen for valid dates)
+}
+
+const ROOM_NAMES = {
+  'double-room':      'Double Room',
+  'twin-room-1':      'Double/Twin Room 1',
+  'twin-room-2':      'Double/Twin Room 2',
+  'studio-apartment': 'Studio Apartment',
+};
 
 function calcCost() {
-  const roomVal  = document.getElementById('booking-room')?.value;
+  const costEl  = document.getElementById('booking-cost');
+  const breakEl = document.getElementById('booking-breakdown');
+  const hidden  = document.getElementById('cost-hidden');
+  if (!costEl) return;
+
   const checkIn  = document.getElementById('booking-checkin')?.value;
   const checkOut = document.getElementById('booking-checkout')?.value;
-  const costEl   = document.getElementById('booking-cost');
-  const breakEl  = document.getElementById('booking-breakdown');
+  const checked  = Array.from(document.querySelectorAll('.room-checkbox:checked'));
 
-  if (!roomVal || !checkIn || !checkOut || !costEl) return;
-
-  const d1 = new Date(checkIn);
-  const d2 = new Date(checkOut);
-  if (d2 <= d1) { costEl.textContent = '—'; breakEl.textContent = 'Check-out must be after check-in'; return; }
-
-  const nights   = daysBetween(d1, d2);
-  const season   = getSeason(d1);
-  const isApt    = APARTMENT_ROOMS.includes(roomVal);
-  const rateData = isApt ? season.apt : season.room;
-
-  if (!rateData.rate) {
+  if (checked.length === 0 || !checkIn || !checkOut) {
     costEl.textContent = '—';
-    breakEl.textContent = `Rooms closed in ${season.name} season`;
+    costEl.style.color = '';
+    if (breakEl) breakEl.innerHTML = checked.length === 0 ? 'Select at least one room' : 'Select dates';
+    if (hidden)  hidden.value = '—';
+    _updateSubmitAvailability(true);
     return;
   }
 
-  if (nights < rateData.minStay) {
+  const d1 = new Date(checkIn), d2 = new Date(checkOut);
+  if (isNaN(d1) || isNaN(d2) || d2 <= d1) {
     costEl.textContent = '—';
-    breakEl.textContent = `Minimum ${rateData.minStay} nights in ${season.name} season`;
+    costEl.style.color = '';
+    if (breakEl) breakEl.innerHTML = 'Check-out must be after check-in';
     return;
   }
 
-  const accom = nights * rateData.rate;
-  const total = accom + rateData.cleaning;
-  costEl.textContent  = `€${total}`;
-  breakEl.textContent = `${nights} nights × €${rateData.rate} + €${rateData.cleaning} cleaning`;
+  const nights      = daysBetween(d1, d2);
+  const season      = getSeason(d1);
+  const extraGuests = parseInt(document.getElementById('extra-guests')?.value || '0');
+  let totalCost = 0, lines = [], hasError = false, hasUnavailable = false;
+
+  checked.forEach(cb => {
+    const val   = cb.value;
+    const isApt = APARTMENT_ROOMS.includes(val);
+    const d     = isApt ? season.apt : season.room;
+    const name  = ROOM_NAMES[val] || val;
+
+    // ── Availability check ──────────────────────────────────
+    if (typeof isRoomAvailable === 'function' && !isRoomAvailable(val, checkIn, checkOut)) {
+      lines.push('<span style="color:#c0392b">\u274c ' + name + ': not available for those dates</span>');
+      hasUnavailable = true;
+      hasError = true;
+      return;
+    }
+
+    // ── Season / min-stay checks ────────────────────────────
+    if (!d.rate) {
+      lines.push('\u26a0\ufe0f ' + name + ': closed in ' + season.name + ' season');
+      hasError = true; return;
+    }
+    if (nights < d.minStay) {
+      lines.push('\u26a0\ufe0f ' + name + ': min ' + d.minStay + ' nights in ' + season.name);
+      hasError = true; return;
+    }
+
+    // ── Cost calculation ────────────────────────────────────
+    let roomCost = nights * d.rate + d.cleaning;
+    if (isApt && extraGuests > 0) {
+      const extra = extraGuests * 50 * nights;
+      roomCost += extra;
+      lines.push('\u2705 ' + name + ': ' + nights + 'n \xd7 \u20ac' + d.rate +
+        ' + ' + extraGuests + ' extra guest' + (extraGuests > 1 ? 's' : '') +
+        ' \xd7 \u20ac50 \xd7 ' + nights + 'n + \u20ac' + d.cleaning + ' cleaning = \u20ac' + roomCost);
+    } else {
+      lines.push('\u2705 ' + name + ': ' + nights + 'n \xd7 \u20ac' + d.rate +
+        ' + \u20ac' + d.cleaning + ' cleaning = \u20ac' + roomCost);
+    }
+    totalCost += roomCost;
+  });
+
+  if (hasUnavailable) {
+    costEl.textContent = 'Not available';
+    costEl.style.color = '#c0392b';
+  } else {
+    const displayCost = (!hasError || totalCost > 0) ? ('\u20ac' + totalCost) : '—';
+    costEl.textContent = displayCost;
+    costEl.style.color = '';
+    if (hidden) hidden.value = displayCost;
+  }
+
+  if (breakEl) breakEl.innerHTML = lines.join('<br>');
+  _updateSubmitAvailability(!hasUnavailable);
+
+  // Build combined rooms string for hidden field
+  const roomsHidden = document.getElementById('rooms-hidden');
+  if (roomsHidden) roomsHidden.value = checked.map(c => ROOM_NAMES[c.value] || c.value).join(', ');
 }
 
-// Bind calculator events
-['booking-room', 'booking-checkin', 'booking-checkout'].forEach(id => {
-  const el = document.getElementById(id);
-  if (el) el.addEventListener('change', calcCost);
-});
+// Disable/re-enable the submit button if unavailable dates are selected
+function _updateSubmitAvailability(available) {
+  const btn = document.getElementById('submit-btn');
+  if (!btn) return;
+  btn.disabled = !available;
+  btn.title    = available ? '' : 'Please choose different dates — one or more rooms are already booked for this period';
+  btn.style.opacity = available ? '' : '0.5';
+}
 
-// ── CONTACT FORM SUBMISSION — Formspree ──
-// Sync cost-hidden field with displayed cost on any change
-document.addEventListener('change', () => {
-  const costEl = document.getElementById('booking-cost');
-  const hidden = document.getElementById('cost-hidden');
-  if (costEl && hidden) hidden.value = costEl.textContent;
-});
+function toggleEnquiryType() {
+  const val      = document.querySelector('input[name="enquiry-type"]:checked')?.value;
+  const isBook   = val === 'booking';
+  const sect     = document.getElementById('booking-section');
+  const typeHid  = document.getElementById('enquiry-type-hidden');
+  const submitBtn = document.getElementById('submit-btn');
+  if (sect)     sect.style.display    = isBook ? '' : 'none';
+  if (typeHid)  typeHid.value         = isBook ? 'Booking Enquiry' : 'General Message';
+  if (submitBtn) submitBtn.dataset.booking = isBook ? '1' : '';
+}
 
+function handleAptChange() {
+  const aptBox   = document.querySelector('.room-checkbox[value="studio-apartment"]');
+  const extraDiv = document.getElementById('apt-extra-guests');
+  if (extraDiv) extraDiv.style.display = (aptBox && aptBox.checked) ? '' : 'none';
+  if (aptBox && !aptBox.checked) {
+    const eg = document.getElementById('extra-guests');
+    if (eg) eg.value = '0';
+  }
+  calcCost();
+}
+
+// ── CONTACT FORM SUBMISSION ──
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Sync hidden cost field before submit
+    // Sync cost hidden field
     const costEl = document.getElementById('booking-cost');
     const hidden = document.getElementById('cost-hidden');
     if (costEl && hidden) hidden.value = costEl.textContent;
@@ -208,7 +287,7 @@ if (contactForm) {
     successEl.style.display = 'none';
     errorEl.style.display   = 'none';
     btn.disabled    = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Sending\u2026';
 
     try {
       const response = await fetch('https://formspree.io/f/xleqevwo', {
@@ -216,16 +295,19 @@ if (contactForm) {
         body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
       });
-
       const result = await response.json();
-
       if (result.ok) {
         successEl.style.display = 'block';
         contactForm.reset();
-        if (document.getElementById('booking-cost'))
-          document.getElementById('booking-cost').textContent = '—';
-        if (document.getElementById('booking-breakdown'))
-          document.getElementById('booking-breakdown').textContent = 'Select room & dates';
+        const bCost = document.getElementById('booking-cost');
+        const bBreak = document.getElementById('booking-breakdown');
+        if (bCost)  bCost.textContent  = '\u2014';
+        if (bBreak) bBreak.textContent = 'Select rooms \u0026 dates';
+        const aptDiv = document.getElementById('apt-extra-guests');
+        if (aptDiv) aptDiv.style.display = 'none';
+        // Reset to booking mode
+        const bookRadio = document.querySelector('input[name="enquiry-type"][value="booking"]');
+        if (bookRadio) { bookRadio.checked = true; toggleEnquiryType(); }
       } else {
         errorText.textContent = result.message || 'Something went wrong. Please email us directly at tamariuchalet@gmail.com';
         errorEl.style.display = 'block';
@@ -234,3 +316,29 @@ if (contactForm) {
       errorText.textContent = 'Could not connect to the server. Please email us directly at tamariuchalet@gmail.com';
       errorEl.style.display = 'block';
     } finally {
+      btn.disabled    = false;
+      btn.textContent = btn.dataset.bookingLabel || 'Send Enquiry';
+    }
+  });
+}
+
+// ── FADE IN ON SCROLL ──
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+fadeEls.forEach(el => observer.observe(el));
+
+// Add fade-in CSS dynamically
+const style = document.createElement('style');
+style.textContent = `
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+`;
+document.head.appendChild(style);

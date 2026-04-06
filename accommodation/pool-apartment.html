@@ -3,6 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book the Studio Apartment at Tamariu Chalet — self-contained with private entrance, terrace and pool in Tamariu, Costa Brava. From €165/night.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/accommodation/pool-apartment.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/accommodation/pool-apartment.html">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/accommodation/pool-apartment.html">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/accommodation/pool-apartment.html">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/accommodation/pool-apartment.html">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/accommodation/pool-apartment.html">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/accommodation/pool-apartment.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/accommodation/pool-apartment.html">
+  <meta property="og:title" content="Studio Apartment — Tamariu Chalet">
+  <meta property="og:description" content="Book the Studio Apartment at Tamariu Chalet — self-contained with private entrance, terrace and pool in Tamariu, Costa Brava. From €165/night.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/rooms/pool-apartment/main.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Studio Apartment — Tamariu Chalet">
+  <meta name="twitter:description" content="Book the Studio Apartment at Tamariu Chalet — self-contained with private entrance, terrace and pool in Tamariu, Costa Brava. From €165/night.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/rooms/pool-apartment/main.jpg">
   <title>Studio Apartment — Tamariu Chalet</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
@@ -31,7 +52,176 @@
       margin-top: 10px;
       font-style: italic;
     }
+  
+/* ── Reviews Carousel ── */
+.reviews-carousel-section {
+  background: var(--linen);
+  padding: 60px 40px;
+  text-align: center;
+}
+.reviews-carousel-section h2 {
+  font-size: 1.6rem;
+  color: var(--deep-blue);
+  margin-bottom: 6px;
+}
+.reviews-carousel-section .carousel-subtitle {
+  font-size: 0.85rem;
+  color: var(--stone);
+  margin-bottom: 36px;
+}
+.rev-carousel-wrap {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.rev-carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.rev-slide {
+  min-width: 100%;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+.rev-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px 36px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  text-align: left;
+  position: relative;
+}
+.rev-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.rev-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--linen);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.12);
+}
+.rev-avatar-initial {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--deep-blue);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.rev-meta { flex: 1; }
+.rev-name { font-weight: 600; font-size: 0.95rem; color: var(--dark); }
+.rev-date { font-size: 0.78rem; color: var(--stone); margin-top: 2px; }
+.rev-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; white-space: nowrap; }
+.rev-quote {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #3a3a3a;
+  position: relative;
+  padding-left: 18px;
+}
+.rev-quote::before {
+  content: 'C';
+  position: absolute;
+  left: 0; top: -4px;
+  font-size: 2rem;
+  color: var(--terracotta);
+  line-height: 1;
+  opacity: 0.5;
+}
+.rev-carousel-btn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: var(--deep-blue);
+  color: #fff;
+  border: none;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s, opacity 0.2s;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0.75;
+}
+.rev-carousel-btn:hover { background: var(--terracotta); opacity: 1; }
+.rev-carousel-btn.prev { left: -48px; }
+.rev-carousel-btn.next { right: -48px; }
+.rev-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+}
+.rev-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--stone);
+  opacity: 0.3;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+.rev-dot.active { background: var(--terracotta); opacity: 1; }
+.rev-all-link {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 0.82rem;
+  color: var(--sea-blue);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.rev-all-link:hover { color: var(--terracotta); border-bottom-color: var(--terracotta); }
+@media (max-width: 860px) {
+  .rev-carousel-btn.prev { left: -12px; }
+  .rev-carousel-btn.next { right: -12px; }
+}
+@media (max-width: 600px) {
+  .reviews-carousel-section { padding: 50px 20px; }
+  .rev-card { padding: 22px 18px; }
+  .rev-carousel-btn { width: 32px; height: 32px; font-size: 0.85rem; }
+  .rev-carousel-btn.prev { left: -8px; }
+  .rev-carousel-btn.next { right: -8px; }
+}
+
   </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Apartment",
+  "name": "Studio Apartment — Tamariu Chalet",
+  "url": "https://tamariuchalet.com/accommodation/pool-apartment.html",
+  "image": "https://tamariuchalet.com/images/rooms/pool-apartment/main.jpg",
+  "description": "Self-contained studio apartment with private entrance, kitchen, bathroom and terrace alongside the pool.",
+  "occupancy": {
+    "@type": "QuantitativeValue",
+    "maxValue": 3
+  },
+  "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "priceCurrency": "EUR",
+    "minPrice": 165,
+    "maxPrice": 180,
+    "unitText": "night"
+  },
+  "containedInPlace": {
+    "@type": "GuestHouse",
+    "name": "Tamariu Chalet",
+    "url": "https://tamariuchalet.com/"
+  }
+}
+  </script>
 </head>
 <body>
 
@@ -42,8 +232,8 @@
       <a href="#">The Accommodation <span class="arrow">▾</span></a>
       <ul class="dropdown">
         <li><a href="double-room.html">Double Room</a></li>
-        <li><a href="twin-room-1.html">Twin Room 1</a></li>
-        <li><a href="twin-room-2.html">Twin Room 2</a></li>
+        <li><a href="twin-room-1.html">Double/Twin Room 1</a></li>
+        <li><a href="twin-room-2.html">Double/Twin Room 2</a></li>
         <li><a href="pool-apartment.html">Studio Apartment</a></li>
       </ul>
     </li>
@@ -54,21 +244,30 @@
         <li><a href="../things-to-do/cycling.html">Cycling</a></li>
         <li><a href="../things-to-do/markets.html">Local Markets</a></li>
         <li><a href="../things-to-do/walking.html">Walking</a></li>
-        <li><a href="../things-to-do/tourist-info.html">Tourist Information</a></li>
+        <li><a href="../things-to-do/tourist-info.html">Tourist Information</a></li><li><a href="../getting-here/julivia-bus.html">Julivia Bus</a></li><li><a href="../getting-here/begur-bus.html">Begur Beach Bus</a></li>
         <li><a href="../things-to-do/restaurants.html">Local Restaurants</a></li>
         <li><a href="../things-to-do/water-sports.html">Water Sports</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About Catalunya <span class="arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="../about-catalunya/cuisine.html">Catalonian Cuisine</a></li>
+        <li><a href="../about-catalunya/language.html">Catalonian Language</a></li>
+        <li><a href="../about-catalunya/culture.html">Catalonian Culture</a></li>
+        <li><a href="../about-catalunya/history.html">Catalonian History</a></li>
+        <li><a href="../about-catalunya/cities.html">Cities of Interest</a></li>
+        <li><a href="../about-catalunya/facts.html">Catalonian Facts</a></li>
       </ul>
     </li>
     <li>
       <a href="#">Getting Here <span class="arrow">▾</span></a>
       <ul class="dropdown">
         <li><a href="../getting-here/index.html">Map &amp; Directions</a></li>
-        <li><a href="../getting-here/julivia-bus.html">Julivia Bus</a></li>
-        <li><a href="../getting-here/begur-bus.html">Begur Beach Bus</a></li>
       </ul>
     </li>
     <li><a href="../contact/index.html">Contact &amp; Book</a></li>
   </ul>
+  <div class="lang-switcher"><a href="/accommodation/pool-apartment.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="/es/accommodation/pool-apartment.html">ES</a><span class="lang-sep">|</span><a href="/ca/accommodation/pool-apartment.html">CA</a><span class="lang-sep">|</span><a href="/fr/accommodation/pool-apartment.html">FR</a><span class="lang-sep">|</span><a href="/nl/accommodation/pool-apartment.html">NL</a></div>
   <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -105,35 +304,83 @@
         The apartment features a comfortable bedroom, a well-equipped private kitchen, a sitting
         area and its own bathroom — everything you need for a relaxed, independent stay on the
         Costa Brava. Step outside onto your terrace to the sight and sound of the pool, with the
-        garden beyond.
+        garden beyond. Free on-street parking is available just outside, and secure bike storage is provided at the chalet.
       </p>
 
       <div class="shared-links">
-        <a href="#" class="shared-link">🌿 Patio &amp; Eating Area</a>
-        <a href="#" class="shared-link">🏊 Pool &amp; Garden</a>
+        <a href="../index.html#chalet-gallery" class="shared-link">🌿 Patio &amp; Eating Area</a>
+        <a href="../index.html#chalet-gallery" class="shared-link">🏊 Pool &amp; Garden</a>
       </div>
 
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 12px;">Apartment Amenities</h3>
-      <ul class="amenities-list">
-        <li>Private entrance</li>
-        <li>Private bathroom</li>
-        <li>Shower</li>
-        <li>Wash hand basin</li>
-        <li>Toilet</li>
-        <li>Private kitchen</li>
-        <li>Coffee making facilities</li>
-        <li>Kettle</li>
-        <li>Toaster</li>
-        <li>Microwave oven</li>
-        <li>Crockery &amp; cutlery</li>
-        <li>Glasses</li>
-        <li>Pots &amp; pans</li>
-        <li>Stove / hob</li>
-        <li>Pool &amp; garden access</li>
-        <li>Private terrace</li>
-        <li>Patio &amp; eating area</li>
-        <li>Free WiFi</li>
-      </ul>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--deep-blue);margin:24px 0 4px;">Facilities</h3>
+
+      <div class="facilities-group">
+        <h4 class="facilities-subhead">🛏 Room Facilities</h4>
+        <ul class="amenities-list amenities-sub">
+          <li>USB charging points</li>
+          <li>Fans</li>
+          <li>Cot available on request</li>
+                  <li>Spacious storage with hangers</li>
+          <li>Room darkening blinds</li>
+        </ul>
+      </div>
+
+      <div class="facilities-group">
+        <h4 class="facilities-subhead">🚿 Bathroom</h4>
+        <ul class="amenities-list amenities-sub">
+          <li>Private en-suite bathroom</li>
+          <li>Shower</li>
+          <li>Toilet</li>
+          <li>Handwash basin</li>
+          <li>Hairdryer</li>
+          <li>Bath soap &amp; shampoo</li>
+        </ul>
+      </div>
+
+      <div class="facilities-group">
+        <h4 class="facilities-subhead">🍳 Kitchen</h4>
+        <ul class="amenities-list amenities-sub">
+          <li>Private kitchen</li>
+          <li>Coffee making facilities</li>
+          <li>Kettle</li>
+          <li>Toaster</li>
+          <li>Microwave oven</li>
+          <li>Stove / hob</li>
+          <li>Crockery &amp; cutlery</li>
+          <li>Glasses</li>
+          <li>Pots &amp; pans</li>
+                  <li>Smoke alarm</li>
+        </ul>
+      </div>
+
+      <div class="facilities-group">
+        <h4 class="facilities-subhead">🌿 Outdoor Facilities</h4>
+        <ul class="amenities-list amenities-sub">
+          <li>Terrace</li>
+          <li>BBQ</li>
+          <li>Covered outdoor dining area</li>
+          <li>Seated pergola area</li>
+          <li>Petanque court</li>
+          <li>8 × 4 m pool</li>
+          <li>Decking area</li>
+          <li>Sun loungers</li>
+          <li>Free on-street parking</li>
+          <li>Secure bike storage</li>
+                  <li>Clothes drying area</li>
+        </ul>
+      </div>
+    
+      <div class="facilities-group">
+        <h4 class="facilities-subhead">🏠 General</h4>
+        <ul class="amenities-list amenities-sub">
+          <li>Ironing facilities</li>
+          <li>Luggage drop off</li>
+          <li>Dedicated fridge storage space</li>
+          <li>Fire extinguisher</li>
+          <li>First aid kit</li>
+          <li>Washing machine (at cost)</li>
+        </ul>
+      </div>
     </div>
 
     <!-- RIGHT: Rates + Availability -->
@@ -145,7 +392,7 @@
             <tr>
               <th>Season</th>
               <th>Dates</th>
-              <th>Rate/Night</th>
+              <th>Rate</th>
               <th>Min Stay</th>
             </tr>
           </thead>
@@ -153,30 +400,30 @@
             <tr>
               <td class="season-name">Early</td>
               <td>01 Jan – 30 Apr</td>
-              <td class="rate-highlight">€100</td>
-              <td>2 nights</td>
+              <td class="closed-cell">Closed</td>
+              <td>—</td>
             </tr>
             <tr>
               <td class="season-name">Spring</td>
-              <td>01 May – 30 Jun</td>
+              <td>01 May – 31 May</td>
               <td class="rate-highlight">€165</td>
               <td>2 nights</td>
             </tr>
             <tr>
               <td class="season-name">Summer</td>
-              <td>01 Jul – 31 Aug</td>
-              <td class="rate-highlight">€175</td>
-              <td>3 nights</td>
+              <td>01 Jun – 31 Aug</td>
+              <td class="rate-highlight">€180</td>
+              <td>4 nights</td>
             </tr>
             <tr>
               <td class="season-name">Late</td>
               <td>01 Sep – 31 Dec</td>
-              <td class="rate-highlight">€120</td>
+              <td class="rate-highlight">€165</td>
               <td>2 nights</td>
             </tr>
           </tbody>
         </table>
-        <p class="rates-note">Rates are per apartment per night. Available year-round.</p>
+        <p class="rates-note">Rates are per apartment per night.</p>
         <p class="rates-cleaning-note">A one-off cleaning fee of €45 applies per stay.</p>
       </div>
 
@@ -192,6 +439,398 @@
     </div>
   </div>
 </div>
+
+
+<!-- Reviews Carousel -->
+<section class="reviews-carousel-section">
+  <h2>What Our Guests Say</h2>
+  <p class="carousel-subtitle">5.0 ★ average · 26 reviews</p>
+  <div class="rev-carousel-wrap" id="rev-pa-wrap">
+    <div class="rev-carousel-track" id="rev-pa-track">
+      
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/users/37859541/profile_pic/1436343689/original.jpg" alt="Nii" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>N</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Nii</div>
+                <div class="rev-date">11 September 2025</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Supermooie accomodatie met een vriendelijke gastheer en -vrouw. Ze stonden altijd voor ons klaar en niets was voor hun teveel. Bedankt voor het geweldige verblijf.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/594b89b5-d219-4d6d-b2d2-e4a9355a73f8.jpg" alt="Helena" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>H</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Helena</div>
+                <div class="rev-date">6 September 2025</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">My friend and I recently spent a week at Kieran and Ceci’s place in Tamariu. It was our first time in Costa Brava and we couldn’t be happier with our choice of stay! Both hosts were very kind, communicated thoroughly and offered us tips to get to know the…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/b9a7c94d-9751-4752-945b-0a3d312153de.jpg" alt="Laurent" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>L</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Laurent</div>
+                <div class="rev-date">27 August 2025</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Nous avons passé un excellent séjour chez Ceci et Kieran. Un accueil très chaleureux avec beaucoup d’informations sur les activités et balades à faire à proximité. Un logement très propre et bien équipé situé dans un charmant jardin avec piscine. De plus…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/User/original/8646c930-8d44-4559-b0f8-0334eff8a5db.jpeg" alt="Nathalie" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>N</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Nathalie</div>
+                <div class="rev-date">20 July 2025</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Nous avons passé un séjour formidable la partie extérieure le jardin et la piscine sont très paisibles un petit coin de paradis. L’appartement est conforme au descriptif et très propre. Kerian et Ceci sont des hôtes très accueillants et bienveillants. Nous…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/303dc45b-0ce2-499a-8b6d-eb4355daec37.jpg" alt="Chris" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>C</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Chris</div>
+                <div class="rev-date">1 July 2025</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Kieran and Ceci were fantastic hosts, very accommodating!</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/7b85b7e2-e116-48ac-ad58-6fff4c4c563c.jpg" alt="Carlos" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>C</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Carlos</div>
+                <div class="rev-date">28 June 2025</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Gracias Kieran y Cici por la atención y por alojarnos en vuestra precioso apartamento. Estaba todo en perfecto estado. Especial atención a la zona del jardín que es espectacular, tanto a nivel de instalaciones como por su ubicación, emplazado en un precioso…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/9b940c3e-8bc9-474a-900f-91a51d212314.jpg" alt="Elisenda" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>E</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Elisenda</div>
+                <div class="rev-date">31 August 2024</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Très beau séjour à tout point de vue!</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/User/original/e8a8920f-3a88-489f-aa84-2b00a5555773.jpeg" alt="Tim" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>T</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Tim</div>
+                <div class="rev-date">21 August 2024</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Geweldige host, ongelooflijk warm en doen alles om ervoor te zorgen dat je niks te kort komt.  Locatie was rustig en goed gelegen. Zeker een aanrader !</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/User/original/1aa88f38-19b8-497f-9e8b-25003b9fe905.jpeg" alt="François" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>F</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">François</div>
+                <div class="rev-date">3 August 2024</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Hôtes très sympathiques, accueillants, qui nous ont donné plein de renseignements sur les visites environnantes</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/c1052b7c-91ac-4479-bdc4-ae5b0cabeb0c.jpg" alt="Anke" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>A</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Anke</div>
+                <div class="rev-date">27 July 2024</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">We had a fabulous time in this cosy apartment. The garden is beautiful. Kieran and Ceci are very welcoming and ready to help with anything you would need.  The house is in a quiet area. And the beach is 10 minutes walk. I would highly recommend this place.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/f45b724c-d2d8-493c-a951-4ddb4a86b70c.jpg" alt="Ana" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>A</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Ana</div>
+                <div class="rev-date">19 July 2024</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Kieran y Ceci han sido unos anfitriones excepcionales, desde el primer hasta el último día, velando por que estuvieras a gusto, así como recomendándonos sitios que visitar y restaurantes donde comer o cenar. El apartamento esta muy bien, muy equipado,…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/User-353349683/original/1bdd4228-4de5-4363-ade3-331c901396e9.jpeg" alt="David" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>D</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">David</div>
+                <div class="rev-date">13 July 2024</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">We had a lovely few days at Kieran and Ceci’s home. The place was private and peaceful. Ceci went out of her way to make our stay comfortable and was very helpful in sharing local knowledge. Thank you</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/b9954c10-7421-4507-88ff-4ec6b5964912.jpg" alt="Johanna F M" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>J</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Johanna F M</div>
+                <div class="rev-date">1 July 2024</div>
+              </div>
+              <div class="rev-stars">★★★★☆</div>
+            </div>
+            <p class="rev-quote">Heerlijk verblijf gehad bij Kieran & Ceci. Ze waren heel hulpvaardig en ze gaven je meteen een goed thuisgevoel. Fijn appartement en een lekker zwembad.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/users/22368380/profile_pic/1413581740/original.jpg" alt="Marioredbcn" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>M</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Marioredbcn</div>
+                <div class="rev-date">2 April 2024</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Pasamos una Semana Santa muy agradable en casa de Kieran y Ceci. Ambos fueron súper amables y nos ayudaron en todo. El alojamiento fue perfecto y tenía hastq el último detalle para no tener que preocuparte de nada. Fue como pasar unos días en casa de unos…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/b8068b02-afd5-4147-b844-ef46e473c9c7.jpg" alt="Kathleen" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>K</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Kathleen</div>
+                <div class="rev-date">28 August 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Kieran and Ceci are such gracious and helpful hosts! They were incredibly helpful, providing tips for sightseeing in the area, where to park, which towns and beaches to visit, etc. They greeted me with a welcome drink and brought me a typical Catalan dessert…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/d130c17c-51d5-4a62-bd49-7db10fa7e8fc.jpg" alt="Alassane" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>A</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Alassane</div>
+                <div class="rev-date">24 August 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Hôtes très accueillant et agréables. Généreux, ont tous mis en œuvre pour que l'on puisse se sentir bien. La vue sur le jardin est calme et reposant.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/b576cd48-5fce-4cae-917d-6b4e78a42feb.jpg" alt="Anna" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>A</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Anna</div>
+                <div class="rev-date">20 August 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Han estat uns dies marevallosos, l'espai és còmode i la piscina i el jardí bonic són fantàstics, l'atenció dels amfitrions és magnífica. Lloc super tranquil després del bullici de les petites cales properes.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/80079114-76a9-444a-88e8-a1fa174a710c.jpg" alt="Blanca" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>B</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Blanca</div>
+                <div class="rev-date">15 August 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Estancia excelente y trato muy agradable, hemos disfrutado mucho.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/5f279f00-0fad-475c-a68b-ea937e45980c.jpg" alt="Eric" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>E</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Eric</div>
+                <div class="rev-date">11 August 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Nous avons passé 2 excellentes semaines chez Kieran et Ceci qui nous ont reçu à la perfection et ont répondu à toutes de questions. Le logement est idéalement situé dans un quartier calme et proche de tout. Nous recommandons sans hésitation.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/users/6556731/profile_pic/1369413663/original.jpg" alt="Ana" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>A</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Ana</div>
+                <div class="rev-date">30 July 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Lovely place, direct access to the shared swimming pool. Place exactly as the photos. Very good wifi which allowed us to work remotely, there is even a desk for this purpose. Place is a walking, but down/uphill, distance to the beach. Thank you Kieran,…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/User/original/8535110f-fb40-4e2a-b1b7-cc9bebc16524.jpeg" alt="Emmanuelle" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>E</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Emmanuelle</div>
+                <div class="rev-date">24 July 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Excellent séjour à Tamariu, localité à recommander ! Très belle plage, beaux paysages  Il y avait du monde en juillet mais se déplacer est facile entre les différents points de la côte. Le logement proposé par Kieran est très fonctionnel, la literie…</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/0361acc0-1815-428c-aee7-349a3cae5022.jpg" alt="Susana" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>S</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Susana</div>
+                <div class="rev-date">9 May 2023</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Hemos pasado unos días fantásticos en el estudio de Kieran y Cecilia. En una zona tranquila, y solo a 10mn a pie de la playa, perfecto! El jardín es precioso y los anfitriones, encantadores. Para repetir.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/User/original/eee56726-62eb-4047-b00c-c5151f9ae35c.jpeg" alt="Paul" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>P</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Paul</div>
+                <div class="rev-date">26 August 2022</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Hemos disfrutado mucho de la experiencia.  Ha sido nuestro primer Airbnb y repetiría experiencia.  Nos acogieron muy bien desde el principio dando información y detalles de las actividades de la zona. ¡Gracias por todo!</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/3cf1cdd0-302f-4b98-9790-cba1ed68beb0.jpg" alt="Javier" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>J</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Javier</div>
+                <div class="rev-date">20 August 2022</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">El estudio es muy bonito y el entorno con la piscina al lado, fantástico. Muy cerca de las playas de Begur, Calella de Palafrugell y por supuesto Tamariu. Cecilia y Kieran muy agradables, muy buena comunicación, y te ayudan en lo q necesites. 100% recomendable</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/4b7a8be5-34a0-4b26-bc98-7a1a3ccaa9af.jpg" alt="Isabelle" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>I</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Isabelle</div>
+                <div class="rev-date">16 August 2022</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Nos hôtes ont été charmants  accueillants disponibles serviables.</p>
+          </div>
+        </div>
+        <div class="rev-slide">
+          <div class="rev-card">
+            <div class="rev-card-top">
+              <img src="https://a0.muscache.com/im/pictures/user/2b57387a-77f9-4065-9922-8eebb2498d02.jpg" alt="Basile" class="rev-avatar" loading="lazy" onerror="this.outerHTML='<div class=&quot;rev-avatar-initial&quot;>B</div>'">
+              <div class="rev-meta">
+                <div class="rev-name">Basile</div>
+                <div class="rev-date">12 August 2022</div>
+              </div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+            <p class="rev-quote">Kieran et Cécilia sont très accueillants et très gentils. Logement propre et agréable. Très bon emplacement avec des plages à proximité.</p>
+          </div>
+        </div>
+    </div>
+    <button class="rev-carousel-btn prev" id="rev-pa-prev" aria-label="Previous review">&#8592;</button>
+    <button class="rev-carousel-btn next" id="rev-pa-next" aria-label="Next review">&#8594;</button>
+  </div>
+  <div class="rev-carousel-dots" id="rev-pa-dots"><button class="rev-dot active" aria-label="Review 1"></button><button class="rev-dot" aria-label="Review 2"></button><button class="rev-dot" aria-label="Review 3"></button><button class="rev-dot" aria-label="Review 4"></button><button class="rev-dot" aria-label="Review 5"></button><button class="rev-dot" aria-label="Review 6"></button><button class="rev-dot" aria-label="Review 7"></button><button class="rev-dot" aria-label="Review 8"></button><button class="rev-dot" aria-label="Review 9"></button><button class="rev-dot" aria-label="Review 10"></button><button class="rev-dot" aria-label="Review 11"></button><button class="rev-dot" aria-label="Review 12"></button><button class="rev-dot" aria-label="Review 13"></button><button class="rev-dot" aria-label="Review 14"></button><button class="rev-dot" aria-label="Review 15"></button><button class="rev-dot" aria-label="Review 16"></button><button class="rev-dot" aria-label="Review 17"></button><button class="rev-dot" aria-label="Review 18"></button><button class="rev-dot" aria-label="Review 19"></button><button class="rev-dot" aria-label="Review 20"></button><button class="rev-dot" aria-label="Review 21"></button><button class="rev-dot" aria-label="Review 22"></button><button class="rev-dot" aria-label="Review 23"></button><button class="rev-dot" aria-label="Review 24"></button><button class="rev-dot" aria-label="Review 25"></button><button class="rev-dot" aria-label="Review 26"></button></div>
+  <a href="../Reviews/pool-apartment/index.html" class="rev-all-link">Read all 26 reviews &rarr;</a>
+</section>
+<script>
+(function(){
+  var track = document.getElementById('rev-pa-track');
+  var dots  = document.querySelectorAll('#rev-pa-dots .rev-dot');
+  var total = 26;
+  var cur = 0;
+  var timer;
+
+  function goTo(n) {
+    cur = (n + total) % total;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
+  }
+
+  function next() { goTo(cur + 1); }
+  function prev() { goTo(cur - 1); }
+
+  function startAuto() { timer = setInterval(next, 6000); }
+  function stopAuto()  { clearInterval(timer); }
+
+  document.getElementById('rev-pa-next').addEventListener('click', function() { stopAuto(); next(); startAuto(); });
+  document.getElementById('rev-pa-prev').addEventListener('click', function() { stopAuto(); prev(); startAuto(); });
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function() { stopAuto(); goTo(i); startAuto(); });
+  });
+
+  // Touch/swipe support
+  var startX = 0;
+  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; stopAuto(); }, {passive:true});
+  track.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+    startAuto();
+  }, {passive:true});
+
+  startAuto();
+})();
+</script>
 
 <footer>
   <div class="f

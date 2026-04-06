@@ -4,8 +4,6 @@
    aged linen, with elegant serif typography
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
-
 :root {
   --terracotta: #C4693A;
   --terracotta-light: #E8926A;
@@ -24,7 +22,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Jost', sans-serif;
+  font-family: Verdana, Arial, sans-serif;
   background: var(--warm-white);
   color: var(--dark);
   font-weight: 300;
@@ -32,7 +30,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -57,7 +55,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 1.4rem;
   color: var(--linen);
   letter-spacing: 0.05em;
@@ -78,8 +76,7 @@ nav {
 .nav-menu > li > a {
   color: var(--linen);
   font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
   padding: 8px 16px;
   border-radius: 2px;
   transition: color 0.2s, background 0.2s;
@@ -152,6 +149,44 @@ nav {
   width: 24px; height: 2px;
   background: var(--linen);
   transition: all 0.3s;
+}
+
+/* ── LANGUAGE SWITCHER ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+.lang-switcher a {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 4px 7px;
+  border-radius: 3px;
+  transition: color 0.2s, background 0.2s;
+  text-transform: uppercase;
+}
+.lang-switcher a:hover {
+  color: var(--gold);
+  background: rgba(255,255,255,0.1);
+}
+.lang-switcher a.lang-active {
+  color: var(--deep-blue);
+  background: var(--gold);
+  border-radius: 3px;
+}
+.lang-switcher .lang-sep {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.65rem;
+  user-select: none;
+}
+@media (max-width: 768px) {
+  .lang-switcher { margin-left: 8px; }
+  .lang-switcher a { padding: 4px 4px; font-size: 0.65rem; }
 }
 
 /* ── HERO ── */
@@ -390,7 +425,7 @@ nav {
   padding: 30px 20px 16px;
   background: linear-gradient(transparent, rgba(0,0,0,0.65));
   color: white;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 1.1rem;
   font-style: italic;
 }
@@ -480,7 +515,7 @@ nav {
 .room-card-image .placeholder-img {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 3rem;
   color: rgba(255,255,255,0.3);
   background: linear-gradient(135deg, var(--deep-blue), var(--sea-blue));
@@ -515,7 +550,7 @@ nav {
 }
 
 .room-from .from-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 1.6rem;
   color: var(--terracotta);
 }
@@ -601,7 +636,7 @@ nav {
 
 .rate-highlight {
   color: var(--terracotta);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 1.05rem;
 }
 
@@ -718,7 +753,7 @@ nav {
   background: linear-gradient(135deg, var(--deep-blue) 0%, var(--sea-blue) 100%);
   color: rgba(255,255,255,0.25);
   font-size: 2.5rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
 }
 
 .room-gallery .img-placeholder.thumb { height: 180px; }
@@ -771,6 +806,28 @@ nav {
   color: var(--gold);
   font-size: 0.55rem;
   flex-shrink: 0;
+}
+
+/* ── Facilities sub-groups ── */
+.facilities-group {
+  margin-bottom: 18px;
+}
+
+.facilities-subhead {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--deep-blue);
+  margin: 16px 0 4px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--gold);
+}
+
+.amenities-sub {
+  margin-top: 0 !important;
+  padding-left: 14px;
 }
 
 .availability-btn {
@@ -859,7 +916,7 @@ nav {
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.25);
   font-size: 2rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
 }
 
 .external-link-card {
@@ -996,7 +1053,7 @@ nav {
   padding: 11px 14px;
   border: 1px solid rgba(0,0,0,0.15);
   background: white;
-  font-family: 'Jost', sans-serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 0.9rem;
   color: var(--dark);
   outline: none;
@@ -1033,7 +1090,7 @@ nav {
 }
 
 .cost-display .cost-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 1.8rem;
   color: var(--terracotta);
 }
@@ -1049,7 +1106,7 @@ nav {
   padding: 14px;
   background: var(--deep-blue);
   color: white;
-  font-family: 'Jost', sans-serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1077,7 +1134,7 @@ footer {
 }
 
 .footer-brand .brand-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 1.5rem;
   margin-bottom: 12px;
   font-style: italic;
@@ -1105,4 +1162,61 @@ footer {
 
 .footer-col ul li a {
   font-size: 0.82rem;
-  color: rgba
+  color: rgba(245,239,230,0.6);
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover { color: var(--gold); }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: rgba(245,239,230,0.35);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .about-section { grid-template-columns: 1fr; gap: 40px; }
+  .room-page-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-menu { display: none; }
+  .hamburger { display: flex; }
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: var(--deep-blue);
+    padding: 20px;
+    gap: 0;
+  }
+  .nav-menu.open .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    border: none;
+    border-left: 2px solid var(--gold);
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+  .about-section, .rooms-section, .content-page, .contact-grid { padding: 50px 20px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .room-page { padding: 40px 20px; }
+}

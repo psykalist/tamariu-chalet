@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block internal/backup files from indexing
+Disallow: /bak.html
+Disallow: /_nav-reference.html
+
+Sitemap: https://tamariuchalet.com/sitemap.xml

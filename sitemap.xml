@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ══════════════════════════════════════════════
+       ENGLISH (EN) — canonical pages
+       ══════════════════════════════════════════════ -->
+
+  <url><loc>https://tamariuchalet.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <!-- Accommodation -->
+  <url><loc>https://tamariuchalet.com/accommodation/double-room.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/accommodation/twin-room-1.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/accommodation/twin-room-2.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/accommodation/pool-apartment.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/accommodation/shared-facilities.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- Contact -->
+  <url><loc>https://tamariuchalet.com/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- About Catalunya (EN) -->
+  <url><loc>https://tamariuchalet.com/about-catalunya/cuisine.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/about-catalunya/language.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/about-catalunya/culture.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/about-catalunya/history.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/about-catalunya/cities.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/about-catalunya/facts.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Getting Here -->
+  <url><loc>https://tamariuchalet.com/getting-here/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/getting-here/julivia-bus.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://tamariuchalet.com/getting-here/begur-bus.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+
+  <!-- Things To Do -->
+  <url><loc>https://tamariuchalet.com/things-to-do/girona.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/cycling.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/markets.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/walking.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/tourist-info.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/restaurants.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/water-sports.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- ══════════════════════════════════════════════
+       SPANISH (ES)
+       ══════════════════════════════════════════════ -->
+
+  <url><loc>https://tamariuchalet.com/es/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/es/accommodation/double-room.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/es/accommodation/twin-room-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/es/accommodation/twin-room-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/es/accommodation/pool-apartment.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/es/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/es/about-catalunya/cuisine.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/es/about-catalunya/language.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/es/about-catalunya/culture.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/es/about-catalunya/history.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/es/about-catalunya/cities.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/es/about-catalunya/facts.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- ══════════════════════════════════════════════
+       CATALAN (CA)
+       ══════════════════════════════════════════════ -->
+
+  <url><loc>https://tamariuchalet.com/ca/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/accommodation/double-room.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/accommodation/twin-room-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/accommodation/twin-room-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/accommodation/pool-apartment.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/about-catalunya/cuisine.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/about-catalunya/language.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/about-catalunya/culture.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/about-catalunya/history.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/about-catalunya/cities.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/ca/about-catalunya/facts.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- ══════════════════════════════════════════════
+       FRENCH (FR)
+       ══════════════════════════════════════════════ -->
+
+  <url><loc>https://tamariuchalet.com/fr/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/accommodation/double-room.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/accommodation/twin-room-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/accommodation/twin-room-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/accommodation/pool-apartment.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/about-catalunya/cuisine.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/about-catalunya/language.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/about-catalunya/culture.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/about-catalunya/history.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/about-catalunya/cities.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/fr/about-catalunya/facts.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- ══════════════════════════════════════════════
+       DUTCH (NL)
+       ══════════════════════════════════════════════ -->
+
+  <url><loc>https://tamariuchalet.com/nl/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/accommodation/double-room.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/accommodation/twin-room-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/accommodation/twin-room-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/accommodation/pool-apartment.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/about-catalunya/cuisine.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/about-catalunya/language.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/about-catalunya/culture.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/about-catalunya/history.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/about-catalunya/cities.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/nl/about-catalunya/facts.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+</urlset>
