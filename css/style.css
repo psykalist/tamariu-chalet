@@ -603,19 +603,20 @@ nav {
 
 .rates-table th {
   text-align: left;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.7rem;
-  color: var(--stone);
+  color: var(--deep-blue);
   padding: 6px 8px 10px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.12);
 }
 
 .rates-table td {
   padding: 9px 8px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
   color: var(--dark);
+  font-weight: 500;
 }
 
 /* Only prevent wrapping on the dates column */
@@ -626,7 +627,13 @@ nav {
 
 .rates-table tr:last-child td { border-bottom: none; }
 
-.rates-table .season-name { font-weight: 500; }
+.rates-table .season-name { font-weight: 700; color: var(--deep-blue); }
+.rates-table .min-stay-cell { font-weight: 700; color: var(--dark); }
+.rates-section-label {
+  font-size: 0.7rem; font-weight: 700; color: var(--deep-blue);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin: 0 0 6px; padding: 0;
+}
 
 .rates-table .closed-cell {
   color: var(--stone);

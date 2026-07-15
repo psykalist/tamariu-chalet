@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamariu Walking Tour</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #f5f0eb;
+    color: #2a2118;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background: #2a2118;
+    color: #f5f0eb;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  header h1 {
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  header p {
+    font-size: 12px;
+    opacity: 0.5;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.06em;
+  }
+
+  .progress-bar { height: 3px; background: #3a3128; flex-shrink: 0; }
+  .progress-fill { height: 100%; background: #c4773b; width: 0%; transition: width 0.3s; }
+
+  .layout { display: flex; flex: 1; overflow: hidden; }
+
+  .sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: #faf7f3;
+    border-right: 1px solid #ddd5c8;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-inner { overflow-y: auto; flex: 1; padding: 16px 0; }
+
+  .stop {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .stop:hover { background: #f0ebe3; }
+  .stop.active { background: #f0ebe3; border-left-color: #c4773b; }
+
+  .stop-num {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #c4773b;
+    letter-spacing: 0.1em;
+    margin-bottom: 3px;
+  }
+
+  .stop-name { font-size: 14px; font-weight: bold; color: #2a2118; margin-bottom: 4px; }
+  .stop-desc { font-size: 12px; color: #7a6e63; line-height: 1.5; }
+  .stop-time { font-family: 'Courier New', monospace; font-size: 10px; color: #b0a898; margin-top: 6px; }
+
+  .controls {
+    padding: 14px 20px;
+    background: #2a2118;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .btn {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: #f5f0eb;
+    padding: 7px 14px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn:hover { background: rgba(255,255,255,0.1); }
+  .btn:disabled { opacity: 0.4; cursor: default; }
+  .btn.primary { background: #c4773b; border-color: #c4773b; color: #fff; }
+  .btn.primary:hover:not(:disabled) { background: #b06830; }
+
+  .speed-label {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    margin-left: auto;
+  }
+
+  select.speed-select {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    background: #3a3128;
+    color: #f5f0eb;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 4px 6px;
+    border-radius: 2px;
+  }
+
+  .info-bar {
+    padding: 8px 20px;
+    background: #faf7f3;
+    border-top: 1px solid #ddd5c8;
+    display: flex;
+    gap: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #9a8e83;
+    flex-shrink: 0;
+  }
+
+  .info-bar span b { color: #2a2118; }
+
+  #map { flex: 1; }
+
+  .stop-marker {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #2a2118;
+    border: 2.5px solid #c4773b;
+    color: #f0c070;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    transition: transform 0.15s;
+  }
+
+  .stop-marker:hover { transform: scale(1.2); }
+
+  .leaflet-popup-content-wrapper {
+    background: #2a2118 !important;
+    color: #f5f0eb !important;
+    border-radius: 4px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+  }
+
+  .leaflet-popup-tip { background: #2a2118 !important; }
+
+  .leaflet-popup-content {
+    font-family: 'Georgia', serif;
+    font-size: 13px;
+    margin: 10px 14px !important;
+    color: #f5f0eb;
+  }
+
+  .leaflet-popup-content strong {
+    color: #f0c070;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .leaflet-popup-content span {
+    font-size: 11px;
+    opacity: 0.75;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tamariu Walking Tour</h1>
+  <p>Costa Brava · Camí de Ronda</p>
+</header>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="layout">
+  <div class="sidebar">
+    <div class="sidebar-inner" id="stopList"></div>
+    <div class="info-bar">
+      <span>Total: <b>~2.1 km</b></span>
+      <span>Time: <b>~45 min</b></span>
+      <span>Stops: <b>6</b></span>
+    </div>
+    <div class="controls">
+      <button class="btn primary" id="btnPlay">▶ Start tour</button>
+      <button class="btn" id="btnReset">↺ Reset</button>
+      <span class="speed-label">Speed</span>
+      <select class="speed-select" id="speedSelect">
+        <option value="1">1×</option>
+        <option value="2" selected>2×</option>
+        <option value="4">4×</option>
+      </select>
+    </div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────────────
+var animating = false;
+var animFrame = null;
+var activePopup = null;
+var activeStop = -1;
+var drawnPolyline = null;
+
+// ── DATA ───────────────────────────────────────────────────────────────────
+var stops = [
+  { id: 1, name: "Tamariu Car Park",         desc: "Start point — the main village car park just above the beach. Arrive early in summer!", time: "Start here", coords: [41.9278, 3.2105] },
+  { id: 2, name: "Tamariu Beach & Promenade",desc: "The horseshoe bay with its tamarisk-lined promenade. Cafés and restaurants right on the sand.", time: "5 min walk", coords: [41.9262, 3.2115] },
+  { id: 3, name: "Platja dels Liris",         desc: "A tiny secret cove to the south — features a diving board over the Mediterranean.", time: "10 min", coords: [41.9250, 3.2128] },
+  { id: 4, name: "Cala Pedrosa Viewpoint",    desc: "Follow the Camí de Ronda south for dramatic cliff views down to hidden Cala Pedrosa.", time: "20 min", coords: [41.9228, 3.2148] },
+  { id: 5, name: "Cala Aigua Dolça",          desc: "The rocky cove to the north — crystal-clear water and wild pine-clad rocks.", time: "30 min", coords: [41.9290, 3.2098] },
+  { id: 6, name: "Village Lookout",           desc: "Head up through the white-washed village lanes for a panoramic view back over the bay.", time: "40 min", coords: [41.9282, 3.2088] }
+];
+
+var routeCoords = [
+  [41.9278, 3.2105],
+  [41.9270, 3.2110],
+  [41.9265, 3.2112],
+  [41.9262, 3.2115],
+  [41.9257, 3.2120],
+  [41.9252, 3.2124],
+  [41.9250, 3.2128],
+  [41.9242, 3.2136],
+  [41.9234, 3.2144],
+  [41.9228, 3.2148],
+  [41.9234, 3.2140],
+  [41.9248, 3.2128],
+  [41.9262, 3.2112],
+  [41.9272, 3.2102],
+  [41.9282, 3.2096],
+  [41.9290, 3.2098],
+  [41.9286, 3.2092],
+  [41.9282, 3.2088],
+  [41.9279, 3.2094],
+  [41.9278, 3.2105]
+];
+
+// ── MAP ────────────────────────────────────────────────────────────────────
+var map = L.map('map').setView([41.9265, 3.2115], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 19
+}).addTo(map);
+
+// Ghost route
+L.polyline(routeCoords, {
+  color: '#c4773b', weight: 2, opacity: 0.2, dashArray: '6, 8'
+}).addTo(map);
+
+// Animated drawn route (starts empty)
+drawnPolyline = L.polyline([], {
+  color: '#c4773b', weight: 4, opacity: 0.9, lineJoin: 'round', lineCap: 'round'
+}).addTo(map);
+
+// ── MARKERS ────────────────────────────────────────────────────────────────
+stops.forEach(function(s, i) {
+  var icon = L.divIcon({
+    html: '<div class="stop-marker">' + s.id + '</div>',
+    className: '',
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    popupAnchor: [0, -16]
+  });
+  L.marker(s.coords, { icon: icon }).addTo(map)
+    .on('click', function() { flyToStop(i); });
+});
+
+// ── SIDEBAR ────────────────────────────────────────────────────────────────
+var stopList = document.getElementById('stopList');
+stops.forEach(function(s, i) {
+  var el = document.createElement('div');
+  el.className = 'stop';
+  el.id = 'stop-' + i;
+  el.innerHTML =
+    '<div class="stop-num">STOP ' + String(s.id).padStart(2, '0') + '</div>' +
+    '<div class="stop-name">' + s.name + '</div>' +
+    '<div class="stop-desc">' + s.desc + '</div>' +
+    '<div class="stop-time">' + s.time + '</div>';
+  el.addEventListener('click', function() { flyToStop(i); });
+  stopList.appendChild(el);
+});
+
+function setActiveStop(i) {
+  document.querySelectorAll('.stop').forEach(function(el) { el.classList.remove('active'); });
+  if (i >= 0) document.getElementById('stop-' + i).classList.add('active');
+  activeStop = i;
+}
+
+function flyToStop(i) {
+  var s = stops[i];
+  map.flyTo(s.coords, 16, { duration: 1.2 });
+  setActiveStop(i);
+  if (activePopup) { map.closePopup(activePopup); activePopup = null; }
+  activePopup = L.popup({ closeButton: false, offset: [0, -10] })
+    .setLatLng(s.coords)
+    .setContent('<strong>' + s.name + '</strong><span>' + s.desc + '</span>')
+    .openOn(map);
+}
+
+// ── ANIMATION ──────────────────────────────────────────────────────────────
+function startTour() {
+  if (animating) return;
+  resetTour();
+  animating = true;
+  document.getElementById('btnPlay').textContent = '⏸ Playing…';
+  document.getElementById('btnPlay').disabled = true;
+
+  var speed = parseInt(document.getElementById('speedSelect').value);
+  var totalPoints = routeCoords.length;
+  var msPerPoint = 500 / speed;
+  var currentPoint = 1;
+
+  map.flyTo(routeCoords[0], 15.5, { duration: 1.5 });
+
+  function drawNext() {
+    if (!animating || currentPoint > totalPoints) {
+      animating = false;
+      document.getElementById('btnPlay').textContent = '✓ Complete';
+      document.getElementById('progressFill').style.width = '100%';
+      return;
+    }
+
+    drawnPolyline.setLatLngs(routeCoords.slice(0, currentPoint));
+    document.getElementById('progressFill').style.width =
+      Math.round((currentPoint / totalPoints) * 100) + '%';
+
+    var latest = routeCoords[currentPoint - 1];
+    stops.forEach(function(s, i) {
+      var dist = Math.abs(s.coords[0] - latest[0]) + Math.abs(s.coords[1] - latest[1]);
+      if (dist < 0.0006 && i !== activeStop) {
+        setActiveStop(i);
+        document.getElementById('stop-' + i).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        map.panTo(s.coords, { animate: true, duration: 0.8 });
+        if (activePopup) { map.closePopup(activePopup); activePopup = null; }
+        activePopup = L.popup({ closeButton: false, offset: [0, -10] })
+          .setLatLng(s.coords)
+          .setContent('<strong>' + s.name + '</strong><span>' + s.desc + '</span>')
+          .openOn(map);
+      }
+    });
+
+    currentPoint++;
+    animFrame = setTimeout(drawNext, msPerPoint);
+  }
+
+  setTimeout(drawNext, 1600);
+}
+
+function resetTour() {
+  animating = false;
+  clearTimeout(animFrame);
+  drawnPolyline.setLatLngs([]);
+  if (activePopup) { map.closePopup(activePopup); activePopup = null; }
+  document.querySelectorAll('.stop').forEach(function(el) { el.classList.remove('active'); });
+  activeStop = -1;
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('btnPlay').textContent = '▶ Start tour';
+  document.getElementById('btnPlay').disabled = false;
+  map.flyTo([41.9265, 3.2115], 15, { duration: 1.2 });
+}
+
+document.getElementById('btnPlay').addEventListener('click', startTour);
+document.getElementById('btnReset').addEventListener('click', resetTour);
+
+setTimeout(function() { flyToStop(0); }, 600);
+</script>
+</body>
+</html>

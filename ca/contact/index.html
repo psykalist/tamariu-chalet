@@ -220,39 +220,64 @@
     </a>
 
     <div style="margin-top:40px;padding:20px 24px;background:var(--linen);border-top:3px solid var(--gold);">
-      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.1rem;color:var(--deep-blue);margin-bottom:12px;">Resum de Temporades i Tarifes</h3>
-      <table class="rates-table" style="font-size:0.78rem;">
+      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.1rem;color:var(--deep-blue);margin-bottom:14px;">Resum de Temporades i Tarifes</h3>
+
+      <p class="rates-section-label">🛏 Habitacions (Doble i Twin)</p>
+      <table class="rates-table" style="font-size:0.78rem;margin-bottom:4px;">
         <thead>
-          <tr><th>Temporada</th><th>Dates</th><th>Habitació</th><th>Apartament</th></tr>
+          <tr><th>Temporada</th><th>Dates</th><th>Per nit</th><th>Estada mín.</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="season-name">Temporada Baixa</td>
-            <td>1 Jan – 30 Apr</td>
-            <td class="closed-cell">Tancat</td>
-            <td class="closed-cell">Tancat</td>
-          </tr>
           <tr>
             <td class="season-name">Primavera</td>
             <td>1 May – 31 May</td>
             <td class="rate-highlight">€115</td>
-            <td class="rate-highlight">€165</td>
+            <td class="min-stay-cell">2 nits</td>
           </tr>
           <tr>
             <td class="season-name">Estiu</td>
             <td>1 Jun – 31 Aug</td>
             <td class="rate-highlight">€130</td>
+            <td class="min-stay-cell">3 nits</td>
+          </tr>
+          <tr>
+            <td class="season-name" style="color:var(--stone);">Resta</td>
+            <td style="color:var(--stone);">Gen–Abr &amp; Set–Des</td>
+            <td class="closed-cell">Tancat</td>
+            <td class="closed-cell">—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.72rem;color:var(--stone);margin:4px 0 16px;padding:0 2px;">Màx. 2 hostes · taxa de neteja €30 per estada</p>
+
+      <p class="rates-section-label" style="border-top:1px solid rgba(0,0,0,0.1);padding-top:14px;">🏠 Apartament Estudi</p>
+      <table class="rates-table" style="font-size:0.78rem;margin-bottom:4px;">
+        <thead>
+          <tr><th>Temporada</th><th>Dates</th><th>Per nit</th><th>Estada mín.</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="season-name">Primavera</td>
+            <td>1 May – 31 May</td>
+            <td class="rate-highlight">€165</td>
+            <td class="min-stay-cell">2 nits</td>
+          </tr>
+          <tr>
+            <td class="season-name">Estiu</td>
+            <td>1 Jun – 31 Aug</td>
             <td class="rate-highlight">€180</td>
+            <td class="min-stay-cell">4 nits</td>
           </tr>
           <tr>
             <td class="season-name">Tardor</td>
             <td>1 Sep – 31 Dec</td>
-            <td class="closed-cell">Tancat</td>
             <td class="rate-highlight">€165</td>
+            <td class="min-stay-cell">2 nits</td>
           </tr>
         </tbody>
       </table>
-      <p class="rates-note">+ Taxa de neteja: €30 per habitació · €45 per apartament. Estada mínima: 2 nits (3 nits habitacions a l'estiu · 4 nits apartament a l'estiu). Habitacions: màx. 2 hostes · sense nadons (per consideració als altres hostes). Apartament: tarifa base per a 2 persones · fins a 2 hostes addicionals en sofà llit +€50/persona/nit (màx. 4 en total).</p>
+      <p style="font-size:0.72rem;color:var(--stone);margin:4px 0 10px;padding:0 2px;">Fins a 4 hostes · 2 inclosos, extra +€50/persona/nit · neteja €45 per estada</p>
+      <p class="rates-note">Totes les tarifes són per nit. La taxa de neteja es cobra una vegada per estada.</p>
     </div>
   </div>
 
@@ -332,6 +357,10 @@
           </div>
         </div>
 
+        <div id="min-stay-warning" style="display:none;margin-top:8px;padding:10px 14px;background:#fff8e6;border-left:3px solid #e6a800;font-size:0.84rem;color:#7a5200;line-height:1.5;">
+          ⚠️ <span id="min-stay-text"></span>
+        </div>
+
         <div class="cost-display">
           <div>
             <div class="cost-label">Total Estimat</div>
@@ -362,10 +391,22 @@
         <textarea id="guest-message" name="message" rows="4" placeholder="Preguntes, requisits especials o informació addicional..."></textarea>
       </div>
 
+      <!-- Idioma de la confirmació -->
+      <div class="form-group" id="invoice-lang-group">
+        <label for="invoice-lang">Idioma de la confirmació <span style="font-size:0.78rem;color:var(--stone);font-weight:normal;">(rebreu la confirmació de reserva per correu en aquest idioma)</span></label>
+        <select id="invoice-lang" name="invoice_lang" style="font-family:Verdana,Arial,sans-serif;">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ca" selected>Català</option>
+          <option value="fr">Français</option>
+          <option value="nl">Nederlands</option>
+        </select>
+      </div>
+
       <button type="submit" class="btn-primary" id="submit-btn" data-booking-label="Enviar la Consulta">Enviar la Consulta</button>
 
       <div id="form-success" style="display:none;margin-top:16px;padding:14px 18px;background:#e6f4ea;border-left:3px solid #34a853;font-size:0.88rem;color:#1e6e36;">
-        ✅ La vostra consulta ha estat enviada! Ens posarem en contacte en menys de 24 hores.
+        ✅ La seva consulta ha estat enviada! Li hem enviat una confirmació de reserva per correu electrònic. Confirmarem en 24 hores.
       </div>
       <div id="form-error" style="display:none;margin-top:16px;padding:14px 18px;background:#fce8e6;border-left:3px solid #c5221f;font-size:0.88rem;color:#c5221f;">
         ❌ <span id="error-text">Alguna cosa ha anat malament. Poseu-vos en contacte directament a tamariuchalet@gmail.com</span>
@@ -421,6 +462,7 @@
   });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="../../js/bookings.js"></script>
 <script src="../../js/rates.js"></script>
 <script src="../../js/main.js"></script>

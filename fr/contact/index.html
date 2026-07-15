@@ -220,39 +220,64 @@
     </a>
 
     <div style="margin-top:40px;padding:20px 24px;background:var(--linen);border-top:3px solid var(--gold);">
-      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.1rem;color:var(--deep-blue);margin-bottom:12px;">Résumé des Saisons et Tarifs</h3>
-      <table class="rates-table" style="font-size:0.78rem;">
+      <h3 style="font-family:Verdana,Arial,sans-serif;font-size:1.1rem;color:var(--deep-blue);margin-bottom:14px;">Résumé des Saisons et Tarifs</h3>
+
+      <p class="rates-section-label">🛏 Chambres (Double et Twin)</p>
+      <table class="rates-table" style="font-size:0.78rem;margin-bottom:4px;">
         <thead>
-          <tr><th>Saison</th><th>Dates</th><th>Chambre</th><th>Appartement</th></tr>
+          <tr><th>Saison</th><th>Dates</th><th>Par nuit</th><th>Séjour min.</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="season-name">Basse Saison</td>
-            <td>1 Jan – 30 Apr</td>
-            <td class="closed-cell">Fermé</td>
-            <td class="closed-cell">Fermé</td>
-          </tr>
           <tr>
             <td class="season-name">Printemps</td>
             <td>1 May – 31 May</td>
             <td class="rate-highlight">€115</td>
-            <td class="rate-highlight">€165</td>
+            <td class="min-stay-cell">2 nuits</td>
           </tr>
           <tr>
             <td class="season-name">Été</td>
             <td>1 Jun – 31 Aug</td>
             <td class="rate-highlight">€130</td>
+            <td class="min-stay-cell">3 nuits</td>
+          </tr>
+          <tr>
+            <td class="season-name" style="color:var(--stone);">Reste</td>
+            <td style="color:var(--stone);">Jan–Avr &amp; Sep–Déc</td>
+            <td class="closed-cell">Fermé</td>
+            <td class="closed-cell">—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.72rem;color:var(--stone);margin:4px 0 16px;padding:0 2px;">Max 2 personnes · frais de ménage €30 par séjour</p>
+
+      <p class="rates-section-label" style="border-top:1px solid rgba(0,0,0,0.1);padding-top:14px;">🏠 Appartement Studio</p>
+      <table class="rates-table" style="font-size:0.78rem;margin-bottom:4px;">
+        <thead>
+          <tr><th>Saison</th><th>Dates</th><th>Par nuit</th><th>Séjour min.</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="season-name">Printemps</td>
+            <td>1 May – 31 May</td>
+            <td class="rate-highlight">€165</td>
+            <td class="min-stay-cell">2 nuits</td>
+          </tr>
+          <tr>
+            <td class="season-name">Été</td>
+            <td>1 Jun – 31 Aug</td>
             <td class="rate-highlight">€180</td>
+            <td class="min-stay-cell">4 nuits</td>
           </tr>
           <tr>
             <td class="season-name">Automne</td>
             <td>1 Sep – 31 Dec</td>
-            <td class="closed-cell">Fermé</td>
             <td class="rate-highlight">€165</td>
+            <td class="min-stay-cell">2 nuits</td>
           </tr>
         </tbody>
       </table>
-      <p class="rates-note">+ Frais de ménage : €30 par chambre · €45 par appartement. Séjour minimum : 2 nuits (3 nuits en été pour les chambres · 4 nuits en été pour l'appartement). Chambres : max 2 personnes · pas de nourrissons (par égard pour les autres clients). Appartement : tarif de base pour 2 personnes · jusqu'à 2 personnes supplémentaires sur canapé-lit +€50/personne/nuit (max 4 au total).</p>
+      <p style="font-size:0.72rem;color:var(--stone);margin:4px 0 10px;padding:0 2px;">Jusqu'à 4 personnes · 2 incluses, supplément +€50/personne/nuit · ménage €45 par séjour</p>
+      <p class="rates-note">Tous les tarifs sont par nuit. Les frais de ménage sont facturés une fois par séjour.</p>
     </div>
   </div>
 
@@ -332,6 +357,10 @@
           </div>
         </div>
 
+        <div id="min-stay-warning" style="display:none;margin-top:8px;padding:10px 14px;background:#fff8e6;border-left:3px solid #e6a800;font-size:0.84rem;color:#7a5200;line-height:1.5;">
+          ⚠️ <span id="min-stay-text"></span>
+        </div>
+
         <div class="cost-display">
           <div>
             <div class="cost-label">Total Estimé</div>
@@ -362,10 +391,22 @@
         <textarea id="guest-message" name="message" rows="4" placeholder="Questions, exigences particulières ou informations supplémentaires..."></textarea>
       </div>
 
+      <!-- Langue de confirmation -->
+      <div class="form-group" id="invoice-lang-group">
+        <label for="invoice-lang">Langue de confirmation <span style="font-size:0.78rem;color:var(--stone);font-weight:normal;">(votre confirmation de réservation sera envoyée par e-mail dans cette langue)</span></label>
+        <select id="invoice-lang" name="invoice_lang" style="font-family:Verdana,Arial,sans-serif;">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ca">Català</option>
+          <option value="fr" selected>Français</option>
+          <option value="nl">Nederlands</option>
+        </select>
+      </div>
+
       <button type="submit" class="btn-primary" id="submit-btn" data-booking-label="Envoyer la Demande">Envoyer la Demande</button>
 
       <div id="form-success" style="display:none;margin-top:16px;padding:14px 18px;background:#e6f4ea;border-left:3px solid #34a853;font-size:0.88rem;color:#1e6e36;">
-        ✅ Votre demande a bien été envoyée ! Nous vous répondrons dans les 24 heures.
+        ✅ Votre demande a été envoyée ! Une confirmation de réservation vous a été envoyée par e-mail. Nous confirmerons sous 24 heures.
       </div>
       <div id="form-error" style="display:none;margin-top:16px;padding:14px 18px;background:#fce8e6;border-left:3px solid #c5221f;font-size:0.88rem;color:#c5221f;">
         ❌ <span id="error-text">Quelque chose s'est mal passé. Veuillez nous contacter directement à tamariuchalet@gmail.com</span>
@@ -421,6 +462,7 @@
   });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="../../js/bookings.js"></script>
 <script src="../../js/rates.js"></script>
 <script src="../../js/main.js"></script>

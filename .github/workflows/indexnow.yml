@@ -1,0 +1,61 @@
+name: IndexNow sitemap submission
+
+# Notifies Bing, Yandex, DuckDuckGo and Seznam of the site's URLs once a week.
+# (Google does not participate in IndexNow — it re-crawls the sitemap on its own
+#  using the <lastmod> dates in sitemap.xml.)
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday at 06:00 UTC
+  workflow_dispatch: {}    # allows manual "Run workflow" from the Actions tab
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    env:
+      # This key is not secret — it is published at https://tamariuchalet.com/<key>.txt
+      INDEXNOW_KEY: "77cddc9375e7750b1d161ed6c3f82379"
+      SITE_HOST: "tamariuchalet.com"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request, xml.etree.ElementTree as ET
+
+          key  = os.environ["INDEXNOW_KEY"]
+          host = os.environ["SITE_HOST"]
+
+          ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          tree = ET.parse("sitemap.xml")
+          urls = [e.text.strip() for e in tree.findall(".//s:loc", ns) if e.text]
+          # keep only URLs on our own host
+          urls = [u for u in urls if host in u]
+          print(f"Submitting {len(urls)} URLs to IndexNow...")
+
+          payload = {
+              "host": host,
+              "key": key,
+              "keyLocation": f"https://{host}/{key}.txt",
+              "urlList": urls,
+          }
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  print("IndexNow response:", r.status, r.reason)
+                  body = r.read().decode(errors="replace").strip()
+                  if body:
+                      print(body)
+          except urllib.error.HTTPError as e:
+              # 200 and 202 are success; anything else, show the detail and fail
+              print("IndexNow HTTPError:", e.code, e.reason)
+              print(e.read().decode(errors="replace"))
+              raise
+          PY

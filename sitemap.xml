@@ -27,6 +27,7 @@
 
   <!-- Getting Here -->
   <url><loc>https://tamariuchalet.com/getting-here/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tamariuchalet.com/getting-here/getting-to-the-beach.html</loc><lastmod>2026-07-15</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://tamariuchalet.com/getting-here/julivia-bus.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://tamariuchalet.com/getting-here/begur-bus.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
@@ -34,9 +35,9 @@
   <url><loc>https://tamariuchalet.com/things-to-do/girona.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tamariuchalet.com/things-to-do/cycling.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tamariuchalet.com/things-to-do/markets.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://tamariuchalet.com/things-to-do/walking.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/walking.html</loc><lastmod>2026-07-15</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tamariuchalet.com/things-to-do/tourist-info.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://tamariuchalet.com/things-to-do/restaurants.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tamariuchalet.com/things-to-do/restaurants.html</loc><lastmod>2026-07-15</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tamariuchalet.com/things-to-do/water-sports.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
 
   <!-- ══════════════════════════════════════════════

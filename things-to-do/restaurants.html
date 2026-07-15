@@ -1,31 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Recommended restaurants near Tamariu, Costa Brava — where to eat in the village and nearby, from fresh seafood to Catalan cuisine.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Where to eat and drink in Tamariu, Costa Brava — bars, beach restaurants, local eateries, pizza takeaway and nearby dining gems. Our personal guide for guests.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tamariuchalet.com/things-to-do/restaurants.html">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tamariuchalet.com/things-to-do/restaurants.html">
-  <meta property="og:title" content="Local Restaurants — Tamariu Chalet">
-  <meta property="og:description" content="Recommended restaurants near Tamariu, Costa Brava — where to eat in the village and nearby, from fresh seafood to Catalan cuisine.">
-  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:title" content="Restaurants & Bars in Tamariu — Tamariu Chalet Guide">
+  <meta property="og:description" content="Where to eat and drink in Tamariu, Costa Brava — bars, beach restaurants, local eateries and more.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/tamariu views/tamariu-beach.jpg">
   <meta property="og:site_name" content="Tamariu Chalet">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Local Restaurants — Tamariu Chalet">
-  <meta name="twitter:description" content="Recommended restaurants near Tamariu, Costa Brava — where to eat in the village and nearby, from fresh seafood to Catalan cuisine.">
-  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
-  <title>Local Restaurants — Tamariu Chalet</title>
+  <meta name="twitter:title" content="Restaurants & Bars in Tamariu — Tamariu Chalet Guide">
+  <meta name="twitter:description" content="Where to eat and drink in Tamariu, Costa Brava — bars, beach restaurants, local eateries and more.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/tamariu views/tamariu-beach.jpg">
+  <title>Restaurants &amp; Bars in Tamariu — Tamariu Chalet</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Page Hero ── */
+    .rest-hero {
+      position: relative;
+      height: 340px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      margin-top: var(--nav-height);
+    }
+    .rest-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('../images/tamariu views/tamariu-beach.jpg') center/cover no-repeat;
+    }
+    .rest-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(26,58,92,0.2) 0%, rgba(26,58,92,0.75) 100%);
+    }
+    .rest-hero-text {
+      position: relative;
+      z-index: 1;
+      padding: 30px 40px 36px;
+      width: 100%;
+    }
+    .rest-hero-text .breadcrumb {
+      font-size: 0.78rem;
+      color: rgba(245,239,230,0.7);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      font-family: Verdana, Arial, sans-serif;
+    }
+    .rest-hero-text h1 {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 2.4rem;
+      color: var(--linen);
+      font-weight: 600;
+      line-height: 1.15;
+    }
+    @media (max-width: 600px) {
+      .rest-hero { height: 260px; }
+      .rest-hero-text { padding: 20px 20px 28px; }
+      .rest-hero-text h1 { font-size: 1.7rem; }
+    }
+
+    /* ── Content wrapper ── */
+    .rest-content {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 44px 30px 60px;
+    }
+    @media (max-width: 600px) { .rest-content { padding: 28px 16px 48px; } }
+
+    .rest-intro {
+      font-size: 1.05rem;
+      color: var(--stone);
+      max-width: 740px;
+      margin-bottom: 50px;
+      line-height: 1.75;
+    }
+
+    /* ── Section headings ── */
+    .rest-section {
+      margin-bottom: 52px;
+    }
+    .rest-section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 6px;
+    }
+    .rest-section h2 {
+      font-size: 1.6rem;
+      color: var(--deep-blue);
+      font-weight: 600;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--linen);
+    }
+
+    /* ── Venue cards ── */
+    .venue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .venue-card {
+      background: var(--warm-white);
+      border: 1px solid #e8e0d6;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .venue-card:hover {
+      box-shadow: 0 8px 28px rgba(26,58,92,0.12);
+      transform: translateY(-2px);
+    }
+    .venue-photo {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .venue-photo-placeholder {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+    }
+    .venue-body {
+      padding: 18px 20px 20px;
+    }
+    .venue-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+    .venue-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--deep-blue);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .venue-desc {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .venue-meta {
+      font-size: 0.8rem;
+      color: var(--dark);
+      line-height: 1.7;
+    }
+    .venue-meta a {
+      color: var(--sea-blue);
+      text-decoration: underline;
+    }
+    .venue-meta a:hover { color: var(--terracotta); }
+
+    /* ── Star rating ── */
+    .venue-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .stars {
+      color: var(--gold);
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+    .rating-score {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .rating-source {
+      font-size: 0.75rem;
+      color: var(--stone);
+    }
+
+    /* ── Hours badge ── */
+    .venue-hours {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .hours-open { background: #e8f5e9; color: #2e7d32; }
+    .hours-seasonal { background: #fff3e0; color: #e65100; }
+
+    /* ── Full-width venue (for featured) ── */
+    .venue-card-wide {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      background: var(--warm-white);
+      border: 1px solid #e8e0d6;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .venue-card-wide:hover {
+      box-shadow: 0 8px 28px rgba(26,58,92,0.12);
+      transform: translateY(-2px);
+    }
+    .venue-card-wide .venue-photo,
+    .venue-card-wide .venue-photo-placeholder { height: 100%; min-height: 200px; width: 100%; }
+    @media (max-width: 640px) {
+      .venue-card-wide { grid-template-columns: 1fr; }
+      .venue-card-wide .venue-photo,
+      .venue-card-wide .venue-photo-placeholder { height: 180px; min-height: unset; }
+    }
+
+    /* ── Tip box ── */
+    .tip-box {
+      background: var(--linen);
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      font-size: 0.88rem;
+      color: var(--stone);
+      margin-top: 28px;
+      border-radius: 0 6px 6px 0;
+      line-height: 1.65;
+    }
+    .tip-box strong { color: var(--deep-blue); }
+
+    /* ── Divider ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid #e8e0d6;
+      margin: 52px 0;
+    }
+
+    /* ── Map link button ── */
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--sea-blue);
+      text-decoration: none;
+      margin-top: 8px;
+    }
+    .map-link:hover { color: var(--terracotta); }
+  </style>
 </head>
 <body>
+
 <nav>
   <a href="../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
   <ul class="nav-menu">
-    <li><a href="#">The Accommodation <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../accommodation/double-room.html">Double Room</a></li><li><a href="../accommodation/twin-room-1.html">Double/Twin Room 1</a></li><li><a href="../accommodation/twin-room-2.html">Double/Twin Room 2</a></li><li><a href="../accommodation/pool-apartment.html">Studio Apartment</a></li></ul></li>
-    <li><a href="#">Things To Do <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="girona.html">Visit Girona</a></li><li><a href="cycling.html">Cycling</a></li><li><a href="markets.html">Local Markets</a></li><li><a href="walking.html">Walking</a></li><li><a href="tourist-info.html">Tourist Information</a></li><li><a href="../getting-here/julivia-bus.html">Julivia Bus</a></li><li><a href="../getting-here/begur-bus.html">Begur Beach Bus</a></li><li><a href="restaurants.html">Local Restaurants</a></li><li><a href="water-sports.html">Water Sports</a></li></ul></li>
+    <li><a href="#">The Accommodation <span class="arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="../accommodation/double-room.html">Double Room</a></li>
+        <li><a href="../accommodation/twin-room-1.html">Double/Twin Room 1</a></li>
+        <li><a href="../accommodation/twin-room-2.html">Double/Twin Room 2</a></li>
+        <li><a href="../accommodation/pool-apartment.html">Studio Apartment</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Things To Do <span class="arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="../getting-here/getting-to-the-beach.html">Getting to the Beach</a></li><li><a href="restaurants.html" class="active">Restaurants &amp; Bars</a></li>
+        <li><a href="girona.html">Visit Girona</a></li>
+        <li><a href="cycling.html">Cycling</a></li>
+        <li><a href="markets.html">Local Markets</a></li>
+        <li><a href="walking.html">Walking</a></li>
+        <li><a href="water-sports.html">Water Sports</a></li>
+        <li><a href="tourist-info.html">Tourist Information</a></li>
+        <li><a href="../getting-here/julivia-bus.html">Julivia Bus</a></li>
+        <li><a href="../getting-here/begur-bus.html">Begur Beach Bus</a></li>
+      </ul>
+    </li>
     <li><a href="#">About Catalunya <span class="arrow">▾</span></a>
       <ul class="dropdown">
         <li><a href="../about-catalunya/cuisine.html">Catalonian Cuisine</a></li>
@@ -36,47 +296,430 @@
         <li><a href="../about-catalunya/facts.html">Catalonian Facts</a></li>
       </ul>
     </li>
-    <li><a href="#">Getting Here <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/index.html">Map &amp; Directions</a></li></ul></li>
+    <li><a href="#">Getting Here <span class="arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="../getting-here/index.html">Map &amp; Directions</a></li>
+      </ul>
+    </li>
     <li><a href="../contact/index.html">Contact &amp; Book</a></li>
   </ul>
   <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<div class="page-hero"><div class="page-hero-content"><p class="breadcrumb">Things To Do → Local Restaurants</p><h1>Local Restaurants</h1></div></div>
-<div class="content-page">
-  <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">The Costa Brava has a remarkable restaurant scene, from simple beach chiringuitos serving grilled fish to creative modern Catalan restaurants. Here are our personal recommendations in and around Tamariu.</p>
 
-  <h2>In Tamariu</h2>
-  <h3>Restaurant Tamariu</h3>
-  <p>The village's most established restaurant, right on the beach. Classic Catalan seafood — fresh fish, fideuà (the Catalan version of paella with noodles), grilled prawns and excellent local wine. Booking essential in summer.</p>
-  <h3>La Sirena</h3>
-  <p>A relaxed beachside terrace serving fresh seafood, salads and simple grills. Perfect for a long lazy lunch watching the boats. Very popular — arrive early or book ahead.</p>
-
-  <h2>Nearby — Llafranc &amp; Calella de Palafrugell</h2>
-  <h3>El Far Hotel-Restaurant, Llafranc</h3>
-  <p>Perched on the lighthouse headland above Llafranc with extraordinary sea views. Creative modern Catalan cooking using the best local ingredients. A special occasion restaurant.</p>
-  <h3>La Malcontenta, Calella de Palafrugell</h3>
-  <p>A beloved Calella institution — simple, honest Catalan cooking in a colourful setting. The rice dishes are outstanding. Long summer lunches here are a highlight of the Costa Brava experience.</p>
-
-  <h2>Palafrugell Town</h2>
-  <h3>La Xicra</h3>
-  <p>One of the most acclaimed restaurants in the area — sophisticated Catalan cuisine in an intimate setting. The tasting menu is excellent value for the quality on offer. Book well in advance.</p>
-  <h3>Mas Pou</h3>
-  <p>A classic Catalan country restaurant outside Palafrugell, in a converted farmhouse with a large garden terrace. Outstanding grilled meats, excellent local wine list, very good value.</p>
-
-  <h2>Further Afield</h2>
-  <h3>Hotel Restaurant Aigua Blava, Begur</h3>
-  <p>A legendary Costa Brava institution overlooking a perfect cove near Begur. The setting is unbeatable and the traditional Catalan cooking is consistently excellent.</p>
-
-  <p style="margin-top:24px;font-size:0.85rem;color:var(--stone);padding:14px 18px;background:var(--linen);border-left:3px solid var(--gold);">We're happy to make recommendations and reservations for guests — just ask us when you arrive or get in touch beforehand.</p>
+<!-- ── HERO ── -->
+<div class="rest-hero">
+  <div class="rest-hero-bg"></div>
+  <div class="rest-hero-overlay"></div>
+  <div class="rest-hero-text">
+    <p class="breadcrumb">Things To Do → Restaurants &amp; Bars</p>
+    <h1>Restaurants &amp; Bars in Tamariu</h1>
+  </div>
 </div>
+
+<!-- ── CONTENT ── -->
+<div class="rest-content">
+
+  <p class="rest-intro">Tamariu is a tiny village but it punches well above its weight when it comes to food and drink. The beachfront has some of the finest seafood on the Costa Brava, the evening bar scene is genuinely local, and a short drive opens up a string of outstanding Catalan restaurants. This is our personal guide — every place here we've eaten at and recommend.</p>
+
+  <!-- ═══════════════════════════════════════
+       BARS
+  ═══════════════════════════════════════ -->
+  <div class="rest-section">
+    <p class="rest-section-title">Drinks &amp; Evening</p>
+    <h2>Bars in Tamariu</h2>
+
+    <div class="venue-grid">
+
+      <!-- ONA -->
+      <div class="venue-card">
+        <img src="../images/restaurants/bar-ona.jpg" alt="Bar Ona beach bar, Tamariu" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Beach Bar</p>
+          <p class="venue-name">Bar Ona</p>
+          <div class="venue-rating">
+            <span class="stars">★★★★</span>
+            <span class="rating-score">4.2</span>
+            <span class="rating-source">· 181 reviews</span>
+          </div>
+          <p class="venue-desc">The liveliest spot on the beach edge — casual tables, good music and a crowd that mixes locals with visitors all evening. Great for bagels, sandwiches, burgers and tapas through the day, and cold beers and cocktails into the night.</p>
+          <div class="venue-meta">
+            <div>📍 Carrer la Riera, 1 · Tamariu</div>
+            <div>📞 <a href="tel:+34671674454">+34 671 674 454</a></div>
+            <div>⏰ Daily — summer season</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOSSEC -->
+      <div class="venue-card">
+        <img src="../images/restaurants/mossec.jpg" alt="Mossec restaurant, Tamariu" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Restaurant &amp; Bar · Local Favourite</p>
+          <p class="venue-name">Mossec</p>
+          <div class="venue-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-score">4.4</span>
+            <span class="rating-source">· TripAdvisor</span>
+          </div>
+          <p class="venue-desc">The village's best-kept secret. A small, intimate place beloved by locals — known for outstanding sea-and-mountain rice (<em>arròs mar i muntanya</em>), gloriously homemade croquettes, and an atmosphere that carries on till 3am at weekends. Don't let the modest exterior fool you.</p>
+          <div class="venue-meta">
+            <div>📍 C/ Pescadors, 8 · Tamariu</div>
+            <div>📞 <a href="tel:+34972620327">+34 972 62 03 27</a></div>
+            <div>⏰ Fri–Sat 13:00–16:00 &amp; 20:30–23:00 · Sun 13:00–16:00</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip-box">
+      <strong>Local tip:</strong> Mossec has very limited hours — if you want dinner there on a weekend, ask us to reserve for you when you arrive. It books up fast in July and August.
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ═══════════════════════════════════════
+       BEACH & PROMENADE
+  ═══════════════════════════════════════ -->
+  <div class="rest-section">
+    <p class="rest-section-title">Seafood &amp; Views</p>
+    <h2>Beach &amp; Promenade Restaurants</h2>
+
+    <!-- EL PALANQUÍ (wide / featured) -->
+    <div class="venue-card-wide">
+      <img src="../images/restaurants/el-palanqui.jpg" alt="El Palanquí seafood restaurant on the Tamariu seafront" class="venue-photo" loading="lazy">
+      <div class="venue-body">
+        <p class="venue-category">Seafood · Promenade · Tamariu's Best</p>
+        <p class="venue-name">El Palanquí</p>
+        <div class="venue-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-score">Highly Recommended</span>
+        </div>
+        <p class="venue-desc">Without question the star of the Tamariu seafront. Sit on the terrace right at the water's edge and order the paella or — if you're lucky enough to see it on the menu — the <em>arròs caldós de llagosta</em> (lobster rice, broth-style). Possibly the best rice dish on the Costa Brava. Book ahead in summer.</p>
+        <div class="venue-meta">
+          <div>📍 Passeig del Mar, 19 · Tamariu</div>
+          <div>📞 <a href="tel:+34972620044">+34 972 620 044</a></div>
+          <a class="map-link" href="https://maps.google.com/?q=El+Palanqui+Tamariu" target="_blank" rel="noopener">📍 View on Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="venue-grid">
+
+      <!-- ROYAL -->
+      <div class="venue-card">
+        <img src="../images/restaurants/royal.jpg" alt="Royal Restaurant on the Tamariu promenade" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Traditional Catalan · Promenade</p>
+          <p class="venue-name">Royal Restaurant</p>
+          <p class="venue-desc">A reliable beachfront institution. The meat croquettes and mussels are the thing to order, and they do a proper family-sized paella that needs a day's notice. Friendly service, fair prices, right on the passeig.</p>
+          <div class="venue-meta">
+            <div>📍 Passeig del Mar, 9 · Tamariu</div>
+            <div>📞 <a href="tel:+34972620041">+34 972 620 041</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOTEL TAMARIU -->
+      <div class="venue-card">
+        <img src="../images/tamariu views/hotel-tamariu-costa-brava--2-.jpg" alt="Hotel Tamariu beach restaurant" class="venue-photo">
+        <div class="venue-body">
+          <p class="venue-category">Hotel Restaurant · Beach Views</p>
+          <p class="venue-name">Hotel Tamariu Restaurant</p>
+          <p class="venue-desc">The terrace of the Hotel Tamariu is one of the finest places to eat on the whole coast — right on the promenade with the whole bay laid out in front of you. The <em>tisana</em> cocktail is a summer ritual. Good Catalan kitchen, excellent wine list.</p>
+          <div class="venue-meta">
+            <div>📍 Passeig del Mar · Tamariu</div>
+            <div>📞 <a href="tel:+34972620031">+34 972 620 031</a></div>
+            <div>🌐 <a href="https://www.tamariu.com" target="_blank" rel="noopener">tamariu.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ES DOFI -->
+      <div class="venue-card">
+        <img src="../images/restaurants/es-dofi.jpg" alt="Es Dofí family restaurant, Tamariu" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Family Run · Simple Catalan</p>
+          <p class="venue-name">Es Dofí</p>
+          <p class="venue-desc">A family-run spot with sea views and honest, unpretentious Catalan cooking. Fresh fish of the day, grilled to order, with good local wine. No frills — just good food at the water's edge. A favourite for a long, lazy lunch.</p>
+          <div class="venue-meta">
+            <div>📍 Passeig del Mar · Tamariu</div>
+            <div>📞 <a href="tel:+34972620043">+34 972 62 00 43</a></div>
+            <div>⏰ Lunch &amp; dinner · summer season</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ═══════════════════════════════════════
+       TOWN & LOCAL
+  ═══════════════════════════════════════ -->
+  <div class="rest-section">
+    <p class="rest-section-title">Village Dining</p>
+    <h2>Town &amp; Local Restaurants</h2>
+
+    <div class="venue-grid">
+
+      <!-- EL CLOT DELS MUSSOLS -->
+      <div class="venue-card">
+        <img src="../images/restaurants/el-clot-dels-mussols.jpg" alt="El Clot dels Mussols restaurant, Tamariu" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Catalan Kitchen · Good Value</p>
+          <p class="venue-name">El Clot dels Mussols</p>
+          <div class="venue-rating">
+            <span class="stars">★★★★</span>
+            <span class="rating-score">4.0</span>
+            <span class="rating-source">· 342 reviews · TripAdvisor</span>
+          </div>
+          <p class="venue-desc">One of the better-value spots in the village — solidly good Catalan home cooking in a simple, honest setting. Locals eat here regularly, which is always a good sign. Great for a relaxed dinner without the beach price premium.</p>
+          <div class="venue-meta">
+            <div>📍 Tamariu village centre</div>
+            <div>📞 <a href="tel:+34972620031">+34 972 62 00 31</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA PASTA TAMARIU -->
+      <div class="venue-card">
+        <img src="../images/restaurants/la-pasta.jpg" alt="La Pasta pizza and pasta, Tamariu" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Pizza &amp; Pasta · Family Friendly</p>
+          <p class="venue-name">Restaurante La Pasta Tamariu</p>
+          <div class="venue-rating">
+            <span class="stars">★★★</span>
+            <span class="rating-score">3.3</span>
+            <span class="rating-source">· 93 reviews</span>
+          </div>
+          <p class="venue-desc">Fresh wood-oven pizzas and pasta in a family-friendly setting — a solid choice when you want something simple and reliable. Relaxed atmosphere, good for children. The Nutella pizza for dessert has its fans.</p>
+          <div class="venue-meta">
+            <div>📍 Tamariu village</div>
+            <div>📞 <a href="tel:+34972620511">+34 972 62 05 11</a></div>
+            <div>⏰ Evenings · summer season</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA PINEDA -->
+      <div class="venue-card">
+        <img src="../images/restaurants/la-pineda.jpg" alt="La Pineda open-air grill among the pines, Tamariu" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Grill &amp; Rotisserie · Among the Pines</p>
+          <p class="venue-name">Restaurant La Pineda</p>
+          <div class="venue-rating">
+            <span class="stars">★★★★</span>
+            <span class="rating-score">4.1</span>
+            <span class="rating-source">· TripAdvisor</span>
+          </div>
+          <p class="venue-desc">A wonderfully relaxed open-air grill on the edge of the village, tucked down a quiet dead-end street among the pines. The speciality is meat cooked over an oak-wood fire — spit-roasted chicken, veal, rabbit and lamb chops, served with chips and simple salads. Generous, honest cooking at fair prices, with a shady terrace that's made for a long, lazy family lunch. Reserve the roast chicken a day ahead, as it slow-cooks over the fire.</p>
+          <div class="venue-meta">
+            <div>📍 Carrer del Cadí, 17 · Tamariu</div>
+            <div>📞 <a href="tel:+34972620050">+34 972 62 00 50</a></div>
+            <div>⏰ Summer season · approx. June–September</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ═══════════════════════════════════════
+       NEARBY — WORTH THE DRIVE
+  ═══════════════════════════════════════ -->
+  <div class="rest-section">
+    <p class="rest-section-title">A Short Drive Away</p>
+    <h2>Worth the Drive</h2>
+
+    <!-- MOOMA (wide) -->
+    <div class="venue-card-wide">
+      <img src="../images/restaurants/mooma.jpg" alt="Mooma farm restaurant near Palafrugell" class="venue-photo" loading="lazy">
+      <div class="venue-body">
+        <p class="venue-category">Farm Restaurant · Creative Catalan · Palau-Sator Area</p>
+        <p class="venue-name">Mooma</p>
+        <p class="venue-desc">A genuinely special experience — a creative Catalan restaurant set on a working farm in the countryside near Palafrugell. They grow much of what they serve, the wine list is outstanding, and the setting among the fields is like no other restaurant on the coast. Well worth the short drive inland. Booking essential.</p>
+        <div class="venue-meta">
+          <div>📍 Palau-Sator / Fontanilles area · approx. 15 min drive</div>
+          <div>📞 <a href="tel:+34872026088">+34 872 026 088</a></div>
+          <div>🌐 <a href="https://www.mooma.cat" target="_blank" rel="noopener">mooma.cat</a></div>
+          <a class="map-link" href="https://maps.google.com/?q=Mooma+Palau-Sator" target="_blank" rel="noopener">📍 View on Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="venue-grid" style="margin-top:20px;">
+
+      <!-- EL FAR, LLAFRANC -->
+      <div class="venue-card">
+        <img src="../images/restaurants/el-far.jpg" alt="El Far hotel-restaurant above Llafranc" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Fine Dining · Llafranc · 10 min</p>
+          <p class="venue-name">El Far Hotel-Restaurant</p>
+          <p class="venue-desc">Perched on the lighthouse headland above Llafranc with extraordinary views down the coast. Creative modern Catalan cooking using the best local ingredients — a special-occasion restaurant. One of the finest settings on the Costa Brava.</p>
+          <div class="venue-meta">
+            <div>📍 Carrer del Far · Llafranc</div>
+            <div>📞 <a href="tel:+34972301639">+34 972 30 16 39</a></div>
+            <div>🌐 <a href="https://www.elfar.net" target="_blank" rel="noopener">elfar.net</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA MALCONTENTA, CALELLA -->
+      <div class="venue-card">
+        <img src="../images/restaurants/la-malcontenta.jpg" alt="La Malcontenta restaurant, Calella de Palafrugell" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Classic Catalan · Calella · 15 min</p>
+          <p class="venue-name">La Malcontenta</p>
+          <p class="venue-desc">A Calella de Palafrugell institution — simple, honest Catalan cooking in a colourful setting. The rice dishes are outstanding. Long summer lunches here are a Costa Brava highlight. Very popular — booking strongly advised.</p>
+          <div class="venue-meta">
+            <div>📍 Calella de Palafrugell</div>
+            <div>📞 <a href="tel:+34972312330">+34 972 31 23 30</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA XICRA, PALAFRUGELL -->
+      <div class="venue-card">
+        <img src="../images/restaurants/la-xicra.jpg" alt="La Xicra restaurant, Palafrugell" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Acclaimed · Palafrugell · 15 min</p>
+          <p class="venue-name">La Xicra</p>
+          <p class="venue-desc">One of the most acclaimed restaurants in the area — sophisticated Catalan cuisine in an intimate setting. The tasting menu is excellent value for the quality on offer. Book well in advance. A treat for a special evening.</p>
+          <div class="venue-meta">
+            <div>📍 Palafrugell</div>
+            <div>📞 <a href="tel:+34972305630">+34 972 30 56 30</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALFOK, ESCLANYÀ (BEGUR) -->
+      <div class="venue-card">
+        <img src="../images/restaurants/alfok.jpg" alt="Alfok restaurant, Esclanyà, Begur" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Creative Dining · Esclanyà, Begur · 20 min</p>
+          <p class="venue-name">Alfok</p>
+          <div class="venue-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-score">4.4</span>
+            <span class="rating-source">· TripAdvisor</span>
+          </div>
+          <p class="venue-desc">A stylish, intimate restaurant tucked away in the hamlet of Esclanyà, just outside Begur, with a lovely terrace and a short, creative menu of beautifully presented, Latin-influenced dishes. Attentive service and a real sense of occasion — one of the finest meals in the area. Open evenings, closed Tuesdays. Booking recommended.</p>
+          <div class="venue-meta">
+            <div>📍 Carrer Salt de ses Eugues, 3 · Esclanyà, Begur</div>
+            <div>📞 <a href="tel:+34653864831">+34 653 864 831</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MACHETE'S, PLATJA DE PALS -->
+      <div class="venue-card">
+        <img src="../images/restaurants/machetes.jpg" alt="Machete's street food, Platja de Pals" class="venue-photo" loading="lazy">
+        <div class="venue-body">
+          <p class="venue-category">Street Food · Platja de Pals · 25 min</p>
+          <p class="venue-name">Machete&rsquo;s</p>
+          <p class="venue-desc">A fun, buzzy street-food spot a few minutes from Pals beach — bold flavours from Mexico and Asia with tacos, Korean fried chicken, burgers and nachos, great cocktails and a relaxed terrace. Perfect for a livelier, informal evening; equally good for families, groups and a young crowd. It fills up fast, so book ahead.</p>
+          <div class="venue-meta">
+            <div>📍 Carrer de la Torre Mora, 2 · Platja de Pals</div>
+            <div>📞 <a href="tel:+34972667656">+34 972 66 76 56</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ═══════════════════════════════════════
+       TAKEAWAY
+  ═══════════════════════════════════════ -->
+  <div class="rest-section">
+    <p class="rest-section-title">Pizza &amp; Takeaway</p>
+    <h2>Takeaway in Tamariu</h2>
+
+    <div class="venue-card-wide">
+      <img src="../images/restaurants/cami-de-ronda.jpg" alt="El Camí de Ronda pizza takeaway, Tamariu" class="venue-photo" loading="lazy">
+      <div class="venue-body">
+        <p class="venue-category">Pizza Takeaway · Artisan · Seasonal</p>
+        <p class="venue-name">El Camí de Ronda</p>
+        <span class="venue-hours hours-seasonal">Summer season only</span>
+        <div class="venue-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-score">4.8</span>
+          <span class="rating-source">· 27 reviews (bravissima)</span>
+        </div>
+        <p class="venue-desc">A brilliant little takeaway right in the village — artisan wood-fired pizzas and crepes, made fresh to order. Gluten-free bases available. Perfect for an evening on the terrace or beach. Small, so arrive early or expect a short wait — it's worth it. One of the village's genuine hidden gems.</p>
+        <div class="venue-meta">
+          <div>📍 Carrer Foraio, 8 · 17212 Tamariu</div>
+          <div>📞 <a href="tel:+34644664318">+34 644 66 43 18</a></div>
+          <div>⏰ Evenings · summer season only (approx. June–September)</div>
+          <a class="map-link" href="https://maps.google.com/?q=Cami+de+Ronda+Tamariu" target="_blank" rel="noopener">📍 View on Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOLERU -->
+    <div class="venue-card-wide">
+      <img src="../images/restaurants/boleru.jpg" alt="Boleru Mediterranean takeaway, Tamariu" class="venue-photo" loading="lazy">
+      <div class="venue-body">
+        <p class="venue-category">Mediterranean Takeaway · Fresh &amp; Healthy</p>
+        <p class="venue-name">Boleru</p>
+        <p class="venue-desc">A stylish little takeaway in the village with a fresh, modern Mediterranean menu — poke bowls, tartars and ceviches, plus brioches and delicate desserts, all matched with craft beer and wine. Healthy, colourful food to take back to the terrace or down to the beach. Their motto says it well: "our food, your place."</p>
+        <div class="venue-meta">
+          <div>📍 Carrer del Salí, 2 · Tamariu</div>
+          <div>📞 <a href="tel:+34613160482">+34 613 160 482</a></div>
+          <div>🌐 <a href="https://boleru.com" target="_blank" rel="noopener">boleru.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Final tip ── -->
+  <div class="tip-box" style="margin-top:0;">
+    <strong>Ask us for advice:</strong> We're always happy to recommend somewhere specific or make a reservation on your behalf — just ask at check-in or drop us a message beforehand. And don't forget: in July and August, most restaurants need booking at least a day ahead.
+  </div>
+
+</div><!-- /rest-content -->
+
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Peaceful accommodation in the coastal village of Tamariu, Costa Brava, Catalunya.</p></div>
-    <div class="footer-col"><h4>The Rooms</h4><ul><li><a href="../accommodation/double-room.html">Double Room</a></li><li><a href="../accommodation/pool-apartment.html">Studio Apartment</a></li></ul></div>
-    <div class="footer-col"><h4>Things To Do</h4><ul><li><a href="girona.html">Visit Girona</a></li><li><a href="markets.html">Markets</a></li><li><a href="water-sports.html">Water Sports</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="../contact/index.html">Book Now</a></li></ul></div>
+    <div class="footer-brand">
+      <div class="brand-name">Tamariu Chalet</div>
+      <p>Peaceful accommodation in the coastal village of Tamariu, Costa Brava, Catalunya.</p>
+    </div>
+    <div class="footer-col">
+      <h4>The Rooms</h4>
+      <ul>
+        <li><a href="../accommodation/double-room.html">Double Room</a></li>
+        <li><a href="../accommodation/pool-apartment.html">Studio Apartment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Things To Do</h4>
+      <ul>
+        <li><a href="restaurants.html">Restaurants &amp; Bars</a></li>
+        <li><a href="girona.html">Visit Girona</a></li>
+        <li><a href="water-sports.html">Water Sports</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="../contact/index.html">Book Now</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet</p><p>Tamariu, Costa Brava, Catalunya</p></div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Tamariu Chalet</p>
+    <p>Tamariu, Costa Brava, Catalunya</p>
+  </div>
 </footer>
+
 <script src="../js/main.js"></script>
-</body></html>
+</body>
+</html>
