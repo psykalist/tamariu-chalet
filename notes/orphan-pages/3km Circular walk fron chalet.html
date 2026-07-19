@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting to the Beach – Tamariu Chalet</title>
+<style>
+  /* ── Base ── */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+  }
+
+  /* ── Page layout ── */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2a2118;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 32px;
+  }
+
+  /* ── Photo placeholder ── */
+  .photo-block {
+    width: 100%;
+    height: 280px;
+    background: #f0ebe3;
+    border: 2px dashed #c8bfb0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+    color: #a09080;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .photo-block svg { opacity: 0.4; }
+
+  .photo-block p { font-size: 12px; opacity: 0.7; }
+
+  /* ── Intro text ── */
+  .intro {
+    margin-bottom: 32px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 720px;
+  }
+
+  .intro p + p { margin-top: 12px; }
+
+  /* ── Walk stats strip ── */
+  .stats {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+    border: 1px solid #ddd5c8;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .stat {
+    flex: 1;
+    padding: 16px 20px;
+    border-right: 1px solid #ddd5c8;
+    background: #faf7f3;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a09080;
+    margin-bottom: 4px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a2118;
+  }
+
+  .stat-unit {
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+
+  /* ── Walk notes ── */
+  .walk-notes { max-width: 720px; }
+
+  .walk-notes h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2a2118;
+    margin-bottom: 14px;
+  }
+
+  .walk-notes ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .walk-notes li {
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.7;
+    color: #444;
+    font-size: 13px;
+  }
+
+  .walk-notes li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c4773b;
+    font-size: 13px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .stats { flex-direction: column; }
+    .stat { border-right: none; border-bottom: 1px solid #ddd5c8; }
+    .stat:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <h1>Getting to the Beach</h1>
+  <p class="subtitle">A 3 km circular walk from Tamariu Chalet down to the beach and back</p>
+
+  <img src="images/tamariu-beach.jpg" alt="Tamariu Beach" style="width:100%;height:280px;object-fit:cover;border-radius:6px;margin-bottom:36px;">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>The walk from Tamariu Chalet is one of the highlights of any stay. The route winds along the coast before dropping down to the Aigua Xelida beach — one of the most remote  beaches on the Costa Brava.</p>
+    <p>The loop shown below follows the 3 km circular route, so you can return a different way and see more of the village. The path is well-shaded and suitable for all fitness levels, though there are some steps on the descent to the beach.</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-label">Distance</div>
+      <div class="stat-value">3</div>
+      <div class="stat-unit">kilometres</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Time</div>
+      <div class="stat-value">~45</div>
+      <div class="stat-unit">minutes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Difficulty</div>
+      <div class="stat-value">Easy</div>
+      <div class="stat-unit">some steps on descent</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Terrain</div>
+      <div class="stat-value">Mixed</div>
+      <div class="stat-unit">lanes &amp; coastal path</div>
+    </div>
+  </div>
+
+  <!-- WALK NOTES -->
+  <div class="walk-notes">
+    <h2>Walk Notes</h2>
+    <ul>
+      <li>Start from the chalet and head downhill through the village lanes towards the coast.</li>
+      <li>The route loops around, giving you views over the bay and the surrounding pine forests.</li>
+      <li>Tamariu beach has a handful of excellent restaurants and beach bars right on the sand — perfect for lunch.</li>
+      <li>The return leg climbs gently back up through the village. Take your time — the views are worth it.</li>
+      <li>Wear comfortable shoes; the path includes some uneven surfaces and steps near the beach.</li>
+      <li>In summer, the beach gets busy by mid-morning — aim to arrive early for the best spot.</li>
+    </ul>
+  </div>
+
+</div><!-- end page-wrap -->
+
+</body>
+</html>

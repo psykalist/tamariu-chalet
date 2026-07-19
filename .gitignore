@@ -9,3 +9,11 @@ bak.html
 .claude/
 CLAUDE.md
 .auto-memory/
+
+# Deploy artefacts
+deploy.log
+notes/deploy.log
+js/.ftp-deploy-sync-state.json
+
+# Installers / binaries that should never be committed or deployed
+*.exe
