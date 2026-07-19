@@ -41,8 +41,10 @@ PAGES["getting-here/julivia-bus.html"] = {
   <h2 style="margin-top:32px;">Sobre el Servicio</h2>
   <p>El Bus Julivia une la localidad interior de Palafrugell con los pueblos costeros de Tamariu, Llafranc y Calella de Palafrugell — lo que facilita moverse entre la costa y el pueblo sin preocuparse por el aparcamiento. También da servicio a algunos puntos culturales e históricos del interior.</p>
   <ul>
-    <li>Servicio de temporada — normalmente funciona de mayo a octubre</li>
-    <li>Billetes asequibles — se paga a bordo</li>
+    <li><strong>Funciona del 25 de julio al 20 de septiembre de 2026</strong> — una temporada más corta de lo que la mayoría espera, así que compruebe las fechas antes de organizar el día</li>
+    <li><strong>Seis vueltas al día.</strong> Desde la parada de Tamariu: 09:46, 11:16, 12:46, 16:16, 17:46 y 19:16 — con un hueco de tres horas y media a mediodía</li>
+    <li>De vuelta por Tamariu a las 10:44, 12:14, 13:44, 17:14, 18:44 y 20:14 — el de las 20:14 es el último del día</li>
+    <li>6,50 € adulto, 3 € niños de 4 a 12 años — billete de día, sube y baja cuantas veces quiera, se compra a bordo</li>
     <li>Conecta Tamariu directamente con el centro de Palafrugell (mercados, tiendas, restaurantes)</li>
     <li>Permite explorar cómodamente los tres pueblos costeros en transporte público</li>
     <li>Consulte la web oficial más arriba para los horarios y el mapa de rutas del año en curso</li>
@@ -70,8 +72,10 @@ PAGES["getting-here/julivia-bus.html"] = {
   <h2 style="margin-top:32px;">Sobre el Servei</h2>
   <p>El Bus Julivia uneix la vila interior de Palafrugell amb els pobles costaners de Tamariu, Llafranc i Calella de Palafrugell — cosa que facilita moure's entre la costa i la vila sense preocupar-se per l'aparcament. També dona servei a alguns indrets culturals i històrics de l'interior.</p>
   <ul>
-    <li>Servei de temporada — normalment funciona de maig a octubre</li>
-    <li>Bitllets assequibles — es paga a bord</li>
+    <li><strong>Funciona del 25 de juliol al 20 de setembre de 2026</strong> — una temporada més curta del que la majoria espera, així que comproveu les dates abans d'organitzar el dia</li>
+    <li><strong>Sis voltes al dia.</strong> Des de la parada de Tamariu: 09:46, 11:16, 12:46, 16:16, 17:46 i 19:16 — amb un buit de tres hores i mitja al migdia</li>
+    <li>De tornada per Tamariu a les 10:44, 12:14, 13:44, 17:14, 18:44 i 20:14 — el de les 20:14 és l'últim del dia</li>
+    <li>6,50 € adult, 3 € infants de 4 a 12 anys — bitllet de dia, puja i baixa tantes vegades com vulgueu, es compra a bord</li>
     <li>Connecta Tamariu directament amb el centre de Palafrugell (mercats, botigues, restaurants)</li>
     <li>Permet explorar còmodament els tres pobles costaners amb transport públic</li>
     <li>Consulteu el web oficial més amunt per als horaris i el mapa de rutes de l'any en curs</li>
@@ -99,8 +103,10 @@ PAGES["getting-here/julivia-bus.html"] = {
   <h2 style="margin-top:32px;">À Propos du Service</h2>
   <p>Le Bus Julivia relie la ville intérieure de Palafrugell aux villages côtiers de Tamariu, Llafranc et Calella de Palafrugell — ce qui facilite les déplacements entre la côte et la ville sans souci de stationnement. Il dessert également quelques sites culturels et historiques de l'intérieur.</p>
   <ul>
-    <li>Service saisonnier — circule généralement de mai à octobre</li>
-    <li>Billets abordables — paiement à bord</li>
+    <li><strong>Circule du 25 juillet au 20 septembre 2026</strong> — une saison plus courte que la plupart des visiteurs ne l'imaginent, vérifiez donc les dates avant d'organiser votre journée</li>
+    <li><strong>Six boucles par jour.</strong> Depuis l'arrêt de Tamariu : 09h46, 11h16, 12h46, 16h16, 17h46 et 19h16 — avec un trou de trois heures et demie au milieu de la journée</li>
+    <li>Retour par Tamariu à 10h44, 12h14, 13h44, 17h14, 18h44 et 20h14 — celui de 20h14 est le dernier de la journée</li>
+    <li>6,50 € adulte, 3 € enfant de 4 à 12 ans — billet à la journée, montez et descendez à volonté, achat à bord</li>
     <li>Relie Tamariu directement au centre de Palafrugell (marchés, commerces, restaurants)</li>
     <li>Permet d'explorer facilement les trois villages côtiers en transport public</li>
     <li>Consultez le site officiel ci-dessus pour les horaires et le plan des lignes de l'année en cours</li>
@@ -128,8 +134,10 @@ PAGES["getting-here/julivia-bus.html"] = {
   <h2 style="margin-top:32px;">Over de Dienst</h2>
   <p>De Julivia Bus verbindt het in het binnenland gelegen Palafrugell met de kustdorpen Tamariu, Llafranc en Calella de Palafrugell — zo reist u eenvoudig tussen kust en dorp zonder u zorgen te maken over parkeren. De bus bedient ook enkele culturele en historische bezienswaardigheden in het binnenland.</p>
   <ul>
-    <li>Seizoensdienst — rijdt doorgaans van mei tot oktober</li>
-    <li>Betaalbare tickets — u betaalt in de bus</li>
+    <li><strong>Rijdt van 25 juli tot 20 september 2026</strong> — een korter seizoen dan de meeste bezoekers verwachten, dus controleer de data voordat u uw dag indeelt</li>
+    <li><strong>Zes ritten per dag.</strong> Vanaf de halte in Tamariu: 09:46, 11:16, 12:46, 16:16, 17:46 en 19:16 — met een gat van drieënhalf uur midden op de dag</li>
+    <li>Terug via Tamariu om 10:44, 12:14, 13:44, 17:14, 18:44 en 20:14 — die van 20:14 is de laatste van de dag</li>
+    <li>€6,50 volwassenen, €3 kinderen van 4 tot 12 — dagticket, onbeperkt in- en uitstappen, te koop in de bus</li>
     <li>Verbindt Tamariu rechtstreeks met het centrum van Palafrugell (markten, winkels, restaurants)</li>
     <li>Maakt het eenvoudig om alle drie de kustdorpen met het openbaar vervoer te verkennen</li>
     <li>Raadpleeg de officiële website hierboven voor de dienstregeling en routekaart van dit jaar</li>

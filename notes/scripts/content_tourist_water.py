@@ -44,7 +44,7 @@ PAGES["things-to-do/tourist-info.html"] = {
   <a href="{julivia}" class="external-link-card" style="margin-top:16px;">
     <div>
       <h4>Bus Julivia</h4>
-      <p>Un autobús turístico de temporada que une Palafrugell con los pueblos costeros de Tamariu, Llafranc y Calella de Palafrugell. Funciona aproximadamente de mayo a octubre — económico, se paga a bordo.</p>
+      <p>Un autobús turístico de temporada que une Palafrugell con los pueblos costeros de Tamariu, Llafranc y Calella de Palafrugell. Funciona del 25 de julio al 20 de septiembre de 2026, seis vueltas al día — económico, se paga a bordo.</p>
     </div>
     <span class="link-arrow">→</span>
   </a>
@@ -99,7 +99,7 @@ PAGES["things-to-do/tourist-info.html"] = {
   <a href="{julivia}" class="external-link-card" style="margin-top:16px;">
     <div>
       <h4>Bus Julivia</h4>
-      <p>Un autobús turístic de temporada que uneix Palafrugell amb els pobles costaners de Tamariu, Llafranc i Calella de Palafrugell. Funciona aproximadament de maig a octubre — econòmic, es paga a bord.</p>
+      <p>Un autobús turístic de temporada que uneix Palafrugell amb els pobles costaners de Tamariu, Llafranc i Calella de Palafrugell. Funciona del 25 de juliol al 20 de setembre de 2026, sis voltes al dia — econòmic, es paga a bord.</p>
     </div>
     <span class="link-arrow">→</span>
   </a>
@@ -154,7 +154,7 @@ PAGES["things-to-do/tourist-info.html"] = {
   <a href="{julivia}" class="external-link-card" style="margin-top:16px;">
     <div>
       <h4>Bus Julivia</h4>
-      <p>Un bus touristique saisonnier reliant Palafrugell aux villages côtiers de Tamariu, Llafranc et Calella de Palafrugell. Circule environ de mai à octobre — abordable, paiement à bord.</p>
+      <p>Un bus touristique saisonnier reliant Palafrugell aux villages côtiers de Tamariu, Llafranc et Calella de Palafrugell. Circule du 25 juillet au 20 septembre 2026, six boucles par jour — abordable, paiement à bord.</p>
     </div>
     <span class="link-arrow">→</span>
   </a>
@@ -209,7 +209,7 @@ PAGES["things-to-do/tourist-info.html"] = {
   <a href="{julivia}" class="external-link-card" style="margin-top:16px;">
     <div>
       <h4>Julivia Bus</h4>
-      <p>Een seizoensgebonden toeristenbus die Palafrugell verbindt met de kustdorpen Tamariu, Llafranc en Calella de Palafrugell. Rijdt ongeveer van mei tot oktober — betaalbaar, u betaalt in de bus.</p>
+      <p>Een seizoensgebonden toeristenbus die Palafrugell verbindt met de kustdorpen Tamariu, Llafranc en Calella de Palafrugell. Rijdt van 25 juli tot 20 september 2026, zes ritten per dag — betaalbaar, u betaalt in de bus.</p>
     </div>
     <span class="link-arrow">→</span>
   </a>
