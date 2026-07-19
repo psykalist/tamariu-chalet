@@ -1,13 +1,49 @@
 ---
+# cPanel git deployment.
+#
+# This previously copied only a handful of directories, which meant the
+# es/ ca/ fr/ nl/ language folders, Reviews, about-catalunya, availability,
+# sitemap.xml, robots.txt and the favicons were never deployed. It also
+# referenced send-mail.php, which does not exist in this repository.
+#
+# Keep this list in step with deploy.bat's exclusion mask: everything in the
+# repo ships EXCEPT notes/, .git/, .github/, dev files and the Python scripts.
 deployment:
   tasks:
     - export DEPLOYPATH=/home/tamariuc/public_html
-    - /bin/cp -r accommodation $DEPLOYPATH/accommodation
-    - /bin/cp -r contact $DEPLOYPATH/contact
-    - /bin/cp -r css $DEPLOYPATH/css
-    - /bin/cp -r getting-here $DEPLOYPATH/getting-here
-    - /bin/cp -r images $DEPLOYPATH/images
-    - /bin/cp -r js $DEPLOYPATH/js
-    - /bin/cp -r things-to-do $DEPLOYPATH/things-to-do
+
+    # ── English site ──────────────────────────────────────────────
+    - /bin/cp -r accommodation $DEPLOYPATH/
+    - /bin/cp -r about-catalunya $DEPLOYPATH/
+    - /bin/cp -r availability $DEPLOYPATH/
+    - /bin/cp -r contact $DEPLOYPATH/
+    - /bin/cp -r getting-here $DEPLOYPATH/
+    - /bin/cp -r things-to-do $DEPLOYPATH/
+    - /bin/cp -r Reviews $DEPLOYPATH/
+
+    # ── Translations ──────────────────────────────────────────────
+    - /bin/cp -r es $DEPLOYPATH/
+    - /bin/cp -r ca $DEPLOYPATH/
+    - /bin/cp -r fr $DEPLOYPATH/
+    - /bin/cp -r nl $DEPLOYPATH/
+
+    # ── Assets ────────────────────────────────────────────────────
+    - /bin/cp -r css $DEPLOYPATH/
+    - /bin/cp -r js $DEPLOYPATH/
+    - /bin/cp -r images $DEPLOYPATH/
+    - /bin/cp -r .well-known $DEPLOYPATH/
+
+    # ── Root files ────────────────────────────────────────────────
     - /bin/cp index.html $DEPLOYPATH/index.html
-    - /bin/cp send-mail.php $DEPLOYPATH/send-mail.php
+    - /bin/cp tamariu-walking-tour.html $DEPLOYPATH/tamariu-walking-tour.html
+    - /bin/cp sitemap.xml $DEPLOYPATH/sitemap.xml
+    - /bin/cp robots.txt $DEPLOYPATH/robots.txt
+    - /bin/cp site.webmanifest $DEPLOYPATH/site.webmanifest
+    - /bin/cp favicon.ico $DEPLOYPATH/favicon.ico
+    - /bin/cp favicon.svg $DEPLOYPATH/favicon.svg
+    - /bin/cp apple-touch-icon.png $DEPLOYPATH/apple-touch-icon.png
+    # IndexNow verification key — must stay reachable at the site root
+    - /bin/cp 77cddc9375e7750b1d161ed6c3f82379.txt $DEPLOYPATH/
+    # GPX tracks linked from the walking pages
+    - /bin/cp 3Km_Tamariu_Walking_Loop.gpx $DEPLOYPATH/
+    - /bin/cp walktobeach.gpx $DEPLOYPATH/

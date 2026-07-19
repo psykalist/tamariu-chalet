@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baños y cocina compartidos en Tamariu Chalet, Tamariu, Costa Brava — bien equipados y cuidados para todos los huéspedes de las habitaciones.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/es/accommodation/shared-facilities.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/accommodation/shared-facilities.html">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/accommodation/shared-facilities.html">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/accommodation/shared-facilities.html">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/accommodation/shared-facilities.html">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/accommodation/shared-facilities.html">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/accommodation/shared-facilities.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/es/accommodation/shared-facilities.html">
+  <meta property="og:title" content="Baños y Cocina Compartidos — Tamariu Chalet">
+  <meta property="og:description" content="Baños y cocina compartidos en Tamariu Chalet, Tamariu, Costa Brava — bien equipados y cuidados para todos los huéspedes de las habitaciones.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <meta property="og:locale" content="es_ES">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Baños y Cocina Compartidos — Tamariu Chalet">
+  <meta name="twitter:description" content="Baños y cocina compartidos en Tamariu Chalet, Tamariu, Costa Brava — bien equipados y cuidados para todos los huéspedes de las habitaciones.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <title>Baños y Cocina Compartidos — Tamariu Chalet</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1A3A5C">
+
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* Bathrooms — 2 portrait cards side by side */
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 860px;
+      margin: 0 auto 60px;
+    }
+    @media (max-width: 600px) {
+      .facilities-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+    /* Kitchens — 2 landscape cards, full width */
+    .facilities-grid-kitchen {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+    }
+    @media (max-width: 700px) {
+      .facilities-grid-kitchen { grid-template-columns: 1fr; gap: 20px; }
+    }
+    .facility-card {
+      background: var(--linen);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    /* Portrait containers for bathroom photos */
+    .facility-card-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(135deg, #2D4A6C, #3D7AAF);
+      overflow: hidden;
+    }
+    .facility-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Landscape containers for kitchen photos — tall for impact */
+    .facility-card-img-wide {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #2D4A6C, #3D7AAF);
+      overflow: hidden;
+    }
+    .facility-card-img-wide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .facility-card-body {
+      padding: 20px 24px 24px;
+    }
+    .facility-card-body h3 {
+      font-size: 1.1rem;
+      color: var(--deep-blue);
+      margin-bottom: 8px;
+    }
+    .facility-card-body p {
+      font-size: 0.87rem;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+    .facilities-note {
+      background: rgba(26,58,92,0.06);
+      border-left: 3px solid var(--deep-blue);
+      padding: 16px 20px;
+      margin: 0 auto 40px;
+      max-width: 1000px;
+      font-size: 0.88rem;
+      color: var(--stone);
+    }
+    .room-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto 60px;
+    }
+    .room-links a {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid var(--deep-blue);
+      color: var(--deep-blue);
+      font-size: 0.85rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .room-links a:hover {
+      background: var(--deep-blue);
+      color: var(--linen);
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
+  <ul class="nav-menu">
+    <li><a href="#">El Alojamiento <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="double-room.html">Habitación Doble</a></li><li><a href="twin-room-1.html">Habitación Doble/Twin 1</a></li><li><a href="twin-room-2.html">Habitación Doble/Twin 2</a></li><li><a href="pool-apartment.html">Apartamento Estudio</a></li><li><a href="shared-facilities.html">Baños y Cocina Compartidos</a></li></ul></li>
+    <li><a href="#">Qué Hacer <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/getting-to-the-beach.html">Cómo Llegar a la Playa</a></li><li><a href="../things-to-do/girona.html">Visitar Girona</a></li><li><a href="../things-to-do/cycling.html">Ciclismo</a></li><li><a href="../things-to-do/markets.html">Mercados Locales</a></li><li><a href="../things-to-do/walking.html">Senderismo</a></li><li><a href="../things-to-do/tourist-info.html">Información Turística</a></li><li><a href="../getting-here/julivia-bus.html">Bus Julivia</a></li><li><a href="../getting-here/begur-bus.html">Bus Playas de Begur</a></li><li><a href="../../things-to-do/local-beaches.html">Playas Locales</a></li><li><a href="../../things-to-do/tamariu-by-foot.html">Tamariu a Pie</a></li><li><a href="../things-to-do/restaurants.html">Restaurantes Locales</a></li><li><a href="../things-to-do/water-sports.html">Deportes Acuáticos</a></li></ul></li>
+    <li><a href="#">Sobre Catalunya <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../about-catalunya/cuisine.html">Cocina Catalana</a></li><li><a href="../about-catalunya/language.html">Idioma Catalán</a></li><li><a href="../about-catalunya/culture.html">Cultura Catalana</a></li><li><a href="../about-catalunya/history.html">Historia de Cataluña</a></li><li><a href="../about-catalunya/cities.html">Ciudades de Interés</a></li><li><a href="../about-catalunya/facts.html">Datos Curiosos</a></li></ul></li>
+    <li><a href="#">Cómo Llegar <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/index.html">Mapa y Direcciones</a></li></ul></li>
+    <li><a href="../contact/index.html">Contactar y Reservar</a></li>
+  </ul>
+  <div class="lang-switcher"><a href="../../accommodation/shared-facilities.html">EN</a><span class="lang-sep">|</span><a href="shared-facilities.html" class="lang-active">ES</a><span class="lang-sep">|</span><a href="../../ca/accommodation/shared-facilities.html">CA</a><span class="lang-sep">|</span><a href="../../fr/accommodation/shared-facilities.html">FR</a><span class="lang-sep">|</span><a href="../../nl/accommodation/shared-facilities.html">NL</a></div>
+  <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-content">
+    <p class="breadcrumb">Alojamiento → Instalaciones Compartidas</p>
+    <h1>Baños y Cocina Compartidos</h1>
+  </div>
+</div>
+
+<div class="content-page">
+
+  <p style="font-size:1.05rem;color:var(--stone);margin-bottom:24px;max-width:700px;">
+    Los huéspedes de la Habitación Doble, la Habitación Doble/Twin 1 y la Habitación Doble/Twin 2
+    comparten dos baños bien equipados y una cocina compartida totalmente instalada. Todas las
+    instalaciones se mantienen con un alto nivel de limpieza y tienen un tamaño holgado para el
+    número de habitaciones a las que dan servicio.
+  </p>
+
+  <div class="facilities-note">
+    Cada baño da servicio a un máximo de dos habitaciones. La cocina compartida está totalmente
+    equipada con todo lo necesario para cocinar — desde una placa completa hasta cafetera,
+    tostadora y toda la vajilla.
+  </div>
+
+  <h2 style="margin-bottom:24px;">Los Baños</h2>
+  <div class="facilities-grid">
+
+    <div class="facility-card">
+      <div class="facility-card-img">
+        <img src="../../images/facilities/bathroom-1.jpg" alt="Baño 1">
+      </div>
+      <div class="facility-card-body">
+        <h3>Baño 1</h3>
+        <p>Un baño limpio y bien equipado con ducha de obra, lavabo, inodoro y todos los accesorios necesarios. Toallas incluidas.</p>
+      </div>
+    </div>
+
+    <div class="facility-card">
+      <div class="facility-card-img">
+        <img src="../../images/facilities/bathroom-2.jpg" alt="Baño 2">
+      </div>
+      <div class="facility-card-body">
+        <h3>Baño 2</h3>
+        <p>Un segundo baño luminoso con ducha, lavabo e inodoro. Se prepara con ropa limpia y se repone para cada grupo de huéspedes.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 style="margin-bottom:24px;">La Cocina</h2>
+  <div class="facilities-grid-kitchen">
+
+    <div class="facility-card">
+      <div class="facility-card-img-wide">
+        <img src="../../images/facilities/kitchen-1.jpg" alt="Cocina compartida">
+      </div>
+      <div class="facility-card-body">
+        <h3>Cocina Compartida</h3>
+        <p>Totalmente equipada con placa, microondas, hervidor, tostadora, cafetera, vajilla y cubertería completas, vasos, ollas y sartenes. Todo lo necesario para una estancia cómoda cocinando por su cuenta.</p>
+      </div>
+    </div>
+
+    <div class="facility-card">
+      <div class="facility-card-img-wide">
+        <img src="../../images/facilities/kitchen-2.jpg" alt="Cocina compartida — segunda vista">
+      </div>
+      <div class="facility-card-body">
+        <h3>Cocina Compartida</h3>
+        <p>Otra vista de la cocina compartida, donde se aprecia toda la encimera, el almacenaje y los electrodomésticos disponibles para todos los huéspedes de las habitaciones de la casa principal.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 style="margin-bottom:16px;">Habitaciones que Usan estas Instalaciones</h2>
+  <p style="color:var(--stone);font-size:0.9rem;margin-bottom:20px;">Las siguientes habitaciones comparten los baños y la cocina que se muestran arriba:</p>
+  <div class="room-links">
+    <a href="double-room.html">← Habitación Doble</a>
+    <a href="twin-room-1.html">← Habitación Doble/Twin 1</a>
+    <a href="twin-room-2.html">← Habitación Doble/Twin 2</a>
+  </div>
+
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Alojamiento tranquilo en el pueblo costero de Tamariu, Costa Brava, Catalunya.</p></div>
+    <div class="footer-col"><h4>Las Habitaciones</h4><ul><li><a href="double-room.html">Habitación Doble</a></li><li><a href="twin-room-1.html">Habitación Doble/Twin 1</a></li><li><a href="twin-room-2.html">Habitación Doble/Twin 2</a></li><li><a href="pool-apartment.html">Apartamento Estudio</a></li></ul></div>
+    <div class="footer-col"><h4>Explorar</h4><ul><li><a href="../things-to-do/girona.html">Visitar Girona</a></li><li><a href="../things-to-do/cycling.html">Ciclismo</a></li><li><a href="../things-to-do/water-sports.html">Deportes Acuáticos</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><ul><li><a href="../contact/index.html">Reservar Ahora</a></li><li><a href="../getting-here/index.html">Cómo Llegar</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet</p><p>Tamariu, Costa Brava, Catalunya</p></div>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

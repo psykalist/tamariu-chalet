@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rutas a pie cerca de Tamariu, Costa Brava — el camino de ronda GR-92 y paseos por el interior desde Tamariu Chalet.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/es/things-to-do/walking.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/things-to-do/walking.html">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/things-to-do/walking.html">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/things-to-do/walking.html">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/things-to-do/walking.html">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/things-to-do/walking.html">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/things-to-do/walking.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/es/things-to-do/walking.html">
+  <meta property="og:title" content="Senderismo — Tamariu Chalet">
+  <meta property="og:description" content="Rutas a pie cerca de Tamariu, Costa Brava — el camino de ronda GR-92 y paseos por el interior desde Tamariu Chalet.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <meta property="og:locale" content="es_ES">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Senderismo — Tamariu Chalet">
+  <meta name="twitter:description" content="Rutas a pie cerca de Tamariu, Costa Brava — el camino de ronda GR-92 y paseos por el interior desde Tamariu Chalet.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <title>Senderismo — Tamariu Chalet</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1A3A5C">
+
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    #beach-walk { margin: 4px 0 30px; }
+    #beach-walk .bw-title { font-size: 1.15rem; color: var(--charcoal, #2a2118); margin: 0 0 6px; }
+    #beach-walk .bw-sub { color: var(--stone); font-size: 0.92rem; line-height: 1.6; margin: 0 0 16px; max-width: 700px; }
+    #beach-walk .map-container { border-radius: 6px; overflow: hidden; border: 1px solid #ddd5c8; position: relative; }
+    #beach-walk #map { height: 420px; width: 100%; }
+    #beach-walk .map-controls { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #2a2118; flex-wrap: wrap; }
+    #beach-walk .btn { font-family: inherit; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.25); background: transparent; color: #f5f0eb; padding: 7px 16px; cursor: pointer; border-radius: 3px; transition: all 0.2s; }
+    #beach-walk .btn:hover:not(:disabled) { background: rgba(255,255,255,0.12); }
+    #beach-walk .btn:disabled { opacity: 0.4; cursor: default; }
+    #beach-walk .btn.primary { background: #c4773b; border-color: #c4773b; color: #fff; }
+    #beach-walk .btn.primary:hover:not(:disabled) { background: #b06830; }
+    #beach-walk .speed-label { font-size: 11px; color: rgba(255,255,255,0.45); margin-left: 6px; }
+    #beach-walk select.speed-select { font-family: inherit; font-size: 11px; background: #3a3128; color: #f5f0eb; border: 1px solid rgba(255,255,255,0.2); padding: 5px 8px; border-radius: 3px; }
+    #beach-walk .progress-wrap { flex: 1; min-width: 80px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; overflow: hidden; }
+    #beach-walk .progress-fill { height: 100%; background: #c4773b; width: 0%; transition: width 0.2s; border-radius: 2px; }
+    .leaflet-popup-content-wrapper { background: #2a2118 !important; color: #f5f0eb !important; border-radius: 4px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; }
+    .leaflet-popup-tip { background: #2a2118 !important; }
+    .leaflet-popup-content { font-family: inherit; font-size: 12px; margin: 10px 14px !important; color: #f5f0eb; min-width: 140px; }
+    .leaflet-popup-content strong { color: #f0c070; display: block; margin-bottom: 4px; font-size: 12px; }
+    .leaflet-popup-content span { font-size: 11px; opacity: 0.75; line-height: 1.5; }
+    @media (max-width: 600px) { #beach-walk #map { height: 300px; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
+  <ul class="nav-menu">
+    <li><a href="#">El Alojamiento <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../accommodation/double-room.html">Habitación Doble</a></li><li><a href="../accommodation/twin-room-1.html">Habitación Doble/Twin 1</a></li><li><a href="../accommodation/twin-room-2.html">Habitación Doble/Twin 2</a></li><li><a href="../accommodation/pool-apartment.html">Apartamento Estudio</a></li><li><a href="../accommodation/shared-facilities.html">Baños y Cocina Compartidos</a></li></ul></li>
+    <li><a href="#">Qué Hacer <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/getting-to-the-beach.html">Cómo Llegar a la Playa</a></li><li><a href="girona.html">Visitar Girona</a></li><li><a href="cycling.html">Ciclismo</a></li><li><a href="markets.html">Mercados Locales</a></li><li><a href="walking.html">Senderismo</a></li><li><a href="tourist-info.html">Información Turística</a></li><li><a href="../getting-here/julivia-bus.html">Bus Julivia</a></li><li><a href="../getting-here/begur-bus.html">Bus Playas de Begur</a></li><li><a href="../../things-to-do/local-beaches.html">Playas Locales</a></li><li><a href="../../things-to-do/tamariu-by-foot.html">Tamariu a Pie</a></li><li><a href="restaurants.html">Restaurantes Locales</a></li><li><a href="water-sports.html">Deportes Acuáticos</a></li></ul></li>
+    <li><a href="#">Sobre Catalunya <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../about-catalunya/cuisine.html">Cocina Catalana</a></li><li><a href="../about-catalunya/language.html">Idioma Catalán</a></li><li><a href="../about-catalunya/culture.html">Cultura Catalana</a></li><li><a href="../about-catalunya/history.html">Historia de Cataluña</a></li><li><a href="../about-catalunya/cities.html">Ciudades de Interés</a></li><li><a href="../about-catalunya/facts.html">Datos Curiosos</a></li></ul></li>
+    <li><a href="#">Cómo Llegar <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/index.html">Mapa y Direcciones</a></li></ul></li>
+    <li><a href="../contact/index.html">Contactar y Reservar</a></li>
+  </ul>
+  <div class="lang-switcher"><a href="../../things-to-do/walking.html">EN</a><span class="lang-sep">|</span><a href="walking.html" class="lang-active">ES</a><span class="lang-sep">|</span><a href="../../ca/things-to-do/walking.html">CA</a><span class="lang-sep">|</span><a href="../../fr/things-to-do/walking.html">FR</a><span class="lang-sep">|</span><a href="../../nl/things-to-do/walking.html">NL</a></div>
+  <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-content">
+    <p class="breadcrumb">Qué Hacer → Senderismo</p>
+    <h1>Senderismo en la Zona</h1>
+  </div>
+</div>
+
+<div class="content-page">
+
+  <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">
+    La costa y el interior alrededor de Tamariu ofrecen un senderismo magnífico para todos los niveles — desde paseos suaves entre calas hasta caminatas más largas por los alcornocales de les Gavarres. El famoso camino de ronda GR-92 pasa por el mismo pueblo.
+  </p>
+
+  <h2>Rutas Destacadas</h2>
+
+  <!-- Getting to the Beach — animated walk (first featured walk) -->
+  <div id="beach-walk">
+    <h4 class="bw-title">Paseo a la Playa — Circular de 3 km desde Tamariu Chalet</h4>
+    <p class="bw-sub">Un circuito suave de 3 km desde la casa hasta la playa de Aigua Xelida y vuelta — unos 90 minutos ida y vuelta.</p>
+    <div class="map-container">
+      <div id="map"></div>
+      <div class="map-controls">
+        <button class="btn primary" id="btnPlay">▶ Animar ruta</button>
+        <button class="btn" id="btnReset">↺ Reiniciar</button>
+        <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="speed-label">Velocidad</span>
+        <select class="speed-select" id="speedSelect">
+          <option value="1">1×</option>
+          <option value="2" selected>2×</option>
+          <option value="4">4×</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Walk 1 — placeholder -->
+  <a href="https://ridewithgps.com/routes/42704391" target="_blank" rel="noopener" class="external-link-card">
+    <div>
+      <h4>Ruta 1 — Circuito costero de Tamariu Chalet a Aigua Xelida </h4>
+      <p>Un clásico paseo costero por el camino de ronda. Aproximadamente 3,2 km solo ida. Fácil–moderado.</p>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+  
+ <!-- Walk 2 -->
+  <a href="https://www.wikiloc.com/hiking-trails/tamariu-ses-falugues-tamariu-96290559" target="_blank" rel="noopener" class="external-link-card">
+    <div>
+      <h4>Ruta 2 — De Tamariu a Ses Falugues</h4>
+      <p>Una subida circular hasta la cima de Ses Falugues, con un mirador excepcional, con parada en el mirador de Aigua Xelida antes de bajar pasando por Sa Roncadora y sus pequeñas calas — un tramo final con bastantes escaleras. 8 km, circular. Moderada.</p>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+  <!-- Walk 3 — placeholder -->
+  <a href="https://www.wikiloc.com/hiking-trails/tamariu-begur-sa-riera-51800402" target="_blank" rel="noopener" class="external-link-card">
+    <div>
+      <h4>Ruta 3 — De Tamariu a Aiguafreda y Sa Riera</h4>
+      <p>Siga la costa hacia el norte desde Tamariu en dirección a las calas vírgenes de Aiguafreda y Sa Riera. Unos km. Moderada.</p>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <!-- Walk 4 -->
+  <a href="https://www.wikiloc.com/mountain-biking-trails/circular-palafrugell-palafrugell-tamariu-far-sant-sebastia-llafranc-calella-palafrugell-74840615" target="_blank" rel="noopener" class="external-link-card">
+    <div>
+      <h4>Ruta 4 — Circular de Palafrugell: Tamariu, Far de Sant Sebastià, Llafranc y Calella</h4>
+      <p>Un circuito panorámico desde Palafrugell bajando a Tamariu, siguiendo la costa hasta el faro de Sant Sebastià y continuando por Llafranc y Calella antes de volver tierra adentro a Palafrugell. 21,5 km, circular. Difícil.</p>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <!-- Walk 5 -->
+  <a href="https://www.wikiloc.com/hiking-trails/tamariu-el-far-de-sant-sebastia-112747932" target="_blank" rel="noopener" class="external-link-card">
+    <div>
+      <h4>Ruta 5 — De Tamariu al Far de Sant Sebastià</h4>
+      <p>Un circuito hasta el faro de Sant Sebastià por senderos del interior, con vuelta a Tamariu por el precioso camí de ronda. 9 km, circular. Fácil.</p>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <h2 style="margin-top:40px;">Consejos para Caminar</h2>
+  <ul>
+    <li>El camino de ronda puede ser pedregoso e irregular — se recomienda calzado de montaña</li>
+    <li>Lleve agua — hay pocas fuentes en el camino de ronda</li>
+    <li>En verano salga temprano para evitar el calor — los senderos de les Gavarres tienen sombra, pero la costa está totalmente expuesta</li>
+    <li>El GR-92 está señalizado con marcas de pintura roja y blanca en rocas y árboles</li>
+    <li>En varias calas del recorrido se puede nadar — lleve toalla y gafas de bucear</li>
+  </ul>
+
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Alojamiento tranquilo en el pueblo costero de Tamariu, Costa Brava, Catalunya.</p></div>
+    <div class="footer-col"><h4>Las Habitaciones</h4><ul><li><a href="../accommodation/double-room.html">Habitación Doble</a></li><li><a href="../accommodation/pool-apartment.html">Apartamento Estudio</a></li></ul></div>
+    <div class="footer-col"><h4>Qué Hacer</h4><ul><li><a href="girona.html">Visitar Girona</a></li><li><a href="cycling.html">Ciclismo</a></li><li><a href="water-sports.html">Deportes Acuáticos</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><ul><li><a href="../contact/index.html">Reservar Ahora</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet</p><p>Tamariu, Costa Brava, Catalunya</p></div>
+</footer>
+<script src="../../js/main.js"></script>
+<script>
+// ── STATE ──────────────────────────────────────────────────────────────────
+var animating = false;
+var animFrame = null;
+var activePopup = null;
+var drawnPolyline = null;
+
+// ── GPX ROUTE (from 3Km_Tamariu_Walking_Loop.gpx) ─────────────────────────
+var routeCoords = [
+          [41.923, 3.20789],
+          [41.92315, 3.20783],
+          [41.92327, 3.20777],
+          [41.92338, 3.20772],
+          [41.92353, 3.20765],
+          [41.92366, 3.20759],
+          [41.92369, 3.20758],
+          [41.92373, 3.20777],
+          [41.92374, 3.20786],
+          [41.92373, 3.2081],
+          [41.92373, 3.208209],
+          [41.923699, 3.20853],
+          [41.92366, 3.20878],
+          [41.92353, 3.20918],
+          [41.92343, 3.209499],
+          [41.92342, 3.20956],
+          [41.923409, 3.20961],
+          [41.92331, 3.20956],
+          [41.92322, 3.20953],
+          [41.922849, 3.20959],
+          [41.922759, 3.2096],
+          [41.92265, 3.20963],
+          [41.922469, 3.20968],
+          [41.92234, 3.20974],
+          [41.92228, 3.2098],
+          [41.92225, 3.20983],
+          [41.92219, 3.20985],
+          [41.92214, 3.20985],
+          [41.92183, 3.20978],
+          [41.9217, 3.20975],
+          [41.92165, 3.20975],
+          [41.92162, 3.20975],
+          [41.92152, 3.20981],
+          [41.92142, 3.20991],
+          [41.921349, 3.20999],
+          [41.9213, 3.21],
+          [41.92122, 3.21],
+          [41.92118, 3.20997],
+          [41.92109, 3.20988],
+          [41.92098, 3.20976],
+          [41.92092, 3.20967],
+          [41.92089, 3.20965],
+          [41.92084, 3.20963],
+          [41.92078, 3.20962],
+          [41.92073, 3.20962],
+          [41.920699, 3.20965],
+          [41.92044, 3.20993],
+          [41.92024, 3.21026],
+          [41.91945, 3.21117],
+          [41.918909, 3.21107],
+          [41.91875, 3.21125],
+          [41.91879, 3.21169],
+          [41.918999, 3.21206],
+          [41.91871, 3.2124],
+          [41.91849, 3.2127],
+          [41.91827, 3.21264],
+          [41.91783, 3.21284],
+          [41.91795, 3.21307],
+          [41.91805, 3.21317],
+          [41.918059, 3.21358],
+          [41.91818, 3.21394],
+          [41.91824, 3.21423],
+          [41.91811, 3.21447],
+          [41.91824, 3.21462],
+          [41.91847, 3.214989],
+          [41.91859, 3.21532],
+          [41.91856, 3.21577],
+          [41.91852, 3.21604],
+          [41.91861, 3.21637],
+          [41.91888, 3.21643],
+          [41.91903, 3.21605],
+          [41.91915, 3.216009],
+          [41.919289, 3.2161],
+          [41.91945, 3.21623],
+          [41.91949, 3.2161],
+          [41.9196, 3.2159],
+          [41.91973, 3.21595],
+          [41.91991, 3.21593],
+          [41.92005, 3.21589],
+          [41.92028, 3.21566],
+          [41.9203, 3.21562],
+          [41.920409, 3.21559],
+          [41.92063, 3.21581],
+          [41.92073, 3.21563],
+          [41.92076, 3.21552],
+          [41.92085, 3.21549],
+          [41.92098, 3.21563],
+          [41.92118, 3.21544],
+          [41.9213, 3.21508],
+          [41.92145, 3.21503],
+          [41.92156, 3.21511],
+          [41.92161, 3.21538],
+          [41.92184, 3.215869],
+          [41.921819, 3.215599],
+          [41.92193, 3.21519],
+          [41.92202, 3.21478],
+          [41.92211, 3.214649],
+          [41.92217, 3.21466],
+          [41.92226, 3.21457],
+          [41.92228, 3.214379],
+          [41.92235, 3.21414],
+          [41.92277, 3.21354],
+          [41.92296, 3.21293],
+          [41.92315, 3.21258],
+          [41.92352, 3.21242],
+          [41.92462, 3.212],
+          [41.92468, 3.21185],
+          [41.92463, 3.211669],
+          [41.92414, 3.21158],
+          [41.92403, 3.21151],
+          [41.92401, 3.21105],
+          [41.92409, 3.21061],
+          [41.92406, 3.21043],
+          [41.92395, 3.21029],
+          [41.92359, 3.21012],
+          [41.92345, 3.20985],
+          [41.92375, 3.208819],
+          [41.92382, 3.20838],
+          [41.92375, 3.20818],
+          [41.92373, 3.208209],
+          [41.923699, 3.20853],
+          [41.92366, 3.20878],
+          [41.92353, 3.20918],
+          [41.92343, 3.209499],
+          [41.92342, 3.20956],
+          [41.923409, 3.20961],
+          [41.92331, 3.20956],
+          [41.92322, 3.20953],
+          [41.92308, 3.20955],
+          [41.92328, 3.20955],
+          [41.92335, 3.209569],
+          [41.923409, 3.20961],
+          [41.92343, 3.20952],
+          [41.92346, 3.2094],
+          [41.92364, 3.20883],
+          [41.92369, 3.20866],
+          [41.92372, 3.2084]
+];
+
+// ── KEY WAYPOINTS (shown as markers) ──────────────────────────────────────
+var waypoints = [
+  { coords: [41.923, 3.20789],    label: "Inicio",         desc: "Tamariu Chalet — baje hacia el pueblo" },
+  { coords: [41.92073, 3.20962],  label: "Calles del pueblo", desc: "Calles tranquilas y sombreadas bajan serpenteando por el pueblo" },
+  { coords: [41.91783, 3.21284],  label: "Mirador",     desc: "Una parada aquí regala unas vistas preciosas de la bahía" },
+  { coords: [41.91888, 3.21643],  label: "Playa",         desc: "Playa de Tamariu — ¡hora de un baño o de comer!" },
+  { coords: [41.92468, 3.21185],  label: "Camino alto",     desc: "La vuelta sube suavemente por encima de la bahía" },
+  { coords: [41.92372, 3.2084],   label: "Final",        desc: "De vuelta a Tamariu Chalet" }
+];
+
+// ── MAP ────────────────────────────────────────────────────────────────────
+var bounds = L.latLngBounds(routeCoords);
+var center = bounds.getCenter();
+
+var map = L.map('map').fitBounds(bounds, { padding: [30, 30] });
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 19
+}).addTo(map);
+
+// Ghost route
+L.polyline(routeCoords, {
+  color: '#c4773b', weight: 2, opacity: 0.2, dashArray: '6, 8'
+}).addTo(map);
+
+// Animated drawn route
+drawnPolyline = L.polyline([], {
+  color: '#c4773b', weight: 4, opacity: 0.9, lineJoin: 'round', lineCap: 'round'
+}).addTo(map);
+
+// ── WAYPOINT MARKERS ───────────────────────────────────────────────────────
+var isStart = true;
+waypoints.forEach(function(wp) {
+  var isEnd = wp.label === 'Final';
+  var color = isStart || isEnd ? '#c4773b' : '#2a2118';
+  var textColor = isStart || isEnd ? '#fff' : '#f0c070';
+  var letter = isStart ? 'S' : (isEnd ? 'F' : '●');
+  isStart = false;
+
+  var icon = L.divIcon({
+    html: '<div style="width:26px;height:26px;border-radius:50%;background:' + color +
+          ';border:2.5px solid #c4773b;color:' + textColor +
+          ';font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;' +
+          'display:flex;align-items:center;justify-content:center;' +
+          'box-shadow:0 2px 8px rgba(0,0,0,0.3);cursor:pointer;">' + letter + '</div>',
+    className: '',
+    iconSize: [26, 26],
+    iconAnchor: [13, 13],
+    popupAnchor: [0, -16]
+  });
+
+  L.marker(wp.coords, { icon: icon }).addTo(map)
+    .on('click', function() {
+      if (activePopup) { map.closePopup(activePopup); activePopup = null; }
+      activePopup = L.popup({ closeButton: false, offset: [0, -10] })
+        .setLatLng(wp.coords)
+        .setContent('<strong>' + wp.label + '</strong><span>' + wp.desc + '</span>')
+        .openOn(map);
+    });
+});
+
+// ── ANIMATION ──────────────────────────────────────────────────────────────
+function startTour() {
+  if (animating) return;
+  resetTour();
+  animating = true;
+  document.getElementById('btnPlay').textContent = '⏸ Animating…';
+  document.getElementById('btnPlay').disabled = true;
+
+  var speed = parseInt(document.getElementById('speedSelect').value);
+  var total = routeCoords.length;
+  var msPerPoint = 400 / speed;
+  var current = 1;
+
+  map.fitBounds(bounds, { padding: [30, 30], animate: true, duration: 1.2 });
+
+  function drawNext() {
+    if (!animating || current > total) {
+      animating = false;
+      document.getElementById('btnPlay').textContent = '✓ Done';
+      document.getElementById('progressFill').style.width = '100%';
+      return;
+    }
+    drawnPolyline.setLatLngs(routeCoords.slice(0, current));
+    document.getElementById('progressFill').style.width =
+      Math.round((current / total) * 100) + '%';
+    current++;
+    animFrame = setTimeout(drawNext, msPerPoint);
+  }
+
+  setTimeout(drawNext, 1400);
+}
+
+function resetTour() {
+  animating = false;
+  clearTimeout(animFrame);
+  drawnPolyline.setLatLngs([]);
+  if (activePopup) { map.closePopup(activePopup); activePopup = null; }
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('btnPlay').textContent = '▶ Animar ruta';
+  document.getElementById('btnPlay').disabled = false;
+  map.fitBounds(bounds, { padding: [30, 30], animate: true, duration: 1 });
+}
+
+document.getElementById('btnPlay').addEventListener('click', startTour);
+document.getElementById('btnReset').addEventListener('click', resetTour);
+</script>
+</body>
+</html>

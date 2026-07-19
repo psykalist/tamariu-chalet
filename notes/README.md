@@ -32,3 +32,24 @@ These look like clutter but are load-bearing — do not move them:
 - `.cpanel.yml` — cPanel deployment configuration.
 - `*.gpx` at root — linked from `things-to-do/walking.html`, so these are live
   site content.
+
+## Authoring scripts (`notes/scripts/`)
+
+The site remains plain static HTML with no serve-time build step. These scripts
+generate HTML that is then committed like any other page, and are safe to re-run.
+
+    python3 notes/scripts/build_translations.py --apply   # translated pages
+    python3 notes/scripts/fix_hreflang.py --apply         # canonical + hreflang
+    python3 notes/scripts/build_sitemap.py --apply        # sitemap.xml from disk
+    python3 notes/scripts/check_site.py                   # verification gate
+
+Run the first three after any page change, then `check_site.py` — it should
+report 0 errors. It checks broken internal links, hreflang reciprocity,
+canonical agreement and sitemap coverage.
+
+Translated prose lives in `content_*.py`; shared nav/footer wording is in
+`i18n_shell.py`. Nav links fall back to English where a translation does not
+exist yet, so re-running upgrades them automatically as pages are added.
+
+Note: `availability/index.html` self-translates via a `?lang=` query parameter
+and is deliberately a single URL — do not create language-folder copies of it.

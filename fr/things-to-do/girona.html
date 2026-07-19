@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guide d'excursion à Gérone depuis le Tamariu Chalet — la vieille ville médiévale, la cathédrale et le quartier juif de la capitale culturelle de la Costa Brava.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/fr/things-to-do/girona.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/things-to-do/girona.html">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/things-to-do/girona.html">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/things-to-do/girona.html">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/things-to-do/girona.html">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/things-to-do/girona.html">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/things-to-do/girona.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/fr/things-to-do/girona.html">
+  <meta property="og:title" content="Visiter Gérone — Tamariu Chalet">
+  <meta property="og:description" content="Guide d'excursion à Gérone depuis le Tamariu Chalet — la vieille ville médiévale, la cathédrale et le quartier juif de la capitale culturelle de la Costa Brava.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <meta property="og:locale" content="fr_FR">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Visiter Gérone — Tamariu Chalet">
+  <meta name="twitter:description" content="Guide d'excursion à Gérone depuis le Tamariu Chalet — la vieille ville médiévale, la cathédrale et le quartier juif de la capitale culturelle de la Costa Brava.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <title>Visiter Gérone — Tamariu Chalet</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1A3A5C">
+
+  <link rel="stylesheet" href="../../css/style.css">
+<style>
+/* ── Girona Photo Carousel ── */
+.girona-carousel-section {
+  background: var(--deep-blue);
+  padding: 50px 0 40px;
+  margin: 40px 0;
+}
+.girona-carousel-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 0 20px;
+}
+.girona-carousel-header h2 {
+  color: var(--warm-white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+.girona-carousel-header p {
+  color: rgba(245,239,230,0.6);
+  font-size: 0.85rem;
+  font-family: Verdana, Arial, sans-serif;
+}
+.girona-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+.girona-track {
+  display: flex;
+  gap: 12px;
+  padding: 0 20px;
+  transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change: transform;
+}
+.girona-slide {
+  flex: 0 0 360px;
+  cursor: pointer;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.girona-slide img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.girona-slide:hover img { transform: scale(1.04); }
+.girona-slide-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(26,58,92,0.85));
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 20px 10px 8px;
+  font-family: Verdana, Arial, sans-serif;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.girona-slide:hover .girona-slide-label { opacity: 1; }
+.girona-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.girona-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.girona-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--deep-blue); }
+.girona-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.girona-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.girona-dot.active { background: var(--gold); }
+
+/* ── Lightbox ── */
+.g-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  background: rgba(0,0,0,0.94);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.g-lightbox.open { display: flex; }
+.g-lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.5);
+  border-radius: 2px;
+}
+.g-lightbox-caption {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-top: 14px;
+  font-family: Verdana, Arial, sans-serif;
+  text-align: center;
+}
+.g-lightbox-close {
+  position: fixed;
+  top: 18px; right: 24px;
+  background: none; border: none;
+  color: #fff; font-size: 2rem;
+  cursor: pointer; line-height: 1;
+}
+.g-lightbox-prev, .g-lightbox-next {
+  position: fixed;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: none; color: #fff;
+  font-size: 1.6rem;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 2px;
+}
+.g-lightbox-prev { left: 12px; }
+.g-lightbox-next { right: 12px; }
+.g-lightbox-prev:hover, .g-lightbox-next:hover { background: rgba(255,255,255,0.25); }
+@media (max-width: 600px) {
+  .girona-slide { flex: 0 0 290px; }
+  .girona-slide img { height: 200px; }
+  .g-lightbox-prev { left: 4px; padding: 10px 12px; }
+  .g-lightbox-next { right: 4px; padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
+  <ul class="nav-menu">
+    <li><a href="#">L'Hébergement <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../accommodation/double-room.html">Chambre Double</a></li><li><a href="../accommodation/twin-room-1.html">Chambre Double/Lits Jumeaux 1</a></li><li><a href="../accommodation/twin-room-2.html">Chambre Double/Lits Jumeaux 2</a></li><li><a href="../accommodation/pool-apartment.html">Appartement Studio</a></li><li><a href="../accommodation/shared-facilities.html">Salles de Bain &amp; Cuisine Partagées</a></li></ul></li>
+    <li><a href="#">À Faire <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/getting-to-the-beach.html">Aller à la Plage</a></li><li><a href="girona.html">Visiter Gérone</a></li><li><a href="cycling.html">Cyclisme</a></li><li><a href="markets.html">Marchés Locaux</a></li><li><a href="walking.html">Randonnée</a></li><li><a href="tourist-info.html">Office de Tourisme</a></li><li><a href="../getting-here/julivia-bus.html">Bus Julivia</a></li><li><a href="../getting-here/begur-bus.html">Bus des Plages de Begur</a></li><li><a href="../../things-to-do/local-beaches.html">Plages Locales</a></li><li><a href="../../things-to-do/tamariu-by-foot.html">Tamariu à Pied</a></li><li><a href="restaurants.html">Restaurants Locaux</a></li><li><a href="water-sports.html">Sports Nautiques</a></li></ul></li>
+    <li><a href="#">À Propos de la Catalogne <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../about-catalunya/cuisine.html">Cuisine Catalane</a></li><li><a href="../about-catalunya/language.html">Langue Catalane</a></li><li><a href="../about-catalunya/culture.html">Culture Catalane</a></li><li><a href="../about-catalunya/history.html">Histoire de la Catalogne</a></li><li><a href="../about-catalunya/cities.html">Villes d'Intérêt</a></li><li><a href="../about-catalunya/facts.html">Faits sur la Catalogne</a></li></ul></li>
+    <li><a href="#">Comment Venir <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/index.html">Carte &amp; Itinéraire</a></li></ul></li>
+    <li><a href="../contact/index.html">Contact &amp; Réservation</a></li>
+  </ul>
+  <div class="lang-switcher"><a href="../../things-to-do/girona.html">EN</a><span class="lang-sep">|</span><a href="../../es/things-to-do/girona.html">ES</a><span class="lang-sep">|</span><a href="../../ca/things-to-do/girona.html">CA</a><span class="lang-sep">|</span><a href="girona.html" class="lang-active">FR</a><span class="lang-sep">|</span><a href="../../nl/things-to-do/girona.html">NL</a></div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-content">
+    <p class="breadcrumb">À Faire → Visiter Gérone</p>
+    <h1>Une Journée à Gérone</h1>
+  </div>
+</div>
+
+<div class="content-page">
+
+  <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">
+    Gérone est l'une des villes les plus captivantes de Catalogne — un lieu où d'anciennes murailles romaines, un quartier juif médiéval et une magnifique cathédrale gothique côtoient une scène gastronomique contemporaine florissante. Depuis Tamariu, elle n'est qu'à 40 minutes en voiture.
+  </p>
+
+  <div style="background:var(--linen);padding:20px 24px;border-left:3px solid var(--gold);margin-bottom:36px;display:inline-flex;gap:40px;flex-wrap:wrap;">
+    <div><p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--stone);margin-bottom:4px;">Distance depuis Tamariu</p><strong style="color:var(--deep-blue);">~38 km</strong></div>
+    <div><p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--stone);margin-bottom:4px;">Temps de trajet</p><strong style="color:var(--deep-blue);">~40 minutes</strong></div>
+    <div><p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--stone);margin-bottom:4px;">En train depuis Flaçà</p><strong style="color:var(--deep-blue);">~20 minutes</strong></div>
+  </div>
+
+  <h2>À Ne Pas Manquer</h2>
+
+  <h3>🏛 La Cathédrale &amp; la Vieille Ville</h3>
+  <p>La cathédrale de Gérone est un chef-d'œuvre du gothique catalan — sa nef unique est la plus large voûte gothique du monde. Gravissez les célèbres 86 marches pour admirer les toits de terre cuite de la ville. Le Barri Vell alentour est un dédale de ruelles étroites, d'arcs de pierre et de places cachées.</p>
+
+  <h3>🕍 Le Quartier Juif (El Call)</h3>
+  <p>L'un des quartiers juifs médiévaux les mieux conservés d'Europe, El Call remonte au IXe siècle. Le Musée d'histoire des Juifs (Museu d'Història dels Jueus) retrace l'histoire de la communauté juive de Gérone, expulsée en 1492. Les ruelles sont d'une beauté saisissante et quasiment inchangées depuis le Moyen Âge.</p>
+
+  <h3>🌉 Les Maisons Colorées (Bords de l'Onyar)</h3>
+  <p>L'image de carte postale de Gérone — une rangée de maisons aux couleurs vives se reflétant dans l'Onyar. Traversez les passerelles métalliques (conçues par Gustave Eiffel) pour la vue classique, puis explorez les boutiques et cafés qui bordent les deux rives.</p>
+
+  <h3>🏰 Les Bains Arabes (Banys Àrabs)</h3>
+  <p>Des bains du XIIe siècle remarquablement conservés, bâtis dans le style roman et inspirés des traditions thermales mauresques et romaines antérieures. La salle centrale du bassin, éclairée par un lanterneau, est particulièrement belle.</p>
+
+  <h3>🌿 Les Remparts</h3>
+  <p>Parcourez une portion des anciennes murailles romaines de Gérone pour de vastes vues sur la ville et la plaine alentour. La promenade est gratuite et, par temps clair, le panorama s'étend jusqu'aux Pyrénées.</p>
+
+
+</div><!-- close content-page -->
+
+<!-- ── GIRONA PHOTO CAROUSEL ── -->
+<section class="girona-carousel-section">
+  <div class="girona-carousel-header">
+    <h2>Gérone en Images</h2>
+    <p>Cliquez sur une image pour l'afficher en grand &mdash; utilisez les flèches pour naviguer</p>
+  </div>
+  <div class="girona-track-wrapper">
+    <div class="girona-track" id="gironaTrack">
+      <div class="girona-slide" onclick="gLightbox(0)">
+        <img src="../../images/girona/girona-catedral.jpg" alt="Cathédrale de Gérone">
+        <div class="girona-slide-label">La Cathédrale</div>
+      </div>
+      <div class="girona-slide" onclick="gLightbox(1)">
+        <img src="../../images/girona/jewish-quarter.jpg" alt="Le quartier juif, Gérone">
+        <div class="girona-slide-label">Le Quartier Juif (El Call)</div>
+      </div>
+      <div class="girona-slide" onclick="gLightbox(2)">
+        <img src="../../images/girona/onyar-view.jpg" alt="Maisons colorées sur l'Onyar, Gérone">
+        <div class="girona-slide-label">L'Onyar &mdash; Maisons Colorées</div>
+      </div>
+      <div class="girona-slide" onclick="gLightbox(3)">
+        <img src="../../images/girona/pujada-sant-marti.jpg" alt="Pujada de Sant Martí, Gérone">
+        <div class="girona-slide-label">Pujada de Sant Mart&iacute;</div>
+      </div>
+      <div class="girona-slide" onclick="gLightbox(4)">
+        <img src="../../images/girona/arab-baths.jpg" alt="Les bains arabes, Gérone">
+        <div class="girona-slide-label">Les Bains Arabes (Banys &Agrave;rabs)</div>
+      </div>
+      <div class="girona-slide" onclick="gLightbox(5)">
+        <img src="../../images/girona/walls.jpg" alt="Les remparts, Gérone">
+        <div class="girona-slide-label">Les Remparts</div>
+      </div>
+      <div class="girona-slide" onclick="gLightbox(6)">
+        <img src="../../images/girona/map-girona.jpg" alt="Plan de la vieille ville de Gérone">
+        <div class="girona-slide-label">Plan de la Vieille Ville de Gérone</div>
+      </div>
+    </div>
+  </div>
+  <div class="girona-controls">
+    <button class="girona-btn" id="gironaPrev" aria-label="Précédent">&#8592;</button>
+    <button class="girona-btn" id="gironaNext" aria-label="Suivant">&#8594;</button>
+  </div>
+  <div class="girona-dots" id="gironaDots"></div>
+</section>
+
+<!-- ── GIRONA LIGHTBOX ── -->
+<div class="g-lightbox" id="gLightboxEl" role="dialog" aria-modal="true">
+  <button class="g-lightbox-close" onclick="gCloseLightbox()" aria-label="Fermer">&times;</button>
+  <button class="g-lightbox-prev" onclick="gLightboxNav(-1)" aria-label="Précédent">&#8592;</button>
+  <img id="gLightboxImg" src="" alt="">
+  <p class="g-lightbox-caption" id="gLightboxCaption"></p>
+  <button class="g-lightbox-next" onclick="gLightboxNav(1)" aria-label="Suivant">&#8594;</button>
+</div>
+
+<div class="content-page" style="padding-top:0;">
+
+  <h2>Restaurants Recommandés à Gérone</h2>
+
+  <h3>El Celler de Can Roca ⭐⭐⭐</h3>
+  <p>L'un des plus grands restaurants du monde, tenu par les trois frères Roca. La réservation est indispensable — souvent des mois à l'avance. Une expérience gastronomique unique, alliant virtuosité technique et profondes racines catalanes.</p>
+
+  <h3>Divinum</h3>
+  <p>Un excellent bar à vins et restaurant de la vieille ville, avec une sélection remarquable de vins catalans et espagnols accompagnés de tapas créatives et de petites assiettes. Ambiance détendue, excellent rapport qualité-prix.</p>
+
+  <h3>Nu</h3>
+  <p>Cuisine catalane moderne dans un cadre élégant près de la cathédrale. Le menu dégustation met en valeur les meilleurs produits locaux — parfait pour un dîner d'exception avant de rentrer à Tamariu.</p>
+
+  <h3>Café Le Bistrot</h3>
+  <p>Un bistrot charmant et informel dans le quartier juif — idéal pour un long déjeuner de salades, tartines et plats catalans simples. Très prisé des habitants le midi.</p>
+
+  <h3>La Pepita</h3>
+  <p>Réputé pour ses montaditos créatifs et son ambiance chaleureuse et animée. Attendez-vous à faire la queue aux heures de pointe — cela en vaut la peine.</p>
+
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Hébergement paisible dans le village côtier de Tamariu, Costa Brava, Catalogne.</p></div>
+    <div class="footer-col"><h4>Les Chambres</h4><ul><li><a href="../accommodation/double-room.html">Chambre Double</a></li><li><a href="../accommodation/pool-apartment.html">Appartement Studio</a></li></ul></div>
+    <div class="footer-col"><h4>À Faire</h4><ul><li><a href="girona.html">Visiter Gérone</a></li><li><a href="cycling.html">Cyclisme</a></li><li><a href="water-sports.html">Sports Nautiques</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="../contact/index.html">Réserver</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet</p><p>Tamariu, Costa Brava, Catalunya</p></div>
+</footer>
+<script src="../../js/main.js"></script>
+<script>
+// ── GIRONA CAROUSEL ──
+(function() {
+  const SLIDE_W = 372; // slide width + gap
+  const track   = document.getElementById('gironaTrack');
+  const slides  = track ? Array.from(track.children) : [];
+  const total   = slides.length;
+  let idx = 0;
+
+  // Build dots
+  const dotsEl = document.getElementById('gironaDots');
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'girona-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Slide ' + (i + 1));
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  });
+
+  function visible() {
+    return Math.max(1, Math.floor(window.innerWidth / SLIDE_W));
+  }
+
+  function goTo(n) {
+    const max = total - visible();
+    idx = Math.max(0, Math.min(n, max));
+    track.style.transform = 'translateX(-' + (idx * SLIDE_W) + 'px)';
+    dotsEl.querySelectorAll('.girona-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+
+  document.getElementById('gironaNext').onclick = () => {
+    goTo(idx >= total - visible() ? 0 : idx + 1);
+    resetAuto();
+  };
+  document.getElementById('gironaPrev').onclick = () => {
+    goTo(idx <= 0 ? total - visible() : idx - 1);
+    resetAuto();
+  };
+
+  let timer = setInterval(() => goTo(idx >= total - visible() ? 0 : idx + 1), 4500);
+  function resetAuto() { clearInterval(timer); timer = setInterval(() => goTo(idx >= total - visible() ? 0 : idx + 1), 4500); }
+  window.addEventListener('resize', () => goTo(idx));
+})();
+
+// ── GIRONA LIGHTBOX ──
+const G_IMAGES = [
+  { src: '../images/girona/girona-catedral.jpg',    caption: 'The Cathedral — Girona' },
+  { src: '../images/girona/jewish-quarter.jpg',     caption: 'Le Quartier Juif (El Call)' },
+  { src: '../images/girona/onyar-view.jpg',         caption: 'River Onyar — Coloured Houses' },
+  { src: '../images/girona/pujada-sant-marti.jpg',  caption: 'Pujada de Sant Martí' },
+  { src: '../images/girona/arab-baths.jpg',         caption: 'The Arab Baths (Banys Àrabs)' },
+  { src: '../images/girona/walls.jpg',              caption: 'Les Remparts' },
+  { src: '../images/girona/map-girona.jpg',         caption: 'Plan de la Vieille Ville de Gérone' },
+];
+let gCurrentIdx = 0;
+
+function gLightbox(i) {
+  gCurrentIdx = i;
+  const lb = document.getElementById('gLightboxEl');
+  document.getElementById('gLightboxImg').src     = G_IMAGES[i].src;
+  document.getElementById('gLightboxImg').alt     = G_IMAGES[i].caption;
+  document.getElementById('gLightboxCaption').textContent = G_IMAGES[i].caption;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function gCloseLightbox() {
+  document.getElementById('gLightboxEl').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function gLightboxNav(dir) {
+  gCurrentIdx = (gCurrentIdx + dir + G_IMAGES.length) % G_IMAGES.length;
+  gLightbox(gCurrentIdx);
+}
+
+// Close on overlay click
+document.getElementById('gLightboxEl').addEventListener('click', function(e) {
+  if (e.target === this) gCloseLightbox();
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  const lb = document.getElementById('gLightboxEl');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape')      gCloseLightbox();
+  if (e.key === 'ArrowRight')  gLightboxNav(1);
+  if (e.key === 'ArrowLeft')   gLightboxNav(-1);
+});
+</script>
+</body>
+</html>
