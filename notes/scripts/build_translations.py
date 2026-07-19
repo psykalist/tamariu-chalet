@@ -27,11 +27,12 @@ import content_tourist_water as c_tw  # noqa: E402
 import content_guides as c_guides  # noqa: E402
 import content_girona as c_girona  # noqa: E402
 import content_restaurants as c_rest  # noqa: E402
+import content_reviews as c_rev  # noqa: E402
 
 TRANSLATED = ["es", "ca", "fr", "nl"]
 
 ALL_PAGES = {}
-for mod in (c_gh, c_ghi, c_ttd, c_tw, c_guides, c_girona, c_rest):
+for mod in (c_gh, c_ghi, c_ttd, c_tw, c_guides, c_girona, c_rest, c_rev):
     ALL_PAGES.update(mod.PAGES)
 
 # Placeholders inside authored content that must resolve to real, existing pages.

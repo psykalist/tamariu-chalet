@@ -6,13 +6,169 @@
   <!-- Re-run after adding or removing any page. -->
 
   <!-- Reviews -->
-  <url><loc>https://tamariuchalet.com/Reviews/double-room/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/Reviews/double-room/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/double-room/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/es/Reviews/double-room/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/double-room/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/ca/Reviews/double-room/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/double-room/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/fr/Reviews/double-room/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/double-room/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/nl/Reviews/double-room/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/double-room/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/double-room/"/>
+  </url>
 
-  <url><loc>https://tamariuchalet.com/Reviews/pool-apartment/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/Reviews/pool-apartment/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/es/Reviews/pool-apartment/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/ca/Reviews/pool-apartment/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/fr/Reviews/pool-apartment/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/nl/Reviews/pool-apartment/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/pool-apartment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/pool-apartment/"/>
+  </url>
 
-  <url><loc>https://tamariuchalet.com/Reviews/twin-room-2/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/Reviews/twin-room-2/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/es/Reviews/twin-room-2/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/ca/Reviews/twin-room-2/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/fr/Reviews/twin-room-2/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/nl/Reviews/twin-room-2/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room-2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room-2/"/>
+  </url>
 
-  <url><loc>https://tamariuchalet.com/Reviews/twin-room1/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tamariuchalet.com/Reviews/twin-room1/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/es/Reviews/twin-room1/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/ca/Reviews/twin-room1/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/fr/Reviews/twin-room1/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+  </url>
+  <url><loc>https://tamariuchalet.com/nl/Reviews/twin-room1/</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/Reviews/twin-room1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/Reviews/twin-room1/"/>
+  </url>
 
   <!-- About Catalunya -->
   <url><loc>https://tamariuchalet.com/about-catalunya/cities.html</loc><lastmod>2026-07-19</lastmod><changefreq>yearly</changefreq><priority>0.6</priority>
