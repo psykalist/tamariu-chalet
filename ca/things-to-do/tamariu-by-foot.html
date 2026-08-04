@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sis dies sense cotxe des de Tamariu, Costa Brava — el bus turístic Julivia, el camí costaner GR92 fins a Llafranc i el far de Sant Sebastià, la caminada a Aiguablava, el bus de platges de Begur, el Bus 60 a Palafrugell i una ruta de museus per a dies de pluja. Cadascun planificat hora a hora.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/ca/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="de" href="https://tamariuchalet.com/de/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/things-to-do/tamariu-by-foot.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/ca/things-to-do/tamariu-by-foot.html">
+  <meta property="og:title" content="Tamariu a Peu — Sis Dies sense Cotxe | Tamariu Chalet">
+  <meta property="og:description" content="Sis dies sense cotxe des de Tamariu, Costa Brava — el bus turístic Julivia, el camí costaner GR92 fins a Llafranc i el far de Sant Sebastià, la caminada a Aiguablava, el bus de platges de Begur, el Bus 60 a Palafrugell i una ruta de museus per a dies de pluja. Cadascun planificat hora a hora.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <meta property="og:locale" content="ca_ES">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tamariu a Peu — Sis Dies sense Cotxe | Tamariu Chalet">
+  <meta name="twitter:description" content="Sis dies sense cotxe des de Tamariu, Costa Brava — el bus turístic Julivia, el camí costaner GR92 fins a Llafranc i el far de Sant Sebastià, la caminada a Aiguablava, el bus de platges de Begur, el Bus 60 a Palafrugell i una ruta de museus per a dies de pluja. Cadascun planificat hora a hora.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <title>Tamariu a Peu — Sis Dies sense Cotxe | Tamariu Chalet</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1A3A5C">
+
+  <link rel="stylesheet" href="../../css/style.css?v=20260803">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    /* ── Page Hero ── */
+    .tbf-hero {
+      position: relative;
+      height: 340px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      margin-top: var(--nav-height);
+    }
+    .tbf-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('../images/local beaches/hero-beaches.jpg') center/cover no-repeat;
+    }
+    .tbf-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(26,58,92,0.2) 0%, rgba(26,58,92,0.78) 100%);
+    }
+    .tbf-hero-text {
+      position: relative;
+      z-index: 1;
+      padding: 30px 40px 36px;
+      width: 100%;
+    }
+    .tbf-hero-text .breadcrumb {
+      font-size: 0.78rem;
+      color: rgba(245,239,230,0.72);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      font-family: Verdana, Arial, sans-serif;
+    }
+    .tbf-hero-text h1 {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 2.4rem;
+      color: var(--linen);
+      font-weight: 600;
+      line-height: 1.15;
+    }
+    @media (max-width: 600px) {
+      .tbf-hero { height: 250px; }
+      .tbf-hero-text { padding: 20px 18px 26px; }
+      .tbf-hero-text h1 { font-size: 1.6rem; }
+    }
+
+    /* ── Content wrapper ── */
+    .tbf-content {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 44px 30px 60px;
+    }
+    @media (max-width: 600px) { .tbf-content { padding: 28px 16px 48px; } }
+
+    .tbf-intro {
+      font-size: 1.05rem;
+      color: var(--stone);
+      max-width: 760px;
+      margin-bottom: 30px;
+      line-height: 1.75;
+    }
+
+    /* ── Advisory box ── */
+    .tbf-note {
+      background: #fdf3d8;
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 40px;
+    }
+    .tbf-note h4 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #856104;
+      margin-bottom: 8px;
+    }
+    .tbf-note p {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .tbf-note p + p { margin-top: 8px; }
+
+    /* ── Quick jump index ── */
+    .tbf-index {
+      background: var(--linen);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-bottom: 52px;
+    }
+    .tbf-index h2 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+    }
+    .tbf-index ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      padding: 0;
+      margin: 0;
+    }
+    .tbf-index a {
+      display: inline-block;
+      background: var(--warm-white);
+      border: 1px solid #e2d8cb;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--deep-blue);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .tbf-index a:hover {
+      background: var(--sea-blue);
+      border-color: var(--sea-blue);
+      color: #fff;
+    }
+
+    /* ── Day card ── */
+    .day {
+      background: var(--warm-white);
+      border: 1px solid #e8e0d6;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 34px;
+      scroll-margin-top: calc(var(--nav-height) + 16px);
+      transition: box-shadow 0.2s;
+    }
+    .day:hover { box-shadow: 0 8px 28px rgba(26,58,92,0.10); }
+    .day-body { padding: 26px 30px 28px; }
+    @media (max-width: 600px) { .day-body { padding: 20px 18px 22px; } }
+
+    .day-kicker {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 6px;
+    }
+    .day h3 {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 1.5rem;
+      color: var(--deep-blue);
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .day-sub {
+      font-size: 0.85rem;
+      color: var(--stone);
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    /* facts strip */
+    .day-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .fact-pill {
+      background: var(--linen);
+      border-radius: 4px;
+      padding: 5px 11px;
+      font-size: 0.76rem;
+      color: var(--deep-blue);
+    }
+    .fact-pill .lbl {
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 0.62rem;
+      color: var(--stone);
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .day-desc {
+      font-size: 0.94rem;
+      color: var(--stone);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .day-desc p + p { margin-top: 12px; }
+
+    /* full timetables */
+    .tt-section { margin: 40px 0 10px; }
+    .tt-section h2 { font-size: 1.15rem; color: var(--deep-blue); margin-bottom: 8px; }
+    .tt-h {
+      font-size: 0.98rem; color: var(--deep-blue);
+      margin: 28px 0 10px; padding-bottom: 6px;
+      border-bottom: 2px solid rgba(26,58,92,0.15);
+    }
+    .tt-season {
+      display: block; font-size: 0.75rem; font-weight: 400;
+      color: var(--stone); margin-top: 3px; letter-spacing: 0;
+    }
+    .tt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .tt {
+      border-collapse: collapse; width: 100%;
+      font-size: 0.78rem; font-variant-numeric: tabular-nums;
+      min-width: 520px;
+    }
+    .tt th {
+      text-align: left; padding: 7px 9px;
+      background: var(--linen); color: var(--deep-blue);
+      font-size: 0.7rem; letter-spacing: 0.05em;
+      border-bottom: 2px solid rgba(26,58,92,0.2); white-space: nowrap;
+    }
+    .tt td {
+      padding: 6px 9px; border-bottom: 1px solid rgba(0,0,0,0.07);
+      color: var(--dark); white-space: nowrap;
+    }
+    .tt tbody tr:hover td { background: rgba(26,58,92,0.04); }
+    .tt .tt-key td { background: rgba(201,162,39,0.13); font-weight: 600; }
+    .tt .tt-key:hover td { background: rgba(201,162,39,0.2); }
+    .tt .tt-sub {
+      font-size: 0.68rem; color: var(--stone);
+      font-weight: 400; letter-spacing: 0;
+    }
+    .tt .tt-sub-head th { font-size: 0.66rem; background: #fff; }
+    .tt .tt-last { color: #b3541e; font-weight: 700; }
+    .tt-last-key { color: #b3541e; font-weight: 700; }
+    .tt-note {
+      font-size: 0.79rem; color: var(--stone);
+      line-height: 1.65; margin-top: 9px; max-width: 780px;
+    }
+    .tt-note a { color: var(--deep-blue); font-weight: 600; }
+    .tt-begur td { text-align: center; }
+    .tt-begur td:first-child { text-align: left; }
+
+    /* bus map */
+    .bus-map-section { margin: 34px 0 10px; }
+    .bus-map-section h2 { font-size: 1.15rem; color: var(--deep-blue); margin-bottom: 8px; }
+    .bus-map-intro { font-size: 0.9rem; color: var(--stone); line-height: 1.7; max-width: 720px; margin-bottom: 14px; }
+    .bus-map-legend {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      font-size: 0.78rem; color: var(--dark); margin-bottom: 12px;
+    }
+    .bus-map-legend .dot {
+      display: inline-block; width: 11px; height: 11px; border-radius: 50%;
+      margin-right: 5px; vertical-align: -1px; border: 2px solid #fff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+    }
+    .dot-julivia { background: #1A3A5C; }
+    .dot-bus30   { background: #7d3c98; }
+    .dot-bus60   { background: #2e7d4f; }
+    .dot-begur   { background: #b3541e; }
+    .dot-home    { background: #c9a227; }
+    .bus-map-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .bmt {
+      font-family: inherit; font-size: 0.8rem; color: var(--deep-blue);
+      background: #fff; border: 1px solid rgba(26,58,92,0.25);
+      padding: 6px 14px; border-radius: 999px; cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .bmt:hover { border-color: var(--deep-blue); }
+    .bmt.is-active { background: var(--deep-blue); color: #fff; border-color: var(--deep-blue); }
+    .bus-map-desc { font-size: 0.85rem; color: var(--stone); line-height: 1.6; max-width: 720px; margin-bottom: 12px; min-height: 2.4em; }
+    #busmap {
+      height: 660px; width: 100%; max-width: 430px; margin: 0 auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 18px rgba(26,58,92,0.13);
+    }
+    .bus-map-note { font-size: 0.75rem; color: var(--stone); margin-top: 9px; line-height: 1.6; max-width: 720px; }
+    .bm-pop strong { color: var(--deep-blue); display: block; margin-bottom: 3px; }
+    .bm-pop { font-size: 0.8rem; line-height: 1.55; }
+    .bm-label {
+      background: rgba(255,255,255,0.92);
+      border: none; box-shadow: 0 1px 4px rgba(0,0,0,0.28);
+      font-family: Verdana, Arial, sans-serif; font-size: 0.66rem;
+      color: var(--deep-blue); padding: 1px 5px; border-radius: 3px;
+      white-space: nowrap; font-weight: 600;
+    }
+    .bm-label.bm-label-home { background: var(--gold); color: #3a2e07; }
+    .leaflet-tooltip.bm-label:before { display: none; }
+    .bm-home svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
+    @media (max-width: 700px) { #busmap { height: 560px; max-width: 100%; } }
+    /* journey times table */
+    .jt-title { font-size: 1.05rem; color: var(--deep-blue); margin: 26px 0 6px; }
+    .jt-wrap { overflow-x: auto; }
+    .jt-table { width: 100%; border-collapse: collapse; max-width: 760px; font-size: 0.9rem; }
+    .jt-table th, .jt-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #e6ddcf; }
+    .jt-table th {
+      color: var(--deep-blue); font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.06em; border-bottom: 2px solid var(--gold);
+    }
+    .jt-table td { color: var(--stone); }
+    .jt-table td:first-child { color: var(--deep-blue); font-weight: 600; }
+    .jt-table td:nth-child(3), .jt-table td:nth-child(4) { white-space: nowrap; }
+    .jt-table td.jt-multi { white-space: normal; line-height: 1.35; }
+    .jt-table tbody tr:hover { background: var(--linen); }
+
+    /* bus facts table */
+    .tbf-warn { border-left: 4px solid #b3541e; }
+    .bus-facts {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 14px;
+      font-size: 0.84rem;
+    }
+    .bus-facts th {
+      text-align: left;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--stone);
+      border-bottom: 2px solid rgba(0,0,0,0.12);
+      padding: 0 10px 7px 0;
+      font-weight: 600;
+    }
+    .bus-facts td {
+      vertical-align: top;
+      padding: 11px 10px 11px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      line-height: 1.55;
+      color: var(--dark);
+    }
+    .bus-facts .bf-sub {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--stone);
+      line-height: 1.5;
+    }
+    .bus-facts .bf-gap {
+      color: #b3541e;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .bus-facts .bf-gap .bf-sub { color: #b3541e; font-weight: 400; }
+    .bf-links { font-size: 0.82rem; line-height: 1.8; }
+    .bf-links a { color: var(--deep-blue); font-weight: 600; }
+    /* last-bus callout inside a day */
+    .last-bus {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: #fdf3ec;
+      border-left: 3px solid #b3541e;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #6b3311;
+    }
+    @media (max-width: 700px) {
+      .bus-facts, .bus-facts thead, .bus-facts tbody,
+      .bus-facts tr, .bus-facts th, .bus-facts td { display: block; width: 100%; }
+      .bus-facts thead { display: none; }
+      .bus-facts tr {
+        border-bottom: 2px solid rgba(0,0,0,0.12);
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+      }
+      .bus-facts td { border: none; padding: 4px 0; }
+    }
+
+    /* timeline */
+    .day-plan {
+      border-top: 1px solid #ece4da;
+      padding-top: 18px;
+      margin-bottom: 18px;
+    }
+    .day-plan h4 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--deep-blue);
+      margin-bottom: 14px;
+    }
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 66px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: #ece4da;
+    }
+    .timeline li {
+      display: flex;
+      gap: 16px;
+      padding: 7px 0;
+      position: relative;
+    }
+    .timeline .t {
+      flex: 0 0 58px;
+      text-align: right;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sea-blue);
+      padding-top: 1px;
+      font-variant-numeric: tabular-nums;
+    }
+    .timeline .d {
+      flex: 1 1 auto;
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.6;
+      padding-left: 14px;
+      position: relative;
+    }
+    .timeline .d::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--warm-white);
+    }
+    .timeline .d strong { color: var(--deep-blue); }
+    @media (max-width: 600px) {
+      .timeline::before { left: 46px; }
+      .timeline .t { flex-basis: 40px; font-size: 0.75rem; }
+    }
+
+    /* tips */
+    .day-tips {
+      border-top: 1px solid #ece4da;
+      padding-top: 16px;
+    }
+    .day-tips h4 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--deep-blue);
+      margin-bottom: 10px;
+    }
+    .day-tips ul { list-style: none; padding: 0; margin: 0 0 12px 0; }
+    .day-tips li {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.6;
+      padding: 5px 0 5px 18px;
+      position: relative;
+    }
+    .day-tips li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .day-tips li strong { color: var(--deep-blue); }
+
+    .ext-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--sea-blue);
+      text-decoration: none;
+    }
+    .ext-link:hover { color: var(--terracotta); }
+
+    /* fares table */
+    .tbf-table-wrap { overflow-x: auto; margin-top: 14px; }
+    .tbf-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      background: var(--warm-white);
+    }
+    .tbf-table th, .tbf-table td {
+      text-align: left;
+      padding: 9px 12px;
+      border-bottom: 1px solid #ece4da;
+      color: var(--stone);
+    }
+    .tbf-table th {
+      background: var(--deep-blue);
+      color: var(--linen);
+      font-size: 0.72rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .tbf-table td:first-child { color: var(--deep-blue); font-weight: 600; }
+
+    /* activity grid */
+    .act-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (max-width: 700px) { .act-grid { grid-template-columns: 1fr; } }
+    .act {
+      background: var(--linen);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+    .act h4 {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--deep-blue);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .act .act-meta {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--terracotta);
+      font-weight: 700;
+      margin-bottom: 9px;
+    }
+    .act p {
+      font-size: 0.86rem;
+      color: var(--stone);
+      line-height: 1.65;
+      margin: 0 0 10px 0;
+    }
+
+    .tbf-section-title {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 1.3rem;
+      color: var(--deep-blue);
+      font-weight: 600;
+      margin: 44px 0 14px;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
+  <ul class="nav-menu">
+    <li><a href="#">L'Allotjament <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../accommodation/double-room.html">Habitació Doble</a></li><li><a href="../accommodation/twin-room-1.html">Habitació Doble/Twin 1</a></li><li><a href="../accommodation/twin-room-2.html">Habitació Doble/Twin 2</a></li><li><a href="../accommodation/pool-apartment.html">Apartament Estudi</a></li></ul></li>
+    <li><a href="#">Què Fer <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/getting-to-the-beach.html">Com Arribar a la Platja</a></li><li><a href="girona.html">Visitar Girona</a></li><li><a href="villages-tour.html">Ruta dels Pobles</a></li><li><a href="markets.html">Mercats Locals</a></li><li><a href="local-beaches.html">Platges Locals</a></li><li><a href="tamariu-by-foot.html">Tamariu a Peu</a></li><li><a href="restaurants.html">Restaurants Locals</a></li><li class="has-sub"><a href="#">Cultura Local <span class="arrow arrow-sub">▸</span></a><ul class="dropdown submenu"><li><a href="../about-catalunya/cuisine.html">Cuina Catalana</a></li><li><a href="../about-catalunya/language.html">Llengua Catalana</a></li><li><a href="../about-catalunya/culture.html">Cultura Catalana</a></li><li><a href="../about-catalunya/history.html">Història de Catalunya</a></li><li><a href="../about-catalunya/cities.html">Ciutats d'Interès</a></li><li><a href="../about-catalunya/facts.html">Dades Curioses</a></li></ul></li><li class="has-sub"><a href="#">Activitats Físiques <span class="arrow arrow-sub">▸</span></a><ul class="dropdown submenu"><li><a href="walking.html">Senderisme</a></li><li><a href="cycling.html">Ciclisme</a></li><li><a href="water-sports.html">Esports Aquàtics</a></li></ul></li></ul></li>
+    <li><a href="#">Com Arribar / Info <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/index.html">Mapa i Indicacions</a></li><li><a href="../getting-here/bus-timetables.html">Horaris d'Autobús</a></li><li><a href="../getting-here/julivia-bus.html">Bus Julivia</a></li><li><a href="../getting-here/begur-bus.html">Bus Platges de Begur</a></li></ul></li>
+    <li><a href="../contact/index.html">Contactar i Reservar</a></li>
+  </ul>
+  <div class="lang-switcher"><a href="../../things-to-do/tamariu-by-foot.html">EN</a><span class="lang-sep">|</span><a href="../../es/things-to-do/tamariu-by-foot.html">ES</a><span class="lang-sep">|</span><a href="tamariu-by-foot.html" class="lang-active">CA</a><span class="lang-sep">|</span><a href="../../fr/things-to-do/tamariu-by-foot.html">FR</a><span class="lang-sep">|</span><a href="../../nl/things-to-do/tamariu-by-foot.html">NL</a><span class="lang-sep">|</span><a href="../../de/things-to-do/tamariu-by-foot.html">DE</a></div>
+  <a href="#" class="nav-help" aria-label="About" title="About">?</a>
+  <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<!-- ── HERO ── -->
+<div class="tbf-hero">
+  <div class="tbf-hero-bg"></div>
+  <div class="tbf-hero-overlay"></div>
+  <div class="tbf-hero-text">
+    <p class="breadcrumb">Què Fer → Tamariu a Peu</p>
+    <h1>Tamariu a Peu</h1>
+  </div>
+</div>
+
+<!-- ── CONTENT ── -->
+<div class="tbf-content">
+
+  <p class="tbf-intro">No necessiteu el cotxe cada dia. Tamariu es troba en un dels millors trams del <strong>camí de ronda</strong> — el vell camí dels guardacostes que recorre tota la Costa Brava — i a l'estiu tres serveis d'autobús diferents posen al vostre abast els pobles, les platges i les viles del voltant. Afegiu-hi el centre de submarinisme, els caiacs i les taules que treballen a peu de platja, i aquí hi ha dies per a tota una setmana. El que segueix en són set, cadascun planificat de l'esmorzar al sopar, amb el cotxe just on és.</p>
+
+  <div class="tbf-note tbf-warn">
+    <h4>Llegiu això abans de planejar un dia d'autobús</h4>
+    <p><strong>Aquests autobusos són poc freqüents, i tots plegats paren al migdia.</strong> És l'única cosa que enxampa desprevinguts els hostes. Si perdeu una sortida, normalment no espereu vint minuts — espereu tres hores i mitja, o fins demà. Planifiqueu al voltant del parèntesi, no al voltant del rellotge.</p>
+
+    <table class="bus-facts">
+      <thead>
+        <tr><th>Servei</th><th>Circula</th><th>Des de Tamariu / parada més propera</th><th>El parèntesi</th><th>Tarifa</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Julivia</strong><br><span class="bf-sub">Tamariu · El Far · Llafranc · Calella · Cap Roig</span></td>
+          <td>25 jul – 20 set 2026<br><span class="bf-sub">6 voltes al dia</span></td>
+          <td><strong>09:46 · 11:16 · 12:46 · 16:16 · 17:46 · 19:16</strong><br><span class="bf-sub">de tornada per Tamariu 10:44 · 12:14 · 13:44 · 17:14 · 18:44 · 20:14</span></td>
+          <td class="bf-gap">3h 30m<br><span class="bf-sub">12:46 → 16:16</span></td>
+          <td>€6,50 adult<br>€3 nen 4–12<br><span class="bf-sub">pujar i baixar tot el dia</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bus 30′</strong><br><span class="bf-sub">Palafrugell · Calella · Llafranc</span></td>
+          <td>1 jul – 31 ago 2026<br><span class="bf-sub">cada 30 min</span></td>
+          <td><span class="bf-sub">No serveix Tamariu — pugeu a Calella o Llafranc.</span><br>Des de Palafrugell (Pl. Europa): 07:30 – 23:15</td>
+          <td class="bf-gap">cap<br><span class="bf-sub">cada 30 min</span></td>
+          <td>€2 senzill<br><span class="bf-sub">10 viatges €10</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bus 60′</strong><br><span class="bf-sub">Palafrugell · Llafranc · Tamariu</span></td>
+          <td>1 jul – 31 ago 2026</td>
+          <td><span class="bf-sub">Sortides des de l'estació de Palafrugell:</span><br><strong>17 jul – 31 ago:</strong> 07:00 · 08:00 · 09:00 · 10:00 · 11:00 · 15:30 · 16:30 · 17:30 · 18:30 · 19:30<br><strong>Gairebé tot principis de juliol:</strong> només 07:00 · 11:00 · 16:30</td>
+          <td class="bf-gap">4h 30m<br><span class="bf-sub">11:00 → 15:30</span></td>
+          <td>€2 senzill<br><span class="bf-sub">T-10 €6,40 via ATM Girona</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bus de platges de Begur</strong><br><span class="bf-sub">Begur · Aiguablava · Sa Tuna · Sa Riera</span></td>
+          <td>13 juny – 13 set 2026</td>
+          <td><span class="bf-sub">Des de Aiguablava:</span> 10:45 · 12:15 · 13:45 · 15:45 · 16:45 · 18:15 · 19:45<br><span class="bf-sub">Des de Sa Tuna:</span> 11:15 · 12:45 · 15:15 · 17:15 · 19:15</td>
+          <td class="bf-gap">2h 30m<br><span class="bf-sub">Sa Tuna 12:45 → 15:15</span></td>
+          <td>€1,50 senzill<br>€3 abonament de dia<br><span class="bf-sub">€1 menors de 16 · menors de 6 gratis</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <figure style="margin:22px 0;max-width:760px;"><img src="../../images/buses/bus60.jpg" alt="Bus 60 entre Palafrugell i Tamariu" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"><figcaption style="font-size:0.72rem;color:var(--stone);margin-top:7px;font-family:Verdana,Arial,sans-serif;">El Bus 60′ connecta l'estació de Palafrugell amb Llafranc i Tamariu</figcaption></figure>
+
+    <p class="bf-links">
+      <a href="#timetables"><strong>↓ Vés als horaris complets</strong></a> — els tres serveis, cada sortida, reproduïts més avall en aquesta pàgina.
+    </p>
+
+    <p class="bf-links">
+      Fonts oficials — consulteu-les abans de fixar un pla, ja que els operadors les revisen a mitja temporada:
+      <a href="https://visitpalafrugell.cat/wp-content/uploads/2024/06/triptic-julivia-2026.pdf" target="_blank" rel="noopener">Julivia 2026 (PDF)</a> ·
+      <a href="https://visitpalafrugell.cat/wp-content/uploads/2022/06/Horaris-Bus-30-i-Bus-60.pdf" target="_blank" rel="noopener">Bus 30′ i Bus 60′ (PDF)</a> ·
+      <a href="https://visitpalafrugell.cat/proposta/bus-30-bus-60/" target="_blank" rel="noopener">Detalls Bus 30′/60′</a> ·
+      <a href="https://www.beguronline.com/bus.htm" target="_blank" rel="noopener">Bus de platges de Begur</a>
+    </p>
+
+    <p><strong>La bona notícia, i el que fa tot això manejable: Llafranc i Calella de Palafrugell són a 25 minuts a peu</strong> per un tram pla i fàcil del camí de ronda, i el far de Sant Sebastià s'alça al cap just per damunt. Un cop l'autobús us ha deixat en qualsevol punt d'aquest grup, no el necessiteu més fins que vulgueu tornar a casa. Tracteu l'autobús com dos grans salts — d'anada al matí, de tornada al vespre — i camineu tota la resta. Gairebé tots els problemes d'horari d'aquesta pàgina desapareixen si ho feu així.</p>
+
+    <p><strong>Dues trampes que val la pena conèixer.</strong> El bus de platges de Begur és un node, no un circuit — cada ruta surt de la Plaça Forgas de Begur i torna, així que <em>no podeu</em> viatjar directament d'una cala a la següent. D'Aiguablava a Sa Tuna cal tornar a pujar a Begur i canviar. I la Julivia no comença fins al 25 de juliol, així que les tres primeres setmanes de juliol el Bus 60′ és el vostre únic servei des de Tamariu.</p>
+
+    <p><strong>Si perdeu l'últim:</strong> un taxi de Palafrugell o Llafranc a Tamariu ronda els €15–25, i la caminada des de Llafranc pel cap de Sant Sebastià triga uns 90 minuts per un camí abrupte — bé de dia, no res per intentar de nit. Demaneu-nos-ho i us trucarem un taxi.</p>
+
+    <p><strong>Els camins costaners són oberts actualment</strong> en totes les rutes aquí descrites. De tant en tant es tanquen trams per obres de seguretat, així que si llegiu això molt abans de la vostra estada, pregunteu-nos per la situació més actual en arribar.</p>
+  </div>
+
+  <section class="bus-map-section">
+    <h2>On paren realment els autobusos</h2>
+    <p class="bus-map-intro">Tres operadors diferents, tres xarxes diferents. Feu servir les pestanyes per centrar-vos en una ruta cada cop, o vegeu-les totes juntes. Les rutes segueixen les carreteres; per als mapes definitius dels operadors i les parades exactes, feu servir els enllaços oficials de dalt.</p>
+    <div class="bus-map-legend">
+      <span><i class="dot dot-julivia"></i> Julivia</span>
+      <span><i class="dot dot-bus30"></i> Bus 30′</span>
+      <span><i class="dot dot-bus60"></i> Bus 60′</span>
+      <span><i class="dot dot-begur"></i> Bus de platges de Begur</span>
+      <span><i class="dot dot-home"></i> Tamariu Chalet</span>
+    </div>
+    <div class="bus-map-tabs" role="tablist" aria-label="Trieu una línia d'autobús">
+      <button type="button" class="bmt is-active" data-view="overview">Vista general</button>
+      <button type="button" class="bmt" data-view="julivia">Julivia</button>
+      <button type="button" class="bmt" data-view="bus30">Bus 30′</button>
+      <button type="button" class="bmt" data-view="bus60">Bus 60′</button>
+      <button type="button" class="bmt" data-view="begur">Bus de platges de Begur</button>
+    </div>
+    <p class="bus-map-desc" id="bmDesc">Totes les xarxes juntes. El grup sud (Julivia, Bus 30′ i Bus 60′) és en gran part accessible a peu; les cales de Begur, al nord, són ramals separats sense enllaç directe entre cales.</p>
+    <div id="busmap"></div>
+    <p class="bus-map-note">Les rutes es tracen per les carreteres a partir de la llista de parades; per als mapes definitius dels operadors i les parades exactes a la vorera, feu servir els enllaços oficials de dalt.</p>
+
+    <h3 class="jt-title">Temps i distàncies des de Tamariu</h3>
+    <p class="bus-map-intro">Els temps es prenen dels horaris de 2026 (o d'un ritme de marxa típic); les distàncies són aproximades per carretera o camí costaner. El xalet és a uns deu minuts a peu de la parada d'autobús de Tamariu.</p>
+    <div class="jt-wrap">
+      <table class="jt-table">
+        <thead>
+          <tr><th>A</th><th>Com</th><th>Temps</th><th>Distància</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Palafrugell (poble i estació)</td><td>Bus 60′ o Julivia</td><td class="jt-multi">Julivia 16 min<br>Bus 60′ 30 min</td><td>~6 km</td></tr>
+          <tr><td>Far de Sant Sebastià</td><td>Julivia, o ~35 min a peu</td><td>10 min</td><td>~3 km</td></tr>
+          <tr><td>Llafranc</td><td>Julivia o Bus 60′</td><td>20 min</td><td>~4 km</td></tr>
+          <tr><td>Calella de Palafrugell (Port Bo)</td><td>Julivia</td><td>35 min</td><td>~6 km</td></tr>
+          <tr><td>Jardins de Cap Roig</td><td>Julivia</td><td>30 min</td><td>~7 km</td></tr>
+          <tr><td>Begur (Plaça Forgas)</td><td>Cotxe — sense autobús directe</td><td>~15 min</td><td>~10 km</td></tr>
+          <tr><td>Aiguablava</td><td>A peu, camí de ronda</td><td>~35 min</td><td>2.2 km</td></tr>
+          <tr><td>Sa Riera / Sa Tuna</td><td>Cotxe a Begur, després bus de platges</td><td>25–30 min</td><td>~11 km</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="bus-map-note"><strong>A peu entre les parades del sud:</strong> Llafranc → Calella són uns 25 minuts (~1,5 km) pel camí de ronda pla, i Calella → Cap Roig uns altres 20 minuts (~1 km) — no cal autobús entre aquests tres.</p>
+  </section>
+
+  <section class="tt-section" id="timetables">
+    <h2>Els horaris complets</h2>
+    <p class="bus-map-intro">Reproduïts dels horaris dels operadors de 2026 perquè pugueu planificar sense buscar cap PDF. Els operadors els revisen a mitja temporada — els enllaços oficials es donen sota cada taula. Vegeu també la nostra <a href="../getting-here/bus-timetables.html">pàgina d'horaris d'autobús</a>, que afegeix el Bus 30 i l'enllaç amb Girona.</p>
+
+    <!-- ── JULIVIA ── -->
+    <h3 class="tt-h">Julivia <span class="tt-season">25 juliol – 20 setembre 2026 · €6,50 adult, €3 nen 4–12 · pujar i baixar tot el dia</span></h3>
+    <div class="tt-scroll">
+      <table class="tt">
+        <thead>
+          <tr><th>Parada</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Estació Palafrugell</td><td>09:30</td><td>11:00</td><td>–</td><td>16:00</td><td>17:30</td><td>–</td></tr>
+          <tr><td>Palafrugell Centre</td><td>09:33</td><td>11:03</td><td>–</td><td>16:03</td><td>17:33</td><td>–</td></tr>
+          <tr><td>Camp d'en Prats</td><td>09:36</td><td>11:06</td><td>12:36</td><td>16:06</td><td>17:36</td><td>19:06</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong></td><td>09:46</td><td>11:16</td><td>12:46</td><td>16:16</td><td>17:46</td><td>19:16</td></tr>
+          <tr><td>El Far</td><td>09:56</td><td>11:26</td><td>12:56</td><td>16:26</td><td>17:56</td><td>19:26</td></tr>
+          <tr><td>Llafranc</td><td>10:06</td><td>11:36</td><td>13:06</td><td>16:36</td><td>18:06</td><td>19:36</td></tr>
+          <tr><td>Pl. Dr. Trueta</td><td>10:09</td><td>11:39</td><td>13:09</td><td>16:39</td><td>18:09</td><td>19:39</td></tr>
+          <tr><td>Av. Joan Pericot</td><td>10:10</td><td>11:40</td><td>13:10</td><td>16:40</td><td>18:10</td><td>19:40</td></tr>
+          <tr><td>Barri St. Roc</td><td>10:12</td><td>11:42</td><td>13:12</td><td>16:42</td><td>18:12</td><td>19:42</td></tr>
+          <tr><td>Golfet Platja</td><td>10:13</td><td>11:43</td><td>13:13</td><td>16:43</td><td>18:13</td><td>19:43</td></tr>
+          <tr class="tt-key"><td><strong>Cap Roig</strong></td><td>10:15</td><td>11:45</td><td>13:15</td><td>16:45</td><td>18:15</td><td>19:45</td></tr>
+          <tr><td>Golfet Platja</td><td>10:17</td><td>11:47</td><td>13:17</td><td>16:47</td><td>18:17</td><td>19:47</td></tr>
+          <tr><td>Barri St. Roc</td><td>10:19</td><td>11:49</td><td>13:19</td><td>16:49</td><td>18:19</td><td>19:49</td></tr>
+          <tr class="tt-key"><td><strong>Port Bo</strong> <span class="tt-sub">Calella</span></td><td>10:21</td><td>11:51</td><td>13:21</td><td>16:51</td><td>18:21</td><td>19:51</td></tr>
+          <tr><td>Passeig de la Torre</td><td>10:23</td><td>11:53</td><td>13:23</td><td>16:53</td><td>18:23</td><td>19:53</td></tr>
+          <tr><td>Pl. Dr. Trueta</td><td>10:24</td><td>11:54</td><td>13:24</td><td>16:54</td><td>18:24</td><td>19:54</td></tr>
+          <tr class="tt-key"><td><strong>Llafranc</strong> <span class="tt-sub">tornada</span></td><td>10:26</td><td>11:56</td><td>13:26</td><td>16:56</td><td>18:26</td><td>19:56</td></tr>
+          <tr><td>El Far</td><td>10:34</td><td>12:04</td><td>13:34</td><td>17:04</td><td>18:34</td><td>20:04</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong> <span class="tt-sub">tornada</span></td><td>10:44</td><td>12:14</td><td>13:44</td><td>17:14</td><td>18:44</td><td>20:14</td></tr>
+          <tr><td>Camp d'en Prats</td><td>–</td><td>12:25</td><td>–</td><td>–</td><td>18:55</td><td>–</td></tr>
+          <tr><td>Pl. d'Europa</td><td>10:54</td><td>–</td><td>13:54</td><td>17:24</td><td>–</td><td>20:24</td></tr>
+          <tr><td>Estació Palafrugell</td><td>11:00</td><td>–</td><td>14:00</td><td>17:30</td><td>–</td><td>20:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note"><strong>Fixeu-vos en el parèntesi entre les voltes 3 i 4.</strong> Sortiu de Tamariu amb el de les 12:46 i el següent bus de sortida no és fins a les 16:16. Font oficial: <a href="https://visitpalafrugell.cat/wp-content/uploads/2024/06/triptic-julivia-2026.pdf" target="_blank" rel="noopener">Horari Julivia 2026 (PDF)</a>.</p>
+
+    <!-- ── BUS 60 ── -->
+    <h3 class="tt-h">Bus 60′ <span class="tt-season">1 juliol – 31 agost 2026 · €2 senzill · T-10 €6,40 via ATM Girona</span></h3>
+    <div class="tt-scroll">
+      <table class="tt">
+        <thead><tr><th>17 jul – 31 ago <span class="tt-sub">més 4, 5, 11 i 12 de juliol</span></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead>
+        <tbody>
+          <tr><td>Palafrugell <span class="tt-sub">surt d'Estació</span></td><td>07:00</td><td>08:00</td><td>09:00</td><td>10:00</td><td>11:00</td><td>15:30</td><td>16:30</td><td>17:30</td><td>18:30</td><td>19:30</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong> <span class="tt-sub">arriba / gira</span></td><td>07:30</td><td>08:30</td><td>09:30</td><td>10:30</td><td>11:30</td><td>16:00</td><td>17:00</td><td>18:00</td><td>19:00</td><td>20:00</td></tr>
+          <tr><td>→ de tornada a <strong>Palafrugell</strong> <span class="tt-sub">via Llafranc, arriba</span></td><td>08:00</td><td>09:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td>16:30</td><td>17:30</td><td>18:30</td><td>19:30</td><td>20:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tt-scroll">
+      <table class="tt">
+        <thead><tr><th>1–3, 6–10, 13–16 de juliol <span class="tt-sub">només tres al dia</span></th><th>1</th><th>2</th><th>3</th></tr></thead>
+        <tbody>
+          <tr><td>Palafrugell <span class="tt-sub">surt d'Estació</span></td><td>07:00</td><td>11:00</td><td>16:30</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong> <span class="tt-sub">arriba / gira</span></td><td>07:30</td><td>11:30</td><td>17:00</td></tr>
+          <tr><td>→ de tornada a <strong>Palafrugell</strong> <span class="tt-sub">via Llafranc, arriba</span></td><td>08:00</td><td>12:00</td><td>17:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note"><strong>Ruta:</strong> Palafrugell (Estació) → Pl. 11 de Setembre → Camp d'en Prats → Bruguerol → Llafranc (Rotonda Camí de la Font d'en Xecu) → <strong>Tamariu</strong> → i tornada pel mateix camí. <strong>L'autobús arriba a Tamariu 30 minuts després de sortir de Palafrugell</strong>, i gira tot seguit — així que les hores de Tamariu de dalt són també quan el preneu per tornar, arribant a l'estació de Palafrugell 30 minuts després. No hi ha servei entre les 11:00 i les 15:30. Font oficial: <a href="https://visitpalafrugell.cat/wp-content/uploads/2022/06/Horaris-Bus-30-i-Bus-60.pdf" target="_blank" rel="noopener">Horari Bus 30′ i 60′ (PDF)</a>.</p>
+
+    <!-- ── BEGUR ── -->
+    <h3 class="tt-h">Bus de platges de Begur <span class="tt-season">13 juny – 13 setembre 2026 · €1,50 senzill, €3 abonament de dia, €1 menors de 16, menors de 6 gratis</span></h3>
+    <div class="tt-scroll">
+      <table class="tt tt-begur">
+        <thead>
+          <tr>
+            <th>Sa Riera <span class="tt-sub">vermell</span></th><th></th>
+            <th>Aiguablava <span class="tt-sub">blau</span></th><th></th>
+            <th>Sa Tuna <span class="tt-sub">verd</span></th><th></th>
+          </tr>
+          <tr class="tt-sub-head">
+            <th>des de Begur</th><th>des de Sa Riera</th>
+            <th>des de Begur</th><th>des de Aiguablava</th>
+            <th>des de Begur</th><th>des de Sa Tuna</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>09:50 *</td><td>10:15</td><td>10:30</td><td>10:45</td><td>11:00</td><td>11:15</td></tr>
+          <tr><td>10:00</td><td>11:45</td><td>12:00</td><td>12:15</td><td>12:30</td><td>12:45</td></tr>
+          <tr><td>11:30</td><td>13:15</td><td>13:30</td><td>13:45 *</td><td>15:00</td><td>15:15</td></tr>
+          <tr><td>13:00</td><td>14:45</td><td>15:30</td><td>15:45</td><td>17:00</td><td>17:15</td></tr>
+          <tr><td>14:20 *</td><td>16:15</td><td>16:30</td><td>16:45</td><td class="tt-last">19:00</td><td class="tt-last">19:15</td></tr>
+          <tr><td>14:30</td><td>17:45</td><td>18:00</td><td>18:15</td><td></td><td></td></tr>
+          <tr><td>16:00</td><td>18:45</td><td class="tt-last">19:30</td><td class="tt-last">19:45</td><td></td><td></td></tr>
+          <tr><td>17:30</td><td class="tt-last">20:15 *</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>18:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="tt-last">20:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note">* Connexions des de/cap a Esclanyà. <strong>Totes les rutes comencen i acaben a la Plaça Forgas de Begur</strong> — no hi ha servei directe entre les cales, així que anar d'Aiguablava a Sa Tuna vol dir tornar a Begur i canviar. Les hores en <span class="tt-last-key">taronja</span> són les últimes del dia en aquella ruta. Font oficial: <a href="https://www.beguronline.com/bus.htm" target="_blank" rel="noopener">Horari del bus llançadora de Begur</a>.</p>
+  </section>
+
+  <nav class="tbf-index" aria-label="Vés a un dia d'excursió">
+    <h2>Trieu el vostre dia</h2>
+    <ul>
+      <li><a href="#julivia">1 · El Dia del Bus Julivia</a></li>
+      <li><a href="#gr92">2 · Caminada Costanera a Llafranc</a></li>
+      <li><a href="#aiguablava">3 · La Caminada cap al Nord a Aiguablava</a></li>
+      <li><a href="#begur-bus">4 · El Bus de Platges de Begur</a></li>
+      <li><a href="#bus60">5 · Bus 60 a Palafrugell</a></li>
+      <li><a href="#rainy">6 · El Dia de Pluja</a></li>
+      <li><a href="#water">7 · Un Dia a l'Aigua</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ 1. JULIVIA ══ -->
+  <article class="day" id="julivia">
+    <div class="day-body">
+      <p class="day-kicker">Dia u · El més fàcil</p>
+      <h3>El Dia del Bus Julivia</h3>
+      <p class="day-sub">Un bitllet, sis sortides, pugeu i baixeu tantes vegades com vulgueu</p>
+      <div class="day-facts">
+        <span class="fact-pill"><span class="lbl">Esforç</span> Molt fàcil</span>
+        <span class="fact-pill"><span class="lbl">Temporada</span> De mitjan juliol a finals de setembre</span>
+        <span class="fact-pill"><span class="lbl">Cost</span> ~€6,50 adult · €3 nen 4–12</span>
+        <span class="fact-pill"><span class="lbl">A peu</span> Menys de 2 km</span>
+      </div>
+      <div class="day-desc">
+        <p>La Julivia és el bus turístic d'estiu de Palafrugell, i és el millor de tota aquesta pàgina per a qui vulgui veure molt sense caminar gaire. Fa un llarg circuit que abasta el poble de Palafrugell, Tamariu, el far de Sant Sebastià, Llafranc, els càmpings, la platja d'El Golfet i els jardins botànics de Cap Roig. Tot el circuit dura uns noranta minuts.</p>
+        <p>I una cosa essencial: és un <strong>pujar i baixar</strong> bitllet, vàlid tot el dia i tantes vegades com vulgueu — així que el més assenyat no és fer la volta sencera, sinó fer-lo servir com a llançadora entre tres o quatre llocs on realment vulgueu passar estona. Compreu-lo a bord, a l'oficina de turisme de Palafrugell o a l'estació d'autobusos de Sarfa.</p>
+      </div>
+      <div class="day-plan">
+        <h4>Un dia que funciona</h4>
+        <ul class="timeline">
+          <li><span class="t">09:15</span><span class="d">Esmorzar al xalet, després la curta passejada fins al poble de Tamariu. Sigueu a la parada a les 09:40 — no hi ha cap altre autobús darrere d'aquest en 90 minuts.</span></li>
+          <li><span class="t">09:46</span><span class="d">Agafeu el <strong>Julivia</strong> a la parada de Tamariu. Compreu el bitllet de tot el dia al conductor.</span></li>
+          <li><span class="t">09:56</span><span class="d">Baixeu al <strong>Far de Sant Sebastià</strong>. El far més alt de la Costa Brava, amb un poblat iber, una torre de guaita del segle XVIII i vistes de tota la costa. Vint minuts basten per veure-ho tot — no cal esperar 90 minuts el següent autobús.</span></li>
+          <li><span class="t">10:15</span><span class="d"><strong>Baixeu a peu a Llafranc.</strong> Un camí clar baixa del cap directament al poble — 1,8 km, uns 25 minuts i tot costa avall — així que sou a la platja cap a les 10:40 en lloc d'esperar a la parada fins a les 11:26.</span></li>
+          <li><span class="t">10:40</span><span class="d">Entreu a <strong>Llafranc</strong>: banyeu-vos a la badia de sorra i preneu un cafè al passeig mentre el matí encara és tranquil.</span></li>
+          <li><span class="t">11:45</span><span class="d"><strong>Camineu</strong> pel camí de ronda fins a <strong>Calella de Palafrugell</strong> — 25 minuts, pla i fàcil, amb les cales obrint-se al vostre costat tot el camí. Dinar llarg entre les cases de pescadors amb porxos de Port Bo.</span></li>
+          <li><span class="t">14:00</span><span class="d">Continueu uns 15 minuts fins a <strong>El Golfet</strong>, la tranquil·la cala envoltada de pins just passada Calella. Aquest és el cor del dia — banyeu-vos, feu snorkel i reposeu a les platges. Salteu-vos els jardins de Cap Roig llevat que us facin molt de goig; el que importa són les cales.</span></li>
+          <li><span class="t">17:00</span><span class="d">Torneu passejant fins a <strong>Llafranc</strong> per a un últim bany i una copa al passeig, ajustant-ho a l'autobús de tornada que us convingui.</span></li>
+          <li><span class="t">18:26<br><span class="bf-sub">o 19:56</span></span><span class="d">Torneu a agafar la Julivia a <strong>Llafranc</strong> — arriba a Tamariu a les 18:44 o 20:14. Sopar davant del mar.</span></li>
+        </ul>
+        <p class="last-bus"><strong>Últim autobús de tornada per Tamariu: 20:14</strong> (surt de Llafranc 19:56, Calella Port Bo 19:51). Aquest és el final del servei del dia — però tingueu en compte que aquest és l'únic dia en què quedar-se tirat no és greu, ja que de Llafranc a Tamariu són 90 minuts a peu pel cap amb llum de dia.</p>
+      </div>
+      <div class="day-tips">
+        <h4>Val la pena saber</h4>
+        <ul>
+          <li><strong>Sis sortides al dia</strong> — més o menys tres al matí i tres a la tarda. Els intervals entre autobusos són llargs, així que planifiqueu al voltant de l'horari en lloc de suposar que podeu sortir quan vulgueu.</li>
+          <li><strong>Descarregueu l'app del bus Julivia</strong> — porta la ruta en directe, la ubicació de les parades, els horaris i un comentari sobre la història del poble.</li>
+          <li><strong>Els jardins de Cap Roig són opcionals</strong> — entrada a part de la de l'autobús, i fàcil de saltar si preferiu dedicar el dia a les platges. A l'estiu acullen un conegut festival de música, així que els vespres poden estar concorreguts.</li>
+        </ul>
+        <a class="ext-link" href="https://visitpalafrugell.cat/en/routes/cultural-routes/julivia-bus/" target="_blank" rel="noopener">→ Ruta i horari oficials de la Julivia</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══ 2. GR92 TO LLAFRANC ══ -->
+  <article class="day" id="gr92">
+    <div class="day-body">
+      <p class="day-kicker">Dia dos · El clàssic</p>
+      <h3>La Caminada Costanera a Llafranc</h3>
+      <p class="day-sub">De Tamariu al far i baixant a Llafranc, pel GR92</p>
+      <div class="day-facts">
+        <span class="fact-pill"><span class="lbl">Distància</span> ~5,8 km només anada</span>
+        <span class="fact-pill"><span class="lbl">Temps a peu</span> 1½–2 h cada trajecte</span>
+        <span class="fact-pill"><span class="lbl">Esforç</span> Moderada — costeruda, rocosa</span>
+        <span class="fact-pill"><span class="lbl">Temporada</span> Tot l'any</span>
+      </div>
+      <div class="day-desc">
+        <p>És la caminada que la gent recorda. El <strong>GR92</strong> sender de gran recorregut segueix el camí de ronda cap al sud des de Tamariu, pujant amb força entre pins fins al cap de Sant Sebastià abans de baixar a Llafranc. Pel camí passa per damunt de <a href="local-beaches.html#cala-pedrosa">Cala Pedrosa</a>, una cala de còdols sense cap accés per carretera, a la qual només s'arriba per aquest sender o amb vaixell.</p>
+        <p>Sigueu sincers amb vosaltres mateixos sobre el terreny. No és un passeig marítim: hi ha llargs trams d'escales aspres, seccions rocoses exposades i un tros a prop de Tamariu on cal enfilar-se per roques. Calçat resistent en lloc de sandàlies, i molta més aigua de la que creieu necessitar.</p>
+      </div>
+      <div class="day-plan">
+        <h4>Un dia que funciona</h4>
+        <ul class="timeline">
+          <li><span class="t">08:00</span><span class="d">Esmorzar d'hora. La pujada és molt més suau abans que el sol sigui alt.</span></li>
+          <li><span class="t">08:30</span><span class="d">Sortiu de l'extrem sud de <strong>la platja de Tamariu</strong> — seguiu els senyals del camí de ronda i les marques vermelles i blanques del GR.</span></li>
+          <li><span class="t">09:20</span><span class="d">Desvieu-vos a baixar a <strong>Cala Pedrosa</strong> per a un bany gairebé sense ningú més. Costerut a la baixada i més costerut a la pujada.</span></li>
+          <li><span class="t">10:30</span><span class="d">Coroneu al <strong>Far de Sant Sebastià</strong> — far, torre de guaita, capella i una panoràmica de tota la costa. Cafè a la terrassa.</span></li>
+          <li><span class="t">11:00</span><span class="d">Baixeu a <strong>Llafranc</strong> — 1,8 km, uns 25 minuts i tot costa avall — per a un llarg bany a la platja de sorra cap a les 11:25.</span></li>
+          <li><span class="t">13:30</span><span class="d">Dinar al passeig de Llafranc.</span></li>
+          <li><span class="t">15:00</span><span class="d">Si us queden cames, continueu — <strong>Calella de Palafrugell és només 25 minuts més enllà</strong> pel camí de ronda pla des de Llafranc, i Cap Roig uns altres 20 més enllà. Res no obliga que la caminada cap al sud acabi a Llafranc.</span></li>
+          <li><span class="t">16:00</span><span class="d"><strong>Després torneu a casa en autobús en lloc de a peu.</strong> És el truc que més rendeix de la pàgina: tota la caminada costanera d'anada, i un autobús per a la tornada.</span></li>
+        </ul>
+        <div class="last-bus">
+          <p style="margin:0 0 8px;"><strong>Anar a peu i tornar en autobús — com quadrar els temps</strong></p>
+          <p style="margin:0 0 8px;">Dos serveis us poden portar de tornada, i quin toca depèn de la data:</p>
+          <p style="margin:0 0 8px;"><strong>Julivia</strong> (25 jul – 20 set) recull a <strong>Llafranc a les 10:26, 11:56, 13:26, 16:56, 18:26 i 19:56</strong>, arribant a Tamariu 18 minuts després. També para a Calella (Port Bo) i Cap Roig, així que podeu caminar tan al sud com vulgueu i encara tenir transport de tornada — les últimes recollides són Cap Roig 19:45, Port Bo 19:51, Llafranc 19:56.</p>
+          <p style="margin:0 0 8px;"><strong>Bus 60′</strong> (1 jul – 31 ago) també para a la rotonda de Llafranc, sortint de Palafrugell cada hora de 15:30 a 19:30 a la tarda. No serveix Calella, així que si heu caminat més enllà de Llafranc, la Julivia és la que us interessa.</p>
+          <p style="margin:0;"><strong>Abans del 25 de juliol no hi ha cap Julivia</strong> — així que una caminada cap al sud a principis de juliol implica o el Bus 60′ des de Llafranc, o tornar per on heu vingut. Consulteu els horaris de dalt el matí que sortiu.</p>
+        </div>
+      </div>
+      <div class="day-tips">
+        <h4>Val la pena saber</h4>
+        <ul>
+          <li><strong>Camineu l'anada, torneu en autobús.</strong> En temporada alta el Bus 60 connecta Llafranc i Tamariu cada hora, cosa que converteix una exigent anada i tornada en un dia molt manejable.</li>
+          <li><strong>Fora de temporada no hi ha autobús</strong>, així que compteu amb tota la tornada a peu — unes quatre hores de caminada més les parades.</li>
+          <li><strong>No hi ha botigues al camí.</strong> Aigua, gorra, crema solar — els trams exposats no tenen gens d'ombra.</li>
+        </ul>
+        <a class="ext-link" href="walking.html">→ Més rutes a peu al voltant de Tamariu</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══ 3. AIGUABLAVA ══ -->
+  <article class="day" id="aiguablava">
+    <div class="day-body">
+      <p class="day-kicker">Dia tres · El turquesa</p>
+      <h3>La Caminada cap al Nord a Aiguablava</h3>
+      <p class="day-sub">De Tamariu a Aigua Xelida i fins a la badia més fotografiada de la costa</p>
+      <div class="day-facts">
+        <span class="fact-pill"><span class="lbl">Distància</span> ~9 km anada i tornada</span>
+        <span class="fact-pill"><span class="lbl">Temps a peu</span> 4–5 h amb parades</span>
+        <span class="fact-pill"><span class="lbl">Esforç</span> Moderada — costeruda en trams</span>
+        <span class="fact-pill"><span class="lbl">Temporada</span> Tot l'any</span>
+      </div>
+      <div class="day-desc">
+        <p>Aneu en canvi cap al nord i el camí de ronda us porta primer a <a href="local-beaches.html#aigua-xelida">Aigua Xelida</a> — un retall de vint-i-cinc metres de còdols i roca encaixat entre formacions extraordinàries, i un dels banys més tranquils a l'abast del poble — i després vorejant el cap fins a <a href="local-beaches.html#aiguablava">Aiguablava</a>, la badia de sorra clara amb una aigua que és de debò del color que apareix a les fotos.</p>
+        <p>És una proposta més suau que la caminada a Llafranc, tot i que també costeruda en trams, i hi ha una bona recompensa al final: dinar a Toc al Mar, directament sobre la sorra, i després un bany abans de tornar.</p>
+      </div>
+      <div class="day-plan">
+        <h4>Un dia que funciona</h4>
+        <ul class="timeline">
+          <li><span class="t">08:30</span><span class="d">Esmorzar, després baixeu a l'extrem nord de <strong>la platja de Tamariu</strong> on el camí comença a pujar.</span></li>
+          <li><span class="t">09:15</span><span class="d">Baixeu a <strong>Aigua Xelida</strong>. Primer bany del dia, gairebé segur que sols.</span></li>
+          <li><span class="t">10:30</span><span class="d">Continueu cap al nord pel camí de ronda vorejant el cap, amb el camí obrint-se a una vista de cala rere una altra.</span></li>
+          <li><span class="t">11:45</span><span class="d">Arribeu a <strong>Fornells</strong> i el seu petit port, després voregeu fins a <strong>Aiguablava</strong> pròpiament.</span></li>
+          <li><span class="t">12:15</span><span class="d">Banyeu-vos en el turquesa. L'aigua és tranquil·la i poc profunda — el millor snorkel és a les vores rocoses.</span></li>
+          <li><span class="t">13:30</span><span class="d">Dinar a <strong>Toc al Mar</strong> sobre la sorra, o a dalt al <strong>Parador</strong> al cap per les vistes.</span></li>
+          <li><span class="t">15:30</span><span class="d">Torneu per on heu vingut, amb millor llum i el mar a la vostra esquerra.</span></li>
+          <li><span class="t">17:30</span><span class="d">De tornada a Tamariu per a un últim bany.</span></li>
+        </ul>
+      </div>
+      <div class="day-tips">
+        <h4>Val la pena saber</h4>
+        <ul>
+          <li><strong>Reserveu Toc al Mar amb antelació</strong> a l'estiu — és tota una institució de la Costa Brava i s'omple amb molta antelació.</li>
+          <li><strong>No hi ha cap autobús fàcil de tornada.</strong> Aiguablava és al municipi de Begur, així que els serveis de Palafrugell no us serveixen aquí — la tornada és a peu, o en taxi. Repartiu les forces en conseqüència.</li>
+          <li><strong>Ajusteu-ho a la llum.</strong> El color d'Aiguablava és més absurd a mig matí, amb el sol alt i a l'esquena.</li>
+        </ul>
+        <a class="ext-link" href="local-beaches.html">→ Guia completa de les platges locals</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══ 4. BEGUR BEACH BUS ══ -->
+  <article class="day" id="begur-bus">
+    <div class="day-body">
+      <p class="day-kicker">Dia quatre · De cala en cala</p>
+      <h3>El Bus de Platges de Begur</h3>
+      <p class="day-sub">Camineu fins a Aiguablava, i deixeu que la llançadora s'ocupi de la resta de cales</p>
+      <div class="day-facts">
+        <span class="fact-pill"><span class="lbl">Anada a peu</span> ~2,2 km · 35–40 min</span>
+        <span class="fact-pill"><span class="lbl">Temporada</span> De mitjan juny a mitjan setembre</span>
+        <span class="fact-pill"><span class="lbl">Cost</span> ~€1,50 senzill · ~€3 bitllet de dia</span>
+        <span class="fact-pill"><span class="lbl">Esforç</span> Fàcil — però amb un inici costerut</span>
+      </div>
+      <div class="day-desc">
+        <p>L'ajuntament de Begur posa a l'estiu una llançadora des de la Plaça Forgas, al centre, fins a Sa Riera, Sa Tuna, Fornells i Aiguablava. Resol el pitjor problema d'aquesta costa — les cales de Begur tenen aparcaments diminuts i cars que s'omplen a mig matí — i un bitllet de dia costa més o menys el que una hora d'aparcament.</p>
+        <p>El bo és que no cal cotxe per prendre-la. <strong>Aiguablava és a només uns 2,2 km del xalet</strong>, i la llançadora hi para. Així que hi aneu a peu, compreu un bitllet de dia a bord i passeu la resta del dia saltant entre cales on la majoria fa cua per aparcar.</p>
+        <p>És una distància curta però no plana — la carretera puja sense pausa sortint de la vall abans de baixar a la badia, així que compteu més amb quaranta minuts que amb trenta i preneu-vos-ho amb calma amb la calor. La compensació és que la tornada, al final d'un dia llarg, és gairebé tota costa avall.</p>
+        <p>Aquesta és la ruta ràpida i directa d'anada — ben diferent de la llarga caminada costanera del <a href="#aiguablava">dia tres</a>, que arriba a la mateixa badia pel camí escènic en un parell d'hores. Avui agafeu la carretera; guardeu el camí de ronda per quan pugueu dedicar-li tot el dia.</p>
+      </div>
+      <div class="day-plan">
+        <h4>Un dia que funciona</h4>
+        <ul class="timeline">
+          <li><span class="t">09:00</span><span class="d">Esmorzar, després sortiu a peu del xalet cap a <strong>Aiguablava</strong> — uns 2,2 km per carretera, amb una pujada constant abans de la baixada a la badia.</span></li>
+          <li><span class="t">09:40</span><span class="d">Arribeu a <strong>Aiguablava</strong>. Primer bany del dia en el turquesa mentre la badia encara és tranquil·la.</span></li>
+          <li><span class="t">12:15</span><span class="d">Agafeu el <strong>bus de platges</strong> a Aiguablava i compreu l'abonament de dia de €3 al conductor. Pugeu a <strong>Begur</strong> — Plaça Forgas — cap a les 12:30.</span></li>
+          <li><span class="t">12:30<br><span class="bf-sub">a les 15:00</span></span><span class="d">Dinar i un tomb per <strong>Begur</strong> pròpiament, i pugeu a les ruïnes del castell. Sou aquí perquè no hi ha més remei: cada ruta surt de Begur i torna, així que aquest és el punt de canvi. El de les 12:30 a Sa Tuna queda massa just per enllaçar amb el de les 12:15, i el següent és a les 15:00.</span></li>
+          <li><span class="t">15:00</span><span class="d">Baixeu a <strong>Sa Tuna</strong> per a les 15:15 — una diminuta cala de còdols envoltada de cases de pescadors blaves i blanques. Aigua profunda i clara, i el millor bany del dia.</span></li>
+          <li><span class="t">17:15</span><span class="d">De tornada a Begur (17:30), i de nou directe amb el <strong>17:30 a Sa Riera</strong> si voleu la més gran de les platges de Begur per a l'últim sol — és la que dóna per a una família tota una tarda.</span></li>
+          <li><span class="t">18:45</span><span class="d">De Sa Riera de tornada a Begur. Sopar al nucli antic mentre cau la llum.</span></li>
+          <li><span class="t">19:30</span><span class="d">Últim autobús que baixa a <strong>Aiguablava</strong> (19:45), després la caminada de 2,2 km de tornada al xalet.</span></li>
+        </ul>
+        <p class="last-bus"><strong>Aquest és el dia que castiga perdre un autobús.</strong> L'última sortida de Begur a Aiguablava és <strong>19:30</strong> — si el perdeu, no hi ha cap servei de tornada a la carretera d'Aiguablava. La línia de Sa Tuna acaba encara abans: l'últim autobús de tornada a Begur és <strong>19:15</strong>. Si aneu justos de temps, agafeu l'anterior; un taxi de Begur a Tamariu ronda els €20–25.</p>
+      </div>
+      <div class="day-tips">
+        <h4>Val la pena saber</h4>
+        <ul>
+          <li><strong>Agafeu el bitllet de dia, no senzills.</strong> S'amortitza en el segon salt i treu tota preocupació per haver de tornar enrere.</li>
+          <li><strong>Consulteu l'última sortida</strong> abans d'instal·lar-vos a sopar a Begur — el servei de vespre acaba abans del que espereu, i la caminada de tornada des d'Aiguablava no té enllumenat.</li>
+          <li><strong>L'anada no té vorera en alguns trams</strong> i puja sense pausa. Bé de dia i força tranquil d'hora, però mantingueu els nens a prop i porteu alguna cosa visible a la tornada.</li>
+          <li><strong>Sortiu d'hora si fa calor.</strong> La pujada és per carretera oberta amb poca ombra — sortir a les nou és una caminada molt diferent de sortir al migdia.</li>
+          <li><strong>Tarifes reduïdes</strong> s'apliquen a nens i a majors de 65; els menors de cinc anys solen viatjar gratis.</li>
+          <li><strong>El nucli antic de Begur és costerut.</strong> Llambordes i escales pertot, sobretot pujant al castell — no és el dia per a soles llises.</li>
+        </ul>
+        <a class="ext-link" href="https://visitbegur.cat/en/moving-around-begur/bus-beaches/" target="_blank" rel="noopener">→ Informació oficial del bus de platges de Begur</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══ 5. BUS 60 ══ -->
+  <article class="day" id="bus60">
+    <div class="day-body">
+      <p class="day-kicker">Dia cinc · Dia de poble</p>
+      <h3>Bus 60 a Palafrugell</h3>
+      <p class="day-sub">El mercat, el nucli antic i un bon dinar de poble català</p>
+      <div class="day-facts">
+        <span class="fact-pill"><span class="lbl">Temporada</span> Juliol i agost</span>
+        <span class="fact-pill"><span class="lbl">Freqüència</span> Més o menys cada hora</span>
+        <span class="fact-pill"><span class="lbl">Cost</span> ~€2 senzill</span>
+        <span class="fact-pill"><span class="lbl">Esforç</span> Fàcil</span>
+      </div>
+      <div class="day-desc">
+        <p><strong>Bus 60</strong> és el servei d'estiu que per fi connecta Tamariu amb el món exterior sense cotxe, circulant entre l'estació d'autobusos de Palafrugell, Llafranc i Tamariu més o menys un cop per hora durant el matí i de nou a última hora de la tarda. Un bitllet senzill costa uns €2, i les targetes integrades ATM Girona l'abarateixen força si el feu servir sovint.</p>
+        <p>Palafrugell és el poble treballador darrere dels bonics pobles — més gran, menys polit i molt més interessant per això. Si aconseguiu quadrar-ho en <strong>diumenge</strong>, el mercat setmanal és un dels millors del Baix Empordà.</p>
+      </div>
+      <div class="day-plan">
+        <h4>Un dia que funciona</h4>
+        <ul class="timeline">
+          <li><span class="t">09:25</span><span class="d">Baixeu a peu fins a la <strong>parada d'autobús de Tamariu</strong> per al <strong>09:30</strong> Bus 60′ de tornada cap al poble — aquest és el servei que surt de Palafrugell a les 09:00 i gira tot seguit a Tamariu.</span></li>
+          <li><span class="t">10:00</span><span class="d">Entreu a <strong>Palafrugell</strong> estació — 30 minuts des de Tamariu — i pugeu a peu al centre.</span></li>
+          <li><span class="t">10:15</span><span class="d">El <strong>mercat</strong> si és diumenge; si no, el mercat cobert diari i els carrers al voltant de la Plaça Nova.</span></li>
+          <li><span class="t">11:30</span><span class="d"><strong>Museu del Suro</strong>, el museu del suro — un relat de debò bo de la indústria que va construir tota aquesta zona.</span></li>
+          <li><span class="t">13:30</span><span class="d">Dinar al poble. Aquí és on es pren el <em>menú del dia</em> a preus de poble en lloc dels del passeig marítim — i bé us ho podeu prendre amb calma, perquè el següent autobús cap a Tamariu no surt fins a les 15:30.</span></li>
+          <li><span class="t">15:30</span><span class="d"><strong>Can Mario</strong> — escultura contemporània en una antiga fàbrica de suro, amb la torre d'aigua modernista al costat. O agafeu l'autobús de les 15:30 directe a casa (a Tamariu a les 16:00) si ja heu vist prou poble.</span></li>
+          <li><span class="t">17:30<br><span class="bf-sub">o 18:30</span></span><span class="d">Bus 60′ des de l'estació de Palafrugell — a Tamariu a les <strong>18:00</strong> (o <strong>19:00</strong>). A casa a temps per a un bany abans de sopar.</span></li>
+        </ul>
+        <p class="last-bus"><strong>L'últim Bus 60′ del dia surt de Palafrugell a les 19:30.</strong> I aneu amb compte a <strong>principis de juliol</strong>: la majoria de dies de l'1 al 16 només hi ha tres sortides — 07:00, 11:00 i 16:30 — així que un dia a Palafrugell suposa el de les 11:00 d'anada i el de les 16:30 de tornada, sense res al mig. A partir del 17 de juliol torna a ser cada hora. Un taxi de tornada ronda els €15–20 si alguna cosa falla.</p>
+      </div>
+      <div class="day-tips">
+        <h4>Val la pena saber</h4>
+        <ul>
+          <li><strong>Compte amb el parèntesi del migdia.</strong> El Bus 60 sol circular al matí i a última hora de la tarda amb un parèntesi al mig — consulteu les hores de tornada abans d'instal·lar-vos a un dinar llarg.</li>
+          <li><strong>Bus 30</strong> és el servei germà, que circula cada mitja hora entre Palafrugell, Calella i Llafranc — útil per combinar un matí de poble amb una tarda de platja.</li>
+          <li><strong>Fora de juliol i agost</strong> aquests serveis no funcionen, i torneu als autobusos regionals de tot l'any des de Palafrugell.</li>
+        </ul>
+        <a class="ext-link" href="https://visitpalafrugell.cat/en/proposta/bus-30-bus-60/" target="_blank" rel="noopener">→ Horaris oficials Bus 30 i Bus 60</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══ 6. RAINY DAY ══ -->
+  <article class="day" id="rainy">
+    <div class="day-body">
+      <p class="day-kicker">Dia sis · Quan plou</p>
+      <h3>El Dia de Pluja</h3>
+      <p class="day-sub">Museus a Palafrugell, o continueu fins a Girona a passar el dia</p>
+      <div class="day-facts">
+        <span class="fact-pill"><span class="lbl">Esforç</span> Fàcil</span>
+        <span class="fact-pill"><span class="lbl">Sobretot</span> Sota cobert</span>
+        <span class="fact-pill"><span class="lbl">Girona</span> ~1 h 10 en autobús</span>
+        <span class="fact-pill"><span class="lbl">Nota</span> Museus tancats els dilluns</span>
+      </div>
+      <div class="day-desc">
+        <p>A la Costa Brava també plou, i quan ho fa la costa es buida. Dues bones opcions, segons com de lluny vulgueu anar.</p>
+        <p>El <strong>versió curta</strong> us manté a Palafrugell: el museu del suro i Can Mario són tots dos ben sota cobert, a vint minuts a peu l'un de l'altre, i un dinar llarg omple el buit entre tots dos. La <strong>versió llarga</strong> continua fins a <strong>Girona</strong> — aproximadament una hora i deu minuts en el <strong>Moventis línia 42</strong> autocar des de Palafrugell (Girona → La Bisbal → Palafrugell) — on la catedral, el barri jueu i la ribera amb porxos fan un dia fàcil malgrat el temps.</p>
+      </div>
+      <div class="day-plan">
+        <h4>Un dia que funciona — la versió Girona</h4>
+        <ul class="timeline">
+          <li><span class="t">08:30</span><span class="d">Agafeu el Bus 60′ a la <strong>parada de Tamariu</strong> (o demaneu que us hi portin) — a <strong>estació de Palafrugell</strong> a les 09:00, a temps per a un autocar de mig matí <strong>línia 42</strong> a Girona (aproximadament 1 h 10).</span></li>
+          <li><span class="t">10:30</span><span class="d">Girona: cafè al barri vell, després la <strong>catedral</strong> i el seu enorme interior d'una sola nau.</span></li>
+          <li><span class="t">12:30</span><span class="d">El <strong>Call</strong>, el barri jueu medieval de Girona — estret, cobert i de allò més evocador amb mal temps.</span></li>
+          <li><span class="t">14:00</span><span class="d">Dinar. Girona es pren seriosament la gastronomia i les opcions estan un esglaó per damunt de les de la costa.</span></li>
+          <li><span class="t">16:00</span><span class="d">El <strong>banys àrabs</strong> i les muralles, o el museu d'art si encara plou.</span></li>
+          <li><span class="t">16:55<br><span class="bf-sub">o 17:55</span></span><span class="d">Tornada a casa: el <strong>15:45</strong> o <strong>16:45</strong> de la línia 42 des de Girona arriba a Palafrugell a les 16:55 / 17:55, enllaçant amb el Bus 60′ de les 17:30 / 18:30 — a Tamariu cap a les 18:00 / 19:00. L'últim enllaç viable és el <strong>17:45</strong> des de Girona (Palafrugell 18:55 → l'últim Bus 60′ 19:30 → Tamariu 20:00). <a href="../getting-here/bus-timetables.html#girona">Taula d'enllaços completa</a>.</span></li>
+        </ul>
+      </div>
+      <div class="day-tips">
+        <h4>Val la pena saber</h4>
+        <ul>
+          <li><strong>Museu del Suro</strong> tanca els dilluns. Sol obrir al matí i a última hora de la tarda de dimarts a dissabte, i només al matí els diumenges i festius — amb un llarg parèntesi al migdia, com pertot aquí.</li>
+          <li><strong>Can Mario</strong> té un horari partit semblant, de dilluns a dissabte, i només al matí els diumenges.</li>
+          <li><strong>Compte amb el parèntesi del migdia i l'últim Bus 60′.</strong> La línia 42 des de Girona circula més o menys cada hora, però el tram del Bus 60′ de tornada a casa no té servei de 11:00 a 15:30 i acaba a les 19:30. La <a href="../getting-here/bus-timetables.html#girona">taula d'enllaços</a> mostra exactament quines sortides de Girona enllacen amb un Bus 60′.</li>
+          <li><strong>El camí de ronda després de la pluja</strong> rellisca als trams de roca i és millor evitar-lo el mateix dia.</li>
+        </ul>
+        <a class="ext-link" href="girona.html">→ La nostra guia completa per visitar Girona</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══ 7. ON THE WATER ══ -->
+  <article class="day" id="water">
+    <div class="day-body">
+      <p class="day-kicker">Dia set · A l'aigua</p>
+      <h3>Un Dia a l'Aigua</h3>
+      <p class="day-sub">Aquí tot surt de la platja de Tamariu — sense cotxe, sense trasllat</p>
+      <div class="day-facts">
+        <span class="fact-pill"><span class="lbl">Esforç</span> A la vostra elecció</span>
+        <span class="fact-pill"><span class="lbl">Temporada</span> Més o menys de Setmana Santa a octubre</span>
+        <span class="fact-pill"><span class="lbl">A peu per començar</span> Baixeu a la platja</span>
+        <span class="fact-pill"><span class="lbl">Reserva</span> Imprescindible a l'estiu</span>
+      </div>
+      <div class="day-desc">
+        <p>El millor argument per allotjar-se a Tamariu en lloc d'un dels grans centres turístics és que el mar és de debò a la porta. El centre de submarinisme, l'operador de caiac i el lloguer de taules treballen a peu de platja — a deu minuts del xalet — i el litoral immediat al nord i al sud és d'allò més espectacular de la Costa Brava, ple de coves i entrades de cala on senzillament no s'arriba a peu.</p>
+        <p>El més notable de tot allà fora és la <strong>Cova d'en Gispert</strong>, entre Tamariu i Aiguablava — amb uns 150 metres és la cova marina més llarga d'aquesta costa, i tant les sortides de caiac com els passejos en vaixell s'hi dirigeixen.</p>
+      </div>
+      <div class="day-plan">
+        <h4>Un dia que funciona</h4>
+        <ul class="timeline">
+          <li><span class="t">08:45</span><span class="d">Baixeu a la platja i presenteu-vos a l'operador de caiac. Bossa estanca, armilla, instrucció breu.</span></li>
+          <li><span class="t">09:30</span><span class="d">Sortiu amb el <strong>caiac de mar guiat de mig dia</strong>, vorejant els penya-segats amb parades de snorkel i entrades de cova pel camí.</span></li>
+          <li><span class="t">12:30</span><span class="d">De tornada a la sorra, agradablement rebentat.</span></li>
+          <li><span class="t">13:00</span><span class="d">Dinar davant del mar a Tamariu — us heu guanyat un de llarg.</span></li>
+          <li><span class="t">15:30</span><span class="d">Llogueu una <strong>taula de paddle</strong> per a l'aigua plana de la tarda i feu tombs per la badia al vostre ritme.</span></li>
+          <li><span class="t">17:00</span><span class="d">Màscara i aletes sobre els esculls dels dos extrems de la platja — pops, tords i les praderies protegides de Posidònia just mar endins.</span></li>
+          <li><span class="t">19:30</span><span class="d">Sopar a cinquanta metres d'on heu passat tot el dia.</span></li>
+        </ul>
+      </div>
+
+      <div class="day-plan">
+        <h4>Què surt des de la platja</h4>
+        <div class="act-grid">
+          <div class="act">
+            <h4>Submarinisme</h4>
+            <p class="act-meta">Stolli's Divebase · Tamariu</p>
+            <p>Un centre de submarinisme veterà que treballa a peu de la platja de Tamariu, amb cursos des de principiants absoluts fins a immersions guiades per a experimentats. L'escull de casa es pot bussejar tot el dia; les immersions des de vaixell surten en general un o dos cops al dia.</p>
+            <p>Els indrets de la zona són excel·lents — els <strong>canyons davant de Tamariu</strong> plens de gorgònies, el <strong>Furió d'Aigua Xelida</strong> per a morenes i llagostes, i la mateixa cova de Gispert.</p>
+          </div>
+          <div class="act">
+            <h4>Caiac de mar</h4>
+            <p class="act-meta">Kayaking Costa Brava · Tamariu</p>
+            <p>Excursions guiades de mig dia que surten de la platja i segueixen els penya-segats, amb parades per fer snorkel i remar dins de coves i passos estrets invisibles des de terra. No cal experiència — els guies ho adapten al grup.</p>
+            <p>Els caiacs dobles són l'opció habitual per a parelles i per a un adult amb un nen. Reserveu amb antelació al juliol i l'agost.</p>
+          </div>
+          <div class="act">
+            <h4>Paddle surf</h4>
+            <p class="act-meta">Lloguer a la platja · temporada d'estiu</p>
+            <p>Les taules es lloguen per hores a la platja a l'estiu. La badia està arrecerada i l'aigua sol estar com un mirall al matí i a última hora de la tarda, cosa que la fa un lloc indulgent per aprendre.</p>
+            <p>Mantingueu-vos dins de les boies exteriors de la zona de bany senyalitzada i vigileu el vent — vegeu l'advertència de més avall.</p>
+          </div>
+          <div class="act">
+            <h4>Passejos en vaixell</h4>
+            <p class="act-meta">Des de Tamariu i el port de Llafranc</p>
+            <p>Les excursions costaneres recorren el litoral entre Palamós i Tamariu, veient les cales i coves des de l'aigua. Alguns operadors fan servir un vaixell gran per als trams oberts i una zòdiac per ficar-se a les entrades estretes de les coves.</p>
+            <p>Llafranc té el port de debò més proper i la major oferta — accessible en Bus 60 a l'estiu, o a peu pel <a href="#gr92">dia dos</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-tips">
+        <h4>Val la pena saber</h4>
+        <ul>
+          <li><strong>Reserveu amb antelació en temporada alta.</strong> Les sortides de caiac i les places de submarinisme s'omplen dies abans durant el juliol i l'agost.</li>
+          <li><strong>Respecteu la Tramuntana.</strong> El vent del nord pot arribar ràpid i fort, i converteix una badia tranquil·la en un remar difícil en un instant. Si els operadors no surten, no sortiu.</li>
+          <li><strong>Els escarpins ajuden.</strong> Els punts d'entrada als extrems rocosos de la badia són esmolats sota els peus.</li>
+          <li><strong>Les praderies de Posidònia estan protegides.</strong> Meravelloses per fer snorkel per damunt, però no hi ancoreu ni les estireu.</li>
+          <li><strong>Socorrista a l'estiu</strong> a la platja de Tamariu, amb banderes que indiquen l'estat del mar del dia.</li>
+        </ul>
+        <a class="ext-link" href="water-sports.html">→ Més sobre esports aquàtics al voltant de Tamariu</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══ FARES SUMMARY ══ -->
+  <h2 class="tbf-section-title">Els serveis d'un cop d'ull</h2>
+  <div class="tbf-table-wrap">
+    <table class="tbf-table">
+      <thead>
+        <tr>
+          <th>Servei</th>
+          <th>Circula</th>
+          <th>Freqüència</th>
+          <th>Tarifa orientativa</th>
+          <th>Útil per a</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bus turístic Julivia</td><td>Mitjan juliol – finals de set</td><td>6 sortides al dia</td><td>~€6,50 bitllet de dia</td><td>Far, Cap Roig, els pobles</td></tr>
+        <tr><td>Bus 60</td><td>Juliol i agost</td><td>Més o menys cada hora</td><td>~€2 senzill</td><td>Tamariu ↔ Llafranc ↔ Palafrugell</td></tr>
+        <tr><td>Bus 30</td><td>Juliol i agost</td><td>Cada 30 min</td><td>~€2 senzill</td><td>Palafrugell ↔ Calella ↔ Llafranc</td></tr>
+        <tr><td>Bus de platges de Begur</td><td>Mitjan juny – mitjan set</td><td>Diverses rutes al dia</td><td>~€1,50 senzill · €3 dia</td><td>Sa Riera, Sa Tuna, Aiguablava</td></tr>
+        <tr><td>Autocar regional Sarfa</td><td>Tot l'any</td><td>Diversos al dia</td><td>Variable</td><td>Palafrugell ↔ Girona i Barcelona</td></tr>
+        <tr><td>Camí de ronda (GR92)</td><td>Tot l'any</td><td>—</td><td>Gratis</td><td>Llafranc, Aiguablava, cales amagades</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══ CULTURAL PASS ══ -->
+  <h2 class="tbf-section-title">El Passi Cultural — entrada més barata als llocs d'interès</h2>
+  <div class="day">
+    <div class="day-body">
+      <figure style="margin:0 0 20px;">
+        <img src="../../images/shared/cultural-pass.svg" alt="Passi Cultural Palafrugell Plus — entrada reduïda per a dues persones fins al 31 de desembre de 2026, que inclou els Jardins de Cap Roig, la Fundació Josep Pla, el Museu Vila Casas–Can Mario, la torre d'aigua de Can Mario, la torre de guaita de Sant Sebastià i el Museu del Suro de Catalunya." loading="lazy" style="width:100%;height:auto;border-radius:8px;display:block;">
+        <figcaption style="font-size:0.76rem;color:var(--stone);margin-top:8px;text-align:center;">El Passi Cultural Palafrugell Plus — una targeta, sis llocs, entrada reduïda per a dos.</figcaption>
+      </figure>
+      <div class="day-desc">
+        <p>Diversos dels dies de dalt acaben en una atracció de pagament — la <strong>torre de guaita de Sant Sebastià</strong> al cap (dies u i dos), els <strong>Jardins de Cap Roig</strong> al peu del circuit de la Julivia, i el <strong>museu del suro</strong> i <strong>Can Mario</strong> a Palafrugell en els dies de poble i de pluja. Tots ells, més la Fundació Josep Pla i la torre d'aigua de Can Mario, formen part de <strong>Palafrugell Plus</strong>, i una sola targeta dóna un preu reduït a tots ells.</p>
+        <p>El bo és que el <strong>Passi Cultural és gratis</strong>: compreu una entrada a preu complet en qualsevol dels sis llocs i us lliuren un passi a l'acte. És <strong>vàlid per a dues persones</strong>, vigent fins al <strong>31 de desembre de 2026</strong>, i podeu reutilitzar-lo tantes vegades com vulgueu durant l'estada — així que el descompte s'aplica a tots els llocs que visiteu després del primer. Els menors de 12 entren gratis a tots. Si preferiu tenir-lo a mà abans de començar, també es pot comprar a part per €10.</p>
+      </div>
+
+      <div class="tbf-note" style="margin-bottom:0;">
+        <h4>El que costa, amb i sense el passi</h4>
+        <div class="tbf-table-wrap" style="margin-top:6px;">
+          <table class="tbf-table">
+            <thead>
+              <tr><th>Lloc</th><th>Normal</th><th>Amb passi</th><th>En quin dia</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Jardins de Cap Roig</td><td>€12</td><td>€8</td><td>Circuit Julivia (dia 1)</td></tr>
+              <tr><td>torre de guaita de Sant Sebastià</td><td>€2</td><td>€1</td><td>Dies 1 i 2 (el cap)</td></tr>
+              <tr><td>Museu del Suro (museu del suro)</td><td>€6</td><td>€3.50</td><td>Dies 5 i 6</td></tr>
+              <tr><td>Museu Vila Casas – Can Mario</td><td>€10</td><td>€5</td><td>Dies 5 i 6</td></tr>
+              <tr><td>Torre d'aigua de Can Mario</td><td>€2</td><td>€1</td><td>Dies 5 i 6</td></tr>
+              <tr><td>Fundació Josep Pla</td><td>€5</td><td>€2.50</td><td>Poble de Palafrugell</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:12px;"><strong>Exemple pràctic, dos adults.</strong> Un dia que inclogui Cap Roig surt a €12 la primera entrada — que us dóna el passi gratis — més €8 la segona, així que €20 la parella. Aquest mateix passi baixa després cada visita posterior a la columna de la dreta: el museu del suro i Can Mario junts són €8,50 per persona en lloc de €16, i la torre de guaita de Sant Sebastià, un sol euro. El passi sol amortitzar-se al segon lloc.</p>
+        <p style="margin-top:8px;">El mateix cap de Sant Sebastià — el poblat iber, la vella hostatgeria i els miradors sobre el penya-segat vora el far — es recorre gratis; només pujar a la torre de guaita requereix entrada. Els preus són vàlids per al 2026; consulteu la <a href="https://plus.palafrugell.cat/en/cultural-pass/" target="_blank" rel="noopener">pàgina oficial del Passi Cultural</a> per si hi ha algun canvi a mitja temporada.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="tbf-section-title">Què portar</h2>
+  <div class="day">
+    <div class="day-body">
+      <div class="day-tips" style="border-top:none;padding-top:0;">
+        <ul>
+          <li><strong>Bon calçat per al camí costaner.</strong> El camí de ronda té esglaons aspres, pedra solta i grimpades per roca. Bambes com a mínim; les sandàlies us espatllaran el dia.</li>
+          <li><strong>Més aigua de la que sembla necessària.</strong> No hi ha ombra als trams exposats ni botigues entre els pobles.</li>
+          <li><strong>Efectiu per als autobusos.</strong> Els conductors venen els bitllets a bord, i s'agraeixen els bitllets petits.</li>
+          <li><strong>Roba de bany a cada caminada.</strong> Cadascuna d'aquestes rutes passa per una cala on voldreu ficar-vos.</li>
+          <li><strong>Un horari imprès o descarregat.</strong> La cobertura mòbil és irregular als caps, just on voldreu consultar l'autobús de tornada.</li>
+        </ul>
+        <a class="ext-link" href="tourist-info.html">→ Informació turística i contactes locals</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Allotjament tranquil al poble costaner de Tamariu, Costa Brava, Catalunya.</p></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet</p><p>Tamariu, Costa Brava, Catalunya</p></div>
+</footer>
+<script src="../../js/main.js?v=20260803"></script>
+<script src="../../js/main.js?v=20260803"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../../js/bus-routes.js"></script>
+<script>
+(function () {
+  var el = document.getElementById('busmap');
+  if (!el || typeof L === 'undefined') return;
+
+  var C = { julivia: '#1A3A5C', bus30: '#7d3c98', bus60: '#2e7d4f', begur: '#b3541e', home: '#c9a227' };
+
+  var stops = [
+    ['home',    41.9179, 3.2055, 'Tamariu Chalet', 'Deu minuts a peu fins a la parada de Tamariu.'],
+    ['julivia', 41.9186, 3.2081, 'Tamariu — parada de bus', 'Julivia: 09:46, 11:16, 12:46, 16:16, 17:46, 19:16.<br>De tornada per aquí a les 10:44, 12:14, 13:44, 17:14, 18:44, 20:14.<br>El Bus 60′ també gira aquí.'],
+    ['julivia', 41.8993, 3.2088, 'Far de Sant Sebastià', 'Julivia, 10 minuts al sud de Tamariu. Accessible a peu des de Llafranc pujant el cap.'],
+    ['julivia', 41.8949, 3.1936, 'Llafranc', 'Recollides Julivia 10:26, 11:56, 13:26, 16:56, 18:26, 19:56.<br>El Bus 60′ també para a la rotonda d'aquí.<br><em>25 minuts a peu fins a Calella.</em>'],
+    ['julivia', 41.8869, 3.1806, 'Calella — Port Bo', 'Només Julivia. Última recollida 19:51.<br><em>25 minuts a peu de tornada a Llafranc.</em>'],
+    ['julivia', 41.8797, 3.1739, 'Cap Roig', 'Només Julivia — el gir sud del circuit. Última recollida 19:45.'],
+    ['bus60',   41.9175, 3.1636, 'Palafrugell — estació d'autobusos', 'Sortides Bus 60′ 07:00–11:00 i 15:30–19:30 (cada hora des del 17 de juliol).<br>La Julivia també comença i acaba aquí.'],
+    ['bus60',   41.9158, 3.1662, 'Camp d\'en Prats', 'A les afores de Palafrugell — <strong>tant</strong> la Julivia com el Bus 60′ paren aquí de camí a la costa.'],
+    ['bus60',   41.9151, 3.1745, 'Bruguerol', 'Només Bus 60′ — una parada interior a la carretera que baixa a Llafranc.'],
+    ['begur',   41.9540, 3.2075, 'Begur — Plaça Forgas', 'El node. <strong>Totes</strong> les rutes de platja de Begur surten d'aquí i tornen — no es pot anar de cala en cala sense canviar aquí.'],
+    ['begur',   41.93428, 3.21501, 'Aiguablava', 'Sortides de tornada a Begur: 10:45, 12:15, 13:45, 15:45, 16:45, 18:15, 19:45.<br>2,2 km a peu des del xalet.'],
+    ['begur',   41.9569, 3.2305, 'Sa Tuna', 'De tornada a Begur a les 11:15, 12:45, 15:15, 17:15, 19:15. L'últim és d'hora — no el perdeu.'],
+    ['begur',   41.9673, 3.2050, 'Sa Riera', 'De tornada a Begur a les 10:15, 11:45, 13:15, 14:45, 16:15, 17:45, 18:45, 20:15.']
+  ];
+
+  var map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(map);
+
+  var homeIcon = L.divIcon({
+    className: 'bm-home',
+    html: '<svg width="30" height="38" viewBox="0 0 30 38" xmlns="http://www.w3.org/2000/svg">' +
+          '<path d="M15 1C7.8 1 2 6.8 2 14c0 9 13 23 13 23s13-14 13-23C28 6.8 22.2 1 15 1z" fill="#c9a227" stroke="#fff" stroke-width="2"/>' +
+          '<path d="M15 8l7 6h-2v7h-3v-4h-4v4H10v-7H8z" fill="#fff"/></svg>',
+    iconSize: [30, 38], iconAnchor: [15, 37], popupAnchor: [0, -32]
+  });
+
+  var layer = L.layerGroup().addTo(map);
+
+  function decPoly(s) {
+    var i = 0, lat = 0, lng = 0, o = [], sh, r, b;
+    while (i < s.length) {
+      sh = r = 0; do { b = s.charCodeAt(i++) - 63; r |= (b & 31) << sh; sh += 5; } while (b >= 32);
+      lat += (r & 1) ? ~(r >> 1) : (r >> 1);
+      sh = r = 0; do { b = s.charCodeAt(i++) - 63; r |= (b & 31) << sh; sh += 5; } while (b >= 32);
+      lng += (r & 1) ? ~(r >> 1) : (r >> 1);
+      o.push([lat * 1e-5, lng * 1e-5]);
+    }
+    return o;
+  }
+  var P = {
+    pala: [41.9175, 3.1636], camp: [41.9158, 3.1662], brug: [41.9151, 3.1745],
+    tam: [41.9186, 3.2081], far: [41.8993, 3.2088], lla: [41.8949, 3.1936],
+    cal: [41.8869, 3.1806], cap: [41.8797, 3.1739], forgas: [41.9540, 3.2075],
+    aigua: [41.93428, 3.21501], satuna: [41.9569, 3.2305], sariera: [41.9673, 3.2050]
+  };
+  var R = window.BUS_ROADS || {};
+  var RD = {
+    julivia: R.julivia ? decPoly(R.julivia) : [P.pala, P.camp, P.tam, P.far, P.lla, P.cap, P.cal],
+    bus30:   R.bus30 ? decPoly(R.bus30) : [P.pala, P.cal, P.lla],
+    bus60:   R.bus60 ? decPoly(R.bus60) : [P.pala, P.camp, P.brug, P.lla, P.tam],
+    begur:   (R.begur && R.begur.length) ? R.begur.map(function (o) { var p = decPoly(o.r); p.push(o.end); return p; }) : [[P.forgas, P.sariera], [P.forgas, P.aigua], [P.forgas, P.satuna]]
+  };
+
+  function drawJulivia(op) { L.polyline(RD.julivia, { color: C.julivia, weight: 4, opacity: op }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Circuit Julivia</strong>Palafrugell → Tamariu → Llafranc → Calella → Cap Roig, i de tornada pel mateix camí. 25 jul – 20 set.</div>'); }
+  function drawBus30(op) { L.polyline(RD.bus30, { color: C.bus30, weight: 4, opacity: op, dashArray: '2,8' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Bus 30′</strong>Palafrugell → Calella de Palafrugell → Llafranc, cada 30 min a l'estiu (1 jul – 31 ago). No serveix Tamariu.</div>'); }
+  function drawBus60(op) { L.polyline(RD.bus60, { color: C.bus60, weight: 4, opacity: op, dashArray: '9,7' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Bus 60′</strong>Palafrugell → Camp d\'en Prats → Bruguerol → Llafranc → Tamariu, i de tornada. L'únic bus des de Tamariu abans del 25 de juliol.</div>'); }
+  function drawBegur(op) { RD.begur.forEach(function (spoke) { L.polyline(spoke, { color: C.begur, weight: 3, opacity: op }).addTo(layer); }); }
+  function drawWalk(op) { L.polyline([P.lla, P.cal, P.cap], { color: '#555', weight: 2, opacity: op, dashArray: '2,7' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Tram a peu</strong>De Llafranc a Calella són 25 minuts en pla; Cap Roig uns altres 20. No cal autobús entre aquests tres.</div>'); }
+
+  var FIT = {
+    all:     [P.pala, P.camp, P.brug, P.tam, P.far, P.lla, P.cal, P.cap, P.forgas, P.aigua, P.satuna, P.sariera],
+    julivia: [P.pala, P.camp, P.tam, P.far, P.lla, P.cal, P.cap],
+    bus30:   [P.pala, P.cal, P.lla],
+    bus60:   [P.pala, P.camp, P.brug, P.lla, P.tam],
+    begur:   [P.forgas, P.aigua, P.satuna, P.sariera]
+  };
+
+  var VIEWS = {
+    overview: { desc: 'Totes les xarxes juntes. El grup sud (Julivia, Bus 30′ i Bus 60′) és en gran part accessible a peu; les cales de Begur, al nord, són ramals separats sense enllaç directe entre cales.', routes: function () { drawJulivia(0.45); drawBus30(0.6); drawBus60(0.75); drawBegur(0.5); drawWalk(0.7); }, show: null, colour: null, fit: 'all' },
+    julivia: { desc: 'El circuit turístic Julivia surt de Palafrugell passant per Tamariu, i després baixa per la costa fins a Llafranc, Calella i Cap Roig — i torna pel mateix camí (25 jul–20 set). Les parades de la costa sud són totes a un passeig còmode les unes de les altres.', routes: function () { drawJulivia(0.9); drawWalk(0.7); }, show: ['Tamariu Chalet', 'Tamariu — parada de bus', 'Far de Sant Sebastià', 'Llafranc', 'Calella — Port Bo', 'Cap Roig', 'Palafrugell — estació d'autobusos', 'Camp d\'en Prats'], colour: C.julivia, fit: 'julivia' },
+    bus30: { desc: 'El Bus 30′ és la llançadora ràpida d'estiu entre Palafrugell, Calella de Palafrugell i Llafranc — cada 30 minuts, de l'1 de juliol al 31 d'agost. No serveix Tamariu; pugeu-hi a Palafrugell, Calella o Llafranc.', routes: function () { drawBus30(0.9); }, show: ['Palafrugell — estació d'autobusos', 'Calella — Port Bo', 'Llafranc'], colour: C.bus30, fit: 'bus30' },
+    bus60: { desc: 'El Bus 60′ connecta l'estació de Palafrugell amb Tamariu via Camp d\'en Prats, Bruguerol i Llafranc, i de tornada. És l'únic bus que serveix Tamariu abans que la Julivia comenci el 25 de juliol.', routes: function () { drawBus60(0.9); }, show: ['Tamariu Chalet', 'Tamariu — parada de bus', 'Palafrugell — estació d'autobusos', 'Camp d\'en Prats', 'Bruguerol', 'Llafranc'], colour: C.bus60, fit: 'bus60' },
+    begur: { desc: 'El bus de platges de Begur és un node a la Plaça Forgas amb un ramal separat cap a cada cala — Sa Riera, Aiguablava i Sa Tuna. No es pot anar de cala en cala; cada viatge torna a passar per Begur.', routes: function () { drawBegur(0.85); }, show: ['Begur — Plaça Forgas', 'Aiguablava', 'Sa Tuna', 'Sa Riera'], colour: C.begur, fit: 'begur' }
+  };
+
+  var descEl = document.getElementById('bmDesc');
+
+  function render(view) {
+    var v = VIEWS[view] || VIEWS.overview;
+    layer.clearLayers();
+    v.routes();
+    stops.forEach(function (s) {
+      var kind = s[0], lat = s[1], lng = s[2], name = s[3], body = s[4];
+      if (v.show && v.show.indexOf(name) < 0) return;
+      var popup = '<div class="bm-pop"><strong>' + name + '</strong>' + body + '</div>';
+      var left = lng < 3.196;
+      var dir = left ? 'left' : 'right';
+      var off = left ? [-8, 0] : [8, 0];
+      if (kind === 'home') {
+        L.marker([lat, lng], { icon: homeIcon, zIndexOffset: 1000 }).addTo(layer).bindPopup(popup).bindTooltip(name, { permanent: true, direction: dir, offset: left ? [-6, -12] : [10, -12], className: 'bm-label bm-label-home' });
+        return;
+      }
+      var fill = v.colour ? v.colour : C[kind];
+      L.circleMarker([lat, lng], { radius: 7, color: '#fff', weight: 2, fillColor: fill, fillOpacity: 1 }).addTo(layer).bindPopup(popup).bindTooltip(name, { permanent: true, direction: dir, offset: off, className: 'bm-label' });
+    });
+    if (descEl) descEl.textContent = v.desc;
+    var bounds = L.latLngBounds(FIT[v.fit]).pad(0.08);
+    map.setMaxBounds(null);
+    map.fitBounds(bounds);
+    map.setMaxBounds(bounds.pad(0.35));
+    map.setMinZoom(map.getZoom() - 1);
+  }
+
+  var tabs = document.querySelectorAll('.bus-map-tabs .bmt');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      render(btn.getAttribute('data-view'));
+    });
+  });
+
+  render('overview');
+  map.on('click', function () { map.scrollWheelZoom.enable(); });
+  map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+})();
+</script>
+</body>
+</html>

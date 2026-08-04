@@ -19,22 +19,31 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import build_pages as bp  # noqa: E402
+import i18n_shell  # noqa: E402
 import strings_mode  # noqa: E402
 import content_getting_here as c_gh  # noqa: E402
 import content_getting_here_index as c_ghi  # noqa: E402
 import content_things_to_do as c_ttd  # noqa: E402
 import content_tourist_water as c_tw  # noqa: E402
 import content_guides as c_guides  # noqa: E402
+import content_villages as c_villages  # noqa: E402
 import content_girona as c_girona  # noqa: E402
 import content_restaurants as c_rest  # noqa: E402
 import content_reviews as c_rev  # noqa: E402
 import content_beaches as c_beach  # noqa: E402
+import content_bus_timetables as c_bus  # noqa: E402
+import content_tamariu_by_foot as c_foot  # noqa: E402
+import content_de  # noqa: E402
 
-TRANSLATED = ["es", "ca", "fr", "nl"]
+TRANSLATED = ["es", "ca", "fr", "nl", "de"]
 
 ALL_PAGES = {}
-for mod in (c_gh, c_ghi, c_ttd, c_tw, c_guides, c_girona, c_rest, c_rev, c_beach):
+for mod in (c_gh, c_ghi, c_ttd, c_tw, c_guides, c_villages, c_girona, c_rest, c_rev,
+            c_beach, c_bus, c_foot):
     ALL_PAGES.update(mod.PAGES)
+
+# Inject German (authored centrally in content_de) into the assembled tables.
+content_de.merge_german(ALL_PAGES)
 
 # Placeholders inside authored content that must resolve to real, existing pages.
 PLACEHOLDERS = {
@@ -59,7 +68,7 @@ def resolve(content: str, logical: str, lang: str) -> str:
 def build(apply: bool) -> list:
     written = []
     for logical, page in sorted(ALL_PAGES.items()):
-        footer = page["footer"]
+        footer = i18n_shell.FOOTER  # single site-wide footer for every page
 
         if page.get("mode") == "strings":
             # Structured pages: English markup is the source, only words differ.

@@ -30,6 +30,8 @@ PAGES["getting-here/julivia-bus.html"] = {
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">El Bus Julivia es un servicio de autobús turístico de temporada que conecta los pueblos costeros y las localidades del interior de la zona de Palafrugell — una forma cómoda y agradable de explorar la región sin coche.</p>
 
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/julivia-bus.jpg" alt="Bus Julivia" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
+
   <a href="https://visitpalafrugell.cat/wp-content/uploads/2024/06/triptic-julivia-2026.pdf" target="_blank" rel="noopener" class="external-link-card">
     <div>
       <h4>Bus Julivia — Horarios 2026 (PDF)</h4>
@@ -60,6 +62,8 @@ PAGES["getting-here/julivia-bus.html"] = {
 <div class="page-hero"><div class="page-hero-content"><p class="breadcrumb">Com Arribar → Bus Julivia</p><h1>El Bus Julivia</h1></div></div>
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">El Bus Julivia és un servei d'autobús turístic de temporada que connecta els pobles costaners i les poblacions de l'interior de la zona de Palafrugell — una manera còmoda i agradable d'explorar la comarca sense cotxe.</p>
+
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/julivia-bus.jpg" alt="Bus Julivia" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
 
   <a href="https://visitpalafrugell.cat/wp-content/uploads/2024/06/triptic-julivia-2026.pdf" target="_blank" rel="noopener" class="external-link-card">
     <div>
@@ -92,6 +96,8 @@ PAGES["getting-here/julivia-bus.html"] = {
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">Le Bus Julivia est un service d'autobus touristique saisonnier reliant les villages côtiers et les communes de l'intérieur de la région de Palafrugell — un moyen pratique et agréable d'explorer la région sans voiture.</p>
 
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/julivia-bus.jpg" alt="Bus Julivia" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
+
   <a href="https://visitpalafrugell.cat/wp-content/uploads/2024/06/triptic-julivia-2026.pdf" target="_blank" rel="noopener" class="external-link-card">
     <div>
       <h4>Bus Julivia — Horaires 2026 (PDF)</h4>
@@ -122,6 +128,8 @@ PAGES["getting-here/julivia-bus.html"] = {
 <div class="page-hero"><div class="page-hero-content"><p class="breadcrumb">Hoe Te Bereiken → Julivia Bus</p><h1>De Julivia Bus</h1></div></div>
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">De Julivia Bus is een seizoensgebonden toeristische busdienst die de kustdorpen en de plaatsen in het binnenland rond Palafrugell verbindt — een handige en aangename manier om de streek zonder auto te verkennen.</p>
+
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/julivia-bus.jpg" alt="Bus Julivia" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
 
   <a href="https://visitpalafrugell.cat/wp-content/uploads/2024/06/triptic-julivia-2026.pdf" target="_blank" rel="noopener" class="external-link-card">
     <div>
@@ -161,6 +169,8 @@ PAGES["getting-here/begur-bus.html"] = {
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">El Bus Platges Begur es un servicio lanzadera de temporada que conecta el pueblo de Begur, en lo alto de la colina, con su rosario de preciosas calas — una forma excelente de descubrir algunos de los tramos de costa más espectaculares de la Costa Brava.</p>
 
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/begur-bus.jpg" alt="Bus Platges Begur" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
+
   <a href="https://www.beguronline.com/bus.htm" target="_blank" rel="noopener" class="external-link-card">
     <div>
       <h4>Bus Playas de Begur — Horarios 2026</h4>
@@ -198,6 +208,8 @@ PAGES["getting-here/begur-bus.html"] = {
 <div class="page-hero"><div class="page-hero-content"><p class="breadcrumb">Com Arribar → Bus Platges de Begur</p><h1>Bus Platges de Begur</h1></div></div>
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">El Bus Platges Begur és un servei llançadora de temporada que connecta la vila de Begur, dalt del turó, amb el seu reguitzell de cales precioses — una manera excel·lent de descobrir alguns dels trams de costa més espectaculars de la Costa Brava.</p>
+
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/begur-bus.jpg" alt="Bus Platges Begur" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
 
   <a href="https://www.beguronline.com/bus.htm" target="_blank" rel="noopener" class="external-link-card">
     <div>
@@ -237,6 +249,8 @@ PAGES["getting-here/begur-bus.html"] = {
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">Le Bus Platges Begur est une navette saisonnière reliant le village perché de Begur au chapelet de ses magnifiques criques — une excellente façon de découvrir quelques-uns des littoraux les plus spectaculaires de la Costa Brava.</p>
 
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/begur-bus.jpg" alt="Bus Platges Begur" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
+
   <a href="https://www.beguronline.com/bus.htm" target="_blank" rel="noopener" class="external-link-card">
     <div>
       <h4>Bus des Plages de Begur — Horaires 2026</h4>
@@ -274,6 +288,8 @@ PAGES["getting-here/begur-bus.html"] = {
 <div class="page-hero"><div class="page-hero-content"><p class="breadcrumb">Hoe Te Bereiken → Begur Strandbus</p><h1>Begur Strandbus</h1></div></div>
 <div class="content-page">
   <p style="font-size:1.05rem;color:var(--stone);margin-bottom:30px;max-width:700px;">De Bus Platges Begur is een seizoensgebonden pendeldienst die het op een heuvel gelegen stadje Begur verbindt met zijn reeks prachtige baaien — een uitstekende manier om enkele van de spectaculairste kuststroken van de Costa Brava te ontdekken.</p>
+
+  <figure style="margin:0 0 30px;max-width:760px;"><img src="../../images/buses/begur-bus.jpg" alt="Bus Platges Begur" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"></figure>
 
   <a href="https://www.beguronline.com/bus.htm" target="_blank" rel="noopener" class="external-link-card">
     <div>

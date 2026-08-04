@@ -114,11 +114,47 @@ nav {
   list-style: none;
 }
 
-.nav-menu > li:hover .dropdown {
+.nav-menu > li:hover > .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
+/* Nested fly-out sub-menu (e.g. Local Culture, Physical Activities) */
+.dropdown li.has-sub { position: relative; }
+.dropdown li.has-sub > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.arrow-sub { font-size: 0.7rem; opacity: 0.8; }
+.dropdown .submenu { top: -2px; left: 100%; }
+.dropdown li.has-sub:hover > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* "?" help / about link, after the language switcher */
+.nav-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-left: 14px;
+  border: 1px solid rgba(245,239,230,0.4);
+  border-radius: 50%;
+  color: var(--linen);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.nav-help:hover { background: var(--gold); color: var(--deep-blue); border-color: var(--gold); }
 
 .dropdown li a {
   display: block;
@@ -149,6 +185,64 @@ nav {
   width: 24px; height: 2px;
   background: var(--linen);
   transition: all 0.3s;
+}
+/* hamburger turns into an X while the menu is open */
+nav.menu-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.menu-open .hamburger span:nth-child(2) { opacity: 0; }
+nav.menu-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── SITE VERSION BADGE ── */
+.site-version {
+  font-size: 0.72rem;
+  color: rgba(245, 239, 230, 0.55);
+  margin-top: 8px;
+  letter-spacing: 0.06em;
+}
+
+/* ── "×" HOME BUTTON (return to main page) ── */
+.home-fab {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 1200;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: rgba(26, 58, 92, 0.92);
+  color: var(--linen);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(184, 150, 58, 0.5);
+  transition: background 0.2s, color 0.2s;
+}
+.home-fab:hover { background: var(--gold); color: var(--deep-blue); }
+
+/* ── ABOUT MODAL ── */
+#about-modal {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center; justify-content: center;
+  padding: 20px;
+}
+.about-box {
+  background: var(--warm-white);
+  border-radius: 8px;
+  padding: 26px 28px 24px;
+  max-width: 340px; width: 100%;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+.about-box h3 { color: var(--deep-blue); margin: 0 0 8px; font-size: 1.2rem; }
+.about-box p { color: var(--stone); font-size: 0.9rem; margin: 6px 0; line-height: 1.6; }
+.about-box .about-ver { color: var(--deep-blue); font-weight: 600; }
+.about-box a { color: var(--sea-blue, var(--gold)); text-decoration: none; }
+.about-close {
+  position: absolute; top: 6px; right: 12px;
+  background: none; border: none;
+  font-size: 1.5rem; color: var(--stone); cursor: pointer; line-height: 1;
 }
 
 /* ── LANGUAGE SWITCHER ── */
@@ -1211,7 +1305,24 @@ footer {
     background: var(--deep-blue);
     padding: 20px;
     gap: 0;
+    max-height: calc(100vh - var(--nav-height));
+    max-height: calc(100dvh - var(--nav-height));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
   }
+  /* every top-level item is a flush, full-width row (so Contact & Book and
+     About never look indented under a dropdown) */
+  .nav-menu.open > li { width: 100%; }
+  .nav-menu.open > li > a {
+    display: block;
+    width: 100%;
+    padding: 13px 2px;
+    color: var(--linen);
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+  }
+  /* only real sub-items are indented under their parent */
   .nav-menu.open .dropdown {
     position: static;
     opacity: 1;
@@ -1219,11 +1330,26 @@ footer {
     transform: none;
     border: none;
     border-left: 2px solid var(--gold);
-    margin-left: 10px;
-    margin-top: 4px;
+    margin: 2px 0 8px 14px;
   }
+  .nav-menu.open .dropdown li a {
+    display: block;
+    padding: 9px 2px 9px 12px;
+    font-size: 0.9rem;
+    color: rgba(245,239,230,0.82);
+  }
+  /* nested sub-menu: indent one level further under its parent */
+  .nav-menu.open .submenu { margin-left: 12px; border-left-color: rgba(184,150,58,0.6); }
+  .nav-help { width: 24px; height: 24px; margin-left: 10px; font-size: 0.8rem; }
   .about-section, .rooms-section, .content-page, .contact-grid { padding: 50px 20px; }
   .footer-grid { grid-template-columns: 1fr; }
+  /* stack the footer copyright / location / version lines with breathing room */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    text-align: left;
+  }
   .form-row { grid-template-columns: 1fr; }
   .room-page { padding: 40px 20px; }
 }

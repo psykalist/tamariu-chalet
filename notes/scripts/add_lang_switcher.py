@@ -17,9 +17,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-LANGS = ["en", "es", "ca", "fr", "nl"]
-LABELS = {"en": "EN", "es": "ES", "ca": "CA", "fr": "FR", "nl": "NL"}
-TRANSLATED = ["es", "ca", "fr", "nl"]
+LANGS = ["en", "es", "ca", "fr", "nl", "de"]
+LABELS = {"en": "EN", "es": "ES", "ca": "CA", "fr": "FR", "nl": "NL", "de": "DE"}
+TRANSLATED = ["es", "ca", "fr", "nl", "de"]
 SKIP_DIRS = {"notes", ".github", ".git", ".well-known"}
 
 HAMBURGER_RE = re.compile(r'([ \t]*)(<button class="hamburger")')

@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-TRANSLATED = ["es", "ca", "fr", "nl"]
+TRANSLATED = ["es", "ca", "fr", "nl", "de"]
 SKIP_DIRS = {"notes", ".github", ".git", ".well-known"}
 
 LINK_RE = re.compile(r'(href=")([^"#?][^"]*?)(")')
@@ -46,8 +46,16 @@ def main():
                 if href.startswith(("http://", "https://", "mailto:", "tel:",
                                     "data:", "javascript:", "/")):
                     return m.group(0)
+                # Preserve any #fragment / ?query so anchors and params survive.
+                path, sep, tail = href.partition("#")
+                if "?" in path:
+                    path, qsep, q = path.partition("?")
+                    tail = qsep + q + sep + tail
+                    sep = ""
+                if not path:
+                    return m.group(0)  # pure "#anchor" link, nothing to repoint
                 # where does this link land, relative to the site root?
-                target = posixpath.normpath(posixpath.join(rel_dir, href))
+                target = posixpath.normpath(posixpath.join(rel_dir, path))
                 if target.startswith(".."):
                     return m.group(0)
                 first = target.split("/")[0]
@@ -56,7 +64,7 @@ def main():
                 localised = f"{lang}/{target}"
                 if not (ROOT / localised).is_file():
                     return m.group(0)  # no translation exists yet
-                new_href = posixpath.relpath(localised, rel_dir)
+                new_href = posixpath.relpath(localised, rel_dir) + sep + tail
                 hits.append((href, new_href))
                 return f"{pre}{new_href}{post}"
 

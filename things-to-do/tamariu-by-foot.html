@@ -7,6 +7,13 @@
   <meta name="keywords" content="Tamariu without a car, Julivia bus, camí de ronda Tamariu, GR92 Costa Brava, walk Tamariu to Llafranc, walk Tamariu to Aiguablava, Begur beach bus, Bus 60 Palafrugell, Palafrugell rainy day, Museu del Suro">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tamariuchalet.com/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="de" href="https://tamariuchalet.com/de/things-to-do/tamariu-by-foot.html">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/things-to-do/tamariu-by-foot.html">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tamariuchalet.com/things-to-do/tamariu-by-foot.html">
@@ -26,7 +33,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#1A3A5C">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=20260803">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
   <!-- Structured data: itinerary list -->
@@ -302,17 +309,53 @@
       box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
     }
     .dot-julivia { background: #1A3A5C; }
+    .dot-bus30   { background: #7d3c98; }
     .dot-bus60   { background: #2e7d4f; }
     .dot-begur   { background: #b3541e; }
     .dot-home    { background: #c9a227; }
+    .bus-map-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .bmt {
+      font-family: inherit; font-size: 0.8rem; color: var(--deep-blue);
+      background: #fff; border: 1px solid rgba(26,58,92,0.25);
+      padding: 6px 14px; border-radius: 999px; cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .bmt:hover { border-color: var(--deep-blue); }
+    .bmt.is-active { background: var(--deep-blue); color: #fff; border-color: var(--deep-blue); }
+    .bus-map-desc { font-size: 0.85rem; color: var(--stone); line-height: 1.6; max-width: 720px; margin-bottom: 12px; min-height: 2.4em; }
     #busmap {
-      height: 460px; width: 100%; border-radius: 6px;
+      height: 660px; width: 100%; max-width: 430px; margin: 0 auto;
+      border-radius: 6px;
       box-shadow: 0 4px 18px rgba(26,58,92,0.13);
     }
-    .bus-map-note { font-size: 0.75rem; color: var(--stone); margin-top: 9px; line-height: 1.6; }
+    .bus-map-note { font-size: 0.75rem; color: var(--stone); margin-top: 9px; line-height: 1.6; max-width: 720px; }
     .bm-pop strong { color: var(--deep-blue); display: block; margin-bottom: 3px; }
     .bm-pop { font-size: 0.8rem; line-height: 1.55; }
-    @media (max-width: 700px) { #busmap { height: 340px; } }
+    .bm-label {
+      background: rgba(255,255,255,0.92);
+      border: none; box-shadow: 0 1px 4px rgba(0,0,0,0.28);
+      font-family: Verdana, Arial, sans-serif; font-size: 0.66rem;
+      color: var(--deep-blue); padding: 1px 5px; border-radius: 3px;
+      white-space: nowrap; font-weight: 600;
+    }
+    .bm-label.bm-label-home { background: var(--gold); color: #3a2e07; }
+    .leaflet-tooltip.bm-label:before { display: none; }
+    .bm-home svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
+    @media (max-width: 700px) { #busmap { height: 560px; max-width: 100%; } }
+    /* journey times table */
+    .jt-title { font-size: 1.05rem; color: var(--deep-blue); margin: 26px 0 6px; }
+    .jt-wrap { overflow-x: auto; }
+    .jt-table { width: 100%; border-collapse: collapse; max-width: 760px; font-size: 0.9rem; }
+    .jt-table th, .jt-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #e6ddcf; }
+    .jt-table th {
+      color: var(--deep-blue); font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.06em; border-bottom: 2px solid var(--gold);
+    }
+    .jt-table td { color: var(--stone); }
+    .jt-table td:first-child { color: var(--deep-blue); font-weight: 600; }
+    .jt-table td:nth-child(3), .jt-table td:nth-child(4) { white-space: nowrap; }
+    .jt-table td.jt-multi { white-space: normal; line-height: 1.35; }
+    .jt-table tbody tr:hover { background: var(--linen); }
 
     /* bus facts table */
     .tbf-warn { border-left: 4px solid #b3541e; }
@@ -557,45 +600,9 @@
 <nav>
   <a href="../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
   <ul class="nav-menu">
-    <li><a href="#">The Accommodation <span class="arrow">▾</span></a>
-      <ul class="dropdown">
-        <li><a href="../accommodation/double-room.html">Double Room</a></li>
-        <li><a href="../accommodation/twin-room-1.html">Double/Twin Room 1</a></li>
-        <li><a href="../accommodation/twin-room-2.html">Double/Twin Room 2</a></li>
-        <li><a href="../accommodation/pool-apartment.html">Studio Apartment</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Things To Do <span class="arrow">▾</span></a>
-      <ul class="dropdown">
-        <li><a href="../getting-here/getting-to-the-beach.html">Getting to the Beach</a></li>
-        <li><a href="local-beaches.html">Local Beaches</a></li>
-        <li><a href="tamariu-by-foot.html" class="active">Tamariu by Foot</a></li>
-        <li><a href="restaurants.html">Restaurants &amp; Bars</a></li>
-        <li><a href="girona.html">Visit Girona</a></li>
-        <li><a href="cycling.html">Cycling</a></li>
-        <li><a href="markets.html">Local Markets</a></li>
-        <li><a href="walking.html">Walking</a></li>
-        <li><a href="water-sports.html">Water Sports</a></li>
-        <li><a href="tourist-info.html">Tourist Information</a></li>
-        <li><a href="../getting-here/julivia-bus.html">Julivia Bus</a></li>
-        <li><a href="../getting-here/begur-bus.html">Begur Beach Bus</a></li>
-      </ul>
-    </li>
-    <li><a href="#">About Catalunya <span class="arrow">▾</span></a>
-      <ul class="dropdown">
-        <li><a href="../about-catalunya/cuisine.html">Catalonian Cuisine</a></li>
-        <li><a href="../about-catalunya/language.html">Catalonian Language</a></li>
-        <li><a href="../about-catalunya/culture.html">Catalonian Culture</a></li>
-        <li><a href="../about-catalunya/history.html">Catalonian History</a></li>
-        <li><a href="../about-catalunya/cities.html">Cities of Interest</a></li>
-        <li><a href="../about-catalunya/facts.html">Catalonian Facts</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Getting Here <span class="arrow">▾</span></a>
-      <ul class="dropdown">
-        <li><a href="../getting-here/index.html">Map &amp; Directions</a></li>
-      </ul>
-    </li>
+    <li><a href="#">The Accommodation <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../accommodation/double-room.html">Double Room</a></li><li><a href="../accommodation/twin-room-1.html">Double/Twin Room 1</a></li><li><a href="../accommodation/twin-room-2.html">Double/Twin Room 2</a></li><li><a href="../accommodation/pool-apartment.html">Studio Apartment</a></li></ul></li>
+    <li><a href="#">Things To Do <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/getting-to-the-beach.html">Getting to the Beach</a></li><li><a href="girona.html">Visit Girona</a></li><li><a href="villages-tour.html">Villages Tour</a></li><li><a href="markets.html">Local Markets</a></li><li><a href="local-beaches.html">Local Beaches</a></li><li><a href="tamariu-by-foot.html">Tamariu by Foot</a></li><li><a href="restaurants.html">Local Restaurants</a></li><li class="has-sub"><a href="#">Local Culture <span class="arrow arrow-sub">▸</span></a><ul class="dropdown submenu"><li><a href="../about-catalunya/cuisine.html">Catalonian Cuisine</a></li><li><a href="../about-catalunya/language.html">Catalonian Language</a></li><li><a href="../about-catalunya/culture.html">Catalonian Culture</a></li><li><a href="../about-catalunya/history.html">Catalonian History</a></li><li><a href="../about-catalunya/cities.html">Cities of Interest</a></li><li><a href="../about-catalunya/facts.html">Catalonian Facts</a></li></ul></li><li class="has-sub"><a href="#">Physical Activities <span class="arrow arrow-sub">▸</span></a><ul class="dropdown submenu"><li><a href="walking.html">Walking</a></li><li><a href="cycling.html">Cycling</a></li><li><a href="water-sports.html">Water Sports</a></li></ul></li></ul></li>
+    <li><a href="#">Getting Here / About <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../getting-here/index.html">Map &amp; Directions</a></li><li><a href="../getting-here/bus-timetables.html">Bus Timetables</a></li><li><a href="../getting-here/julivia-bus.html">Julivia Bus</a></li><li><a href="../getting-here/begur-bus.html">Begur Beach Bus</a></li></ul></li>
     <li><a href="../contact/index.html">Contact &amp; Book</a></li>
   </ul>
   <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -633,6 +640,13 @@
           <td>€6.50 adult<br>€3 child 4–12<br><span class="bf-sub">all-day hop-on hop-off</span></td>
         </tr>
         <tr>
+          <td><strong>Bus 30′</strong><br><span class="bf-sub">Palafrugell · Calella · Llafranc</span></td>
+          <td>1 Jul – 31 Aug 2026<br><span class="bf-sub">every 30 min</span></td>
+          <td><span class="bf-sub">Does not serve Tamariu — board at Calella or Llafranc.</span><br>From Palafrugell (Pl. Europa): 07:30 – 23:15</td>
+          <td class="bf-gap">none<br><span class="bf-sub">every 30 min</span></td>
+          <td>€2 single<br><span class="bf-sub">10 trips €10</span></td>
+        </tr>
+        <tr>
           <td><strong>Bus 60′</strong><br><span class="bf-sub">Palafrugell · Llafranc · Tamariu</span></td>
           <td>1 Jul – 31 Aug 2026</td>
           <td><span class="bf-sub">Departures from Palafrugell station:</span><br><strong>17 Jul – 31 Aug:</strong> 07:00 · 08:00 · 09:00 · 10:00 · 11:00 · 15:30 · 16:30 · 17:30 · 18:30 · 19:30<br><strong>Most of early July:</strong> 07:00 · 11:00 · 16:30 only</td>
@@ -648,6 +662,8 @@
         </tr>
       </tbody>
     </table>
+
+    <figure style="margin:22px 0;max-width:760px;"><img src="../images/buses/bus60.jpg" alt="Bus 60 between Palafrugell and Tamariu" style="width:100%;height:auto;border-radius:4px;box-shadow:0 6px 22px rgba(26,58,92,0.14);display:block;"><figcaption style="font-size:0.72rem;color:var(--stone);margin-top:7px;font-family:Verdana,Arial,sans-serif;">The Bus 60′ links Palafrugell station with Llafranc and Tamariu</figcaption></figure>
 
     <p class="bf-links">
       <a href="#timetables"><strong>↓ Jump to the full timetables</strong></a> — all three services, every departure, reproduced further down this page.
@@ -672,20 +688,50 @@
 
   <section class="bus-map-section">
     <h2>Where the buses actually stop</h2>
-    <p class="bus-map-intro">Three separate operators, three different networks. This map shows how they fit together — which is mostly a matter of seeing that the Julivia cluster in the south is all walkable, while the Begur coves in the north are not connected to each other at all.</p>
+    <p class="bus-map-intro">Three separate operators, three different networks. Use the tabs to focus on one route at a time, or see them all together. Routes follow the roads; for the operators' own definitive maps and exact stops, use the official links above.</p>
     <div class="bus-map-legend">
       <span><i class="dot dot-julivia"></i> Julivia</span>
+      <span><i class="dot dot-bus30"></i> Bus 30′</span>
       <span><i class="dot dot-bus60"></i> Bus 60′</span>
       <span><i class="dot dot-begur"></i> Begur beach bus</span>
       <span><i class="dot dot-home"></i> Tamariu Chalet</span>
     </div>
+    <div class="bus-map-tabs" role="tablist" aria-label="Choose a bus route">
+      <button type="button" class="bmt is-active" data-view="overview">Overview</button>
+      <button type="button" class="bmt" data-view="julivia">Julivia</button>
+      <button type="button" class="bmt" data-view="bus30">Bus 30′</button>
+      <button type="button" class="bmt" data-view="bus60">Bus 60′</button>
+      <button type="button" class="bmt" data-view="begur">Begur beach bus</button>
+    </div>
+    <p class="bus-map-desc" id="bmDesc">All the networks together. The southern cluster (Julivia, Bus 30′ and Bus 60′) is largely walkable; the Begur coves in the north are separate spokes with no cove-to-cove link.</p>
     <div id="busmap"></div>
-    <p class="bus-map-note">Stop positions are indicative, placed to show the shape of each network rather than the exact kerbside. For precise stops and the current timetable, use the official links above.</p>
+    <p class="bus-map-note">Routes are drawn along the roads from the stop list; for the operators' definitive maps and exact kerbside stops, use the official links above.</p>
+
+    <h3 class="jt-title">Journey times &amp; distances from Tamariu</h3>
+    <p class="bus-map-intro">Times are taken from the 2026 timetables (or a typical walking pace); distances are approximate by road or coastal path. The chalet is about a ten-minute walk from the Tamariu bus stop.</p>
+    <div class="jt-wrap">
+      <table class="jt-table">
+        <thead>
+          <tr><th>To</th><th>How</th><th>Time</th><th>Distance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Palafrugell (town &amp; station)</td><td>Bus 60′ or Julivia</td><td class="jt-multi">Julivia 16 min<br>Bus 60′ 30 min</td><td>~6 km</td></tr>
+          <tr><td>Sant Sebastià lighthouse</td><td>Julivia, or ~35 min on foot</td><td>10 min</td><td>~3 km</td></tr>
+          <tr><td>Llafranc</td><td>Julivia or Bus 60′</td><td>20 min</td><td>~4 km</td></tr>
+          <tr><td>Calella de Palafrugell (Port Bo)</td><td>Julivia</td><td>35 min</td><td>~6 km</td></tr>
+          <tr><td>Cap Roig gardens</td><td>Julivia</td><td>30 min</td><td>~7 km</td></tr>
+          <tr><td>Begur (Plaça Forgas)</td><td>Car — no direct bus</td><td>~15 min</td><td>~10 km</td></tr>
+          <tr><td>Aiguablava</td><td>On foot, camí de ronda</td><td>~35 min</td><td>2.2 km</td></tr>
+          <tr><td>Sa Riera / Sa Tuna</td><td>Car to Begur, then beach bus</td><td>25–30 min</td><td>~11 km</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="bus-map-note"><strong>On foot between the southern stops:</strong> Llafranc → Calella is about 25 minutes (~1.5 km) on the flat camí de ronda, and Calella → Cap Roig another 20 minutes (~1 km) — no bus needed between these three.</p>
   </section>
 
   <section class="tt-section" id="timetables">
     <h2>The timetables in full</h2>
-    <p class="bus-map-intro">Reproduced from the 2026 operator timetables so you can plan without hunting for a PDF. Operators do revise these mid-season — the official links are given under each table.</p>
+    <p class="bus-map-intro">Reproduced from the 2026 operator timetables so you can plan without hunting for a PDF. Operators do revise these mid-season — the official links are given under each table. See also our dedicated <a href="../getting-here/bus-timetables.html">bus timetables page</a>, which adds Bus 30 and the Girona connection.</p>
 
     <!-- ── JULIVIA ── -->
     <h3 class="tt-h">Julivia <span class="tt-season">25 July – 20 September 2026 · €6.50 adult, €3 child 4–12 · all-day hop-on hop-off</span></h3>
@@ -726,21 +772,25 @@
     <h3 class="tt-h">Bus 60′ <span class="tt-season">1 July – 31 August 2026 · €2 single · T-10 €6.40 via ATM Girona</span></h3>
     <div class="tt-scroll">
       <table class="tt">
-        <thead><tr><th>Dates</th><th colspan="10">Departures from Palafrugell bus station</th></tr></thead>
+        <thead><tr><th>17 Jul – 31 Aug <span class="tt-sub">plus 4, 5, 11 &amp; 12 July</span></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead>
         <tbody>
-          <tr class="tt-key">
-            <td><strong>17 July – 31 August</strong><br><span class="tt-sub">plus 4, 5, 11 &amp; 12 July</span></td>
-            <td>07:00</td><td>08:00</td><td>09:00</td><td>10:00</td><td>11:00</td>
-            <td>15:30</td><td>16:30</td><td>17:30</td><td>18:30</td><td>19:30</td>
-          </tr>
-          <tr class="tt-thin">
-            <td><strong>1–3, 6–10, 13–16 July</strong><br><span class="tt-sub">three a day only</span></td>
-            <td>07:00</td><td colspan="4">11:00</td><td colspan="5">16:30</td>
-          </tr>
+          <tr><td>Palafrugell <span class="tt-sub">departs Estació</span></td><td>07:00</td><td>08:00</td><td>09:00</td><td>10:00</td><td>11:00</td><td>15:30</td><td>16:30</td><td>17:30</td><td>18:30</td><td>19:30</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong> <span class="tt-sub">arrives / turns round</span></td><td>07:30</td><td>08:30</td><td>09:30</td><td>10:30</td><td>11:30</td><td>16:00</td><td>17:00</td><td>18:00</td><td>19:00</td><td>20:00</td></tr>
+          <tr><td>→ back to <strong>Palafrugell</strong> <span class="tt-sub">via Llafranc, arrives</span></td><td>08:00</td><td>09:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td>16:30</td><td>17:30</td><td>18:30</td><td>19:30</td><td>20:30</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tt-note"><strong>Route:</strong> Palafrugell (Estació) → Pl. 11 de Setembre → Camp d'en Prats → Bruguerol → Llafranc (Rotonda Camí de la Font d'en Xecu) → <strong>Tamariu</strong> → and back the same way. Tamariu is roughly 20 minutes after the Palafrugell departure — the operator publishes departure times from Palafrugell only, so check the PDF for the exact minute at your stop. There is no service between 11:00 and 15:30. Official source: <a href="https://visitpalafrugell.cat/wp-content/uploads/2022/06/Horaris-Bus-30-i-Bus-60.pdf" target="_blank" rel="noopener">Bus 30′ &amp; 60′ timetable (PDF)</a>.</p>
+    <div class="tt-scroll">
+      <table class="tt">
+        <thead><tr><th>1–3, 6–10, 13–16 July <span class="tt-sub">three a day only</span></th><th>1</th><th>2</th><th>3</th></tr></thead>
+        <tbody>
+          <tr><td>Palafrugell <span class="tt-sub">departs Estació</span></td><td>07:00</td><td>11:00</td><td>16:30</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong> <span class="tt-sub">arrives / turns round</span></td><td>07:30</td><td>11:30</td><td>17:00</td></tr>
+          <tr><td>→ back to <strong>Palafrugell</strong> <span class="tt-sub">via Llafranc, arrives</span></td><td>08:00</td><td>12:00</td><td>17:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note"><strong>Route:</strong> Palafrugell (Estació) → Pl. 11 de Setembre → Camp d'en Prats → Bruguerol → Llafranc (Rotonda Camí de la Font d'en Xecu) → <strong>Tamariu</strong> → and back the same way. <strong>The bus reaches Tamariu 30 minutes after leaving Palafrugell</strong>, and turns straight round — so the Tamariu times above are also when you board for the trip back, reaching Palafrugell station 30 minutes later. There is no service between 11:00 and 15:30. Official source: <a href="https://visitpalafrugell.cat/wp-content/uploads/2022/06/Horaris-Bus-30-i-Bus-60.pdf" target="_blank" rel="noopener">Bus 30′ &amp; 60′ timetable (PDF)</a>.</p>
 
     <!-- ── BEGUR ── -->
     <h3 class="tt-h">Begur beach bus <span class="tt-season">13 June – 13 September 2026 · €1.50 single, €3 day pass, €1 under-16s, under-6 free</span></h3>
@@ -809,10 +859,11 @@
         <ul class="timeline">
           <li><span class="t">09:15</span><span class="d">Breakfast at the chalet, then the short walk down into Tamariu village. Be at the stop by 09:40 — there is no bus behind this one for 90 minutes.</span></li>
           <li><span class="t">09:46</span><span class="d">Pick up the <strong>Julivia</strong> at the Tamariu stop. Buy the all-day ticket from the driver.</span></li>
-          <li><span class="t">09:56</span><span class="d">Off at the <strong>Far de Sant Sebastià</strong>. The highest lighthouse on the Costa Brava, with an Iberian settlement, an 18th-century watchtower and a view down the whole coast. You have exactly 90 minutes here — the next bus is 11:26.</span></li>
-          <li><span class="t">11:26</span><span class="d">Back on the bus, down to <strong>Llafranc</strong> for 11:36. Swim from the sandy bay, coffee on the promenade.</span></li>
-          <li><span class="t">13:00</span><span class="d">Now put the timetable away. <strong>Walk</strong> the camí de ronda round to <strong>Calella de Palafrugell</strong> — 25 minutes, flat and easy, with the coves opening up beside you the whole way. Long lunch among the arcaded fishermen's houses at Port Bo.</span></li>
-          <li><span class="t">15:30</span><span class="d">Optional: <strong>Cap Roig</strong>, the clifftop botanical gardens, is a further 20 minutes on foot from Calella. Two hours is right for the gardens and the sea views.</span></li>
+          <li><span class="t">09:56</span><span class="d">Off at the <strong>Far de Sant Sebastià</strong>. The highest lighthouse on the Costa Brava, with an Iberian settlement, an 18th-century watchtower and a view down the whole coast. Twenty minutes is plenty to take it all in — no need to wait 90 minutes for the next bus.</span></li>
+          <li><span class="t">10:15</span><span class="d"><strong>Walk down to Llafranc.</strong> A clear path drops off the headland straight into the village — 1.8 km, about 25 minutes and all downhill — so you are on the beach by 10:40 rather than standing at the stop until 11:26.</span></li>
+          <li><span class="t">10:40</span><span class="d">Into <strong>Llafranc</strong>: swim from the sandy bay and take a coffee on the promenade while the morning is still quiet.</span></li>
+          <li><span class="t">11:45</span><span class="d"><strong>Walk</strong> the camí de ronda round to <strong>Calella de Palafrugell</strong> — 25 minutes, flat and easy, with the coves opening up beside you the whole way. Long lunch among the arcaded fishermen's houses at Port Bo.</span></li>
+          <li><span class="t">14:00</span><span class="d">Carry on about 15 minutes to <strong>El Golfet</strong>, the quiet pine-backed cove just beyond Calella. This is the heart of the day — swim, snorkel and laze on the beaches. Give the Cap Roig gardens a miss unless you especially want them; the coves are the point.</span></li>
           <li><span class="t">17:00</span><span class="d">Stroll back round to <strong>Llafranc</strong> for a last swim and a drink on the promenade, timing it for whichever bus home suits you.</span></li>
           <li><span class="t">18:26<br><span class="bf-sub">or 19:56</span></span><span class="d">Pick the Julivia back up at <strong>Llafranc</strong> — into Tamariu at 18:44 or 20:14. Dinner on the seafront.</span></li>
         </ul>
@@ -823,7 +874,7 @@
         <ul>
           <li><strong>Six departures a day</strong> — roughly three in the morning and three in the afternoon. Gaps between buses are long, so plan around the timetable rather than assuming you can leave when you like.</li>
           <li><strong>Download the Julivia bus app</strong> — it carries the live route, stop locations, times and a commentary on the town's history.</li>
-          <li><strong>Cap Roig needs its own ticket</strong>, separate from the bus fare. In summer it also hosts a well-known music festival, so evenings can be busy.</li>
+          <li><strong>The Cap Roig gardens are optional</strong> — a separate ticket from the bus fare, and easily skipped if you would rather give the day to the beaches. In summer they host a well-known music festival, so evenings can be busy.</li>
         </ul>
         <a class="ext-link" href="https://visitpalafrugell.cat/en/routes/cultural-routes/julivia-bus/" target="_blank" rel="noopener">→ Official Julivia route &amp; timetable</a>
       </div>
@@ -853,7 +904,7 @@
           <li><span class="t">08:30</span><span class="d">Leave from the southern end of <strong>Tamariu beach</strong> — follow the signs for the camí de ronda and the red-and-white GR waymarks.</span></li>
           <li><span class="t">09:20</span><span class="d">Detour down to <strong>Cala Pedrosa</strong> for a swim with almost nobody else there. Steep in and steeper out.</span></li>
           <li><span class="t">10:30</span><span class="d">Top out at the <strong>Far de Sant Sebastià</strong> — lighthouse, watchtower, chapel and a panorama over the whole coastline. Coffee at the terrace.</span></li>
-          <li><span class="t">11:30</span><span class="d">Descend the zigzags into <strong>Llafranc</strong>. Long swim from the sandy beach.</span></li>
+          <li><span class="t">11:00</span><span class="d">Descend into <strong>Llafranc</strong> — 1.8 km, about 25 minutes and all downhill — for a long swim from the sandy beach by 11:25.</span></li>
           <li><span class="t">13:30</span><span class="d">Lunch on the Llafranc promenade.</span></li>
           <li><span class="t">15:00</span><span class="d">If you have the legs, carry on — <strong>Calella de Palafrugell is only 25 minutes further</strong> along the flat camí de ronda from Llafranc, and Cap Roig another 20 beyond that. Nothing about the walk south has to stop at Llafranc.</span></li>
           <li><span class="t">16:00</span><span class="d"><strong>Then ride home instead of walking back.</strong> This is the best-value trick on the page: the whole coast walk one way, and a bus for the return.</span></li>
@@ -985,13 +1036,13 @@
       <div class="day-plan">
         <h4>A day that works</h4>
         <ul class="timeline">
-          <li><span class="t">09:20</span><span class="d">Walk down to the <strong>Tamariu bus stop</strong> for the Bus 60′ that leaves Palafrugell station at 09:00 and turns round at Tamariu. Check the PDF for the exact Tamariu minute — it is roughly 20 minutes after the Palafrugell departure.</span></li>
-          <li><span class="t">09:45</span><span class="d">Into <strong>Palafrugell</strong> and walk from the station to the centre.</span></li>
-          <li><span class="t">10:00</span><span class="d">The <strong>market</strong> if it is Sunday; otherwise the daily covered market and the streets around Plaça Nova.</span></li>
+          <li><span class="t">09:25</span><span class="d">Walk down to the <strong>Tamariu bus stop</strong> for the <strong>09:30</strong> Bus 60′ back towards town — this is the service that leaves Palafrugell at 09:00 and turns straight round at Tamariu.</span></li>
+          <li><span class="t">10:00</span><span class="d">Into <strong>Palafrugell</strong> station — 30 minutes from Tamariu — and walk up to the centre.</span></li>
+          <li><span class="t">10:15</span><span class="d">The <strong>market</strong> if it is Sunday; otherwise the daily covered market and the streets around Plaça Nova.</span></li>
           <li><span class="t">11:30</span><span class="d"><strong>Museu del Suro</strong>, the cork museum — a genuinely good account of the industry that built this whole area.</span></li>
-          <li><span class="t">13:30</span><span class="d">Lunch in town. This is where you get the <em>menú del dia</em> at local prices rather than seafront ones — and you may as well take your time, because there is no bus back between 11:00 and 15:30 anyway.</span></li>
-          <li><span class="t">15:30</span><span class="d"><strong>Can Mario</strong> — contemporary sculpture in a converted cork factory, with the modernista water tower alongside. Or take the 15:30 bus straight home if the town is done.</span></li>
-          <li><span class="t">17:30<br><span class="bf-sub">or 18:30</span></span><span class="d">Bus 60′ back towards the coast from Palafrugell station. Home in time for a swim before dinner.</span></li>
+          <li><span class="t">13:30</span><span class="d">Lunch in town. This is where you get the <em>menú del dia</em> at local prices rather than seafront ones — and you may as well take your time, because the next bus towards Tamariu is not until 15:30.</span></li>
+          <li><span class="t">15:30</span><span class="d"><strong>Can Mario</strong> — contemporary sculpture in a converted cork factory, with the modernista water tower alongside. Or take the 15:30 bus straight home (into Tamariu at 16:00) if the town is done.</span></li>
+          <li><span class="t">17:30<br><span class="bf-sub">or 18:30</span></span><span class="d">Bus 60′ from Palafrugell station — into Tamariu at <strong>18:00</strong> (or <strong>19:00</strong>). Home in time for a swim before dinner.</span></li>
         </ul>
         <p class="last-bus"><strong>Last Bus 60′ of the day leaves Palafrugell at 19:30.</strong> And be careful in <strong>early July</strong>: on most days from the 1st to the 16th there are only three departures — 07:00, 11:00 and 16:30 — so a day in Palafrugell means the 11:00 out and the 16:30 back, with nothing in between. From 17 July it runs hourly again. A taxi back is around €15–20 if it goes wrong.</p>
       </div>
@@ -1016,24 +1067,22 @@
       <div class="day-facts">
         <span class="fact-pill"><span class="lbl">Effort</span> Easy</span>
         <span class="fact-pill"><span class="lbl">Mostly</span> Indoors</span>
-        <span class="fact-pill"><span class="lbl">Girona</span> ~1 hr by bus</span>
+        <span class="fact-pill"><span class="lbl">Girona</span> ~1 h 10 by bus</span>
         <span class="fact-pill"><span class="lbl">Note</span> Museums shut Mondays</span>
       </div>
       <div class="day-desc">
         <p>It does rain on the Costa Brava, and when it does the coast empties. Two good options, depending on how far you want to go.</p>
-        <p>The <strong>short version</strong> keeps you in Palafrugell: the cork museum and Can Mario are both properly indoor, twenty minutes apart on foot, and a long lunch fills the gap between them. The <strong>long version</strong> continues to <strong>Girona</strong> — around an hour by regional bus — where the cathedral, the Jewish quarter and the colonnaded riverfront make an easy day out of the weather.</p>
+        <p>The <strong>short version</strong> keeps you in Palafrugell: the cork museum and Can Mario are both properly indoor, twenty minutes apart on foot, and a long lunch fills the gap between them. The <strong>long version</strong> continues to <strong>Girona</strong> — about an hour and ten minutes on the <strong>Moventis line 42</strong> coach from Palafrugell (Girona → La Bisbal → Palafrugell) — where the cathedral, the Jewish quarter and the colonnaded riverfront make an easy day out of the weather.</p>
       </div>
       <div class="day-plan">
         <h4>A day that works — the Girona version</h4>
         <ul class="timeline">
-          <li><span class="t">09:00</span><span class="d">Bus 60 (or a lift) to <strong>Palafrugell bus station</strong>.</span></li>
-          <li><span class="t">09:45</span><span class="d">Regional <strong>Moventis/Sarfa coach to Girona</strong> — around an hour, and a comfortable ride.</span></li>
-          <li><span class="t">11:00</span><span class="d">Coffee in the old town, then the <strong>cathedral</strong> and its vast single-nave interior.</span></li>
+          <li><span class="t">08:30</span><span class="d">Catch the Bus 60′ at the <strong>Tamariu stop</strong> (or take a lift) — into <strong>Palafrugell station</strong> at 09:00, in time for a mid-morning <strong>line 42</strong> coach to Girona (about 1 h 10).</span></li>
+          <li><span class="t">10:30</span><span class="d">Girona: coffee in the old town, then the <strong>cathedral</strong> and its vast single-nave interior.</span></li>
           <li><span class="t">12:30</span><span class="d">The <strong>Call</strong>, Girona's medieval Jewish quarter — narrow, covered, and at its most atmospheric in bad weather.</span></li>
           <li><span class="t">14:00</span><span class="d">Lunch. Girona takes its food seriously and the options are a step up from the coast.</span></li>
           <li><span class="t">16:00</span><span class="d">The <strong>Arab baths</strong> and the city walls, or the art museum if it is still coming down.</span></li>
-          <li><span class="t">18:00</span><span class="d">Coach back to Palafrugell.</span></li>
-          <li><span class="t">19:30</span><span class="d">Home, with the weather forgotten.</span></li>
+          <li><span class="t">16:55<br><span class="bf-sub">or 17:55</span></span><span class="d">Home run: the <strong>15:45</strong> or <strong>16:45</strong> line 42 from Girona reaches Palafrugell at 16:55 / 17:55, connecting with the Bus 60′ at 17:30 / 18:30 — into Tamariu by 18:00 / 19:00. The last workable link is the <strong>17:45</strong> from Girona (Palafrugell 18:55 → the final Bus 60′ 19:30 → Tamariu 20:00). <a href="../getting-here/bus-timetables.html#girona">Full connection table</a>.</span></li>
         </ul>
       </div>
       <div class="day-tips">
@@ -1041,7 +1090,7 @@
         <ul>
           <li><strong>Museu del Suro</strong> is closed on Mondays. It generally opens mornings and late afternoons Tuesday to Saturday, and mornings only on Sundays and holidays — with a long midday break, as everywhere here.</li>
           <li><strong>Can Mario</strong> keeps similar split hours, Monday to Saturday, mornings only on Sundays.</li>
-          <li><strong>Check the last coach back</strong> from Girona before you go. Services thin out considerably in the evening and outside high season.</li>
+          <li><strong>Mind the Bus 60′ midday gap and last bus.</strong> Line 42 from Girona runs roughly hourly, but the Bus 60′ leg home has no service 11:00–15:30 and finishes at 19:30. The <a href="../getting-here/bus-timetables.html#girona">connection table</a> shows exactly which Girona departures make a Bus 60′.</li>
           <li><strong>The camí de ronda after rain</strong> is slippery on the rock sections and best avoided the same day.</li>
         </ul>
         <a class="ext-link" href="girona.html">→ Our full guide to visiting Girona</a>
@@ -1146,6 +1195,42 @@
     </table>
   </div>
 
+  <!-- ══ CULTURAL PASS ══ -->
+  <h2 class="tbf-section-title">The Cultural Pass — cheaper entry to the sights</h2>
+  <div class="day">
+    <div class="day-body">
+      <figure style="margin:0 0 20px;">
+        <img src="../images/shared/cultural-pass.svg" alt="Palafrugell Plus Cultural Pass — reduced admission for two people until 31 December 2026, covering Cap Roig Gardens, the Josep Pla Foundation, the Vila Casas–Can Mario Museum, the Can Mario water tower, the Sant Sebastià watchtower and the Cork Museum of Catalonia." loading="lazy" style="width:100%;height:auto;border-radius:8px;display:block;">
+        <figcaption style="font-size:0.76rem;color:var(--stone);margin-top:8px;text-align:center;">The Palafrugell Plus Cultural Pass — one card, six sights, reduced entry for two.</figcaption>
+      </figure>
+      <div class="day-desc">
+        <p>Several of the days above end at a paid attraction — the <strong>Sant Sebastià watchtower</strong> on the headland (days one and two), the <strong>Cap Roig gardens</strong> at the foot of the Julivia loop, and the <strong>cork museum</strong> and <strong>Can Mario</strong> in Palafrugell on the town and rainy days. All of them, plus the Josep Pla Foundation and the Can Mario water tower, belong to <strong>Palafrugell Plus</strong>, and a single card unlocks a reduced price at every one.</p>
+        <p>The trick is that the <strong>Cultural Pass is free</strong>: buy one full-price ticket at any of the six sites and you are handed a pass on the spot. It is <strong>valid for two people</strong>, good until <strong>31 December 2026</strong>, and you can reuse it as often as you like across your stay — so the discount applies to every site you visit after the first. Children under 12 go free throughout. If you would rather have it in hand before you start, it can also be bought on its own for €10.</p>
+      </div>
+
+      <div class="tbf-note" style="margin-bottom:0;">
+        <h4>What it costs, with and without the pass</h4>
+        <div class="tbf-table-wrap" style="margin-top:6px;">
+          <table class="tbf-table">
+            <thead>
+              <tr><th>Site</th><th>Regular</th><th>With Pass</th><th>On which day</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cap Roig Gardens</td><td>€12</td><td>€8</td><td>Julivia loop (day 1)</td></tr>
+              <tr><td>Sant Sebastià watchtower</td><td>€2</td><td>€1</td><td>Days 1 &amp; 2 (the headland)</td></tr>
+              <tr><td>Museu del Suro (cork museum)</td><td>€6</td><td>€3.50</td><td>Days 5 &amp; 6</td></tr>
+              <tr><td>Vila Casas – Can Mario Museum</td><td>€10</td><td>€5</td><td>Days 5 &amp; 6</td></tr>
+              <tr><td>Can Mario water tower</td><td>€2</td><td>€1</td><td>Days 5 &amp; 6</td></tr>
+              <tr><td>Josep Pla Foundation</td><td>€5</td><td>€2.50</td><td>Palafrugell town</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:12px;"><strong>Worked example, two adults.</strong> A day that takes in Cap Roig works out at €12 for the first ticket — which earns your free pass — plus €8 for the second, so €20 the pair. That same pass then brings every later visit down to the right-hand column: the cork museum and Can Mario together are €8.50 a head rather than €16, and the Sant Sebastià watchtower is a single euro. The pass has usually paid for itself by the second sight.</p>
+        <p style="margin-top:8px;">The Sant Sebastià headland itself — the Iberian settlement, the old inn and the cliff-top viewpoints by the lighthouse — is free to wander; only climbing the watchtower needs a ticket. Prices are current for 2026; check the <a href="https://plus.palafrugell.cat/en/cultural-pass/" target="_blank" rel="noopener">official Cultural Pass page</a> for any mid-season change.</p>
+      </div>
+    </div>
+  </div>
+
   <h2 class="tbf-section-title">What to take</h2>
   <div class="day">
     <div class="day-body">
@@ -1166,49 +1251,20 @@
 
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="brand-name">Tamariu Chalet</div>
-      <p>Peaceful accommodation in the coastal village of Tamariu, Costa Brava, Catalunya.</p>
-    </div>
-    <div class="footer-col">
-      <h4>The Rooms</h4>
-      <ul>
-        <li><a href="../accommodation/double-room.html">Double Room</a></li>
-        <li><a href="../accommodation/pool-apartment.html">Studio Apartment</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Things To Do</h4>
-      <ul>
-        <li><a href="local-beaches.html">Local Beaches</a></li>
-        <li><a href="tamariu-by-foot.html">Tamariu by Foot</a></li>
-        <li><a href="restaurants.html">Restaurants &amp; Bars</a></li>
-        <li><a href="girona.html">Visit Girona</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="../contact/index.html">Book Now</a></li>
-      </ul>
-    </div>
+    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Peaceful accommodation in the coastal village of Tamariu, Costa Brava, Catalunya.</p></div>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Tamariu Chalet</p>
-    <p>Tamariu, Costa Brava, Catalunya</p>
-  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet</p><p>Tamariu, Costa Brava, Catalunya</p></div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=20260803"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../js/bus-routes.js"></script>
 <script>
 (function () {
   var el = document.getElementById('busmap');
   if (!el || typeof L === 'undefined') return;
 
-  // Colour by operator. Stop positions are indicative — they show the shape of
-  // each network, not the exact kerbside.
-  var C = { julivia: '#1A3A5C', bus60: '#2e7d4f', begur: '#b3541e', home: '#c9a227' };
+  var C = { julivia: '#1A3A5C', bus30: '#7d3c98', bus60: '#2e7d4f', begur: '#b3541e', home: '#c9a227' };
 
   var stops = [
     ['home',    41.9179, 3.2055, 'Tamariu Chalet', 'Ten minutes on foot down to the Tamariu stop.'],
@@ -1218,35 +1274,115 @@
     ['julivia', 41.8869, 3.1806, 'Calella — Port Bo', 'Julivia only. Last pickup 19:51.<br><em>25 minutes on foot back to Llafranc.</em>'],
     ['julivia', 41.8797, 3.1739, 'Cap Roig', 'Julivia only — the southern turn of the loop. Last pickup 19:45.'],
     ['bus60',   41.9175, 3.1636, 'Palafrugell — bus station', 'Bus 60′ departures 07:00–11:00 and 15:30–19:30 (hourly from 17 July).<br>Julivia also starts and ends here.'],
+    ['bus60',   41.9158, 3.1662, 'Camp d\'en Prats', 'On the edge of Palafrugell — <strong>both</strong> the Julivia and Bus 60′ call here on the way out to the coast.'],
+    ['bus60',   41.9151, 3.1745, 'Bruguerol', 'Bus 60′ only — an inland stop on the road down to Llafranc.'],
     ['begur',   41.9540, 3.2075, 'Begur — Plaça Forgas', 'The hub. <strong>Every</strong> Begur beach route runs out from here and back — you cannot travel cove to cove without changing here.'],
-    ['begur',   41.9354, 3.2137, 'Aiguablava', 'Departures back to Begur: 10:45, 12:15, 13:45, 15:45, 16:45, 18:15, 19:45.<br>2.2 km on foot from the chalet.'],
-    ['begur',   41.9585, 3.2266, 'Sa Tuna', 'Back to Begur at 11:15, 12:45, 15:15, 17:15, 19:15. Last one is early — do not miss it.'],
-    ['begur',   41.9640, 3.1996, 'Sa Riera', 'Back to Begur at 10:15, 11:45, 13:15, 14:45, 16:15, 17:45, 18:45, 20:15.']
+    ['begur',   41.93428, 3.21501, 'Aiguablava', 'Departures back to Begur: 10:45, 12:15, 13:45, 15:45, 16:45, 18:15, 19:45.<br>2.2 km on foot from the chalet.'],
+    ['begur',   41.9569, 3.2305, 'Sa Tuna', 'Back to Begur at 11:15, 12:45, 15:15, 17:15, 19:15. Last one is early — do not miss it.'],
+    ['begur',   41.9673, 3.2050, 'Sa Riera', 'Back to Begur at 10:15, 11:45, 13:15, 14:45, 16:15, 17:45, 18:45, 20:15.']
   ];
 
-  var map = L.map(el, { scrollWheelZoom: false });
+  var map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 18
+    maxZoom: 19
   }).addTo(map);
 
-  var pts = [];
-  stops.forEach(function (s) {
-    var kind = s[0], lat = s[1], lng = s[2], name = s[3], body = s[4];
-    pts.push([lat, lng]);
-    L.circleMarker([lat, lng], {
-      radius: kind === 'home' ? 9 : 7,
-      color: '#fff', weight: 2,
-      fillColor: C[kind], fillOpacity: 1
-    }).addTo(map).bindPopup('<div class="bm-pop"><strong>' + name + '</strong>' + body + '</div>');
+  var homeIcon = L.divIcon({
+    className: 'bm-home',
+    html: '<svg width="30" height="38" viewBox="0 0 30 38" xmlns="http://www.w3.org/2000/svg">' +
+          '<path d="M15 1C7.8 1 2 6.8 2 14c0 9 13 23 13 23s13-14 13-23C28 6.8 22.2 1 15 1z" fill="#c9a227" stroke="#fff" stroke-width="2"/>' +
+          '<path d="M15 8l7 6h-2v7h-3v-4h-4v4H10v-7H8z" fill="#fff"/></svg>',
+    iconSize: [30, 38], iconAnchor: [15, 37], popupAnchor: [0, -32]
   });
 
-  // The walkable stretch: Llafranc - Calella - Cap Roig.
-  L.polyline([[41.8949, 3.1936], [41.8869, 3.1806], [41.8797, 3.1739]], {
-    color: '#1A3A5C', weight: 3, opacity: 0.55, dashArray: '6,6'
-  }).addTo(map).bindPopup('<div class="bm-pop"><strong>Walkable stretch</strong>Llafranc to Calella is 25 minutes on the flat; Cap Roig another 20. No bus needed between these three.</div>');
+  var layer = L.layerGroup().addTo(map);
 
-  map.fitBounds(L.latLngBounds(pts).pad(0.12));
+  function decPoly(s) {
+    var i = 0, lat = 0, lng = 0, o = [], sh, r, b;
+    while (i < s.length) {
+      sh = r = 0; do { b = s.charCodeAt(i++) - 63; r |= (b & 31) << sh; sh += 5; } while (b >= 32);
+      lat += (r & 1) ? ~(r >> 1) : (r >> 1);
+      sh = r = 0; do { b = s.charCodeAt(i++) - 63; r |= (b & 31) << sh; sh += 5; } while (b >= 32);
+      lng += (r & 1) ? ~(r >> 1) : (r >> 1);
+      o.push([lat * 1e-5, lng * 1e-5]);
+    }
+    return o;
+  }
+  var P = {
+    pala: [41.9175, 3.1636], camp: [41.9158, 3.1662], brug: [41.9151, 3.1745],
+    tam: [41.9186, 3.2081], far: [41.8993, 3.2088], lla: [41.8949, 3.1936],
+    cal: [41.8869, 3.1806], cap: [41.8797, 3.1739], forgas: [41.9540, 3.2075],
+    aigua: [41.93428, 3.21501], satuna: [41.9569, 3.2305], sariera: [41.9673, 3.2050]
+  };
+  var R = window.BUS_ROADS || {};
+  var RD = {
+    julivia: R.julivia ? decPoly(R.julivia) : [P.pala, P.camp, P.tam, P.far, P.lla, P.cap, P.cal],
+    bus30:   R.bus30 ? decPoly(R.bus30) : [P.pala, P.cal, P.lla],
+    bus60:   R.bus60 ? decPoly(R.bus60) : [P.pala, P.camp, P.brug, P.lla, P.tam],
+    begur:   (R.begur && R.begur.length) ? R.begur.map(function (o) { var p = decPoly(o.r); p.push(o.end); return p; }) : [[P.forgas, P.sariera], [P.forgas, P.aigua], [P.forgas, P.satuna]]
+  };
+
+  function drawJulivia(op) { L.polyline(RD.julivia, { color: C.julivia, weight: 4, opacity: op }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Julivia loop</strong>Palafrugell → Tamariu → Llafranc → Calella → Cap Roig, then back the same way. 25 Jul – 20 Sep.</div>'); }
+  function drawBus30(op) { L.polyline(RD.bus30, { color: C.bus30, weight: 4, opacity: op, dashArray: '2,8' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Bus 30′</strong>Palafrugell → Calella de Palafrugell → Llafranc, every 30 min in summer (1 Jul – 31 Aug). Does not serve Tamariu.</div>'); }
+  function drawBus60(op) { L.polyline(RD.bus60, { color: C.bus60, weight: 4, opacity: op, dashArray: '9,7' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Bus 60′</strong>Palafrugell → Camp d\'en Prats → Bruguerol → Llafranc → Tamariu, and back. The only bus from Tamariu before 25 July.</div>'); }
+  function drawBegur(op) { RD.begur.forEach(function (spoke) { L.polyline(spoke, { color: C.begur, weight: 3, opacity: op }).addTo(layer); }); }
+  function drawWalk(op) { L.polyline([P.lla, P.cal, P.cap], { color: '#555', weight: 2, opacity: op, dashArray: '2,7' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Walkable stretch</strong>Llafranc to Calella is 25 minutes on the flat; Cap Roig another 20. No bus needed between these three.</div>'); }
+
+  var FIT = {
+    all:     [P.pala, P.camp, P.brug, P.tam, P.far, P.lla, P.cal, P.cap, P.forgas, P.aigua, P.satuna, P.sariera],
+    julivia: [P.pala, P.camp, P.tam, P.far, P.lla, P.cal, P.cap],
+    bus30:   [P.pala, P.cal, P.lla],
+    bus60:   [P.pala, P.camp, P.brug, P.lla, P.tam],
+    begur:   [P.forgas, P.aigua, P.satuna, P.sariera]
+  };
+
+  var VIEWS = {
+    overview: { desc: 'All the networks together. The southern cluster (Julivia, Bus 30′ and Bus 60′) is largely walkable; the Begur coves in the north are separate spokes with no cove-to-cove link.', routes: function () { drawJulivia(0.45); drawBus30(0.6); drawBus60(0.75); drawBegur(0.5); drawWalk(0.7); }, show: null, colour: null, fit: 'all' },
+    julivia: { desc: 'The Julivia tourist loop runs out from Palafrugell through Tamariu, then down the coast to Llafranc, Calella and Cap Roig — and back the same way (25 Jul–20 Sep). The southern coast stops are all within an easy walk of one another.', routes: function () { drawJulivia(0.9); drawWalk(0.7); }, show: ['Tamariu Chalet', 'Tamariu — bus stop', 'Far de Sant Sebastià', 'Llafranc', 'Calella — Port Bo', 'Cap Roig', 'Palafrugell — bus station', 'Camp d\'en Prats'], colour: C.julivia, fit: 'julivia' },
+    bus30: { desc: 'Bus 30′ is the fast summer shuttle between Palafrugell, Calella de Palafrugell and Llafranc — every 30 minutes, 1 July–31 August. It does not serve Tamariu; board it at Palafrugell, Calella or Llafranc.', routes: function () { drawBus30(0.9); }, show: ['Palafrugell — bus station', 'Calella — Port Bo', 'Llafranc'], colour: C.bus30, fit: 'bus30' },
+    bus60: { desc: 'Bus 60′ links Palafrugell station with Tamariu via Camp d\'en Prats, Bruguerol and Llafranc, and back. It is the only bus serving Tamariu before the Julivia starts on 25 July.', routes: function () { drawBus60(0.9); }, show: ['Tamariu Chalet', 'Tamariu — bus stop', 'Palafrugell — bus station', 'Camp d\'en Prats', 'Bruguerol', 'Llafranc'], colour: C.bus60, fit: 'bus60' },
+    begur: { desc: 'The Begur beach bus is a hub at Plaça Forgas with a separate spoke out to each cove — Sa Riera, Aiguablava and Sa Tuna. You cannot travel cove to cove; every trip goes back through Begur.', routes: function () { drawBegur(0.85); }, show: ['Begur — Plaça Forgas', 'Aiguablava', 'Sa Tuna', 'Sa Riera'], colour: C.begur, fit: 'begur' }
+  };
+
+  var descEl = document.getElementById('bmDesc');
+
+  function render(view) {
+    var v = VIEWS[view] || VIEWS.overview;
+    layer.clearLayers();
+    v.routes();
+    stops.forEach(function (s) {
+      var kind = s[0], lat = s[1], lng = s[2], name = s[3], body = s[4];
+      if (v.show && v.show.indexOf(name) < 0) return;
+      var popup = '<div class="bm-pop"><strong>' + name + '</strong>' + body + '</div>';
+      var left = lng < 3.196;
+      var dir = left ? 'left' : 'right';
+      var off = left ? [-8, 0] : [8, 0];
+      if (kind === 'home') {
+        L.marker([lat, lng], { icon: homeIcon, zIndexOffset: 1000 }).addTo(layer).bindPopup(popup).bindTooltip(name, { permanent: true, direction: dir, offset: left ? [-6, -12] : [10, -12], className: 'bm-label bm-label-home' });
+        return;
+      }
+      var fill = v.colour ? v.colour : C[kind];
+      L.circleMarker([lat, lng], { radius: 7, color: '#fff', weight: 2, fillColor: fill, fillOpacity: 1 }).addTo(layer).bindPopup(popup).bindTooltip(name, { permanent: true, direction: dir, offset: off, className: 'bm-label' });
+    });
+    if (descEl) descEl.textContent = v.desc;
+    var bounds = L.latLngBounds(FIT[v.fit]).pad(0.08);
+    map.setMaxBounds(null);
+    map.fitBounds(bounds);
+    map.setMaxBounds(bounds.pad(0.35));
+    map.setMinZoom(map.getZoom() - 1);
+  }
+
+  var tabs = document.querySelectorAll('.bus-map-tabs .bmt');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      render(btn.getAttribute('data-view'));
+    });
+  });
+
+  render('overview');
   map.on('click', function () { map.scrollWheelZoom.enable(); });
   map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
 })();

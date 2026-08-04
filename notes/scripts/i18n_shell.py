@@ -10,10 +10,10 @@ Relative paths are computed from the page's depth so the generated pages match
 the existing hand-written ones rather than switching to root-absolute links.
 """
 
-LANGS = ["en", "es", "ca", "fr", "nl"]
-LANG_LABELS = {"en": "EN", "es": "ES", "ca": "CA", "fr": "FR", "nl": "NL"}
+LANGS = ["en", "es", "ca", "fr", "nl", "de"]
+LANG_LABELS = {"en": "EN", "es": "ES", "ca": "CA", "fr": "FR", "nl": "NL", "de": "DE"}
 
-HTML_LANG = {"en": "en", "es": "es", "ca": "ca", "fr": "fr", "nl": "nl"}
+HTML_LANG = {"en": "en", "es": "es", "ca": "ca", "fr": "fr", "nl": "nl", "de": "de"}
 
 # ── UI vocabulary ────────────────────────────────────────────────────────────
 # Keys are stable identifiers; values are the string in each language. These
@@ -33,8 +33,20 @@ UI = {
         "fr": "À Propos de la Catalogne", "nl": "Over Catalonië",
     },
     "nav_getting_here": {
-        "en": "Getting Here", "es": "Cómo Llegar", "ca": "Com Arribar",
-        "fr": "Comment Venir", "nl": "Hoe Te Bereiken",
+        "en": "Getting Here / About", "es": "Cómo Llegar / Info", "ca": "Com Arribar / Info",
+        "fr": "Venir / À Propos", "nl": "Bereikbaarheid / Info",
+    },
+    "nav_local_culture": {
+        "en": "Local Culture", "es": "Cultura Local", "ca": "Cultura Local",
+        "fr": "Culture Locale", "nl": "Lokale Cultuur",
+    },
+    "nav_physical": {
+        "en": "Physical Activities", "es": "Actividades Físicas", "ca": "Activitats Físiques",
+        "fr": "Activités Physiques", "nl": "Fysieke Activiteiten",
+    },
+    "nav_buses": {
+        "en": "Buses", "es": "Autobuses", "ca": "Autobusos",
+        "fr": "Bus", "nl": "Bussen",
     },
     "nav_contact": {
         "en": "Contact &amp; Book", "es": "Contactar y Reservar", "ca": "Contactar i Reservar",
@@ -71,6 +83,10 @@ UI = {
         "en": "Visit Girona", "es": "Visitar Girona", "ca": "Visitar Girona",
         "fr": "Visiter Gérone", "nl": "Bezoek Girona",
     },
+    "villages": {
+        "en": "Villages Tour", "es": "Ruta de los Pueblos", "ca": "Ruta dels Pobles",
+        "fr": "Circuit des Villages", "nl": "Dorpenroute",
+    },
     "cycling": {
         "en": "Cycling", "es": "Ciclismo", "ca": "Ciclisme",
         "fr": "Cyclisme", "nl": "Fietsen",
@@ -94,6 +110,10 @@ UI = {
     "begur_bus": {
         "en": "Begur Beach Bus", "es": "Bus Playas de Begur", "ca": "Bus Platges de Begur",
         "fr": "Bus des Plages de Begur", "nl": "Begur Strandbus",
+    },
+    "timetables": {
+        "en": "Bus Timetables", "es": "Horarios de Autobús", "ca": "Horaris d'Autobús",
+        "fr": "Horaires de Bus", "nl": "Busdienstregeling",
     },
     "local_beaches": {
         "en": "Local Beaches", "es": "Playas Locales", "ca": "Platges Locals",
@@ -169,6 +189,53 @@ UI = {
     },
 }
 
+# ── German (de) UI vocabulary ────────────────────────────────────────────────
+# Added in one block so the table above stays readable; injected into UI below.
+_DE_UI = {
+    "nav_accommodation": "Die Unterkunft",
+    "nav_things": "Aktivitäten",
+    "nav_about": "Über Katalonien",
+    "nav_getting_here": "Anreise / Über uns",
+    "nav_local_culture": "Lokale Kultur",
+    "nav_physical": "Sportaktivitäten",
+    "nav_contact": "Kontakt &amp; Buchen",
+    "double_room": "Doppelzimmer",
+    "twin_1": "Doppel-/Zweibettzimmer 1",
+    "twin_2": "Doppel-/Zweibettzimmer 2",
+    "studio": "Studio-Apartment",
+    "shared_facilities": "Gemeinschaftsbäder &amp; Küche",
+    "beach_walk": "Zum Strand",
+    "girona": "Girona besuchen",
+    "villages": "Dörfertour",
+    "cycling": "Radfahren",
+    "markets": "Lokale Märkte",
+    "walking": "Wandern",
+    "tourist_info": "Touristeninformation",
+    "julivia": "Julivia-Bus",
+    "begur_bus": "Begur Strandbus",
+    "timetables": "Busfahrpläne",
+    "nav_buses": "Busse",
+    "local_beaches": "Lokale Strände",
+    "by_foot": "Tamariu zu Fuß",
+    "restaurants": "Lokale Restaurants",
+    "water_sports": "Wassersport",
+    "cuisine": "Katalanische Küche",
+    "language": "Katalanische Sprache",
+    "culture": "Katalanische Kultur",
+    "history": "Geschichte Kataloniens",
+    "cities": "Sehenswerte Städte",
+    "facts": "Fakten über Katalonien",
+    "map_directions": "Karte &amp; Anfahrt",
+    "footer_blurb": "Ruhige Unterkunft im Küstendorf Tamariu, Costa Brava, Katalonien.",
+    "footer_rooms": "Die Zimmer",
+    "footer_contact": "Kontakt",
+    "explore": "Entdecken",
+    "book_now": "Jetzt Buchen",
+    "menu": "Menü",
+}
+for _k, _v in _DE_UI.items():
+    UI[_k]["de"] = _v
+
 
 def t(key: str, lang: str) -> str:
     return UI[key][lang]
@@ -183,31 +250,46 @@ NAV = [
         ("twin_1", "accommodation/twin-room-1.html"),
         ("twin_2", "accommodation/twin-room-2.html"),
         ("studio", "accommodation/pool-apartment.html"),
-        ("shared_facilities", "accommodation/shared-facilities.html"),
     ]),
     ("nav_things", None, [
         ("beach_walk", "getting-here/getting-to-the-beach.html"),
         ("girona", "things-to-do/girona.html"),
-        ("cycling", "things-to-do/cycling.html"),
+        ("villages", "things-to-do/villages-tour.html"),
         ("markets", "things-to-do/markets.html"),
-        ("walking", "things-to-do/walking.html"),
-        ("tourist_info", "things-to-do/tourist-info.html"),
-        ("julivia", "getting-here/julivia-bus.html"),
-        ("begur_bus", "getting-here/begur-bus.html"),
         ("local_beaches", "things-to-do/local-beaches.html"),
         ("by_foot", "things-to-do/tamariu-by-foot.html"),
         ("restaurants", "things-to-do/restaurants.html"),
-        ("water_sports", "things-to-do/water-sports.html"),
-    ]),
-    ("nav_about", None, [
-        ("cuisine", "about-catalunya/cuisine.html"),
-        ("language", "about-catalunya/language.html"),
-        ("culture", "about-catalunya/culture.html"),
-        ("history", "about-catalunya/history.html"),
-        ("cities", "about-catalunya/cities.html"),
-        ("facts", "about-catalunya/facts.html"),
+        # Nested fly-out sub-menus: (label_key, [(label_key, logical), ...]).
+        ("nav_local_culture", [
+            ("cuisine", "about-catalunya/cuisine.html"),
+            ("language", "about-catalunya/language.html"),
+            ("culture", "about-catalunya/culture.html"),
+            ("history", "about-catalunya/history.html"),
+            ("cities", "about-catalunya/cities.html"),
+            ("facts", "about-catalunya/facts.html"),
+        ]),
+        ("nav_physical", [
+            ("walking", "things-to-do/walking.html"),
+            ("cycling", "things-to-do/cycling.html"),
+            ("water_sports", "things-to-do/water-sports.html"),
+        ]),
     ]),
     ("nav_getting_here", None, [
         ("map_directions", "getting-here/index.html"),
+        ("timetables", "getting-here/bus-timetables.html"),
+        ("julivia", "getting-here/julivia-bus.html"),
+        ("begur_bus", "getting-here/begur-bus.html"),
     ]),
 ]
+
+# The "?" help/about link sits after the language switcher (see build_nav).
+HELP_LINK = "about-catalunya/culture.html"
+
+# ── Site-wide footer ─────────────────────────────────────────────────────────
+# Single source of truth for the footer, used for every language. Kept clean and
+# link-free: just the brand line and copyright. English pages sync via
+# sync_en_footer.py; translated pages build from this in build_translations.py;
+# German standalone pages inherit it through build_de_standalone.py.
+# (Add (heading_key, [(label_key, logical), ...]) tuples here to bring columns
+# back.)
+FOOTER = []

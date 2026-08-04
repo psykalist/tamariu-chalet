@@ -21,8 +21,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = "https://tamariuchalet.com"
-LANGS = ["en", "es", "ca", "fr", "nl"]
-TRANSLATED = ["es", "ca", "fr", "nl"]
+LANGS = ["en", "es", "ca", "fr", "nl", "de"]
+TRANSLATED = ["es", "ca", "fr", "nl", "de"]
 
 # Directories that are not part of the deployed site
 SKIP_DIRS = {"notes", ".github", ".git", ".well-known"}

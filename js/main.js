@@ -2,13 +2,89 @@
 // TAMARIU CHALET — Main JavaScript
 // ============================================================
 
+// ── SITE VERSION + SHARED UI (version badge, home button, About) ──
+const SITE_VERSION = 'v20260803';
+
+// Enable safe-area insets (fixes menu / buttons sitting under the Android nav bar)
+(function () {
+  const vp = document.querySelector('meta[name="viewport"]');
+  if (vp && !/viewport-fit/.test(vp.content)) {
+    vp.setAttribute('content', vp.content + ', viewport-fit=cover');
+  }
+})();
+
+// Version line in every page footer (light, readable on the dark footer)
+(function () {
+  const fb = document.querySelector('.footer-bottom');
+  if (fb && !fb.querySelector('.site-version')) {
+    const p = document.createElement('p');
+    p.className = 'site-version';
+    p.textContent = 'Site ' + SITE_VERSION;
+    fb.appendChild(p);
+  }
+})();
+
+// A floating "×" button on every page (except the home page) that returns to
+// the main site page — so guests don't have to use the browser back arrow.
+(function () {
+  const path = location.pathname;
+  const atHome = path === '/' || path === '/index.html';
+  if (atHome) return;
+  const a = document.createElement('a');
+  a.className = 'home-fab';
+  a.href = '/';
+  a.setAttribute('aria-label', 'Return to the home page');
+  a.title = 'Return to the home page';
+  a.innerHTML = '<span aria-hidden="true">×</span>';
+  if (document.body) {
+    document.body.appendChild(a);
+  } else {
+    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(a));
+  }
+})();
+
+// "?" help item (after the language switcher) — opens a small dialog that
+// shows the site version. The "?" link is emitted by build_nav / sync_en_nav.
+(function () {
+  const trigger = document.querySelector('.nav-help');
+  if (!trigger) return;
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    let m = document.getElementById('about-modal');
+    if (!m) {
+      m = document.createElement('div');
+      m.id = 'about-modal';
+      m.innerHTML =
+        '<div class="about-box">' +
+        '<button class="about-close" aria-label="Close">×</button>' +
+        '<h3>Tamariu Chalet</h3>' +
+        '<p>Peaceful accommodation in the coastal village of Tamariu, Costa Brava.</p>' +
+        '<p class="about-ver">Website version ' + SITE_VERSION + '</p>' +
+        '<p><a href="/">Go to the home page →</a></p>' +
+        '</div>';
+      document.body.appendChild(m);
+      m.addEventListener('click', (ev) => {
+        if (ev.target === m || ev.target.classList.contains('about-close')) m.style.display = 'none';
+      });
+    }
+    m.style.display = 'flex';
+    const nav = document.querySelector('nav');
+    if (nav) nav.classList.remove('menu-open');
+    const menu = document.querySelector('.nav-menu');
+    if (menu) menu.classList.remove('open');
+  });
+})();
+
 // ── NAV: Hamburger Toggle ──
 const hamburger = document.querySelector('.hamburger');
 const navMenu   = document.querySelector('.nav-menu');
 
+const navEl = document.querySelector('nav');
+
 if (hamburger) {
   hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
+    const open = navMenu.classList.toggle('open');
+    if (navEl) navEl.classList.toggle('menu-open', open);
   });
 }
 
@@ -16,6 +92,7 @@ if (hamburger) {
 document.addEventListener('click', (e) => {
   if (navMenu && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
     navMenu.classList.remove('open');
+    if (navEl) navEl.classList.remove('menu-open');
   }
 });
 
@@ -112,8 +189,10 @@ function renderSummaryTable() {
   });
 }
 
-renderRatesTables();
-renderSummaryTable();
+if (typeof SEASON_CONFIG !== 'undefined') {
+  renderRatesTables();
+  renderSummaryTable();
+}
 
 // ── BOOKING FORM — Cost Calculator ──
 

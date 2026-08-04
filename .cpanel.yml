@@ -26,6 +26,7 @@ deployment:
     - /bin/cp -r ca $DEPLOYPATH/
     - /bin/cp -r fr $DEPLOYPATH/
     - /bin/cp -r nl $DEPLOYPATH/
+    - /bin/cp -r de $DEPLOYPATH/
 
     # ── Assets ────────────────────────────────────────────────────
     - /bin/cp -r css $DEPLOYPATH/

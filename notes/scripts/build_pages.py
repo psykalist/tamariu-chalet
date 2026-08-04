@@ -15,10 +15,10 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from i18n_shell import LANG_LABELS, NAV, UI, t  # noqa: E402
+from i18n_shell import LANG_LABELS, NAV, UI, HELP_LINK, t  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-TRANSLATED = ["es", "ca", "fr", "nl"]
+TRANSLATED = ["es", "ca", "fr", "nl", "de"]
 
 
 def file_for(lang: str, logical: str) -> Path:
@@ -96,9 +96,21 @@ def build_nav(from_logical: str, lang: str) -> str:
     out.append('  <ul class="nav-menu">')
     for group_key, _, items in NAV:
         lis = []
-        for label_key, logical in items:
-            href, _ = link(from_logical, lang, logical)
-            lis.append(f'<li><a href="{href}">{t(label_key, lang)}</a></li>')
+        for label_key, target in items:
+            if isinstance(target, list):
+                # Nested fly-out sub-menu.
+                sub = []
+                for slabel, slogical in target:
+                    shref, _ = link(from_logical, lang, slogical)
+                    sub.append(f'<li><a href="{shref}">{t(slabel, lang)}</a></li>')
+                lis.append(
+                    f'<li class="has-sub"><a href="#">{t(label_key, lang)} '
+                    f'<span class="arrow arrow-sub">▸</span></a>'
+                    f'<ul class="dropdown submenu">{"".join(sub)}</ul></li>'
+                )
+            else:
+                href, _ = link(from_logical, lang, target)
+                lis.append(f'<li><a href="{href}">{t(label_key, lang)}</a></li>')
         out.append(
             f'    <li><a href="#">{t(group_key, lang)} <span class="arrow">▾</span></a>'
             f'<ul class="dropdown">{"".join(lis)}</ul></li>'
@@ -107,6 +119,8 @@ def build_nav(from_logical: str, lang: str) -> str:
     out.append(f'    <li><a href="{contact}">{t("nav_contact", lang)}</a></li>')
     out.append('  </ul>')
     out.append(build_lang_switcher(from_logical, lang))
+    # "?" opens the version/About modal (wired in js/main.js); href is just a hook.
+    out.append('  <a href="#" class="nav-help" aria-label="About" title="About">?</a>')
     out.append(
         f'  <button class="hamburger" aria-label="{t("menu", lang)}">'
         '<span></span><span></span><span></span></button>'
@@ -244,7 +258,7 @@ HEAD = """<!DOCTYPE html>
 {extra_head}</head>
 <body>"""
 
-LOCALES = {"en": "en_GB", "es": "es_ES", "ca": "ca_ES", "fr": "fr_FR", "nl": "nl_NL"}
+LOCALES = {"en": "en_GB", "es": "es_ES", "ca": "ca_ES", "fr": "fr_FR", "nl": "nl_NL", "de": "de_DE"}
 
 
 def url_for(lang: str, logical: str) -> str:
@@ -267,7 +281,7 @@ def render(logical: str, lang: str, title: str, desc: str, content: str,
 
     head = HEAD.format(
         lang=lang, title=title, desc=desc, url=url_for(lang, logical),
-        locale=LOCALES[lang], css=asset(logical, lang, "css/style.css"),
+        locale=LOCALES[lang], css=asset(logical, lang, "css/style.css") + "?v=20260803",
         extra_head=extra_head,
     )
     parts = [
@@ -275,7 +289,7 @@ def render(logical: str, lang: str, title: str, desc: str, content: str,
         build_nav(logical, lang),
         content.strip(),
         build_footer(logical, lang, footer_cols),
-        f'<script src="{asset(logical, lang, "js/main.js")}"></script>',
+        f'<script src="{asset(logical, lang, "js/main.js")}?v=20260803"></script>',
     ]
     if extra_body:
         parts.append(extra_body)

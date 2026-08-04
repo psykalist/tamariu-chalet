@@ -22,7 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import strings_mode  # noqa: E402
 
-LANGS = ["es", "ca", "fr", "nl"]
+LANGS = ["es", "ca", "fr", "nl", "de"]
 
 MONTHS = {
     "es": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
@@ -33,6 +33,8 @@ MONTHS = {
            "août", "septembre", "octobre", "novembre", "décembre"],
     "nl": ["januari", "februari", "maart", "april", "mei", "juni", "juli",
            "augustus", "september", "oktober", "november", "december"],
+    "de": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli",
+           "August", "September", "Oktober", "November", "Dezember"],
 }
 
 EN_MONTHS = ["January", "February", "March", "April", "May", "June", "July",
@@ -51,6 +53,8 @@ def localise_date(day: int, month_idx: int, year: int, lang: str) -> str:
         return f"{day} {art}{m} de {year}"
     if lang == "fr":
         return f"{'1er' if day == 1 else day} {m} {year}"
+    if lang == "de":
+        return f"{day}. {m} {year}"
     return f"{day} {m} {year}"  # nl
 
 
@@ -74,35 +78,41 @@ ROOMS = {
     "Reviews/double-room/index.html": {
         "en": "Double Room",
         "es": "Habitación Doble", "ca": "Habitació Doble",
-        "fr": "Chambre Double", "nl": "Tweepersoonskamer",
+        "fr": "Chambre Double", "nl": "Tweepersoonskamer", "de": "Doppelzimmer",
     },
     "Reviews/twin-room1/index.html": {
         "en": "Double/Twin Room 1",
         "es": "Habitación Doble/Twin 1", "ca": "Habitació Doble/Twin 1",
         "fr": "Chambre Double/Lits Jumeaux 1", "nl": "Twee-/Tweepersoonskamer 1",
+        "de": "Doppel-/Zweibettzimmer 1",
     },
     "Reviews/twin-room-2/index.html": {
         "en": "Double/Twin Room 2",
         "es": "Habitación Doble/Twin 2", "ca": "Habitació Doble/Twin 2",
         "fr": "Chambre Double/Lits Jumeaux 2", "nl": "Twee-/Tweepersoonskamer 2",
+        "de": "Doppel-/Zweibettzimmer 2",
     },
     "Reviews/pool-apartment/index.html": {
         "en": "Studio Apartment",
         "es": "Apartamento Estudio", "ca": "Apartament Estudi",
-        "fr": "Appartement Studio", "nl": "Studioappartement",
+        "fr": "Appartement Studio", "nl": "Studioappartement", "de": "Studio-Apartment",
     },
 }
 
 GUEST_REVIEWS = {"es": "Opiniones de Huéspedes", "ca": "Opinions dels Hostes",
-                 "fr": "Avis des Voyageurs", "nl": "Gastenbeoordelingen"}
-BACK_TO = {"es": "Volver a", "ca": "Tornar a", "fr": "Retour à", "nl": "Terug naar"}
-REVIEWS_N = {"es": "reseñas", "ca": "ressenyes", "fr": "avis", "nl": "recensies"}
+                 "fr": "Avis des Voyageurs", "nl": "Gastenbeoordelingen",
+                 "de": "Gästebewertungen"}
+BACK_TO = {"es": "Volver a", "ca": "Tornar a", "fr": "Retour à", "nl": "Terug naar",
+           "de": "Zurück zu"}
+REVIEWS_N = {"es": "reseñas", "ca": "ressenyes", "fr": "avis", "nl": "recensies",
+             "de": "Bewertungen"}
 
 SUBTITLE = {
     "es": "Lo que dicen nuestros huéspedes sobre su estancia · Las opiniones se muestran en el idioma en que fueron escritas",
     "ca": "El que diuen els nostres hostes sobre la seva estada · Les opinions es mostren en la llengua en què van ser escrites",
     "fr": "Ce que nos hôtes disent de leur séjour · Les avis sont affichés dans la langue dans laquelle ils ont été rédigés",
     "nl": "Wat onze gasten zeggen over hun verblijf · Beoordelingen worden weergegeven in de taal waarin ze zijn geschreven",
+    "de": "Was unsere Gäste über ihren Aufenthalt sagen · Bewertungen werden in der Sprache angezeigt, in der sie verfasst wurden",
 }
 
 META_DESC = {
@@ -110,6 +120,7 @@ META_DESC = {
     "ca": "Opinions dels hostes sobre l'{room} a Tamariu Chalet, Tamariu, Costa Brava.",
     "fr": "Avis des voyageurs sur la {room} au Tamariu Chalet, Tamariu, Costa Brava.",
     "nl": "Gastenbeoordelingen van de {room} in Tamariu Chalet, Tamariu, Costa Brava.",
+    "de": "Gästebewertungen zum {room} im Tamariu Chalet, Tamariu, Costa Brava.",
 }
 
 FOOTER_REVIEWS = [

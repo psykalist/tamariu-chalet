@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Busdienstregelingen zomer 2026 voor Tamariu, Costa Brava — Bus 60 en de toeristenbus Julivia van en naar Tamariu, plus Bus 30 en de strandbus van Begur. Aankomsttijden in Tamariu gemarkeerd.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tamariuchalet.com/nl/getting-here/bus-timetables.html">
+  <link rel="alternate" hreflang="en" href="https://tamariuchalet.com/getting-here/bus-timetables.html">
+  <link rel="alternate" hreflang="es" href="https://tamariuchalet.com/es/getting-here/bus-timetables.html">
+  <link rel="alternate" hreflang="ca" href="https://tamariuchalet.com/ca/getting-here/bus-timetables.html">
+  <link rel="alternate" hreflang="fr" href="https://tamariuchalet.com/fr/getting-here/bus-timetables.html">
+  <link rel="alternate" hreflang="nl" href="https://tamariuchalet.com/nl/getting-here/bus-timetables.html">
+  <link rel="alternate" hreflang="de" href="https://tamariuchalet.com/de/getting-here/bus-timetables.html">
+  <link rel="alternate" hreflang="x-default" href="https://tamariuchalet.com/getting-here/bus-timetables.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tamariuchalet.com/nl/getting-here/bus-timetables.html">
+  <meta property="og:title" content="Busdienstregelingen van en naar Tamariu — Tamariu Chalet">
+  <meta property="og:description" content="Busdienstregelingen zomer 2026 voor Tamariu, Costa Brava — Bus 60 en de toeristenbus Julivia van en naar Tamariu, plus Bus 30 en de strandbus van Begur. Aankomsttijden in Tamariu gemarkeerd.">
+  <meta property="og:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <meta property="og:site_name" content="Tamariu Chalet">
+  <meta property="og:locale" content="nl_NL">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Busdienstregelingen van en naar Tamariu — Tamariu Chalet">
+  <meta name="twitter:description" content="Busdienstregelingen zomer 2026 voor Tamariu, Costa Brava — Bus 60 en de toeristenbus Julivia van en naar Tamariu, plus Bus 30 en de strandbus van Begur. Aankomsttijden in Tamariu gemarkeerd.">
+  <meta name="twitter:image" content="https://tamariuchalet.com/images/shared/tamariu.jpg">
+  <title>Busdienstregelingen van en naar Tamariu — Tamariu Chalet</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1A3A5C">
+
+  <link rel="stylesheet" href="../../css/style.css?v=20260803">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    .tt-section { margin: 26px 0 10px; }
+    .tt-h {
+      font-size: 1.05rem; color: var(--deep-blue);
+      margin: 34px 0 10px; padding-bottom: 6px;
+      border-bottom: 2px solid rgba(26,58,92,0.15);
+    }
+    .tt-season {
+      display: block; font-size: 0.78rem; font-weight: 400;
+      color: var(--stone); margin-top: 3px; letter-spacing: 0;
+    }
+    .tt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 4px; }
+    .tt {
+      border-collapse: collapse; width: 100%;
+      font-size: 0.8rem; font-variant-numeric: tabular-nums;
+      min-width: 520px;
+    }
+    .tt th {
+      text-align: left; padding: 7px 9px;
+      background: var(--linen); color: var(--deep-blue);
+      font-size: 0.72rem; letter-spacing: 0.04em;
+      border-bottom: 2px solid rgba(26,58,92,0.2); white-space: nowrap;
+    }
+    .tt td {
+      padding: 6px 9px; border-bottom: 1px solid rgba(0,0,0,0.07);
+      color: var(--dark); white-space: nowrap;
+    }
+    .tt tbody tr:hover td { background: rgba(26,58,92,0.04); }
+    .tt .tt-key td { background: rgba(201,162,39,0.16); font-weight: 700; }
+    .tt .tt-key:hover td { background: rgba(201,162,39,0.24); }
+    .tt .tt-sub { font-size: 0.7rem; color: var(--stone); font-weight: 400; letter-spacing: 0; }
+    .tt .tt-sub-head th { font-size: 0.68rem; background: #fff; }
+    .tt .tt-last { color: #b3541e; font-weight: 700; }
+    .tt-last-key { color: #b3541e; font-weight: 700; }
+    .tt-note { font-size: 0.82rem; color: var(--stone); line-height: 1.65; margin: 9px 0 4px; max-width: 820px; }
+    .tt-board-h { font-size: 0.9rem; color: var(--deep-blue); font-weight: 700; margin: 20px 0 7px; }
+    .tt-board { min-width: 300px; }
+    .tt-board td { white-space: normal; }
+    .tt-serve-key { background: rgba(201,162,39,0.45); padding: 0 4px; border-radius: 3px; font-weight: 600; }
+    .tt-serves {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+      margin: 26px 0 8px; max-width: 820px;
+    }
+    @media (max-width: 620px) { .tt-serves { grid-template-columns: 1fr; } }
+    .tt-card { border-radius: 6px; padding: 15px 18px; border: 1px solid rgba(0,0,0,0.08); }
+    .tt-card.yes { background: rgba(201,162,39,0.10); border-left: 4px solid var(--gold); }
+    .tt-card.no { background: rgba(26,58,92,0.04); border-left: 4px solid rgba(26,58,92,0.25); }
+    .tt-card h3 { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--deep-blue); margin-bottom: 8px; }
+    .tt-card p { font-size: 0.9rem; color: var(--dark); line-height: 1.55; margin: 0; }
+    .tt-card p + p { margin-top: 6px; }
+    .tt-legend { font-size: 0.8rem; color: var(--stone); margin: 4px 0 30px; }
+    .tt-legend .swatch { display:inline-block; width:13px; height:13px; border-radius:3px; background: rgba(201,162,39,0.5); vertical-align:-2px; margin-right:5px; }
+    .tt-src { font-size: 0.82rem; margin-top: 2px; }
+    .tt-jump { display:flex; flex-wrap:wrap; gap:8px; margin: 22px 0 6px; }
+    .tt-jump a { font-size: 0.82rem; padding: 6px 12px; border:1px solid rgba(26,58,92,0.2); border-radius: 20px; color: var(--deep-blue); text-decoration:none; }
+    .tt-jump a:hover { background: var(--deep-blue); color: #fff; }
+    /* bus map */
+    .bus-map-section { margin: 30px 0 10px; }
+    .bus-map-section h2 { font-size: 1.15rem; color: var(--deep-blue); margin-bottom: 8px; }
+    .bus-map-intro { font-size: 0.9rem; color: var(--stone); line-height: 1.7; max-width: 720px; margin-bottom: 14px; }
+    .bus-map-legend {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      font-size: 0.78rem; color: var(--dark); margin-bottom: 12px;
+    }
+    .bus-map-legend .dot {
+      display: inline-block; width: 11px; height: 11px; border-radius: 50%;
+      margin-right: 5px; vertical-align: -1px; border: 2px solid #fff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+    }
+    .dot-julivia { background: #1A3A5C; }
+    .dot-bus30   { background: #7d3c98; }
+    .dot-bus60   { background: #2e7d4f; }
+    .dot-begur   { background: #b3541e; }
+    .dot-home    { background: #c9a227; }
+    .bus-map-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .bmt {
+      font-family: inherit; font-size: 0.8rem; color: var(--deep-blue);
+      background: #fff; border: 1px solid rgba(26,58,92,0.25);
+      padding: 6px 14px; border-radius: 999px; cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .bmt:hover { border-color: var(--deep-blue); }
+    .bmt.is-active { background: var(--deep-blue); color: #fff; border-color: var(--deep-blue); }
+    .bus-map-desc { font-size: 0.85rem; color: var(--stone); line-height: 1.6; max-width: 720px; margin-bottom: 12px; min-height: 2.4em; }
+    #busmap {
+      height: 660px; width: 100%; max-width: 430px; margin: 0 auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 18px rgba(26,58,92,0.13);
+    }
+    .bus-map-note { font-size: 0.75rem; color: var(--stone); margin-top: 9px; line-height: 1.6; max-width: 720px; }
+    .bm-pop strong { color: var(--deep-blue); display: block; margin-bottom: 3px; }
+    .bm-pop { font-size: 0.8rem; line-height: 1.55; }
+    .bm-label {
+      background: rgba(255,255,255,0.92);
+      border: none; box-shadow: 0 1px 4px rgba(0,0,0,0.28);
+      font-family: Verdana, Arial, sans-serif; font-size: 0.66rem;
+      color: var(--deep-blue); padding: 1px 5px; border-radius: 3px;
+      white-space: nowrap; font-weight: 600;
+    }
+    .bm-label.bm-label-home { background: var(--gold); color: #3a2e07; }
+    .leaflet-tooltip.bm-label:before { display: none; }
+    .bm-home svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
+    @media (max-width: 700px) { #busmap { height: 560px; max-width: 100%; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Tamariu <span>Chalet</span></a>
+  <ul class="nav-menu">
+    <li><a href="#">Het Verblijf <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="../accommodation/double-room.html">Tweepersoonskamer</a></li><li><a href="../accommodation/twin-room-1.html">Twee-/Tweepersoonskamer 1</a></li><li><a href="../accommodation/twin-room-2.html">Twee-/Tweepersoonskamer 2</a></li><li><a href="../accommodation/pool-apartment.html">Studioappartement</a></li></ul></li>
+    <li><a href="#">Wat Te Doen <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="getting-to-the-beach.html">Naar het Strand</a></li><li><a href="../things-to-do/girona.html">Bezoek Girona</a></li><li><a href="../things-to-do/villages-tour.html">Dorpenroute</a></li><li><a href="../things-to-do/markets.html">Lokale Markten</a></li><li><a href="../things-to-do/local-beaches.html">Lokale Stranden</a></li><li><a href="../things-to-do/tamariu-by-foot.html">Tamariu te Voet</a></li><li><a href="../things-to-do/restaurants.html">Lokale Restaurants</a></li><li class="has-sub"><a href="#">Lokale Cultuur <span class="arrow arrow-sub">▸</span></a><ul class="dropdown submenu"><li><a href="../about-catalunya/cuisine.html">Catalaanse Keuken</a></li><li><a href="../about-catalunya/language.html">Catalaanse Taal</a></li><li><a href="../about-catalunya/culture.html">Catalaanse Cultuur</a></li><li><a href="../about-catalunya/history.html">Catalaanse Geschiedenis</a></li><li><a href="../about-catalunya/cities.html">Interessante Steden</a></li><li><a href="../about-catalunya/facts.html">Weetjes over Catalonië</a></li></ul></li><li class="has-sub"><a href="#">Fysieke Activiteiten <span class="arrow arrow-sub">▸</span></a><ul class="dropdown submenu"><li><a href="../things-to-do/walking.html">Wandelen</a></li><li><a href="../things-to-do/cycling.html">Fietsen</a></li><li><a href="../things-to-do/water-sports.html">Watersport</a></li></ul></li></ul></li>
+    <li><a href="#">Bereikbaarheid / Info <span class="arrow">▾</span></a><ul class="dropdown"><li><a href="index.html">Kaart &amp; Routebeschrijving</a></li><li><a href="bus-timetables.html">Busdienstregeling</a></li><li><a href="julivia-bus.html">Julivia Bus</a></li><li><a href="begur-bus.html">Begur Strandbus</a></li></ul></li>
+    <li><a href="../contact/index.html">Contact &amp; Boeken</a></li>
+  </ul>
+  <div class="lang-switcher"><a href="../../getting-here/bus-timetables.html">EN</a><span class="lang-sep">|</span><a href="../../es/getting-here/bus-timetables.html">ES</a><span class="lang-sep">|</span><a href="../../ca/getting-here/bus-timetables.html">CA</a><span class="lang-sep">|</span><a href="../../fr/getting-here/bus-timetables.html">FR</a><span class="lang-sep">|</span><a href="bus-timetables.html" class="lang-active">NL</a><span class="lang-sep">|</span><a href="../../de/getting-here/bus-timetables.html">DE</a></div>
+  <a href="#" class="nav-help" aria-label="About" title="About">?</a>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="page-hero"><div class="page-hero-content"><p class="breadcrumb">Bereikbaarheid → Busdienstregelingen</p><h1>Busdienstregelingen van en naar Tamariu</h1></div></div>
+<div class="content-page">
+  <p style="font-size:1.05rem;color:var(--stone);margin-bottom:22px;max-width:760px;">Zomerdienstregelingen 2026 van de vier buslijnen rond Tamariu, overgenomen van de vervoerders zodat u kunt plannen zonder naar een PDF te zoeken. <strong>De tijden waarop de bus daadwerkelijk in Tamariu is, zijn goudkleurig gemarkeerd.</strong> Vervoerders passen deze halverwege het seizoen aan, dus onder elke tabel staat de officiële bron.</p>
+
+  <div class="tt-serves">
+    <div class="tt-card yes">
+      <h3>✓ Stopt in Tamariu</h3>
+      <p><strong>Bus 60</strong> — Palafrugell ⇄ Llafranc ⇄ Tamariu, alleen in de zomer.</p>
+      <p><strong>Julivia</strong> — de hop-on hop-off toeristenlus, alleen in de zomer.</p>
+    </div>
+    <div class="tt-card no">
+      <h3>✗ Bereikt Tamariu niet</h3>
+      <p><strong>Bus 30</strong> — rijdt alleen de lus Palafrugell ⇄ Calella ⇄ Llafranc.</p>
+      <p><strong>Strandbus van Begur</strong> — bedient de eigen baaien van Begur (Sa Riera, Aiguablava, Sa Tuna).</p>
+    </div>
+  </div>
+  <p class="tt-legend"><span class="swatch"></span> De goudkleurige rijen zijn de Tamariu-tijden — waar de bus aankomt bij en vertrekt van de halte van Tamariu.</p>
+
+  <div class="tt-jump">
+    <a href="#bus60">Bus 60 →</a>
+    <a href="#julivia">Julivia →</a>
+    <a href="#bus30">Bus 30 →</a>
+    <a href="#begur">Strandbus van Begur →</a>
+    <a href="#girona">Verder naar Girona →</a>
+  </div>
+
+  <!-- ══ ROUTE MAP ══ -->
+  <section class="bus-map-section" id="map">
+    <h2>Waar de bussen echt stoppen</h2>
+    <p class="bus-map-intro">Vier lijnen, vier verschillende netwerken. Gebruik de tabbladen om op één route tegelijk te focussen, of bekijk ze allemaal samen. De routes volgen de wegen; gebruik voor de definitieve kaarten van de vervoerders en de exacte haltes de officiële links onder elke tabel.</p>
+    <div class="bus-map-legend">
+      <span><i class="dot dot-julivia"></i> Julivia</span>
+      <span><i class="dot dot-bus30"></i> Bus 30′</span>
+      <span><i class="dot dot-bus60"></i> Bus 60′</span>
+      <span><i class="dot dot-begur"></i> Strandbus van Begur</span>
+      <span><i class="dot dot-home"></i> Tamariu Chalet</span>
+    </div>
+    <div class="bus-map-tabs" role="tablist" aria-label="Kies een buslijn">
+      <button type="button" class="bmt is-active" data-view="overview">Overzicht</button>
+      <button type="button" class="bmt" data-view="julivia">Julivia</button>
+      <button type="button" class="bmt" data-view="bus30">Bus 30′</button>
+      <button type="button" class="bmt" data-view="bus60">Bus 60′</button>
+      <button type="button" class="bmt" data-view="begur">Strandbus van Begur</button>
+    </div>
+    <p class="bus-map-desc" id="bmDesc">Alle netwerken samen. Het zuidelijke cluster (Julivia, Bus 30′ en Bus 60′) is grotendeels te belopen; de baaien van Begur in het noorden zijn losse takken zonder verbinding tussen de baaien onderling.</p>
+    <div id="busmap"></div>
+    <p class="bus-map-note">De routes zijn langs de wegen getekend op basis van de haltelijst; gebruik voor de definitieve kaarten van de vervoerders en de exacte haltes langs de weg de officiële links onder elke tabel.</p>
+  </section>
+
+  <!-- ══ BUS 60 ══ -->
+  <section class="tt-section" id="bus60">
+    <h3 class="tt-h">Bus 60′ — Palafrugell ⇄ Llafranc ⇄ Tamariu <span class="tt-season">1 juli – 31 augustus 2026 · €2 enkeltje (gratis onder de 4) · T-10 €6,40 via ATM Girona · uitgevoerd door Moventis</span></h3>
+    <p class="tt-note">De handigste lijn voor gasten: een directe verbinding tussen Tamariu, Llafranc en het stadje Palafrugell. <strong>De bus komt precies 30 minuten na vertrek van het station van Palafrugell in Tamariu aan en keert meteen terug</strong> — elke Tamariu-tijd hieronder is dus zowel de aankomst vanuit Palafrugell als het moment waarop u instapt voor de terugreis.</p>
+
+    <h4 class="tt-board-h">Bij de halte van Tamariu</h4>
+    <div class="tt-scroll">
+      <table class="tt tt-board">
+        <thead><tr><th>In Tamariu</th><th>Richting</th><th>Aankomst</th></tr></thead>
+        <tbody>
+          <tr class="tt-key"><td>07:30</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>08:00</td></tr>
+          <tr class="tt-key"><td>08:30</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>09:00</td></tr>
+          <tr class="tt-key"><td>09:30</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>10:00</td></tr>
+          <tr class="tt-key"><td>10:30</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>11:00</td></tr>
+          <tr class="tt-key"><td>11:30</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>12:00</td></tr>
+          <tr class="tt-key"><td>16:00</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>16:30</td></tr>
+          <tr class="tt-key"><td>17:00</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>17:30</td></tr>
+          <tr class="tt-key"><td>18:00</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>18:30</td></tr>
+          <tr class="tt-key"><td>19:00</td><td><strong>Palafrugell</strong> — via Llafranc</td><td>19:30</td></tr>
+          <tr class="tt-key"><td>20:00</td><td><strong>Palafrugell</strong> — via Llafranc <span class="tt-sub">laatste bus</span></td><td>20:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note">Tamariu is het eindpunt, dus elke Bus 60′ hier gaat terug naar <strong>Palafrugell</strong> via Llafranc, 30 minuten later bij het station. Elke bus kwam 30 minuten na vertrek uit Palafrugell in Tamariu aan (vertrek 07:00–11:00 en 15:30–19:30); tussen 11:00 en 15:30 rijdt er geen bus. <strong>Begin juli</strong> (1–3, 6–10, 13–16) rijden er slechts drie per dag — in Tamariu <strong>07:30, 11:30 en 17:00</strong>. Buiten juli en augustus rijdt de lijn niet.</p>
+    <p class="tt-note"><strong>Volledige route:</strong> Palafrugell (Estació) → Pl. 11 de Setembre → Camp d'en Prats → Bruguerol → Llafranc (Rotonda Camí de la Font d'en Xecu) → <strong>Tamariu</strong> → en dezelfde weg terug.</p>
+    <p class="tt-src"><a href="https://visitpalafrugell.cat/wp-content/uploads/2022/06/Horaris-Bus-30-i-Bus-60.pdf" target="_blank" rel="noopener">Officiële dienstregeling Bus 30′ &amp; 60′ (PDF)</a> · <a href="https://visitpalafrugell.cat/en/proposta/bus-30-bus-60/" target="_blank" rel="noopener">Bezoek Palafrugell</a></p>
+  </section>
+
+  <!-- ══ JULIVIA ══ -->
+  <section class="tt-section" id="julivia">
+    <h3 class="tt-h">Julivia — hop-on hop-off toeristenbus <span class="tt-season">25 juli – 20 september 2026 · €6,50 volwassene, €3 kind 4–12 · dagkaart</span></h3>
+    <p class="tt-note">Eén dagkaart, aan boord gekocht, geldig voor zoveel rondes als u wilt. Het best te gebruiken als pendel tussen Tamariu, de vuurtoren van Sant Sebastià, Llafranc, Calella (Port Bo) en de tuinen van Cap Roig. Anders dan Bus 60′ is de Julivia een eenrichtingslus — bij Tamariu rijdt hij dus in twee richtingen.</p>
+    <h4 class="tt-board-h">Bij de halte van Tamariu</h4>
+    <div class="tt-scroll">
+      <table class="tt tt-board">
+        <thead><tr><th>In Tamariu</th><th>Richting</th></tr></thead>
+        <tbody>
+          <tr class="tt-key"><td>09:46</td><td>→ El Far, Llafranc, Calella &amp; <strong>Cap Roig</strong> <span class="tt-sub">heenreis, langs de stranden</span></td></tr>
+          <tr><td>10:44</td><td>→ <strong>Palafrugell</strong> (dorp) — draait dan meteen weer terug langs de stranden</td></tr>
+          <tr class="tt-key"><td>11:16</td><td>→ El Far, Llafranc, Calella &amp; <strong>Cap Roig</strong></td></tr>
+          <tr><td>12:14</td><td>→ <strong>Palafrugell</strong> (dorp) — draait dan meteen weer terug langs de stranden</td></tr>
+          <tr class="tt-key"><td>12:46</td><td>→ El Far, Llafranc, Calella &amp; <strong>Cap Roig</strong></td></tr>
+          <tr><td>13:44</td><td>→ <strong>Palafrugell</strong> (dorp) — laatste ronde vóór de middagpauze</td></tr>
+          <tr class="tt-key"><td>16:16</td><td>→ El Far, Llafranc, Calella &amp; <strong>Cap Roig</strong></td></tr>
+          <tr><td>17:14</td><td>→ <strong>Palafrugell</strong> (dorp) — draait dan meteen weer terug langs de stranden</td></tr>
+          <tr class="tt-key"><td>17:46</td><td>→ El Far, Llafranc, Calella &amp; <strong>Cap Roig</strong></td></tr>
+          <tr><td>18:44</td><td>→ <strong>Palafrugell</strong> (dorp) — draait dan meteen weer terug langs de stranden</td></tr>
+          <tr class="tt-key"><td>19:16</td><td>→ El Far, Llafranc, Calella &amp; <strong>Cap Roig</strong></td></tr>
+          <tr><td>20:14</td><td>→ <strong>Palafrugell</strong> (dorp) — laatste ronde van de dag, eindigt in het dorp</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note">Omdat het een hop-on hop-off kaartje is, kunt u op de ene ronde heen en op een latere terug. Tijden halte voor halte hieronder.</p>
+    <div class="tt-scroll">
+      <table class="tt">
+        <thead><tr><th>Halte</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+        <tbody>
+          <tr><td>Estació Palafrugell</td><td>09:30</td><td>11:00</td><td>–</td><td>16:00</td><td>17:30</td><td>–</td></tr>
+          <tr><td>Palafrugell Centre</td><td>09:33</td><td>11:03</td><td>–</td><td>16:03</td><td>17:33</td><td>–</td></tr>
+          <tr><td>Camp d'en Prats</td><td>09:36</td><td>11:06</td><td>12:36</td><td>16:06</td><td>17:36</td><td>19:06</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong></td><td>09:46</td><td>11:16</td><td>12:46</td><td>16:16</td><td>17:46</td><td>19:16</td></tr>
+          <tr><td>El Far <span class="tt-sub">vuurtoren</span></td><td>09:56</td><td>11:26</td><td>12:56</td><td>16:26</td><td>17:56</td><td>19:26</td></tr>
+          <tr><td>Llafranc</td><td>10:06</td><td>11:36</td><td>13:06</td><td>16:36</td><td>18:06</td><td>19:36</td></tr>
+          <tr><td>Pl. Dr. Trueta</td><td>10:09</td><td>11:39</td><td>13:09</td><td>16:39</td><td>18:09</td><td>19:39</td></tr>
+          <tr><td>Cap Roig <span class="tt-sub">tuinen</span></td><td>10:15</td><td>11:45</td><td>13:15</td><td>16:45</td><td>18:15</td><td>19:45</td></tr>
+          <tr><td>Port Bo <span class="tt-sub">Calella</span></td><td>10:21</td><td>11:51</td><td>13:21</td><td>16:51</td><td>18:21</td><td>19:51</td></tr>
+          <tr><td>Llafranc <span class="tt-sub">terug</span></td><td>10:26</td><td>11:56</td><td>13:26</td><td>16:56</td><td>18:26</td><td>19:56</td></tr>
+          <tr><td>El Far</td><td>10:34</td><td>12:04</td><td>13:34</td><td>17:04</td><td>18:34</td><td>20:04</td></tr>
+          <tr class="tt-key"><td><strong>Tamariu</strong> <span class="tt-sub">terug</span></td><td>10:44</td><td>12:14</td><td>13:44</td><td>17:14</td><td>18:44</td><td>20:14</td></tr>
+          <tr><td>Estació Palafrugell</td><td>11:00</td><td>–</td><td>14:00</td><td>17:30</td><td>–</td><td>20:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note"><strong>Let op de middagonderbreking:</strong> vertrek uit Tamariu met die van 12:46 en de volgende bus terug is pas om 16:16.</p>
+    <p class="tt-src"><a href="https://visitpalafrugell.cat/wp-content/uploads/2024/06/triptic-julivia-2026.pdf" target="_blank" rel="noopener">Officiële dienstregeling Julivia 2026 (PDF)</a> · <a href="julivia-bus.html">Meer over de Julivia-bus</a></p>
+  </section>
+
+  <!-- ══ BUS 30 ══ -->
+  <section class="tt-section" id="bus30">
+    <h3 class="tt-h">Bus 30′ — Palafrugell ⇄ Calella ⇄ Llafranc <span class="tt-season">1 juli – 31 augustus 2026 · €2 enkeltje · dagelijks · uitgevoerd door Moventis</span></h3>
+    <p class="tt-note"><strong>Deze lijn bereikt Tamariu niet</strong> — hij rijdt de lus tussen Palafrugell, Calella de Palafrugell en Llafranc. Handig om een ochtend in de stad te combineren met een strandmiddag in Calella of Llafranc. De ritten vertrekken uit Palafrugell (Pl. d'Europa) <strong>elke 30 minuten van 07:30 tot 21:30</strong>; de tabel hieronder toont hoeveel minuten na dat vertrek de bus elke halte bereikt.</p>
+    <div class="tt-scroll">
+      <table class="tt" style="min-width:420px;">
+        <thead><tr><th>Halte</th><th>Minuten na vertrek</th><th>Eerste</th><th>Laatste</th></tr></thead>
+        <tbody>
+          <tr><td>Palafrugell <span class="tt-sub">Pl. d'Europa</span></td><td>vertrek</td><td>07:30</td><td>21:30</td></tr>
+          <tr><td>Palafrugell <span class="tt-sub">C. Barris i Buixó (centrum)</span></td><td>+2 min</td><td>07:32</td><td>21:32</td></tr>
+          <tr><td>Calella <span class="tt-sub">Rbla. Josep Tarradellas</span></td><td>+10 min</td><td>07:40</td><td>21:40</td></tr>
+          <tr><td>Llafranc <span class="tt-sub">Pl. Dr. Trueta</span></td><td>+15 min</td><td>07:45</td><td>21:45</td></tr>
+          <tr><td>Palafrugell <span class="tt-sub">Pl. d'Europa</span></td><td>+30 min</td><td>08:00</td><td>22:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note">Zo vertrekt er een bus uit Palafrugell om 07:30, 08:00, 08:30 … tot 21:30, die telkens ongeveer 10 minuten later in Calella en ongeveer 15 minuten later in Llafranc is.</p>
+    <p class="tt-src"><a href="https://visitpalafrugell.cat/wp-content/uploads/2022/06/Horaris-Bus-30-i-Bus-60.pdf" target="_blank" rel="noopener">Officiële dienstregeling Bus 30′ &amp; 60′ (PDF)</a></p>
+  </section>
+
+  <!-- ══ BEGUR ══ -->
+  <section class="tt-section" id="begur">
+    <h3 class="tt-h">Strandbus van Begur <span class="tt-season">13 juni – 13 september 2026 · €1,50 enkeltje, €3 dagpas, €1 onder de 16, onder de 6 gratis</span></h3>
+    <p class="tt-note"><strong>Deze bus vertrekt vanuit Begur, niet Tamariu</strong> — hij pendelt vanaf de Plaça Forgas in Begur naar de eigen baaien van Begur. Om er te komen moet u eerst naar Begur rijden (ongeveer 15 minuten vanuit Tamariu). Elke route begint en eindigt op de Plaça Forgas, dus er is geen directe overstap tussen de baaien.</p>
+    <div class="tt-scroll">
+      <table class="tt tt-begur">
+        <thead>
+          <tr>
+            <th>Sa Riera <span class="tt-sub">rood</span></th><th></th>
+            <th>Aiguablava <span class="tt-sub">blauw</span></th><th></th>
+            <th>Sa Tuna <span class="tt-sub">groen</span></th><th></th>
+          </tr>
+          <tr class="tt-sub-head">
+            <th>vanuit Begur</th><th>vanuit Sa Riera</th>
+            <th>vanuit Begur</th><th>vanuit Aiguablava</th>
+            <th>vanuit Begur</th><th>vanuit Sa Tuna</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>09:50 *</td><td>10:15</td><td>10:30</td><td>10:45</td><td>11:00</td><td>11:15</td></tr>
+          <tr><td>10:00</td><td>11:45</td><td>12:00</td><td>12:15</td><td>12:30</td><td>12:45</td></tr>
+          <tr><td>11:30</td><td>13:15</td><td>13:30</td><td>13:45 *</td><td>15:00</td><td>15:15</td></tr>
+          <tr><td>13:00</td><td>14:45</td><td>15:30</td><td>15:45</td><td>17:00</td><td>17:15</td></tr>
+          <tr><td>14:20 *</td><td>16:15</td><td>16:30</td><td>16:45</td><td class="tt-last">19:00</td><td class="tt-last">19:15</td></tr>
+          <tr><td>14:30</td><td>17:45</td><td>18:00</td><td>18:15</td><td></td><td></td></tr>
+          <tr><td>16:00</td><td>18:45</td><td class="tt-last">19:30</td><td class="tt-last">19:45</td><td></td><td></td></tr>
+          <tr><td>17:30</td><td class="tt-last">20:15 *</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>18:30</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td class="tt-last">20:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note">* Aansluitingen van/naar Esclanyà. De tijden in <span class="tt-last-key">oranje</span> zijn de laatste van de dag op die route.</p>
+    <p class="tt-src"><a href="https://www.beguronline.com/bus.htm" target="_blank" rel="noopener">Dienstregeling pendelbus Begur</a> · <a href="begur-bus.html">Meer over de strandbus van Begur</a></p>
+  </section>
+
+  <!-- ══ GIRONA ══ -->
+  <section class="tt-section" id="girona">
+    <h3 class="tt-h">Girona → Palafrugell — naar huis <span class="tt-season">Moventis (Sarfa) lijn 42, direct via La Bisbal · dagelijks 1 juli – 31 augustus 2026 · reistijd ~1 u 10</span></h3>
+    <p class="tt-note">Er is geen directe bus tussen Tamariu en Girona — u reist in twee etappes. Voor de terugreis neemt u <strong>lijn 42</strong> (Girona → La Bisbal → Palafrugell), en daarna de <strong>Bus 60′</strong> voor het laatste stuk naar Tamariu. De tabel toont elk vertrek van lijn 42 uit Girona en wanneer die het station van Palafrugell bereikt; <span class="tt-serve-key">de goudkleurige rijen</span> zijn degene die op tijd aankomen voor een Bus 60′ naar huis.</p>
+    <div class="tt-scroll">
+      <table class="tt tt-board" style="min-width:520px;">
+        <thead><tr><th>Girona <span class="tt-sub">Estació, vertrek</span></th><th>Palafrugell <span class="tt-sub">aankomst</span></th><th>Aansluiting Bus 60′ → Tamariu</th></tr></thead>
+        <tbody>
+          <tr class="tt-key"><td>07:45</td><td>08:55</td><td>09:00 → Tamariu 09:30 <span class="tt-sub">krap, 5 min op het station</span></td></tr>
+          <tr class="tt-key"><td>08:45</td><td>09:55</td><td>10:00 → Tamariu 10:30 <span class="tt-sub">krap, 5 min</span></td></tr>
+          <tr class="tt-key"><td>09:45</td><td>10:55</td><td>11:00 → Tamariu 11:30 <span class="tt-sub">krap; de laatste vóór de middagonderbreking</span></td></tr>
+          <tr><td>10:45</td><td>11:55</td><td>15:30 → Tamariu 16:00 <span class="tt-sub">lange middagwachttijd</span></td></tr>
+          <tr><td>11:45</td><td>12:55</td><td>15:30 → Tamariu 16:00 <span class="tt-sub">lange wachttijd</span></td></tr>
+          <tr><td>12:45</td><td>13:55</td><td>15:30 → Tamariu 16:00 <span class="tt-sub">lange wachttijd</span></td></tr>
+          <tr class="tt-key"><td>13:45</td><td>14:55</td><td>15:30 → Tamariu 16:00 <span class="tt-sub">35 min</span></td></tr>
+          <tr class="tt-key"><td>14:45</td><td>15:55</td><td>16:30 → Tamariu 17:00 <span class="tt-sub">35 min</span></td></tr>
+          <tr class="tt-key"><td>15:45</td><td>16:55</td><td>17:30 → Tamariu 18:00 <span class="tt-sub">35 min</span></td></tr>
+          <tr class="tt-key"><td>16:45</td><td>17:55</td><td>18:30 → Tamariu 19:00 <span class="tt-sub">35 min</span></td></tr>
+          <tr class="tt-key"><td>17:45</td><td>18:55</td><td>19:30 → Tamariu 20:00 <span class="tt-sub">de laatste Bus 60′ van de dag</span></td></tr>
+          <tr><td>18:45</td><td>19:55</td><td>— geen Bus 60′ meer · taxi (~€15–20)</td></tr>
+          <tr><td>19:45</td><td>21:05</td><td>— geen Bus 60′ · taxi</td></tr>
+          <tr><td>20:15</td><td>21:25</td><td>— geen Bus 60′ · taxi</td></tr>
+          <tr><td>21:45</td><td>22:55</td><td>— geen Bus 60′ · taxi</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tt-note"><strong>Let op de middagonderbreking.</strong> Bus 60′ rijdt niet tussen 11:00 en 15:30, dus een lijn 42 die tussen 11:55 en 13:55 aankomt betekent wachten in Palafrugell (aangenaam genoeg voor een lange lunch) of een taxi. De veilige avondaansluitingen zijn de vertrektijden 13:45–17:45 uit Girona. <strong>Begin juli</strong> (1–3, 6–10, 13–16) rijdt Bus 60′ slechts driemaal per dag — in Tamariu om 07:30, 11:30 en 17:00 — plan dus rond die tijden.</p>
+    <p class="tt-note"><strong>'s Ochtends heen</strong> is hetzelfde omgekeerd: Bus 60′ of de Julivia naar Palafrugell, dan lijn 42 door naar Girona (ongeveer elk uur). Volledige dienstregeling in de PDF van de vervoerder hieronder.</p>
+    <p class="tt-src"><a href="https://www.moventis.es/es/lineas-horarios/linea-autobus-42-girona-la-bisbal-palafrugell-p-aro-girona" target="_blank" rel="noopener">Officiële dienstregeling Moventis lijn 42</a> · <a href="../things-to-do/girona.html">Onze gids voor een bezoek aan Girona</a></p>
+  </section>
+
+  <p style="font-size:0.9rem;color:var(--stone);margin-top:34px;max-width:820px;">Plant u een autoloze dag rond deze bussen? Zie <a href="../things-to-do/tamariu-by-foot.html">Tamariu te Voet — zeven autoloze dagen</a>, die volledige routes opbouwt rond Bus 60, de Julivia en de kustpaden.</p>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="brand-name">Tamariu Chalet</div><p>Rustig verblijf in het kustdorp Tamariu, Costa Brava, Catalonië.</p></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Tamariu Chalet</p><p>Tamariu, Costa Brava, Catalunya</p></div>
+</footer>
+<script src="../../js/main.js?v=20260803"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../../js/bus-routes.js"></script>
+<script src="../../js/main.js?v=20260803"></script>
+<script>
+(function () {
+  var el = document.getElementById('busmap');
+  if (!el || typeof L === 'undefined') return;
+
+  var C = { julivia: '#1A3A5C', bus30: '#7d3c98', bus60: '#2e7d4f', begur: '#b3541e', home: '#c9a227' };
+
+  var stops = [
+    ['home',    41.9179, 3.2055, 'Tamariu Chalet', 'Tien minuten lopen naar de halte van Tamariu.'],
+    ['julivia', 41.9186, 3.2081, 'Tamariu — bushalte', 'Julivia: 09:46, 11:16, 12:46, 16:16, 17:46, 19:16.<br>Terug langs hier om 10:44, 12:14, 13:44, 17:14, 18:44, 20:14.<br>De Bus 60′ keert hier ook om.'],
+    ['julivia', 41.8993, 3.2088, 'Far de Sant Sebastià', 'Julivia, 10 minuten ten zuiden van Tamariu. Te voet bereikbaar vanaf Llafranc over de kaap.'],
+    ['julivia', 41.8949, 3.1936, 'Llafranc', 'Julivia-opstaptijden 10:26, 11:56, 13:26, 16:56, 18:26, 19:56.<br>De Bus 60′ stopt hier ook bij de rotonde.<br><em>25 minuten lopen naar Calella.</em>'],
+    ['julivia', 41.8869, 3.1806, 'Calella — Port Bo', 'Alleen Julivia. Laatste opstaptijd 19:51.<br><em>25 minuten lopen terug naar Llafranc.</em>'],
+    ['julivia', 41.8797, 3.1739, 'Cap Roig', 'Alleen Julivia — de zuidelijke ommekeer van de lus. Laatste opstaptijd 19:45.'],
+    ['bus60',   41.9175, 3.1636, 'Palafrugell — busstation', 'Vertrek Bus 60′ 07:00–11:00 en 15:30–19:30 (elk uur vanaf 17 juli).<br>De Julivia begint en eindigt hier ook.'],
+    ['bus60',   41.9158, 3.1662, 'Camp d\'en Prats', 'Aan de rand van Palafrugell — <strong>zowel</strong> de Julivia als de Bus 60′ stoppen hier op weg naar de kust.'],
+    ['bus60',   41.9151, 3.1745, 'Bruguerol', 'Alleen Bus 60′ — een halte landinwaarts aan de weg omlaag naar Llafranc.'],
+    ['begur',   41.9540, 3.2075, 'Begur — Plaça Forgas', 'Het knooppunt. <strong>Elke</strong> strandroute van Begur vertrekt hier en keert terug — u kunt niet van baai naar baai zonder hier over te stappen.'],
+    ['begur',   41.93428, 3.21501, 'Aiguablava', 'Vertrek terug naar Begur: 10:45, 12:15, 13:45, 15:45, 16:45, 18:15, 19:45.<br>2,2 km lopen vanaf het chalet.'],
+    ['begur',   41.9569, 3.2305, 'Sa Tuna', 'Terug naar Begur om 11:15, 12:45, 15:15, 17:15, 19:15. De laatste is vroeg — mis hem niet.'],
+    ['begur',   41.9673, 3.2050, 'Sa Riera', 'Terug naar Begur om 10:15, 11:45, 13:15, 14:45, 16:15, 17:45, 18:45, 20:15.']
+  ];
+
+  var map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(map);
+
+  var homeIcon = L.divIcon({
+    className: 'bm-home',
+    html: '<svg width="30" height="38" viewBox="0 0 30 38" xmlns="http://www.w3.org/2000/svg">' +
+          '<path d="M15 1C7.8 1 2 6.8 2 14c0 9 13 23 13 23s13-14 13-23C28 6.8 22.2 1 15 1z" fill="#c9a227" stroke="#fff" stroke-width="2"/>' +
+          '<path d="M15 8l7 6h-2v7h-3v-4h-4v4H10v-7H8z" fill="#fff"/></svg>',
+    iconSize: [30, 38], iconAnchor: [15, 37], popupAnchor: [0, -32]
+  });
+
+  var layer = L.layerGroup().addTo(map);
+
+  function decPoly(s) {
+    var i = 0, lat = 0, lng = 0, o = [], sh, r, b;
+    while (i < s.length) {
+      sh = r = 0; do { b = s.charCodeAt(i++) - 63; r |= (b & 31) << sh; sh += 5; } while (b >= 32);
+      lat += (r & 1) ? ~(r >> 1) : (r >> 1);
+      sh = r = 0; do { b = s.charCodeAt(i++) - 63; r |= (b & 31) << sh; sh += 5; } while (b >= 32);
+      lng += (r & 1) ? ~(r >> 1) : (r >> 1);
+      o.push([lat * 1e-5, lng * 1e-5]);
+    }
+    return o;
+  }
+  var P = {
+    pala: [41.9175, 3.1636], camp: [41.9158, 3.1662], brug: [41.9151, 3.1745],
+    tam: [41.9186, 3.2081], far: [41.8993, 3.2088], lla: [41.8949, 3.1936],
+    cal: [41.8869, 3.1806], cap: [41.8797, 3.1739], forgas: [41.9540, 3.2075],
+    aigua: [41.93428, 3.21501], satuna: [41.9569, 3.2305], sariera: [41.9673, 3.2050]
+  };
+  var R = window.BUS_ROADS || {};
+  var RD = {
+    julivia: R.julivia ? decPoly(R.julivia) : [P.pala, P.camp, P.tam, P.far, P.lla, P.cap, P.cal],
+    bus30:   R.bus30 ? decPoly(R.bus30) : [P.pala, P.cal, P.lla],
+    bus60:   R.bus60 ? decPoly(R.bus60) : [P.pala, P.camp, P.brug, P.lla, P.tam],
+    begur:   (R.begur && R.begur.length) ? R.begur.map(function (o) { var p = decPoly(o.r); p.push(o.end); return p; }) : [[P.forgas, P.sariera], [P.forgas, P.aigua], [P.forgas, P.satuna]]
+  };
+
+  function drawJulivia(op) { L.polyline(RD.julivia, { color: C.julivia, weight: 4, opacity: op }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Julivia-lus</strong>Palafrugell → Tamariu → Llafranc → Calella → Cap Roig, dan dezelfde weg terug. 25 jul – 20 sep.</div>'); }
+  function drawBus30(op) { L.polyline(RD.bus30, { color: C.bus30, weight: 4, opacity: op, dashArray: '2,8' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Bus 30′</strong>Palafrugell → Calella de Palafrugell → Llafranc, elke 30 min in de zomer (1 jul – 31 aug). Bedient Tamariu niet.</div>'); }
+  function drawBus60(op) { L.polyline(RD.bus60, { color: C.bus60, weight: 4, opacity: op, dashArray: '9,7' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Bus 60′</strong>Palafrugell → Camp d\'en Prats → Bruguerol → Llafranc → Tamariu, en terug. De enige bus vanuit Tamariu vóór 25 juli.</div>'); }
+  function drawBegur(op) { RD.begur.forEach(function (spoke) { L.polyline(spoke, { color: C.begur, weight: 3, opacity: op }).addTo(layer); }); }
+  function drawWalk(op) { L.polyline([P.lla, P.cal, P.cap], { color: '#555', weight: 2, opacity: op, dashArray: '2,7' }).addTo(layer).bindPopup('<div class="bm-pop"><strong>Loopbaar stuk</strong>Llafranc naar Calella is 25 minuten over vlak terrein; Cap Roig nog eens 20. Tussen deze drie is geen bus nodig.</div>'); }
+
+  var FIT = {
+    all:     [P.pala, P.camp, P.brug, P.tam, P.far, P.lla, P.cal, P.cap, P.forgas, P.aigua, P.satuna, P.sariera],
+    julivia: [P.pala, P.camp, P.tam, P.far, P.lla, P.cal, P.cap],
+    bus30:   [P.pala, P.cal, P.lla],
+    bus60:   [P.pala, P.camp, P.brug, P.lla, P.tam],
+    begur:   [P.forgas, P.aigua, P.satuna, P.sariera]
+  };
+
+  var VIEWS = {
+    overview: { desc: 'Alle netwerken samen. Het zuidelijke cluster (Julivia, Bus 30′ en Bus 60′) is grotendeels te belopen; de baaien van Begur in het noorden zijn losse takken zonder verbinding tussen de baaien onderling.', routes: function () { drawJulivia(0.45); drawBus30(0.6); drawBus60(0.75); drawBegur(0.5); drawWalk(0.7); }, show: null, colour: null, fit: 'all' },
+    julivia: { desc: 'De toeristische Julivia-lus vertrekt vanuit Palafrugell via Tamariu en gaat dan langs de kust naar Llafranc, Calella en Cap Roig — en dezelfde weg terug (25 jul–20 sep). De haltes aan de zuidkust liggen allemaal op korte loopafstand van elkaar.', routes: function () { drawJulivia(0.9); drawWalk(0.7); }, show: ['Tamariu Chalet', 'Tamariu — bushalte', 'Far de Sant Sebastià', 'Llafranc', 'Calella — Port Bo', 'Cap Roig', 'Palafrugell — busstation', 'Camp d\'en Prats'], colour: C.julivia, fit: 'julivia' },
+    bus30: { desc: 'De Bus 30′ is de snelle zomerpendel tussen Palafrugell, Calella de Palafrugell en Llafranc — elke 30 minuten, 1 juli–31 augustus. Hij bedient Tamariu niet; stap op in Palafrugell, Calella of Llafranc.', routes: function () { drawBus30(0.9); }, show: ['Palafrugell — busstation', 'Calella — Port Bo', 'Llafranc'], colour: C.bus30, fit: 'bus30' },
+    bus60: { desc: 'De Bus 60′ verbindt het station van Palafrugell met Tamariu via Camp d\'en Prats, Bruguerol en Llafranc, en terug. Het is de enige bus die Tamariu bedient voordat de Julivia op 25 juli begint.', routes: function () { drawBus60(0.9); }, show: ['Tamariu Chalet', 'Tamariu — bushalte', 'Palafrugell — busstation', 'Camp d\'en Prats', 'Bruguerol', 'Llafranc'], colour: C.bus60, fit: 'bus60' },
+    begur: { desc: 'De strandbus van Begur is een knooppunt op de Plaça Forgas met een aparte tak naar elke baai — Sa Riera, Aiguablava en Sa Tuna. U kunt niet van baai naar baai; elke rit gaat weer via Begur.', routes: function () { drawBegur(0.85); }, show: ['Begur — Plaça Forgas', 'Aiguablava', 'Sa Tuna', 'Sa Riera'], colour: C.begur, fit: 'begur' }
+  };
+
+  var descEl = document.getElementById('bmDesc');
+
+  function render(view) {
+    var v = VIEWS[view] || VIEWS.overview;
+    layer.clearLayers();
+    v.routes();
+    stops.forEach(function (s) {
+      var kind = s[0], lat = s[1], lng = s[2], name = s[3], body = s[4];
+      if (v.show && v.show.indexOf(name) < 0) return;
+      var popup = '<div class="bm-pop"><strong>' + name + '</strong>' + body + '</div>';
+      var left = lng < 3.196;
+      var dir = left ? 'left' : 'right';
+      var off = left ? [-8, 0] : [8, 0];
+      if (kind === 'home') {
+        L.marker([lat, lng], { icon: homeIcon, zIndexOffset: 1000 }).addTo(layer).bindPopup(popup).bindTooltip(name, { permanent: true, direction: dir, offset: left ? [-6, -12] : [10, -12], className: 'bm-label bm-label-home' });
+        return;
+      }
+      var fill = v.colour ? v.colour : C[kind];
+      L.circleMarker([lat, lng], { radius: 7, color: '#fff', weight: 2, fillColor: fill, fillOpacity: 1 }).addTo(layer).bindPopup(popup).bindTooltip(name, { permanent: true, direction: dir, offset: off, className: 'bm-label' });
+    });
+    if (descEl) descEl.textContent = v.desc;
+    var bounds = L.latLngBounds(FIT[v.fit]).pad(0.08);
+    map.setMaxBounds(null);
+    map.fitBounds(bounds);
+    map.setMaxBounds(bounds.pad(0.35));
+    map.setMinZoom(map.getZoom() - 1);
+  }
+
+  var tabs = document.querySelectorAll('.bus-map-tabs .bmt');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      render(btn.getAttribute('data-view'));
+    });
+  });
+
+  render('overview');
+  map.on('click', function () { map.scrollWheelZoom.enable(); });
+  map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+})();
+</script>
+</body>
+</html>
