@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from i18n_shell import LANG_LABELS, NAV, UI, HELP_LINK, t  # noqa: E402
+from i18n_shell import LANG_LABELS, NAV, UI, HELP_LINK, WEBCAMS, t  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 TRANSLATED = ["es", "ca", "fr", "nl", "de"]
@@ -117,6 +117,15 @@ def build_nav(from_logical: str, lang: str) -> str:
         )
     contact, _ = link(from_logical, lang, "contact/index.html")
     out.append(f'    <li><a href="{contact}">{t("nav_contact", lang)}</a></li>')
+    # Webcams: external live-cam links (open in a new tab).
+    cams = "".join(
+        f'<li><a href="{url}" target="_blank" rel="noopener">{label}</a></li>'
+        for label, url in WEBCAMS
+    )
+    out.append(
+        f'    <li><a href="#">{t("nav_webcams", lang)} <span class="arrow">▾</span></a>'
+        f'<ul class="dropdown">{cams}</ul></li>'
+    )
     out.append('  </ul>')
     out.append(build_lang_switcher(from_logical, lang))
     # "?" opens the version/About modal (wired in js/main.js); href is just a hook.

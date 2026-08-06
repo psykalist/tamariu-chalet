@@ -99,15 +99,19 @@ PAGES["things-to-do/markets.html"] = {
   <h2>Mercados Semanales</h2>
   <h3>🛒 Mercado de Palafrugell — miércoles y sábados por la mañana</h3>
   <p>El mercado más cómodo para los huéspedes de Tamariu Chalet — a solo 4 km. El mercado bisemanal de Palafrugell llena la plaza del pueblo con puestos de fruta y verdura fresca, aceitunas, embutidos, quesos, flores y artículos para el hogar. El de los sábados es más grande y especialmente animado.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcamiento:</strong> <span>Aparcamientos gratuitos a pocos minutos a pie del centro.</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Palafrugell" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicación en Google Maps ↗</a></p>
 
   <h3>🛒 Mercado de Pals — martes por la mañana</h3>
   <p>Un mercado con encanto en el pueblo medieval de Pals, con producto local y artesanía. El propio pueblo — con su torre gótica del siglo XV y sus calles empedradas — merece una visita por sí solo.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcamiento:</strong> <span>Gratis fuera de temporada; zona azul en verano (aprox. 1–2 €/hora).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+de+Pals" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicación en Google Maps ↗</a></p>
 
   <h3>🛒 Mercado de Palamós — martes y viernes por la mañana</h3>
   <p>Un mercado más grande en el puerto pesquero de Palamós, fuerte en pescado y marisco (como es de esperar), producto fresco y ropa. La subasta de pescado del puerto merece la pena si madruga.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcamiento:</strong> <span>Aparcamiento gratuito detrás de la playa; plazas del paseo marítimo de pago en verano (aprox. 10 €/día).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Palamos+aparcament+platja" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicación en Google Maps ↗</a></p>
 
   <h3>🛒 Mercado de Begur — miércoles por la mañana</h3>
   <p>Un mercado popular a los pies de las murallas del castillo de Begur. Buena mezcla de producto local, artesanía y antigüedades. Los cafés del pueblo son un sitio excelente para desayunar antes.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcamiento:</strong> <span>Gratis fuera de temporada; zona azul en verano (aprox. 1–2 €/hora).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Begur" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicación en Google Maps ↗</a></p>
 
   <h2>Mercados Artesanales</h2>
   <p>Durante todo el verano, los mercados nocturnos de artesanía y las ferias de artesanos surgen en los pueblos de la costa — Calella de Palafrugell y Llafranc acogen mercados nocturnos de verano con regularidad. Pregúntenos por el calendario vigente cuando llegue.</p>
@@ -138,15 +142,19 @@ PAGES["things-to-do/markets.html"] = {
   <h2>Mercats Setmanals</h2>
   <h3>🛒 Mercat de Palafrugell — dimecres i dissabtes al matí</h3>
   <p>El mercat més còmode per als hostes de Tamariu Chalet — a només 4 km. El mercat bisetmanal de Palafrugell omple la plaça de la vila amb parades de fruita i verdura fresca, olives, embotits, formatges, flors i articles per a la llar. El de dissabte és més gran i especialment animat.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcament:</strong> <span>Aparcaments gratuïts a pocs minuts a peu del centre.</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Palafrugell" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicació a Google Maps ↗</a></p>
 
   <h3>🛒 Mercat de Pals — dimarts al matí</h3>
   <p>Un mercat amb encant al poble medieval de Pals, amb producte local i artesania. El poble mateix — amb la seva torre gòtica del segle XV i els carrers empedrats — ja mereix una visita.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcament:</strong> <span>Gratuït fora de temporada; zona blava a l'estiu (aprox. 1–2 €/hora).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+de+Pals" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicació a Google Maps ↗</a></p>
 
   <h3>🛒 Mercat de Palamós — dimarts i divendres al matí</h3>
   <p>Un mercat més gran al port pesquer de Palamós, fort en peix i marisc (com és d'esperar), producte fresc i roba. La subhasta de peix del port val la pena si sou matiners.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcament:</strong> <span>Aparcament gratuït darrere la platja; places del passeig marítim de pagament a l'estiu (aprox. 10 €/dia).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Palamos+aparcament+platja" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicació a Google Maps ↗</a></p>
 
   <h3>🛒 Mercat de Begur — dimecres al matí</h3>
   <p>Un mercat popular als peus de les muralles del castell de Begur. Bona barreja de producte local, artesania i antiguitats. Els cafès de la vila són un lloc excel·lent per esmorzar abans.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Aparcament:</strong> <span>Gratuït fora de temporada; zona blava a l'estiu (aprox. 1–2 €/hora).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Begur" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Ubicació a Google Maps ↗</a></p>
 
   <h2>Mercats Artesanals</h2>
   <p>Durant tot l'estiu, els mercats nocturns d'artesania i les fires d'artesans apareixen als pobles de la costa — Calella de Palafrugell i Llafranc acullen mercats nocturns d'estiu amb regularitat. Pregunteu-nos pel calendari vigent quan arribeu.</p>
@@ -177,15 +185,19 @@ PAGES["things-to-do/markets.html"] = {
   <h2>Marchés Hebdomadaires</h2>
   <h3>🛒 Marché de Palafrugell — mercredi et samedi matin</h3>
   <p>Le marché le plus pratique pour les hôtes du Tamariu Chalet — à seulement 4 km. Le marché bihebdomadaire de Palafrugell remplit la place du village d'étals de fruits et légumes frais, d'olives, de charcuterie, de fromages, de fleurs et d'articles ménagers. Celui du samedi est plus grand et particulièrement animé.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Stationnement :</strong> <span>Parkings gratuits à quelques minutes à pied du centre.</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Palafrugell" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Emplacement Google Maps ↗</a></p>
 
   <h3>🛒 Marché de Pals — mardi matin</h3>
   <p>Un marché charmant dans le village médiéval de Pals, avec produits locaux et artisanat. Le village lui-même — avec sa tour gothique du XVe siècle et ses ruelles pavées — mérite à lui seul la visite.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Stationnement :</strong> <span>Gratuit hors saison ; zone bleue en été (env. 1–2 €/heure).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+de+Pals" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Emplacement Google Maps ↗</a></p>
 
   <h3>🛒 Marché de Palamós — mardi et vendredi matin</h3>
   <p>Un marché de plus grande taille dans le port de pêche de Palamós, riche en poissons et fruits de mer (naturellement), produits frais et vêtements. La criée du port vaut le détour si vous êtes matinal.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Stationnement :</strong> <span>Parking gratuit derrière la plage ; places du front de mer payantes en été (env. 10 €/jour).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Palamos+aparcament+platja" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Emplacement Google Maps ↗</a></p>
 
   <h3>🛒 Marché de Begur — mercredi matin</h3>
   <p>Un marché apprécié au pied des murailles du château de Begur. Bon mélange de produits locaux, d'artisanat et d'antiquités. Les cafés du village sont parfaits pour un petit-déjeuner avant.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Stationnement :</strong> <span>Gratuit hors saison ; zone bleue en été (env. 1–2 €/heure).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Begur" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Emplacement Google Maps ↗</a></p>
 
   <h2>Marchés Artisanaux</h2>
   <p>Tout l'été, des marchés nocturnes d'artisanat et des foires d'artisans s'installent dans les villages du littoral — Calella de Palafrugell et Llafranc accueillent régulièrement des marchés nocturnes estivaux. Demandez-nous le calendrier en cours à votre arrivée.</p>
@@ -216,15 +228,19 @@ PAGES["things-to-do/markets.html"] = {
   <h2>Wekelijkse Markten</h2>
   <h3>🛒 Markt van Palafrugell — woensdag- en zaterdagochtend</h3>
   <p>De handigste markt voor gasten van Tamariu Chalet — op slechts 4 km. De tweewekelijkse markt van Palafrugell vult het dorpsplein met kramen vol vers fruit en groenten, olijven, vleeswaren, kaas, bloemen en huishoudelijke artikelen. De zaterdagmarkt is groter en bijzonder levendig.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parkeren:</strong> <span>Gratis parkeerplaatsen op een paar minuten lopen van het centrum.</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Palafrugell" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Locatie op Google Maps ↗</a></p>
 
   <h3>🛒 Markt van Pals — dinsdagochtend</h3>
   <p>Een charmante markt in het middeleeuwse dorp Pals, met lokale producten en ambachtelijke waren. Het dorp zelf — met zijn 15e-eeuwse gotische toren en geplaveide straatjes — is op zichzelf al een bezoek waard.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parkeren:</strong> <span>Buiten het seizoen gratis; blauwe zone in de zomer (ca. €1–2/uur).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+de+Pals" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Locatie op Google Maps ↗</a></p>
 
   <h3>🛒 Markt van Palamós — dinsdag- en vrijdagochtend</h3>
   <p>Een grotere markt in de werkende vissershaven van Palamós, sterk in vis en zeevruchten (uiteraard), verse producten en kleding. De visafslag in de haven is de moeite waard als u vroeg opstaat.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parkeren:</strong> <span>Gratis parkeerplaats achter het strand; plaatsen aan de boulevard betaald in de zomer (ca. €10/dag).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Palamos+aparcament+platja" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Locatie op Google Maps ↗</a></p>
 
   <h3>🛒 Markt van Begur — woensdagochtend</h3>
   <p>Een populaire markt onder de kasteelmuren van Begur. Een goede mix van lokale producten, ambachtelijk werk en antiek. De cafés van het stadje zijn uitstekend voor een ontbijt vooraf.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parkeren:</strong> <span>Buiten het seizoen gratis; blauwe zone in de zomer (ca. €1–2/uur).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Begur" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Locatie op Google Maps ↗</a></p>
 
   <h2>Ambachts- en Kunstmarkten</h2>
   <p>De hele zomer door duiken er avondmarkten met ambachten en kunstnijverheid op in de kustdorpen — Calella de Palafrugell en Llafranc houden beide regelmatig zomerse avondmarkten. Vraag ons bij aankomst naar de actuele agenda.</p>

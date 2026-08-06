@@ -3,31 +3,43 @@ name: Sync Bookings from Airbnb
 # ── When this runs ───────────────────────────────────────────
 on:
   schedule:
-    # Every hour
+    # Every hour, on the hour
     - cron: '0 * * * *'
-  # Also allows you to trigger it manually from the GitHub Actions tab
+  # Lets you trigger it manually from the Actions tab
   workflow_dispatch:
 
-# ── The job ──────────────────────────────────────────────────
+# Only one sync at a time — never let two runs race on the same file.
+concurrency:
+  group: sync-bookings
+  cancel-in-progress: false
+
+# Needed so the job can commit the refreshed bookings.js back to the repo.
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
 
-      # 1. Check out your repo so the script and js/ folder are available
+      # 1. Check out the repo (script + js/ folder + last-known-good bookings.js)
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up Python 3
+      # 2. Python 3
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      # 3. Run the sync script
-      #    Airbnb iCal URLs are passed in as environment variables
-      #    from GitHub Secrets — they never appear in the code
+      # 3. Refresh bookings.js from the Airbnb calendars.
+      #    The script exits non-zero (and leaves bookings.js untouched) if any
+      #    feed fails, so a broken/expired feed makes THIS step fail loudly
+      #    instead of silently publishing an empty calendar. When it fails,
+      #    the commit and deploy steps below are skipped and the live site
+      #    keeps its last-known-good availability.
       - name: Fetch Airbnb calendars and update bookings.js
         env:
           AIRBNB_DOUBLE_ROOM: ${{ secrets.AIRBNB_DOUBLE_ROOM }}
@@ -37,8 +49,25 @@ jobs:
           GOOGLE_CALENDAR:    ${{ secrets.GOOGLE_CALENDAR }}
         run: python3 sync-bookings.py
 
-      # 4. Upload the updated bookings.js to iFastNet via FTP
-      #    Only uploads this one file — everything else stays as-is
+      # 4. Commit the refreshed file back so git stays the single source of
+      #    truth (any later cPanel/WinSCP deploy ships the current data too).
+      #    Only commits when availability actually changed — no-op runs make
+      #    no commits.
+      - name: Commit refreshed bookings.js
+        run: |
+          if git diff --quiet -- js/bookings.js; then
+            echo "No availability change — nothing to commit."
+          else
+            git config user.name  "tamariu-sync-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add js/bookings.js
+            git commit -m "Sync availability from Airbnb [skip ci]"
+            git push
+          fi
+
+      # 5. Upload the refreshed bookings.js to iFastNet via FTPS.
+      #    Only this one file is touched — everything else on the server
+      #    stays as-is. No-op when the file is unchanged (hash match).
       - name: Deploy bookings.js to iFastNet
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:

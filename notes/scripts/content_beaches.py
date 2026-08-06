@@ -689,3 +689,8 @@ PAGES = {
         "strings": STRINGS,
     }
 }
+
+
+# Parking notes (pin + cost) shared across the guide pages.
+from content_parking import PARKING_STRINGS as _PARK  # noqa: E402
+PAGES["things-to-do/local-beaches.html"]["strings"].update(_PARK)

@@ -30,7 +30,12 @@ deployment:
 
     # ── Assets ────────────────────────────────────────────────────
     - /bin/cp -r css $DEPLOYPATH/
-    - /bin/cp -r js $DEPLOYPATH/
+    # js/ ships EXCEPT bookings.js — the live availability file is owned
+    # solely by the hourly "Sync Bookings from Airbnb" GitHub Action, which
+    # regenerates it from Airbnb and uploads it via FTP. Copying the repo
+    # copy here would roll the booking calendar back to the last commit.
+    - /bin/mkdir -p $DEPLOYPATH/js
+    - /usr/bin/find js -maxdepth 1 -type f ! -name bookings.js -exec /bin/cp {} $DEPLOYPATH/js/ \;
     - /bin/cp -r images $DEPLOYPATH/
     - /bin/cp -r .well-known $DEPLOYPATH/
 

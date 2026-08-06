@@ -32,6 +32,12 @@ REM      77cddc...txt  - IndexNow verification key
 REM      sitemap.xml, robots.txt, favicon.*, site.webmanifest
 REM    sync-bookings.py stays at root for the GitHub Action, but is
 REM    excluded from upload by the *.py mask.
+REM
+REM    js/bookings.js is EXCLUDED on purpose. The live availability file is
+REM    owned solely by the hourly GitHub Action (Sync Bookings from Airbnb),
+REM    which regenerates it from Airbnb and uploads it. Never let a manual
+REM    upload push a stale local copy over the top - it would roll the
+REM    booking calendar back to whatever your PC last had.
 REM ============================================================
 
 set SESSION=sftp://tamariuc@tamariuchalet.com:1394/
@@ -54,7 +60,7 @@ echo.
     "open %SESSION%" ^
     "cd %REMOTE_DIR%" ^
     "lcd ""%LOCAL_DIR%""" ^
-    "synchronize remote -criteria=time -filemask=""| notes/; .git/; .github/; .well-known/; *.py; *.docx; *.xlsx; *.log; *.bat; *.exe; *.txt.bak; README.md; CLAUDE.md; .gitignore; .cpanel.yml""" ^
+    "synchronize remote -criteria=time -filemask=""| notes/; .git/; .github/; .well-known/; js/bookings.js; *.py; *.docx; *.xlsx; *.log; *.bat; *.exe; *.txt.bak; README.md; CLAUDE.md; .gitignore; .cpanel.yml""" ^
     "exit"
 
 set RESULT=%ERRORLEVEL%

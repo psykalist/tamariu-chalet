@@ -198,15 +198,19 @@ PAGES_DE = {
   <h2>Wochenmärkte</h2>
   <h3>🛒 Markt Palafrugell — Mittwoch- &amp; Samstagvormittag</h3>
   <p>Der günstigste Markt für Gäste des Tamariu Chalet — nur 4 km entfernt. Der zweimal wöchentlich stattfindende Markt von Palafrugell füllt den Stadtplatz mit Ständen voller frischem Obst und Gemüse, Oliven, Wurstwaren, Käse, Blumen und Haushaltswaren. Der Samstagsmarkt ist größer und besonders lebhaft.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parken:</strong> <span>Kostenlose Parkplätze wenige Gehminuten vom Zentrum.</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Palafrugell" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Standort auf Google Maps ↗</a></p>
 
   <h3>🛒 Markt Pals — Dienstagvormittag</h3>
   <p>Ein charmanter Markt im mittelalterlichen Dorf Pals, mit lokalen Erzeugnissen und Kunsthandwerk. Das Dorf selbst — mit seinem gotischen Turm aus dem 15. Jahrhundert und den Kopfsteinpflastergassen — ist schon für sich einen Besuch wert.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parken:</strong> <span>Außerhalb der Saison kostenlos; blaue Zone im Sommer (ca. 1–2 €/Stunde).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+de+Pals" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Standort auf Google Maps ↗</a></p>
 
   <h3>🛒 Markt Palamós — Dienstag- &amp; Freitagvormittag</h3>
   <p>Ein größerer Stadtmarkt im Arbeitshafen von Palamós, stark bei Fisch und Meeresfrüchten (natürlich), frischen Erzeugnissen und Kleidung. Die Fischauktion am Hafen ist sehenswert, wenn Sie früh auf den Beinen sind.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parken:</strong> <span>Kostenloser Parkplatz hinter dem Strand; Plätze an der Strandpromenade im Sommer kostenpflichtig (ca. 10 €/Tag).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Palamos+aparcament+platja" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Standort auf Google Maps ↗</a></p>
 
   <h3>🛒 Markt Begur — Mittwochvormittag</h3>
   <p>Ein beliebter Markt unterhalb der Burgmauern von Begur. Gute Mischung aus lokalen Erzeugnissen, Kunsthandwerk und Antiquitäten. Die Cafés der Stadt sind ein ausgezeichneter Ort für ein vorheriges Frühstück.</p>
+  <p class="parking-note" style="margin:12px 0 0;padding:9px 13px;background:#eef5f8;border-left:3px solid var(--deep-blue);border-radius:5px;font-size:0.95rem;line-height:1.55;">🅿 <strong>Parken:</strong> <span>Außerhalb der Saison kostenlos; blaue Zone im Sommer (ca. 1–2 €/Stunde).</span> — <a href="https://www.google.com/maps/search/?api=1&query=Aparcament+Begur" target="_blank" rel="noopener" style="color:var(--deep-blue);font-weight:600;white-space:nowrap;">Standort auf Google Maps ↗</a></p>
 
   <h2>Kunsthandwerks- &amp; Handwerksmärkte</h2>
   <p>Den ganzen Sommer über tauchen in den Küstendörfern abendliche Handwerksmärkte und Kunsthandwerksmessen auf — Calella de Palafrugell und Llafranc veranstalten beide regelmäßig sommerliche Abendmärkte. Fragen Sie uns bei Ihrer Ankunft nach dem aktuellen Programm.</p>

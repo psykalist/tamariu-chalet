@@ -52,6 +52,10 @@ UI = {
         "en": "Contact &amp; Book", "es": "Contactar y Reservar", "ca": "Contactar i Reservar",
         "fr": "Contact &amp; Réservation", "nl": "Contact &amp; Boeken",
     },
+    "nav_webcams": {
+        "en": "Webcams", "es": "Webcams", "ca": "Webcams",
+        "fr": "Webcams", "nl": "Webcams",
+    },
     # Rooms
     "double_room": {
         "en": "Double Room", "es": "Habitación Doble", "ca": "Habitació Doble",
@@ -199,6 +203,7 @@ _DE_UI = {
     "nav_local_culture": "Lokale Kultur",
     "nav_physical": "Sportaktivitäten",
     "nav_contact": "Kontakt &amp; Buchen",
+    "nav_webcams": "Webcams",
     "double_room": "Doppelzimmer",
     "twin_1": "Doppel-/Zweibettzimmer 1",
     "twin_2": "Doppel-/Zweibettzimmer 2",
@@ -280,6 +285,14 @@ NAV = [
         ("julivia", "getting-here/julivia-bus.html"),
         ("begur_bus", "getting-here/begur-bus.html"),
     ]),
+]
+
+# External live webcams, shown as a dropdown after the Contact item in the nav.
+# (label, external URL) — labels are proper nouns, identical in every language.
+WEBCAMS = [
+    ("Tamariu", "https://www.tamariu.eu/webcam.php"),
+    ("Llafranc", "https://www.ipcamlive.com/6149f4deaa509"),
+    ("Calella", "https://www.myearthcam.com/finquesfrigolacalella"),
 ]
 
 # The "?" help/about link sits after the language switcher (see build_nav).
