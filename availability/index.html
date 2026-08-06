@@ -277,11 +277,52 @@
     }
     .cal-legend-swatch.cal-avail   { transform: none !important; }
 
+    /* ── Live sync status badge ── */
+    .sync-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      max-width: 560px;
+      margin: -18px auto 30px;
+      padding: 8px 16px;
+      background: #e8f5e9;
+      border: 1px solid #bfe0c4;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: #2d6a40;
+      font-family: Verdana, Arial, sans-serif;
+      text-align: center;
+    }
+    .sync-badge.is-stale {
+      background: #fdf3e3;
+      border-color: #f0d9a8;
+      color: #8a6516;
+    }
+    .sync-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #2e9e4f;
+      flex-shrink: 0;
+      animation: sync-pulse 2s infinite;
+    }
+    .sync-badge.is-stale .sync-dot { background: #d69a2d; animation: none; }
+    @keyframes sync-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(46,158,79,0.5); }
+      70%  { box-shadow: 0 0 0 6px rgba(46,158,79,0); }
+      100% { box-shadow: 0 0 0 0 rgba(46,158,79,0); }
+    }
+    .sync-next { opacity: 0.8; }
+    .sync-next b { font-variant-numeric: tabular-nums; font-weight: 700; }
+
     /* ── Responsive tweaks ── */
     @media (max-width: 600px) {
       .avail-intro h1 { font-size: 1.4rem; }
       .room-tabs { gap: 6px; }
       .room-tab  { padding: 8px 14px; font-size: 0.78rem; }
+      .sync-badge { font-size: 0.72rem; margin-top: -6px; }
     }
   </style>
 </head>
@@ -316,6 +357,9 @@
     <p id="avail-subhead">Select a room below to view which dates are open. Click any green date to start selecting your stay — then hit <em>Book These Dates</em> to jump straight to the enquiry form with your dates pre-filled.</p>
   </div>
 
+  <!-- Live sync status badge (filled by JS from js/sync-status.js) -->
+  <div id="sync-status-badge" class="sync-badge" hidden></div>
+
   <!-- Room tabs -->
   <div class="room-tabs" id="room-tabs"></div>
 
@@ -333,6 +377,7 @@
 
 <script src="../js/rates.js"></script>
 <script src="../js/bookings.js"></script>
+<script src="../js/sync-status.js" onerror="window.__syncStatusMissing=true"></script>
 <script src="../js/availability-calendar.js"></script>
 <script src="../js/main.js?v=20260804"></script>
 <script>
@@ -450,6 +495,74 @@
       cal.appendChild(ph);
     }
   }
+})();
+</script>
+
+<!-- ── Live sync-status badge: "synced ✓ · next update in M:SS" ── -->
+<script>
+(function () {
+  var badge = document.getElementById('sync-status-badge');
+  if (!badge) return;
+  var s = window.SYNC_STATUS;
+  if (!s || !s.lastRunUtc) return;              // no heartbeat yet → stay hidden
+
+  var lastRun = new Date(s.lastRunUtc).getTime();
+  if (isNaN(lastRun)) return;
+  var interval   = (s.intervalMinutes || 60) * 60000;
+  var staleAfter = interval * 2 + 30 * 60000;   // ~2h30m of silence = a problem
+
+  var params  = new URLSearchParams(window.location.search);
+  var rawLang = params.get('lang') || document.documentElement.lang || 'en';
+  var lang    = ['en','es','ca','fr','nl'].indexOf(rawLang) >= 0 ? rawLang : 'en';
+
+  var L = {
+    en: { live:'Availability synced live from Airbnb', just:'updated just now', ago:'updated %s ago', next:'next update in', stale:'Availability last synced %s ago', min:'min', hour:'h', day:'d' },
+    es: { live:'Disponibilidad sincronizada con Airbnb', just:'actualizado ahora', ago:'actualizado hace %s', next:'próxima actualización en', stale:'Última sincronización hace %s', min:'min', hour:'h', day:'d' },
+    ca: { live:'Disponibilitat sincronitzada amb Airbnb', just:'actualitzat ara', ago:'actualitzat fa %s', next:'propera actualització en', stale:'Última sincronització fa %s', min:'min', hour:'h', day:'d' },
+    fr: { live:'Disponibilité synchronisée avec Airbnb', just:'mis à jour à l\'instant', ago:'mis à jour il y a %s', next:'prochaine mise à jour dans', stale:'Dernière synchronisation il y a %s', min:'min', hour:'h', day:'j' },
+    nl: { live:'Beschikbaarheid live gesynct met Airbnb', just:'zojuist bijgewerkt', ago:'%s geleden bijgewerkt', next:'volgende update over', stale:'Laatst gesynct %s geleden', min:'min', hour:'u', day:'d' }
+  };
+  var t = L[lang] || L.en;
+
+  function fmtAgo(ms) {
+    var mins = Math.floor(ms / 60000);
+    if (mins < 1)  return null;                 // caller shows "just now"
+    if (mins < 60) return mins + ' ' + t.min;
+    var hrs = Math.floor(mins / 60);
+    if (hrs < 24)  { var rm = mins % 60; return hrs + t.hour + (rm ? ' ' + rm + ' ' + t.min : ''); }
+    return Math.floor(hrs / 24) + t.day;
+  }
+  function fmtCountdown(ms) {
+    if (ms < 0) ms = 0;
+    var total = Math.floor(ms / 1000), m = Math.floor(total / 60), sec = total % 60;
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  function render() {
+    var now = Date.now(), age = now - lastRun;
+
+    if (age > staleAfter) {
+      badge.className = 'sync-badge is-stale';
+      badge.innerHTML = '<span class="sync-dot"></span><span>⚠ ' +
+        t.stale.replace('%s', fmtAgo(age) || ('1 ' + t.min)) + '</span>';
+      return;
+    }
+
+    var nextRun = lastRun + interval;
+    while (nextRun <= now) nextRun += interval;  // roll forward if a run was missed
+    var agoStr  = fmtAgo(age);
+    var updated = agoStr ? t.ago.replace('%s', agoStr) : t.just;
+
+    badge.className = 'sync-badge';
+    badge.innerHTML =
+      '<span class="sync-dot"></span>' +
+      '<span>✓ ' + t.live + ' · ' + updated + '</span>' +
+      '<span class="sync-next">· ' + t.next + ' <b>' + fmtCountdown(nextRun - now) + '</b></span>';
+  }
+
+  render();
+  badge.hidden = false;
+  setInterval(render, 1000);
 })();
 </script>
 </body>

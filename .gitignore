@@ -15,5 +15,8 @@ deploy.log
 notes/deploy.log
 js/.ftp-deploy-sync-state.json
 
+# Sync heartbeat — generated hourly by the Action and FTP-uploaded; never committed
+js/sync-status.js
+
 # Installers / binaries that should never be committed or deployed
 *.exe

@@ -65,10 +65,16 @@ jobs:
             git push
           fi
 
-      # 5. Upload the refreshed bookings.js to iFastNet via FTPS.
-      #    Only this one file is touched — everything else on the server
-      #    stays as-is. No-op when the file is unchanged (hash match).
-      - name: Deploy bookings.js to iFastNet
+      # 5. Sync the ./js folder to iFastNet via FTPS. The action diffs against
+      #    its server-side state file and only transfers files whose contents
+      #    changed, so in practice each run ships just:
+      #      - bookings.js     the availability data (only when it changed)
+      #      - sync-status.js  the heartbeat the website badge reads (every run)
+      #    sync-status.js is generated into ./js by the step above, so it is
+      #    present at upload time even though it is git-ignored.
+      #    NOTE: this action has no working "include"/whitelist — it syncs the
+      #    whole local-dir — so we deliberately do not try to restrict it.
+      - name: Deploy availability files to iFastNet
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server:      ${{ secrets.FTP_SERVER }}
@@ -78,5 +84,4 @@ jobs:
           port:        21
           local-dir:   ./js/
           server-dir:  /public_html/js/
-          include:     bookings.js   # only this file, nothing else
           log-level:   minimal

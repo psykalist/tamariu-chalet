@@ -51,12 +51,16 @@ import re
 import os
 import urllib.request
 import urllib.error
-from datetime import date, timedelta, datetime
+from datetime import date, timedelta, datetime, timezone
 
 # ── CONFIGURATION ────────────────────────────────────────────
 SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
 # BOOKINGS_JS_PATH env override exists only to make automated testing easy.
 BOOKINGS_JS  = os.environ.get('BOOKINGS_JS_PATH') or os.path.join(SCRIPT_DIR, 'js', 'bookings.js')
+# Tiny machine-readable heartbeat the website reads to show a "last synced"
+# badge + countdown. Rewritten on EVERY successful run (even a no-change one)
+# so a fresh timestamp means "the sync ran OK"; a stale one means it's stuck.
+SYNC_STATUS_JS = os.environ.get('SYNC_STATUS_JS_PATH') or os.path.join(SCRIPT_DIR, 'js', 'sync-status.js')
 
 HORIZON_DAYS         = 365   # how many days ahead to include
 FETCH_TIMEOUT        = 20    # seconds per attempt
@@ -276,6 +280,23 @@ def write_bookings_js(bookings):
         f.write('\n'.join(lines) + '\n')
 
 
+def write_sync_status(live_synced, total):
+    """Heartbeat the website reads. Written only on a successful run."""
+    now_utc = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    payload = (
+        '// Auto-generated heartbeat — do not edit. Written by sync-bookings.py.\n'
+        'window.SYNC_STATUS = {'
+        f'"lastRunUtc":"{now_utc}",'
+        '"ok":true,'
+        f'"feedsSynced":{live_synced},'
+        f'"bookings":{total},'
+        '"intervalMinutes":60'
+        '};\n'
+    )
+    with open(SYNC_STATUS_JS, 'w', encoding='utf-8') as f:
+        f.write(payload)
+
+
 # ── MAIN ─────────────────────────────────────────────────────
 
 def main():
@@ -303,12 +324,15 @@ def main():
     total = sum(len(v) for v in bookings.values())
     print(f'\nLive feeds synced: {live_synced}/{configured} · total bookings: {total}')
 
-    # 3) No change → leave the file untouched (stable hash, no commit/upload).
+    # 3) No change → leave bookings.js untouched (stable hash), but still
+    #    refresh the heartbeat so the website shows this run succeeded.
     if _signature(bookings) == _signature(existing):
         print('No availability change since last sync — file left untouched.')
+        write_sync_status(live_synced, total)
         return 0
 
     write_bookings_js(bookings)
+    write_sync_status(live_synced, total)
     print(f'\n✔ Updated {BOOKINGS_JS} — safe to deploy.')
     return 0
 
