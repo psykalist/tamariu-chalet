@@ -290,7 +290,7 @@ def render(logical: str, lang: str, title: str, desc: str, content: str,
 
     head = HEAD.format(
         lang=lang, title=title, desc=desc, url=url_for(lang, logical),
-        locale=LOCALES[lang], css=asset(logical, lang, "css/style.css") + "?v=20260804",
+        locale=LOCALES[lang], css=asset(logical, lang, "css/style.css") + "?v=20260807",
         extra_head=extra_head,
     )
     parts = [
@@ -298,7 +298,7 @@ def render(logical: str, lang: str, title: str, desc: str, content: str,
         build_nav(logical, lang),
         content.strip(),
         build_footer(logical, lang, footer_cols),
-        f'<script src="{asset(logical, lang, "js/main.js")}?v=20260804"></script>',
+        f'<script src="{asset(logical, lang, "js/main.js")}?v=20260807"></script>',
     ]
     if extra_body:
         parts.append(extra_body)

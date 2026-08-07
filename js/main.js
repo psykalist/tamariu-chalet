@@ -75,6 +75,68 @@ const SITE_VERSION = 'v20260803';
   });
 })();
 
+// ── NAV: Availability-sync status dot ──
+// Small always-visible indicator in the nav on every page. Green = the hourly
+// Airbnb sync ran recently; amber = it has gone quiet (a couple of hours with
+// no successful run) or its status can't be read — i.e. a possible failure.
+// Clicking it opens the availability page for the full picture.
+// Reads the heartbeat published at /js/sync-status.js by sync-bookings.py.
+(function () {
+  function init() {
+    const nav = document.querySelector('nav');
+    if (!nav || nav.querySelector('.nav-sync-dot')) return;
+
+    let lang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+    if (['en','es','ca','fr','nl','de'].indexOf(lang) < 0) lang = 'en';
+    const availUrl = '/availability/' + (lang !== 'en' ? '?lang=' + lang : '');
+
+    const L = {
+      en: { ok: 'Availability synced from Airbnb — click for details', bad: 'Availability sync delayed — click for details' },
+      es: { ok: 'Disponibilidad sincronizada con Airbnb — clic para más info', bad: 'Sincronización de disponibilidad retrasada — clic para más info' },
+      ca: { ok: 'Disponibilitat sincronitzada amb Airbnb — clic per a més info', bad: 'Sincronització de disponibilitat endarrerida — clic per a més info' },
+      fr: { ok: 'Disponibilité synchronisée avec Airbnb — cliquez pour les détails', bad: 'Synchronisation de disponibilité en retard — cliquez pour les détails' },
+      nl: { ok: 'Beschikbaarheid gesynct met Airbnb — klik voor details', bad: 'Beschikbaarheidssync vertraagd — klik voor details' },
+      de: { ok: 'Verfügbarkeit mit Airbnb synchronisiert — für Details klicken', bad: 'Verfügbarkeitssync verzögert — für Details klicken' }
+    };
+    const t = L[lang] || L.en;
+
+    const a = document.createElement('a');
+    a.className = 'nav-sync-dot';
+    a.href = availUrl;
+    a.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin-left:8px;border-radius:50%;text-decoration:none;flex-shrink:0;vertical-align:middle;';
+    const dot = document.createElement('span');
+    dot.style.cssText = 'width:11px;height:11px;border-radius:50%;background:#9aa0a6;box-shadow:0 0 0 2px rgba(255,255,255,0.6);transition:background .3s;';
+    a.appendChild(dot);
+
+    function setState(ok) {
+      dot.style.background = ok ? '#2e9e4f' : '#e0a52d';
+      a.title = ok ? t.ok : t.bad;
+      a.setAttribute('aria-label', ok ? t.ok : t.bad);
+    }
+    setState(true); // optimistic default until the heartbeat is read
+
+    const ls = nav.querySelector('.lang-switcher');
+    if (ls && ls.parentNode) ls.parentNode.insertBefore(a, ls.nextSibling);
+    else nav.appendChild(a);
+
+    // Load the heartbeat (5-minute cache bucket keeps it fresh but cacheable).
+    const sc = document.createElement('script');
+    sc.src = '/js/sync-status.js?t=' + Math.floor(Date.now() / 300000);
+    sc.onload = function () {
+      const s = window.SYNC_STATUS;
+      if (!s || !s.lastRunUtc) { setState(false); return; }
+      const last = new Date(s.lastRunUtc).getTime();
+      const interval = (s.intervalMinutes || 60) * 60000;
+      const stale = (Date.now() - last) > interval * 2 + 30 * 60000;
+      setState(!!s.ok && !stale);
+    };
+    sc.onerror = function () { setState(false); };
+    document.head.appendChild(sc);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
 // ── NAV: Hamburger Toggle ──
 const hamburger = document.querySelector('.hamburger');
 const navMenu   = document.querySelector('.nav-menu');

@@ -26,11 +26,11 @@ jobs:
 
       # 1. Check out the repo (script + js/ folder + last-known-good bookings.js)
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5   # v5 runs on Node 24 (no deprecation warning)
 
       # 2. Python 3
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6   # v6 runs on Node 24
         with:
           python-version: '3.11'
 
